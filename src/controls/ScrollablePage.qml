@@ -102,10 +102,22 @@ Kirigami.Page {
     property int verticalScrollBarPolicy
 
     /**
+     * @brief Set if the vertical scrollbar should be interactable.
+     * @property bool verticalScrollBarInteractive
+     */
+    property bool verticalScrollBarInteractive: true
+
+    /**
      * @brief This property sets the horizontal scrollbar policy.
      * @property Qt::ScrollBarPolicy horizontalScrollBarPolicy
      */
     property int horizontalScrollBarPolicy: QQC2.ScrollBar.AlwaysOff
+
+    /**
+     * @brief Set if the horizontal scrollbar should be interactable.
+     * @property bool horizontalScrollBarInteractive
+     */
+    property bool horizontalScrollBarInteractive: true
 
     default property alias scrollablePageData: itemsParent.data
     property alias scrollablePageChildren: itemsParent.children
@@ -171,7 +183,9 @@ Kirigami.Page {
         }
         clip: true
         QQC2.ScrollBar.horizontal.policy: root.horizontalScrollBarPolicy
+        QQC2.ScrollBar.horizontal.interactive: root.horizontalScrollBarInteractive
         QQC2.ScrollBar.vertical.policy: root.verticalScrollBarPolicy
+        QQC2.ScrollBar.vertical.interactive: root.verticalScrollBarInteractive
     }
 
     data: [
