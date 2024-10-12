@@ -173,17 +173,14 @@ msgid "Clear search"
 msgstr "ძიების გასუფთავება"
 
 #: controls/SelectableLabel.qml:174
-#, fuzzy
-#| msgctxt "AboutItem|"
-#| msgid "Copyright"
 msgctxt "SelectableLabel|"
 msgid "Copy"
-msgstr "საავტორო უფლებები"
+msgstr "კოპირება"
 
 #: controls/SelectableLabel.qml:187
 msgctxt "SelectableLabel|"
 msgid "Select All"
-msgstr ""
+msgstr "ყველას მონიშვნა"
 
 #: controls/templates/OverlayDrawer.qml:128
 msgctxt "OverlayDrawer|"
