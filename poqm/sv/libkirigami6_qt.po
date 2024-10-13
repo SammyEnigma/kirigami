@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2024-10-08 18:42+0200\n"
+"PO-Revision-Date: 2024-10-12 19:10+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
 "Language: sv\n"
@@ -173,17 +173,14 @@ msgid "Clear search"
 msgstr "Rensa sökning"
 
 #: controls/SelectableLabel.qml:174
-#, fuzzy
-#| msgctxt "AboutItem|"
-#| msgid "Copyright"
 msgctxt "SelectableLabel|"
 msgid "Copy"
-msgstr "Copyright"
+msgstr "Kopiera"
 
 #: controls/SelectableLabel.qml:187
 msgctxt "SelectableLabel|"
 msgid "Select All"
-msgstr ""
+msgstr "Markera alla"
 
 #: controls/templates/OverlayDrawer.qml:128
 msgctxt "OverlayDrawer|"
