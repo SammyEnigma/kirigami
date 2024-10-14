@@ -178,8 +178,6 @@ msgstr "Tøm søkjefelt"
 
 #: controls/SelectableLabel.qml:174
 #, fuzzy
-#| msgctxt "AboutItem|"
-#| msgid "Copyright"
 msgctxt "SelectableLabel|"
 msgid "Copy"
 msgstr "Opphavsrett"
