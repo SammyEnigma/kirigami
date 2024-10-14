@@ -37,42 +37,57 @@ QQC2.Control {
     activeFocusOnTab: false
     padding: 0
 
-    property bool readOnly: true
-    property bool selectByMouse: true
-    property color color: Kirigami.Theme.textColor
-    property color selectedTextColor: Kirigami.Theme.highlightedTextColor
-    property color selectionColor: Kirigami.Theme.highlightColor
-    property string text
-    property var baseUrl
-    property var cursorShape
-    property var horizontalAlignment
-    property var textFormat: TextEdit.AutoText
-    property var verticalAlignment: TextEdit.AlignTop
-    property var wrapMode: TextEdit.WordWrap
+    property alias readOnly: textEdit.readOnly
+    property alias selectByMouse: textEdit.selectByMouse
+    property alias color: textEdit.color
+    property alias selectedTextColor: textEdit.selectedTextColor
+    property alias selectionColor: textEdit.selectionColor
+    property alias text: textEdit.text
+    property alias baseUrl: textEdit.baseUrl
+    property alias cursorShape: textEdit.cursorShape
+    property alias horizontalAlignment: textEdit.horizontalAlignment
+    property alias verticalAlignment: textEdit.verticalAlignment
+    property alias textFormat: textEdit.textFormat
+    property alias wrapMode: textEdit.wrapMode
 
-    readonly property bool canPaste: textEdit.canPaste
-    readonly property bool canRedo: textEdit.canRedo
-    readonly property bool canUndo: textEdit.canUndo
-    readonly property bool inputMethodComposing: textEdit.inputMethodComposing
-    readonly property int length: textEdit.length
-    readonly property int lineCount: textEdit.lineCount
-    readonly property int selectionEnd: textEdit.selectionEnd
-    readonly property int selectionStart: textEdit.selectionStart
-    readonly property real contentHeight: textEdit.contentHeight
-    readonly property real contentWidth: textEdit.contentWidth
-    readonly property string hoveredLink: textEdit.hoveredLink
-    readonly property string preeditText: textEdit.preeditText
-    readonly property string selectedText: textEdit.selectedText
-    readonly property var cursorRectangle: textEdit.cursorRectangle
-    readonly property var cursorSelection: textEdit.cursorSelection
-    readonly property var effectiveHorizontalAlignment: textEdit.effectiveHorizontalAlignment
-    readonly property var textDocument: textEdit.textDocument
+    property alias activeFocusOnPress: textEdit.activeFocusOnPress
+    property alias cursorDelegate: textEdit.cursorDelegate
+    property alias cursorPosition: textEdit.cursorPosition
+    property alias cursorVisible: textEdit.cursorVisible
+    property alias inputMethodHints: textEdit.inputMethodHints
+    property alias mouseSelectionMode: textEdit.mouseSelectionMode
+    property alias overwriteMode: textEdit.overwriteMode
+    property alias persistentSelection: textEdit.persistentSelection
+    property alias renderType: textEdit.renderType
+    property alias selectByKeyboard: textEdit.selectByKeyboard
+    property alias tabStopDistance: textEdit.tabStopDistance
+    property alias textMargin: textEdit.textMargin
 
+    readonly property alias canPaste: textEdit.canPaste
+    readonly property alias canRedo: textEdit.canRedo
+    readonly property alias canUndo: textEdit.canUndo
+    readonly property alias inputMethodComposing: textEdit.inputMethodComposing
+    readonly property alias length: textEdit.length
+    readonly property alias lineCount: textEdit.lineCount
+    readonly property alias selectionEnd: textEdit.selectionEnd
+    readonly property alias selectionStart: textEdit.selectionStart
+    readonly property alias contentHeight: textEdit.contentHeight
+    readonly property alias contentWidth: textEdit.contentWidth
+    readonly property alias hoveredLink: textEdit.hoveredLink
+    readonly property alias preeditText: textEdit.preeditText
+    readonly property alias selectedText: textEdit.selectedText
+    readonly property alias cursorRectangle: textEdit.cursorRectangle
+    readonly property alias cursorSelection: textEdit.cursorSelection
+    readonly property alias effectiveHorizontalAlignment: textEdit.effectiveHorizontalAlignment
+    readonly property alias textDocument: textEdit.textDocument
+
+    signal editingFinished()
     signal clicked()
     signal linkActivated(string link)
     signal linkHovered(string link)
 
     onLinkActivated: link => Qt.openUrlExternally(link)
+
 //BEGIN TextArea dummy entries
     property var flickable: undefined
     property var placeholderText: undefined
@@ -82,23 +97,6 @@ QQC2.Control {
     signal pressed(MouseEvent event)
     signal released(MouseEvent event)
 //END TextArea dummy entries
-
-//BEGIN TextEdit dummy entries
-    property var activeFocusOnPress: undefined
-    property var cursorDelegate: undefined
-    property var cursorPosition: undefined
-    property var cursorVisible: undefined
-    property var inputMethodHints: undefined
-    property var mouseSelectionMode: undefined
-    property var overwriteMode: undefined
-    property var persistentSelection: undefined
-    property var renderType: undefined
-    property var selectByKeyboard: undefined
-    property var tabStopDistance: undefined
-    property var textMargin: undefined
-
-    signal editingFinished()
-//END TextEdit dummy entries
 
     contentItem: TextEdit {
         id: textEdit
@@ -114,22 +112,19 @@ QQC2.Control {
         property alias cursorShape: hoverHandler.cursorShape
 
         activeFocusOnTab: root.activeFocusOnTab
-        baseUrl: root.baseUrl
-        color: root.color
-        horizontalAlignment: root.horizontalAlignment
+        color: Kirigami.Theme.textColor
+        readOnly: true
+        selectByMouse: true
         padding: 0
-        readOnly: root.readOnly
-        selectByMouse: root.selectByMouse
-        selectedTextColor: root.selectedTextColor
-        selectionColor: root.selectionColor
-        textFormat: root.textFormat
-        verticalAlignment: root.verticalAlignment
-        wrapMode: root.wrapMode
+        selectedTextColor: Kirigami.Theme.highlightedTextColor
+        selectionColor: Kirigami.Theme.highlightColor
+        textFormat: TextEdit.AutoText
+        verticalAlignment: TextEdit.AlignTop
+        wrapMode: TextEdit.WordWrap
 
         onLinkActivated: root.linkActivated(textEdit.hoveredLink)
         onLinkHovered: root.linkHovered(textEdit.hoveredLink)
-
-        text: root.text
+        onEditingFinished: root.editingFinished()
 
         Accessible.selectableText: true
         Accessible.editable: false
