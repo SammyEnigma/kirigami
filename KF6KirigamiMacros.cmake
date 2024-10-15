@@ -24,7 +24,7 @@ function(kirigami_package_breeze_icons)
         edit-delete-remove
         emblem-error
         emblem-information
-        emblem-positive
+        emblem-success
         emblem-warning
         globe
         go-next

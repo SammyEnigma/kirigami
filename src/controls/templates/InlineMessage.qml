@@ -264,7 +264,7 @@ T.Control {
 
                 switch (root.type) {
                 case Kirigami.MessageType.Positive:
-                    return "emblem-positive";
+                    return "emblem-success";
                 case Kirigami.MessageType.Warning:
                     return "emblem-warning";
                 case Kirigami.MessageType.Error:
