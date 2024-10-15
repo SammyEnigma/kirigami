@@ -86,7 +86,7 @@ int main(int argc, char *argv[])
     qmlRegisterSingletonInstance("org.kde.%{APPNAMELC}.private", 1, 0, "Config", config);
 
     engine.rootContext()->setContextObject(new KLocalizedContext(&engine));
-    engine.loadFromModule("org.kde.%{APPNAMELC}", u"Main.qml");
+    engine.loadFromModule("org.kde.%{APPNAMELC}", u"Main");
 
     if (engine.rootObjects().isEmpty()) {
         return -1;
