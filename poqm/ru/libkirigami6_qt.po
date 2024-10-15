@@ -176,7 +176,7 @@ msgctxt "SearchField|"
 msgid "Clear search"
 msgstr "Очистить поиск"
 
-#: controls/SelectableLabel.qml:174
+#: controls/SelectableLabel.qml:169
 #, fuzzy
 #| msgctxt "AboutItem|"
 #| msgid "Copyright"
@@ -184,7 +184,7 @@ msgctxt "SelectableLabel|"
 msgid "Copy"
 msgstr "Авторские права"
 
-#: controls/SelectableLabel.qml:187
+#: controls/SelectableLabel.qml:182
 msgctxt "SelectableLabel|"
 msgid "Select All"
 msgstr ""
@@ -233,7 +233,7 @@ msgctxt "UrlButton|"
 msgid "Copy Link to Clipboard"
 msgstr "Копировать ссылку в буфер обмена"
 
-#: dialogs/Dialog.qml:452
+#: dialogs/Dialog.qml:442
 msgctxt "Dialog|@action:button close dialog"
 msgid "Close"
 msgstr "Закрыть"

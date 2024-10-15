@@ -172,12 +172,12 @@ msgctxt "SearchField|"
 msgid "Clear search"
 msgstr "ძიების გასუფთავება"
 
-#: controls/SelectableLabel.qml:174
+#: controls/SelectableLabel.qml:169
 msgctxt "SelectableLabel|"
 msgid "Copy"
 msgstr "კოპირება"
 
-#: controls/SelectableLabel.qml:187
+#: controls/SelectableLabel.qml:182
 msgctxt "SelectableLabel|"
 msgid "Select All"
 msgstr "ყველას მონიშვნა"
@@ -223,7 +223,7 @@ msgctxt "UrlButton|"
 msgid "Copy Link to Clipboard"
 msgstr "ბმულის ბმულის ბაფერში კოპირება"
 
-#: dialogs/Dialog.qml:452
+#: dialogs/Dialog.qml:442
 msgctxt "Dialog|@action:button close dialog"
 msgid "Close"
 msgstr "დახურვა"

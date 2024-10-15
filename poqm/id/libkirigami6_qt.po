@@ -184,7 +184,7 @@ msgctxt "SearchField|"
 msgid "Clear search"
 msgstr ""
 
-#: controls/SelectableLabel.qml:174
+#: controls/SelectableLabel.qml:169
 #, fuzzy
 #| msgctxt "AboutItem|"
 #| msgid "Copyright"
@@ -192,7 +192,7 @@ msgctxt "SelectableLabel|"
 msgid "Copy"
 msgstr "Hak Cipta"
 
-#: controls/SelectableLabel.qml:187
+#: controls/SelectableLabel.qml:182
 msgctxt "SelectableLabel|"
 msgid "Select All"
 msgstr ""
@@ -241,7 +241,7 @@ msgctxt "UrlButton|"
 msgid "Copy Link to Clipboard"
 msgstr "Salin Tautan ke Papan Klip"
 
-#: dialogs/Dialog.qml:452
+#: dialogs/Dialog.qml:442
 #, fuzzy
 #| msgctxt "OverlayDrawer|"
 #| msgid "Close drawer"

@@ -174,12 +174,12 @@ msgctxt "SearchField|"
 msgid "Clear search"
 msgstr "Aramayı temizle"
 
-#: controls/SelectableLabel.qml:174
+#: controls/SelectableLabel.qml:169
 msgctxt "SelectableLabel|"
 msgid "Copy"
 msgstr "Kopyala"
 
-#: controls/SelectableLabel.qml:187
+#: controls/SelectableLabel.qml:182
 msgctxt "SelectableLabel|"
 msgid "Select All"
 msgstr "Tümünü Seç"
@@ -225,7 +225,7 @@ msgctxt "UrlButton|"
 msgid "Copy Link to Clipboard"
 msgstr "Bağlantıyı Panoya Kopyala"
 
-#: dialogs/Dialog.qml:452
+#: dialogs/Dialog.qml:442
 msgctxt "Dialog|@action:button close dialog"
 msgid "Close"
 msgstr "Kapat"

@@ -180,7 +180,7 @@ msgctxt "SearchField|"
 msgid "Clear search"
 msgstr "検索をクリア"
 
-#: controls/SelectableLabel.qml:174
+#: controls/SelectableLabel.qml:169
 #, fuzzy
 #| msgctxt "AboutItem|"
 #| msgid "Copyright"
@@ -188,7 +188,7 @@ msgctxt "SelectableLabel|"
 msgid "Copy"
 msgstr "著作権について"
 
-#: controls/SelectableLabel.qml:187
+#: controls/SelectableLabel.qml:182
 msgctxt "SelectableLabel|"
 msgid "Select All"
 msgstr ""
@@ -240,7 +240,7 @@ msgctxt "UrlButton|"
 msgid "Copy Link to Clipboard"
 msgstr "リンクをクリップボードにコピー"
 
-#: dialogs/Dialog.qml:452
+#: dialogs/Dialog.qml:442
 #, fuzzy
 #| msgctxt "PageRowGlobalToolBarUI|"
 #| msgid "Close menu"
