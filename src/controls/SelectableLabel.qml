@@ -44,7 +44,7 @@ QQC2.Control {
     property alias selectionColor: textEdit.selectionColor
     property alias text: textEdit.text
     property alias baseUrl: textEdit.baseUrl
-    property alias cursorShape: textEdit.cursorShape
+    property var cursorShape
     property alias horizontalAlignment: textEdit.horizontalAlignment
     property alias verticalAlignment: textEdit.verticalAlignment
     property alias textFormat: textEdit.textFormat
