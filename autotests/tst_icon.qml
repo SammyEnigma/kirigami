@@ -65,6 +65,6 @@ TestCase {
             imageColors.source = result.image
             imageColors.update()
         })
-        tryCompare(imageColors, "dominant", "#2196f3")
+        tryCompare(imageColors, "dominant", "#2980b9")
     }
 }
