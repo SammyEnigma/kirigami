@@ -66,7 +66,7 @@ Kirigami.BasicThemeDefinition {
     headerHoverColor: palette.highlight
     headerFocusColor: palette.highlight
 
-    property font defaultFont: fontMetrics.font
+    defaultFont: fontMetrics.font
 
     property list<QtObject> children: [
         TextMetrics {
