@@ -50,21 +50,15 @@ BasicThemeDefinition &BasicThemeInstance::themeDefinition(QQmlEngine *engine)
     QQmlComponent component(engine);
     component.loadUrl(themeUrl);
 
-    if (!component.isError()) {
-        auto result = component.create();
-        if (auto themeDefinition = qobject_cast<BasicThemeDefinition *>(result)) {
-            m_themeDefinition.reset(themeDefinition);
-        } else {
-            const auto errors = component.errors();
-            for (auto error : errors) {
-                qCWarning(KirigamiPlatform) << error.toString();
-            }
-
-            qCWarning(KirigamiPlatform) << "Invalid Theme file, using default Basic theme.";
-            m_themeDefinition = std::make_unique<BasicThemeDefinition>();
-        }
+    if (auto themeDefinition = qobject_cast<BasicThemeDefinition *>(component.create())) {
+        m_themeDefinition.reset(themeDefinition);
     } else {
-        qCDebug(KirigamiPlatform) << "No Theme file found, using default Basic theme";
+        const auto errors = component.errors();
+        for (auto error : errors) {
+            qCWarning(KirigamiPlatform) << error.toString();
+        }
+
+        qCWarning(KirigamiPlatform) << "Invalid Theme file, using default Basic theme.";
         m_themeDefinition = std::make_unique<BasicThemeDefinition>();
     }
 
