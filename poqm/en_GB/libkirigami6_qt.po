@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2024-05-20 19:38+0100\n"
+"PO-Revision-Date: 2024-10-18 17:12+0100\n"
 "Last-Translator: Steve Allewell <steve.allewell@gmail.com>\n"
 "Language-Team: British English\n"
 "Language: en_GB\n"
@@ -11,7 +11,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Qt-Contexts: true\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.02.2\n"
+"X-Generator: Lokalize 24.08.2\n"
 
 #: controls/AboutItem.qml:163
 #, qt-format
@@ -173,17 +173,14 @@ msgid "Clear search"
 msgstr "Clear search"
 
 #: controls/SelectableLabel.qml:169
-#, fuzzy
-#| msgctxt "AboutItem|"
-#| msgid "Copyright"
 msgctxt "SelectableLabel|"
 msgid "Copy"
-msgstr "Copyright"
+msgstr "Copy"
 
 #: controls/SelectableLabel.qml:182
 msgctxt "SelectableLabel|"
 msgid "Select All"
-msgstr ""
+msgstr "Select All"
 
 #: controls/templates/OverlayDrawer.qml:128
 msgctxt "OverlayDrawer|"
@@ -196,9 +193,6 @@ msgid "Open drawer"
 msgstr "Open drawer"
 
 #: controls/templates/OverlaySheet.qml:289
-#, fuzzy
-#| msgctxt "Dialog|@action:button close dialog"
-#| msgid "Close"
 msgctxt "OverlaySheet|@action:button close dialog"
 msgid "Close"
 msgstr "Close"

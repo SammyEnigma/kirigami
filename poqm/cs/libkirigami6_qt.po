@@ -1,17 +1,17 @@
-# SPDX-FileCopyrightText: 2016, 2017, 2018, 2019, 2020, 2023 Vít Pelčák <vit@pelcak.org>
+# SPDX-FileCopyrightText: 2016, 2017, 2018, 2019, 2020, 2023, 2024 Vít Pelčák <vit@pelcak.org>
 # SPDX-FileCopyrightText: 2021, 2022, 2023, 2024 Vit Pelcak <vit@pelcak.org>
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2024-05-07 10:58+0200\n"
-"Last-Translator: Vit Pelcak <vpelcak@suse.cz>\n"
+"PO-Revision-Date: 2024-10-18 11:29+0200\n"
+"Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Lokalize 24.02.2\n"
+"X-Generator: Lokalize 24.08.2\n"
 "X-Qt-Contexts: true\n"
 
 #: controls/AboutItem.qml:163
@@ -174,17 +174,14 @@ msgid "Clear search"
 msgstr "Vyprázdnit hledání"
 
 #: controls/SelectableLabel.qml:169
-#, fuzzy
-#| msgctxt "AboutItem|"
-#| msgid "Copyright"
 msgctxt "SelectableLabel|"
 msgid "Copy"
-msgstr "Autorská práva"
+msgstr "Kopírovat"
 
 #: controls/SelectableLabel.qml:182
 msgctxt "SelectableLabel|"
 msgid "Select All"
-msgstr ""
+msgstr "Vybrat vše"
 
 #: controls/templates/OverlayDrawer.qml:128
 msgctxt "OverlayDrawer|"
@@ -197,9 +194,6 @@ msgid "Open drawer"
 msgstr "Otevřít šuplík"
 
 #: controls/templates/OverlaySheet.qml:289
-#, fuzzy
-#| msgctxt "Dialog|@action:button close dialog"
-#| msgid "Close"
 msgctxt "OverlaySheet|@action:button close dialog"
 msgid "Close"
 msgstr "Zavřít"
