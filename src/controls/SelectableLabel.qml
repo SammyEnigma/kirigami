@@ -35,7 +35,12 @@ QQC2.Control {
 
     //TODO KF7: Cleanup from unnecessary properties we dont need to expose for a label
     activeFocusOnTab: false
-    padding: 0
+
+    padding: undefined
+    topPadding: undefined
+    leftPadding: undefined
+    rightPadding: undefined
+    bottomPadding: undefined
 
     property alias readOnly: textEdit.readOnly
     property alias selectByMouse: textEdit.selectByMouse
