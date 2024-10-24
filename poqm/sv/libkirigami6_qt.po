@@ -172,12 +172,12 @@ msgctxt "SearchField|"
 msgid "Clear search"
 msgstr "Rensa sökning"
 
-#: controls/SelectableLabel.qml:169
+#: controls/SelectableLabel.qml:174
 msgctxt "SelectableLabel|"
 msgid "Copy"
 msgstr "Kopiera"
 
-#: controls/SelectableLabel.qml:182
+#: controls/SelectableLabel.qml:187
 msgctxt "SelectableLabel|"
 msgid "Select All"
 msgstr "Markera alla"

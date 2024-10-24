@@ -181,12 +181,12 @@ msgctxt "SearchField|"
 msgid "Clear search"
 msgstr "Neteja la cerca"
 
-#: controls/SelectableLabel.qml:169
+#: controls/SelectableLabel.qml:174
 msgctxt "SelectableLabel|"
 msgid "Copy"
 msgstr "Copia"
 
-#: controls/SelectableLabel.qml:182
+#: controls/SelectableLabel.qml:187
 msgctxt "SelectableLabel|"
 msgid "Select All"
 msgstr "Selecciona-ho tot"
