@@ -296,7 +296,6 @@ public:
      * @brief Available rendering types for ShadowedRectangle.
      */
     enum RenderType {
-
         /**
          * @brief Automatically determine the optimal rendering type.
          *
