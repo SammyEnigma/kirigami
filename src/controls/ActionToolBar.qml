@@ -153,6 +153,8 @@ QQC2.Control {
     topPadding: 0
     bottomPadding: 0
 
+    Accessible.role: Accessible.ToolBar
+
     contentItem: Kirigami.ToolBarLayout {
         id: layout
         spacing: Kirigami.Units.smallSpacing

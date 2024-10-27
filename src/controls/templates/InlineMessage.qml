@@ -152,6 +152,9 @@ T.Control {
 
     padding: Kirigami.Units.smallSpacing
 
+    Accessible.role: Accessible.AlertMessage
+    Accessible.ignored: !visible
+
     Behavior on implicitHeight {
         enabled: !root.visible
 
@@ -210,6 +213,8 @@ T.Control {
                 return Math.max(icon.implicitHeight, label.implicitHeight, closeButton.implicitHeight, actionsLayout.implicitHeight)
             }
         }
+
+        Accessible.ignored: true
 
         readonly property real remainingWidth: width - (
             icon.width
@@ -275,6 +280,20 @@ T.Control {
             }
 
             color: root.icon.color
+
+            Accessible.ignored: !root.visible
+            Accessible.name: {
+                switch (root.type) {
+                case Kirigami.MessageType.Positive:
+                    return qsTr("Success");
+                case Kirigami.MessageType.Warning:
+                    return qsTr("Warning");
+                case Kirigami.MessageType.Error:
+                    return qsTr("Error");
+                default:
+                    return qsTr("Note");
+                }
+             }
         }
 
         Kirigami.SelectableLabel {
@@ -325,6 +344,8 @@ T.Control {
 
             onLinkHovered: link => root.linkHovered(link)
             onLinkActivated: link => root.linkActivated(link)
+
+            Accessible.ignored: !root.visible
         }
 
         Kirigami.ActionToolBar {
@@ -333,6 +354,7 @@ T.Control {
             flat: false
             actions: root.actions
             visible: root.actions.length > 0
+            Accessible.ignored: !visible || !root.visible
             alignment: Qt.AlignRight
 
             anchors {
@@ -375,9 +397,13 @@ T.Control {
 
             height: contentLayout.atBottom ? implicitHeight : implicitHeight
 
+            text: qsTr("Close")
+            display: QQC2.ToolButton.IconOnly
             icon.name: "dialog-close"
 
             onClicked: root.visible = false
+
+            Accessible.ignored: !root.visible
         }
 
         Component.onCompleted: complete = true
