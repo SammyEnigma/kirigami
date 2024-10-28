@@ -161,7 +161,7 @@ QQC2.Control {
             acceptedDevices: PointerDevice.Mouse | PointerDevice.TouchPad | PointerDevice.Stylus
             acceptedButtons: Qt.RightButton
 
-            onTapped: {
+            onPressedChanged: if (pressed) {
                 contextMenu.popup();
             }
         }
