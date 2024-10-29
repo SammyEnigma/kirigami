@@ -42,6 +42,11 @@ QQC2.Control {
     rightPadding: undefined
     bottomPadding: undefined
 
+    Accessible.name: textEdit.text
+    Accessible.role: Accessible.StaticText
+    Accessible.selectableText: true
+    Accessible.editable: false
+
     property alias readOnly: textEdit.readOnly
     property alias selectByMouse: textEdit.selectByMouse
     property alias color: textEdit.color
@@ -131,8 +136,6 @@ QQC2.Control {
         onLinkHovered: root.linkHovered(textEdit.hoveredLink)
         onEditingFinished: root.editingFinished()
 
-        Accessible.selectableText: true
-        Accessible.editable: false
         HoverHandler {
             id: hoverHandler
             // By default HoverHandler accepts the left button while it shouldn't accept anything,
