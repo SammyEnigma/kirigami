@@ -141,8 +141,6 @@ Item {
         // https://bugreports.qt.io/browse/QTBUG-95873
         horizontalAlignment: Text.AlignLeft
 
-        renderType: Text.NativeRendering
-
         // Note: Can't do this through ordinary bindings as the order between
         // binding evaluation is not defined which leads to incorrect sizing or
         // the QML engine complaining about not being able to anchor to null items.
