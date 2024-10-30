@@ -116,6 +116,7 @@ T.Popup {
         return Math.round(Math.max(visualParentAdjust, wantedPosition, Kirigami.Units.gridUnit * 3));
     }
 
+    width: root.parent ? Math.min(root.parent.width, implicitWidth) : implicitWidth
     implicitWidth: {
         let width = parent?.width ?? 0;
         if (!scrollView.itemForSizeHints) {
