@@ -179,12 +179,12 @@ msgctxt "SearchField|"
 msgid "Clear search"
 msgstr "Спорожнити поле пошуку"
 
-#: controls/SelectableLabel.qml:174
+#: controls/SelectableLabel.qml:177
 msgctxt "SelectableLabel|"
 msgid "Copy"
 msgstr "Копіювати"
 
-#: controls/SelectableLabel.qml:187
+#: controls/SelectableLabel.qml:190
 msgctxt "SelectableLabel|"
 msgid "Select All"
 msgstr "Вибрати все"
@@ -199,7 +199,7 @@ msgctxt "OverlayDrawer|"
 msgid "Open drawer"
 msgstr "Відкрити висувну панель"
 
-#: controls/templates/OverlaySheet.qml:289
+#: controls/templates/OverlaySheet.qml:290
 msgctxt "OverlaySheet|@action:button close dialog"
 msgid "Close"
 msgstr "Закрити"

@@ -181,12 +181,12 @@ msgctxt "SearchField|"
 msgid "Clear search"
 msgstr "Neteja la cerca"
 
-#: controls/SelectableLabel.qml:174
+#: controls/SelectableLabel.qml:177
 msgctxt "SelectableLabel|"
 msgid "Copy"
 msgstr "Copia"
 
-#: controls/SelectableLabel.qml:187
+#: controls/SelectableLabel.qml:190
 msgctxt "SelectableLabel|"
 msgid "Select All"
 msgstr "Selecciona-ho tot"
@@ -201,7 +201,7 @@ msgctxt "OverlayDrawer|"
 msgid "Open drawer"
 msgstr "Obre el calaix"
 
-#: controls/templates/OverlaySheet.qml:289
+#: controls/templates/OverlaySheet.qml:290
 msgctxt "OverlaySheet|@action:button close dialog"
 msgid "Close"
 msgstr "Tanca"

@@ -173,12 +173,12 @@ msgctxt "SearchField|"
 msgid "Clear search"
 msgstr "פינוי החיפוש"
 
-#: controls/SelectableLabel.qml:174
+#: controls/SelectableLabel.qml:177
 msgctxt "SelectableLabel|"
 msgid "Copy"
 msgstr "העתקה"
 
-#: controls/SelectableLabel.qml:187
+#: controls/SelectableLabel.qml:190
 msgctxt "SelectableLabel|"
 msgid "Select All"
 msgstr "בחירה בהכול"
@@ -193,7 +193,7 @@ msgctxt "OverlayDrawer|"
 msgid "Open drawer"
 msgstr "פתיחת המגירה"
 
-#: controls/templates/OverlaySheet.qml:289
+#: controls/templates/OverlaySheet.qml:290
 msgctxt "OverlaySheet|@action:button close dialog"
 msgid "Close"
 msgstr "סגירה"

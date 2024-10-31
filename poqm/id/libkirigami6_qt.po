@@ -184,7 +184,7 @@ msgctxt "SearchField|"
 msgid "Clear search"
 msgstr ""
 
-#: controls/SelectableLabel.qml:174
+#: controls/SelectableLabel.qml:177
 #, fuzzy
 #| msgctxt "AboutItem|"
 #| msgid "Copyright"
@@ -192,7 +192,7 @@ msgctxt "SelectableLabel|"
 msgid "Copy"
 msgstr "Hak Cipta"
 
-#: controls/SelectableLabel.qml:187
+#: controls/SelectableLabel.qml:190
 msgctxt "SelectableLabel|"
 msgid "Select All"
 msgstr ""
@@ -207,7 +207,7 @@ msgctxt "OverlayDrawer|"
 msgid "Open drawer"
 msgstr "Buka penggambar"
 
-#: controls/templates/OverlaySheet.qml:289
+#: controls/templates/OverlaySheet.qml:290
 #, fuzzy
 #| msgctxt "OverlayDrawer|"
 #| msgid "Close drawer"

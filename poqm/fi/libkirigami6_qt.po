@@ -173,7 +173,7 @@ msgctxt "SearchField|"
 msgid "Clear search"
 msgstr "Tyhjennä haku"
 
-#: controls/SelectableLabel.qml:174
+#: controls/SelectableLabel.qml:177
 #, fuzzy
 #| msgctxt "AboutItem|"
 #| msgid "Copyright"
@@ -181,7 +181,7 @@ msgctxt "SelectableLabel|"
 msgid "Copy"
 msgstr "Tekijänoikeudet"
 
-#: controls/SelectableLabel.qml:187
+#: controls/SelectableLabel.qml:190
 msgctxt "SelectableLabel|"
 msgid "Select All"
 msgstr ""
@@ -196,7 +196,7 @@ msgctxt "OverlayDrawer|"
 msgid "Open drawer"
 msgstr "Avaa laatikko"
 
-#: controls/templates/OverlaySheet.qml:289
+#: controls/templates/OverlaySheet.qml:290
 #, fuzzy
 #| msgctxt "PageRowGlobalToolBarUI|"
 #| msgid "Close menu"
