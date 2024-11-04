@@ -18,7 +18,7 @@ endif()
 if (BUILD_SHARED_LIBS)
     set(_extra_options ${_extra_options} NO_PLUGIN_OPTIONAL)
 endif()
-if (ANDROID)
+if (ANDROID OR NOT BUILD_SHARED_LIBS)
     set(_extra_options ${_extra_options} OPTIONAL_IMPORTS org.kde.breeze)
 endif()
 
