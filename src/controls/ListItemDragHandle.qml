@@ -1,5 +1,6 @@
 /*
  *  SPDX-FileCopyrightText: 2018 Marco Martin <mart@kde.org>
+ *  SPDX-FileCopyrightText: 2024 Filipe Azevedo <pasnox@gmail.com>
  *
  *  SPDX-License-Identifier: LGPL-2.0-or-later
  */
@@ -124,6 +125,18 @@ Item {
         cursorShape: pressed ? Qt.ClosedHandCursor : Qt.OpenHandCursor
         preventStealing: true
 
+        QtObject {
+            id: _previousMove
+
+            property int oldIndex: -1
+            property int newIndex: -1
+
+            function reset() {
+                _previousMove.oldIndex = -1;
+                _previousMove.newIndex = -1;
+            }
+        }
+
         Kirigami.Icon {
             id: internal
 
@@ -142,6 +155,13 @@ Item {
                 const newIndex = listView.indexAt(1, listView.contentItem.mapFromItem(mouseArea, 0, internal.mouseDownY).y);
 
                 if (newIndex > -1 && ((internal.draggingUp && newIndex < index) || (!internal.draggingUp && newIndex > index))) {
+                    if (_previousMove.oldIndex === index && _previousMove.newIndex === newIndex) {
+                        return;
+                    }
+
+                    _previousMove.oldIndex = index;
+                    _previousMove.newIndex = newIndex;
+
                     root.moveRequested(index, newIndex);
                 }
             }
