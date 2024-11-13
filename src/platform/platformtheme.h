@@ -203,15 +203,22 @@ class KIRIGAMIPLATFORM_EXPORT PlatformTheme : public QObject
 
 public:
     enum ColorSet {
-        View = 0, /** Color set for item views, usually the lightest of all */
-        Window, /** Default Color set for windows and "chrome" areas */
-        Button, /** Color set used by buttons */
-        Selection, /** Color set used by selected areas */
-        Tooltip, /** Color set used by tooltips */
-        Complementary, /** Color set meant to be complementary to Window: usually is a dark theme for light themes */
-        Header, /** Color set to be used by heading areas of applications, such as toolbars */
-
-        ColorSetCount, // Number of items in this enum, this should always be the last item.
+        /** Color set for item views, usually the lightest of all */
+        View = 0,
+        /** Default Color set for windows and "chrome" areas */
+        Window,
+        /** Color set used by buttons */
+        Button,
+        /** Color set used by selected areas */
+        Selection,
+        /** Color set used by tooltips */
+        Tooltip,
+        /** Color set meant to be complementary to Window: usually is a dark theme for light themes */
+        Complementary,
+        /** Color set to be used by heading areas of applications, such as toolbars */
+        Header,
+        // Number of items in this enum, this should always be the last item.
+        ColorSetCount,
     };
     Q_ENUM(ColorSet)
 
