@@ -427,41 +427,46 @@ QQC2.SwipeDelegate {
     // TODO: expose in API?
     Component {
         id: actionsBackgroundDelegate
-        MouseArea {
-
+        Item {
             anchors.fill: parent
+            z: 1
 
-            // QQC2.SwipeDelegate.onPressedChanged is broken with touch
-            onClicked: mouse => {
-                    slideAnim.to = 0;
-                    slideAnim.restart();
-            }
+            readonly property Item contentItem: swipeBackground
             Rectangle {
-                anchors.fill: parent
-                color: parent.pressed ? Qt.darker(Kirigami.Theme.backgroundColor, 1.1) : Qt.darker(Kirigami.Theme.backgroundColor, 1.05)
-            }
-
-            visible: listItem.swipe.position != 0
-
-
-            EdgeShadow {
-                edge: Qt.TopEdge
-                visible: background.x != 0
-                anchors {
-                    right: parent.right
-                    left: parent.left
-                    top: parent.top
-                }
-            }
-            EdgeShadow {
-                edge: listItem.mirrored ? Qt.RightEdge : Qt.LeftEdge
-                x: listItem.mirrored ? listItem.background.x - width : (listItem.background.x + listItem.background.width)
-                visible: background.x != 0
+                id: swipeBackground
                 anchors {
                     top: parent.top
                     bottom: parent.bottom
                 }
+                clip: true
+                color: parent.pressed ? Qt.darker(Kirigami.Theme.backgroundColor, 1.1) : Qt.darker(Kirigami.Theme.backgroundColor, 1.05)
+                x: listItem.mirrored ? listItem.background.x - width : (listItem.background.x + listItem.background.width)
+                width: listItem.mirrored ? parent.width - (parent.width - x) : parent.width - x
+
+                TapHandler {
+                    onTapped: listItem.swipe.close()
+                }
+                EdgeShadow {
+                    edge: Qt.TopEdge
+                    visible: background.x != 0
+                    anchors {
+                        right: parent.right
+                        left: parent.left
+                        top: parent.top
+                    }
+                }
+                EdgeShadow {
+                    edge: listItem.mirrored ? Qt.RightEdge : Qt.LeftEdge
+
+                    visible: background.x != 0
+                    anchors {
+                        top: parent.top
+                        bottom: parent.bottom
+                    }
+                }
             }
+
+            visible: listItem.swipe.position != 0
         }
     }
 
@@ -478,7 +483,7 @@ QQC2.SwipeDelegate {
         }
         visible: parent !== listItem
         parent: !listItem.alwaysVisibleActions && Kirigami.Settings.tabletMode
-                ? listItem.swipe.leftItem || listItem.swipe.rightItem || listItem
+                ? listItem.swipe.leftItem?.contentItem || listItem.swipe.rightItem?.contentItem || listItem
                 : overlayLoader
 
         property bool hasVisibleActions: false
