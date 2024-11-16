@@ -47,6 +47,8 @@ QQC2.Control {
     Accessible.selectableText: true
     Accessible.editable: false
 
+    property bool contextMenuEnabled: true
+
     property alias readOnly: textEdit.readOnly
     property alias selectByMouse: textEdit.selectByMouse
     property alias color: textEdit.color
@@ -159,7 +161,7 @@ QQC2.Control {
         }
 
         TapHandler {
-            enabled: textEdit.selectByMouse
+            enabled: textEdit.selectByMouse && root.contextMenuEnabled
 
             acceptedDevices: PointerDevice.Mouse | PointerDevice.TouchPad | PointerDevice.Stylus
             acceptedButtons: Qt.RightButton
