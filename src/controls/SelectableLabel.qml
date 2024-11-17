@@ -131,6 +131,7 @@ QQC2.Control {
         textFormat: TextEdit.AutoText
         verticalAlignment: TextEdit.AlignTop
         wrapMode: TextEdit.WordWrap
+        font: root.font
 
         onLinkActivated: root.linkActivated(textEdit.hoveredLink)
         onLinkHovered: root.linkHovered(textEdit.hoveredLink)
