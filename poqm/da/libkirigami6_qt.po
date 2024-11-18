@@ -173,12 +173,12 @@ msgctxt "SearchField|"
 msgid "Clear search"
 msgstr "Ryd søgning"
 
-#: controls/SelectableLabel.qml:177
+#: controls/SelectableLabel.qml:178
 msgctxt "SelectableLabel|"
 msgid "Copy"
 msgstr "Kopiér"
 
-#: controls/SelectableLabel.qml:190
+#: controls/SelectableLabel.qml:191
 msgctxt "SelectableLabel|"
 msgid "Select All"
 msgstr "Vælg alle"

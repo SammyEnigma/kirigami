@@ -178,12 +178,12 @@ msgctxt "SearchField|"
 msgid "Clear search"
 msgstr "Počisti iskanje"
 
-#: controls/SelectableLabel.qml:177
+#: controls/SelectableLabel.qml:178
 msgctxt "SelectableLabel|"
 msgid "Copy"
 msgstr "Kopiraj"
 
-#: controls/SelectableLabel.qml:190
+#: controls/SelectableLabel.qml:191
 msgctxt "SelectableLabel|"
 msgid "Select All"
 msgstr "Izberi vse"
