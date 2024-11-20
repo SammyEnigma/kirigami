@@ -96,8 +96,6 @@ QQC2.Control {
     signal linkActivated(string link)
     signal linkHovered(string link)
 
-    onLinkActivated: link => Qt.openUrlExternally(link)
-
 //BEGIN TextArea dummy entries
     property var flickable: undefined
     property var placeholderText: undefined
