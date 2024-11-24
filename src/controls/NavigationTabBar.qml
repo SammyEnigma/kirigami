@@ -239,7 +239,7 @@ QQC2.ToolBar {
     T.ButtonGroup {
         id: tabGroup
         exclusive: true
-        buttons: root.contentItem.children
+        buttons: root.contentItem.children.filter((child) => child !== instantiator)
 
         onCheckedButtonChanged: {
             if (!checkedButton) {
