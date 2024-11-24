@@ -179,7 +179,10 @@ ColumnLayout {
      * @see org::kde::kirigami::private::ActionIconGroup
      * @since 5.70
      */
-    property P.ActionIconGroup icon: P.ActionIconGroup {}
+    readonly property P.ActionIconGroup icon: P.ActionIconGroup {
+        width: Math.round(Kirigami.Units.iconSizes.huge * 1.5)
+        height: Math.round(Kirigami.Units.iconSizes.huge * 1.5)
+    }
 
     /**
      * @brief This property holds an action that helps the user proceed.
@@ -237,8 +240,8 @@ ColumnLayout {
         opacity: root.type === PlaceholderMessage.Type.Actionable ? 1 : 0.5
 
         Layout.alignment: Qt.AlignHCenter
-        Layout.preferredWidth: Math.round(Kirigami.Units.iconSizes.huge * 1.5)
-        Layout.preferredHeight: Math.round(Kirigami.Units.iconSizes.huge * 1.5)
+        Layout.preferredWidth: root.icon.width
+        Layout.preferredHeight: root.icon.height
 
         source: {
             if (root.icon.source.length > 0) {
