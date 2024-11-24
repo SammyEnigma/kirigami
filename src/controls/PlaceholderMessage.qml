@@ -182,6 +182,7 @@ ColumnLayout {
     readonly property P.ActionIconGroup icon: P.ActionIconGroup {
         width: Math.round(Kirigami.Units.iconSizes.huge * 1.5)
         height: Math.round(Kirigami.Units.iconSizes.huge * 1.5)
+        color: Kirigami.Theme.textColor
     }
 
     /**
@@ -242,6 +243,8 @@ ColumnLayout {
         Layout.alignment: Qt.AlignHCenter
         Layout.preferredWidth: root.icon.width
         Layout.preferredHeight: root.icon.height
+
+        color: root.icon.color
 
         source: {
             if (root.icon.source.length > 0) {
