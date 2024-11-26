@@ -212,7 +212,7 @@ msgctxt "SearchField|"
 msgid "Clear search"
 msgstr ""
 
-#: controls/SelectableLabel.qml:176
+#: controls/SelectableLabel.qml:177
 #, fuzzy
 #| msgctxt "AboutPage|"
 #| msgid "Copyright"
@@ -220,7 +220,7 @@ msgctxt "SelectableLabel|"
 msgid "Copy"
 msgstr "Autoriõigus"
 
-#: controls/SelectableLabel.qml:189
+#: controls/SelectableLabel.qml:190
 msgctxt "SelectableLabel|"
 msgid "Select All"
 msgstr ""

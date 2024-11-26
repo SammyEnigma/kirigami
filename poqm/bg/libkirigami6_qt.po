@@ -173,12 +173,12 @@ msgctxt "SearchField|"
 msgid "Clear search"
 msgstr "Изчистване на търсенето"
 
-#: controls/SelectableLabel.qml:176
+#: controls/SelectableLabel.qml:177
 msgctxt "SelectableLabel|"
 msgid "Copy"
 msgstr "Копиране"
 
-#: controls/SelectableLabel.qml:189
+#: controls/SelectableLabel.qml:190
 msgctxt "SelectableLabel|"
 msgid "Select All"
 msgstr "Избиране на всичко"
