@@ -138,7 +138,7 @@ QQC2.Page {
         if (globalToolBar.row && !globalToolBar.stack) {
             return globalToolBar.row.globalToolBar.actualStyle;
         } else if (globalToolBar.stack) {
-            return Kirigami.Settings.isMobile ? Kirigami.ApplicationHeaderStyle.Titles : Kirigami.ApplicationHeaderStyle.ToolBar;
+            return Kirigami.ApplicationHeaderStyle.ToolBar;
         } else {
             return Kirigami.ApplicationHeaderStyle.None;
         }
