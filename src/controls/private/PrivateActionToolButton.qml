@@ -116,7 +116,7 @@ QQC2.ToolButton {
     Accessible.role: (control.showMenuArrow && control.menuActions.length > 0) ? Accessible.ButtonMenu : Accessible.Button
     Accessible.ignored: !visible
     Accessible.onPressAction: {
-        if (control.menuActions.length > 0) {
+        if (control.checkable) {
             control.toggle();
         } else {
             control.action.trigger();
