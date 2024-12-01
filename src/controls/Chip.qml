@@ -46,6 +46,7 @@ KT.Chip {
     implicitHeight: toolButton.implicitHeight
 
     checkable: !closable
+    hoverEnabled: true
 
     /**
      * @brief This property holds the label item; used for accessing the usual Text properties.
