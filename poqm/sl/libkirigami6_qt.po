@@ -98,12 +98,12 @@ msgctxt "AbstractApplicationWindow|"
 msgid "Quit"
 msgstr "Zapusti"
 
-#: controls/ActionToolBar.qml:193
+#: controls/ActionToolBar.qml:195
 msgctxt "ActionToolBar|"
 msgid "More Actions"
 msgstr "Več dejanj"
 
-#: controls/Chip.qml:85
+#: controls/Chip.qml:86
 msgctxt "Chip|"
 msgid "Remove Tag"
 msgstr "Odstrani značko"
@@ -187,6 +187,34 @@ msgstr "Kopiraj"
 msgctxt "SelectableLabel|"
 msgid "Select All"
 msgstr "Izberi vse"
+
+#: controls/templates/InlineMessage.qml:288
+msgctxt "InlineMessage|"
+msgid "Success"
+msgstr ""
+
+#: controls/templates/InlineMessage.qml:290
+msgctxt "InlineMessage|"
+msgid "Warning"
+msgstr ""
+
+#: controls/templates/InlineMessage.qml:292
+msgctxt "InlineMessage|"
+msgid "Error"
+msgstr ""
+
+#: controls/templates/InlineMessage.qml:294
+msgctxt "InlineMessage|"
+msgid "Note"
+msgstr ""
+
+#: controls/templates/InlineMessage.qml:400
+#, fuzzy
+#| msgctxt "OverlaySheet|@action:button close dialog"
+#| msgid "Close"
+msgctxt "InlineMessage|"
+msgid "Close"
+msgstr "Zapri"
 
 #: controls/templates/OverlayDrawer.qml:128
 msgctxt "OverlayDrawer|"
