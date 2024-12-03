@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2024-10-11 16:44+0200\n"
+"PO-Revision-Date: 2024-12-02 13:29+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -11,7 +11,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Qt-Contexts: true\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.08.1\n"
+"X-Generator: Lokalize 24.08.3\n"
 
 #: controls/AboutItem.qml:163
 #, qt-format
@@ -185,27 +185,24 @@ msgstr "Alles selecteren"
 #: controls/templates/InlineMessage.qml:288
 msgctxt "InlineMessage|"
 msgid "Success"
-msgstr ""
+msgstr "Succes"
 
 #: controls/templates/InlineMessage.qml:290
 msgctxt "InlineMessage|"
 msgid "Warning"
-msgstr ""
+msgstr "Waarschuwing"
 
 #: controls/templates/InlineMessage.qml:292
 msgctxt "InlineMessage|"
 msgid "Error"
-msgstr ""
+msgstr "Fout"
 
 #: controls/templates/InlineMessage.qml:294
 msgctxt "InlineMessage|"
 msgid "Note"
-msgstr ""
+msgstr "Notitie"
 
 #: controls/templates/InlineMessage.qml:400
-#, fuzzy
-#| msgctxt "OverlaySheet|@action:button close dialog"
-#| msgid "Close"
 msgctxt "InlineMessage|"
 msgid "Close"
 msgstr "Sluiten"

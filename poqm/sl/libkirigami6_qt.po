@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2024-10-11 19:41+0200\n"
+"PO-Revision-Date: 2024-12-02 06:34+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -191,27 +191,24 @@ msgstr "Izberi vse"
 #: controls/templates/InlineMessage.qml:288
 msgctxt "InlineMessage|"
 msgid "Success"
-msgstr ""
+msgstr "Uspeh"
 
 #: controls/templates/InlineMessage.qml:290
 msgctxt "InlineMessage|"
 msgid "Warning"
-msgstr ""
+msgstr "Opozorilo"
 
 #: controls/templates/InlineMessage.qml:292
 msgctxt "InlineMessage|"
 msgid "Error"
-msgstr ""
+msgstr "Napaka"
 
 #: controls/templates/InlineMessage.qml:294
 msgctxt "InlineMessage|"
 msgid "Note"
-msgstr ""
+msgstr "Opomba"
 
 #: controls/templates/InlineMessage.qml:400
-#, fuzzy
-#| msgctxt "OverlaySheet|@action:button close dialog"
-#| msgid "Close"
 msgctxt "InlineMessage|"
 msgid "Close"
 msgstr "Zapri"
