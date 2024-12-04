@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2024-10-11 12:25+0200\n"
+"PO-Revision-Date: 2024-12-03 16:54+0100\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -185,27 +185,24 @@ msgstr "Selige toto"
 #: controls/templates/InlineMessage.qml:288
 msgctxt "InlineMessage|"
 msgid "Success"
-msgstr ""
+msgstr "Successo"
 
 #: controls/templates/InlineMessage.qml:290
 msgctxt "InlineMessage|"
 msgid "Warning"
-msgstr ""
+msgstr "Aviso"
 
 #: controls/templates/InlineMessage.qml:292
 msgctxt "InlineMessage|"
 msgid "Error"
-msgstr ""
+msgstr "Error"
 
 #: controls/templates/InlineMessage.qml:294
 msgctxt "InlineMessage|"
 msgid "Note"
-msgstr ""
+msgstr "Nota"
 
 #: controls/templates/InlineMessage.qml:400
-#, fuzzy
-#| msgctxt "OverlaySheet|@action:button close dialog"
-#| msgid "Close"
 msgctxt "InlineMessage|"
 msgid "Close"
 msgstr "Claude"

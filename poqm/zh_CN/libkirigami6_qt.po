@@ -187,27 +187,27 @@ msgstr "全部选择"
 #: controls/templates/InlineMessage.qml:288
 msgctxt "InlineMessage|"
 msgid "Success"
-msgstr ""
+msgstr "成功"
 
 #: controls/templates/InlineMessage.qml:290
 msgctxt "InlineMessage|"
 msgid "Warning"
-msgstr ""
+msgstr "警告"
 
 #: controls/templates/InlineMessage.qml:292
 msgctxt "InlineMessage|"
 msgid "Error"
-msgstr ""
+msgstr "错误"
 
 #: controls/templates/InlineMessage.qml:294
 msgctxt "InlineMessage|"
 msgid "Note"
-msgstr ""
+msgstr "注意"
 
 #: controls/templates/InlineMessage.qml:400
 msgctxt "InlineMessage|"
 msgid "Close"
-msgstr ""
+msgstr "关闭"
 
 #: controls/templates/OverlayDrawer.qml:128
 msgctxt "OverlayDrawer|"

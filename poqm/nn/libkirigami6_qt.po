@@ -208,8 +208,6 @@ msgstr ""
 
 #: controls/templates/InlineMessage.qml:400
 #, fuzzy
-#| msgctxt "OverlaySheet|@action:button close dialog"
-#| msgid "Close"
 msgctxt "InlineMessage|"
 msgid "Close"
 msgstr "Lukk"
