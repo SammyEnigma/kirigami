@@ -178,7 +178,7 @@ T.Drawer {
     rightPadding: Kirigami.Units.smallSpacing
     bottomPadding: Kirigami.Units.smallSpacing
 
-    y: modal ? 0 : ((T.ApplicationWindow.menuBar ? T.ApplicationWindow.menuBar.height : 0) + (T.ApplicationWindow.header ? T.ApplicationWindow.header.height : 0))
+    y: modal ? 0 : ((T.ApplicationWindow.menuBar && T.ApplicationWindow.menuBar.visible ? T.ApplicationWindow.menuBar.height : 0) + (T.ApplicationWindow.header && T.ApplicationWindow.header.visible ? T.ApplicationWindow.header.height : 0))
 
     height: parent && (root.edge === Qt.LeftEdge || root.edge === Qt.RightEdge) ? (modal ? parent.height : (parent.height - y - (T.ApplicationWindow.footer ? T.ApplicationWindow.footer.height : 0))) : implicitHeight
 
