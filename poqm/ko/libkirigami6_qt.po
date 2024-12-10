@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2024-08-20 23:35+0200\n"
+"PO-Revision-Date: 2024-12-10 00:53+0100\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
 "Language: ko\n"
@@ -173,17 +173,14 @@ msgid "Clear search"
 msgstr "검색 지우기"
 
 #: controls/SelectableLabel.qml:179
-#, fuzzy
-#| msgctxt "AboutItem|"
-#| msgid "Copyright"
 msgctxt "SelectableLabel|"
 msgid "Copy"
-msgstr "저작권"
+msgstr "복사"
 
 #: controls/SelectableLabel.qml:192
 msgctxt "SelectableLabel|"
 msgid "Select All"
-msgstr ""
+msgstr "모두 선택"
 
 #: controls/templates/InlineMessage.qml:288
 msgctxt "InlineMessage|"
@@ -224,9 +221,6 @@ msgid "Open drawer"
 msgstr "서랍 열기"
 
 #: controls/templates/OverlaySheet.qml:290
-#, fuzzy
-#| msgctxt "Dialog|@action:button close dialog"
-#| msgid "Close"
 msgctxt "OverlaySheet|@action:button close dialog"
 msgid "Close"
 msgstr "닫기"
