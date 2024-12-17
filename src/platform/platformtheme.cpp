@@ -238,6 +238,7 @@ public:
             break;
         case HighlightColor:
             palette.setColor(QPalette::Highlight, color);
+            palette.setColor(QPalette::Accent, color);
             break;
         case HighlightedTextColor:
             palette.setColor(QPalette::HighlightedText, color);
