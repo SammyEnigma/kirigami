@@ -35,7 +35,7 @@ import org.kde.kirigami.templates.private as KTP
  *     icon.name: "document-new"
  *
  *     contentItem: RowLayout {
- *         spacing: Kirigami.Theme.smallSpacing
+ *         spacing: Kirigami.Units.smallSpacing
  *
  *         Kirigami.IconTitleSubtitle {
  *             Layout.fillWidth: true
