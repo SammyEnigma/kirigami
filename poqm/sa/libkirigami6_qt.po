@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2024-12-14 01:48+0530\n"
+"PO-Revision-Date: 2024-12-20 21:52+0530\n"
 "Last-Translator: kali <skkalwar999@gmail.com>\n"
 "Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
 "Language: sa\n"
@@ -17,7 +17,7 @@ msgstr ""
 #, qt-format
 msgctxt "AboutItem|"
 msgid "%1 (%2)"
-msgstr "%1 (%2) २."
+msgstr "%1 (%2)"
 
 #: controls/AboutItem.qml:172
 #, qt-format
@@ -48,7 +48,7 @@ msgstr "प्रतिलिपि अधिकार"
 #: controls/AboutItem.qml:302
 msgctxt "AboutItem|"
 msgid "License:"
-msgstr "अनुज्ञापत्रम् : १."
+msgstr "अनुज्ञापत्रम् :"
 
 #: controls/AboutItem.qml:324
 #, qt-format
