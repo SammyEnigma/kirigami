@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2024-12-02 19:48+0300\n"
+"PO-Revision-Date: 2024-12-21 15:24+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -45,7 +45,7 @@ msgstr "Hata Bildir"
 #: controls/AboutItem.qml:258
 msgctxt "AboutItem|"
 msgid "Copyright"
-msgstr "Telif hakkı"
+msgstr "Telif Hakkı"
 
 #: controls/AboutItem.qml:302
 msgctxt "AboutItem|"
