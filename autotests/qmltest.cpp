@@ -4,6 +4,6 @@
  *  SPDX-License-Identifier: LGPL-2.0-or-later
  */
 
-#include <QtQuickTest>
+#include <quicktest.h>
 
 QUICK_TEST_MAIN(Kirigami)
