@@ -65,6 +65,7 @@ QQC2.ToolButton {
     }
 
     visible: action instanceof Kirigami.Action ? action.visible : true
+    autoExclusive: action instanceof Kirigami.Action ? action.autoExclusive : false
 
     // Workaround for QTBUG-85941
     Binding {

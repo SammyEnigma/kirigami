@@ -210,11 +210,19 @@ QQC2.Control {
                                && (!(parentAction instanceof Kirigami.Action) || parentAction.visible)
                         restoreMode: Binding.RestoreBinding
                     }
+
+                    Binding {
+                        target: parentItem
+                        property: "autoExclusive"
+                        value: action instanceof Kirigami.Action && action.autoExclusive
+                        restoreMode: Binding.RestoreBinding
+                    }
                 }
 
                 itemDelegate: P.ActionMenuItem {
                     visible: layout.hiddenActions.includes(action)
                              && (!(action instanceof Kirigami.Action) || action.visible)
+                    autoExclusive: action instanceof Kirigami.Action && action.autoExclusive
                 }
 
                 loaderDelegate: Loader {

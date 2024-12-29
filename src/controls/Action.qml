@@ -45,6 +45,18 @@ QQC2.Action {
     property bool separator: false
 
     /**
+     * @brief This property holds whether auto-exclusivity is enabled.
+     *
+     * If auto-exclusivity is enabled, checkable actions that belong to the
+     * same parent item behave as if they were part of the same ButtonGroup.
+     * Only one action can be checked at any time; checking another action
+     * automatically unchecks the previously checked one.
+     *
+     * default: ``false``
+     */
+    property bool autoExclusive: false
+
+    /**
      * @brief This property sets whether this action  becomes a title displaying
      * its child actions as sub-items in GlobalDrawers and ContextDrawers.
      *
