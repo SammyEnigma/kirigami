@@ -378,7 +378,16 @@ Item {
 
             enabled: item?.enabled ?? false
             visible: (item?.visible && (root.wideMode || text.length > 0)) ?? false
-            Kirigami.MnemonicData.enabled: item?.Kirigami.FormData.buddyFor?.activeFocusOnTab ?? false
+            Kirigami.MnemonicData.enabled: {
+                const buddy = item?.Kirigami.FormData.buddyFor;
+                if (buddy && buddy.enabled && buddy.visible && buddy.activeFocusOnTab) {
+                    // Only set mnemonic if the buddy doesn't already have one.
+                    const buddyMnemonic = buddy.Kirigami.MnemonicData;
+                    return !buddyMnemonic.label || !buddyMnemonic.enabled;
+                } else {
+                    return false;
+                }
+            }
             Kirigami.MnemonicData.controlType: Kirigami.MnemonicData.FormLabel
             Kirigami.MnemonicData.label: item?.Kirigami.FormData.label ?? ""
             text: Kirigami.MnemonicData.richTextLabel
