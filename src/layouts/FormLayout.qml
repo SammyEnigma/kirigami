@@ -439,7 +439,7 @@ Item {
                     if (buttonBuddy && buttonBuddy.animateClick) {
                         buttonBuddy.animateClick();
                     } else {
-                        buddy.forceActiveFocus();
+                        buddy.forceActiveFocus(Qt.ShortcutFocusReason);
                     }
                 }
             }
