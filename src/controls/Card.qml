@@ -65,6 +65,8 @@ Kirigami.AbstractCard {
      */
     readonly property alias banner: bannerImage
 
+    Accessible.name: banner.title
+
     header: Kirigami.Padding {
         topPadding: -root.topPadding + root.background.border.width
         leftPadding: -root.leftPadding + root.background.border.width
