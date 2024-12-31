@@ -274,6 +274,45 @@ Kirigami.OverlayDrawer {
         }
     }
 
+    //BEGIN FUNCTIONS
+    /**
+     * @brief This method checks whether a particular drawer entry is in view, and scrolls
+     * the drawer to center the item if it is not.
+     *
+     * Drawer items supplied through the actions property will handle this automatically,
+     * but items supplied in topContent will need to call this explicitly on receiving focus
+     * Otherwise, if the user passes focus to the item with e.g. keyboard navigation, it may
+     * be outside the visible area.
+     *
+     * When called, this method will place the visible area such that the item at the
+     * center if any part of it is currently outside.
+     *
+     * @code
+     * QQC2.ItemDelegate {
+     *     id: item
+     *     //  ...
+     *     onFocusChanged: if (focus) drawer.ensureVisible(item)
+     * }
+     * @endcode
+     *
+     * @param item The item that should be in the visible area of the drawer. Item coordinates need to be in the coordinate system of the drawer's flickable.
+     * @param yOffset Offset to align the item's and the flickable's coordinate system (optional)
+     */
+    //END FUNCTIONS
+
+    function ensureVisible(item: Item, yOffset: int) {
+        var actualItemY = item.y + (yOffset ?? 0)
+        var viewYPosition = (item.height <= mainFlickable.height)
+            ? Math.round(actualItemY + item.height / 2 - mainFlickable.height / 2)
+            : actualItemY
+        if (actualItemY < mainFlickable.contentY) {
+            mainFlickable.contentY = Math.max(0, viewYPosition)
+        } else if ((actualItemY + item.height) > (mainFlickable.contentY + mainFlickable.height)) {
+            mainFlickable.contentY = Math.min(mainFlickable.contentHeight - mainFlickable.height, viewYPosition)
+        }
+        mainFlickable.returnToBounds()
+    }
+
     // rightPadding: !Kirigami.Settings.isMobile && mainFlickable.contentHeight > mainFlickable.height ? Kirigami.Units.gridUnit : Kirigami.Units.smallSpacing
 
     Kirigami.Theme.colorSet: modal ? Kirigami.Theme.Window : Kirigami.Theme.View
@@ -377,6 +416,12 @@ Kirigami.OverlayDrawer {
                 // move every checked item into view
                 if (checked && topContent.height + backItem.height + (delegate.index + 1) * height - mainFlickable.contentY > mainFlickable.height) {
                     mainFlickable.contentY += height
+                }
+            }
+
+            onFocusChanged: {
+                if (focus) {
+                    root.ensureVisible (delegate, topContent.height + (backItem.visible ? backItem.height : 0))
                 }
             }
         }
