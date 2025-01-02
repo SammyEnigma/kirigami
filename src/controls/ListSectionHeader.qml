@@ -59,6 +59,8 @@ QQC2.ItemDelegate {
 
     topPadding: Kirigami.Units.largeSpacing + Kirigami.Units.smallSpacing
 
+    Accessible.role: Accessible.Heading
+
     contentItem: RowLayout {
         id: rowLayout
         spacing: Kirigami.Units.largeSpacing
