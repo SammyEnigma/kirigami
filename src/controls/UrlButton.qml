@@ -22,7 +22,20 @@ import QtQuick.Controls as QQC2
 Kirigami.LinkButton {
     id: button
 
+    /**
+     * This property holds the url used by the link button.
+     */
     property string url
+
+    /**
+     * This property holds whether the url is an external link.
+     *
+     * External links will have a small icon on their right to show that the link goes to an external website.
+     *
+     * default: true
+     * @since 6.11
+     */
+    property bool externalLink: true
 
     text: url
     enabled: url.length > 0
@@ -33,6 +46,27 @@ Kirigami.LinkButton {
     Accessible.description: text !== url
         ? qsTr("Open link %1", "@info:whatsthis").arg(url)
         : qsTr("Open link", "@info:whatsthis")
+
+    rightPadding: LayoutMirroring.enabled || !icon.visible ? 0 : icon.size + Kirigami.Units.smallSpacing
+    leftPadding: LayoutMirroring.enabled && icon.visible ? icon.size + Kirigami.Units.smallSpacing : 0
+
+    Kirigami.Icon {
+        id: icon
+
+        readonly property int size: Kirigami.Units.iconSizes.sizeForLabels
+
+        x: LayoutMirroring.enabled ? button.width - button.implicitWidth : button.implicitWidth - size
+        width: size
+        height: size
+
+        visible: button.externalLink
+
+        source: "open-link-symbolic"
+        fallback: "link-symbolic"
+        color: button.color
+
+        anchors.verticalCenter: button.verticalCenter
+    }
 
     onPressed: mouse => {
         if (mouse.button === Qt.RightButton) {
