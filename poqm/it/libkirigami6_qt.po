@@ -232,18 +232,18 @@ msgctxt "ForwardButton|"
 msgid "Navigate Forward"
 msgstr "Naviga in avanti"
 
-#: controls/UrlButton.qml:34
+#: controls/UrlButton.qml:47
 #, qt-format
 msgctxt "UrlButton|@info:whatsthis"
 msgid "Open link %1"
 msgstr "Apri il collegamento %1"
 
-#: controls/UrlButton.qml:35
+#: controls/UrlButton.qml:48
 msgctxt "UrlButton|@info:whatsthis"
 msgid "Open link"
 msgstr "Apri il collegamento"
 
-#: controls/UrlButton.qml:58
+#: controls/UrlButton.qml:92
 msgctxt "UrlButton|"
 msgid "Copy Link to Clipboard"
 msgstr "Copia il collegamento negli appunti"
