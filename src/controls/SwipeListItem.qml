@@ -204,6 +204,30 @@ QQC2.SwipeDelegate {
     topPadding: padding
     bottomPadding: padding
 
+    Keys.onTabPressed: (event) => {
+        if (actionsLayout.hasVisibleActions) {
+            actionsLayout.children[0].tabbedFromDelegate = true
+            actionsLayout.children[0].forceActiveFocus(Qt.TabFocusReason)
+        } else {
+            event.accepted = false
+        }
+    }
+
+    Keys.onPressed: (event) => {
+        if ((actionsLayout.hasVisibleActions && activeFocus && event.key == Qt.Key_Right && Qt.application.layoutDirection == Qt.LeftToRight) ||
+            (actionsLayout.hasVisibleActions && activeFocus && event.key == Qt.Key_Left && Qt.application.layoutDirection == Qt.RightToLeft)) {
+            for (var target = 0; target < actionsRep.count; target ++) {
+                if (actionsLayout.children[target].visible) {
+                    break
+                }
+            }
+            if (target < actionsRep.count) {
+                actionsLayout.children[target].forceActiveFocus(Qt.TabFocusReason)
+                event.accepted = true
+            }
+        }
+    }
+
     QtObject {
         id: internal
 
@@ -486,6 +510,7 @@ QQC2.SwipeDelegate {
                 : overlayLoader
 
         property bool hasVisibleActions: false
+        property int indexInListView: index ?? -1 // might not be set if using required properties
 
         function updateVisibleActions(definitelyVisible: bool) {
             hasVisibleActions = definitelyVisible || listItem.actions.some(isActionVisible);
@@ -496,10 +521,14 @@ QQC2.SwipeDelegate {
         }
 
         Repeater {
+            id: actionsRep
             model: listItem.actions
 
             delegate: QQC2.ToolButton {
                 required property T.Action modelData
+                required property int index
+
+                property bool tabbedFromDelegate: false
 
                 action: modelData
                 display: T.AbstractButton.IconOnly
@@ -516,6 +545,67 @@ QQC2.SwipeDelegate {
                 onClicked: {
                     slideAnim.to = 0;
                     slideAnim.restart();
+                }
+
+                Keys.onBacktabPressed: (event) => {
+                    if (tabbedFromDelegate) {
+                        listItem.forceActiveFocus(Qt.BacktabFocusReason)
+                    } else {
+                        event.accepted = false
+                    }
+                }
+
+                Keys.onPressed: (event) => {
+                    if ((Qt.application.layoutDirection == Qt.LeftToRight && event.key == Qt.Key_Left) ||
+                        (Qt.application.layoutDirection == Qt.RightToLeft && event.key == Qt.Key_Right)) {
+                        for (var target = index -1; target>=0; target--) {
+                            if (target == -1 || actionsLayout.children[target].visible) {
+                                break
+                            }
+                        }
+                        if (target == -1) {
+                            listItem.forceActiveFocus(Qt.BacktabFocusReason)
+                        } else {
+                            actionsLayout.children[target].tabbedFromDelegate = tabbedFromDelegate
+                            actionsLayout.children[target].forceActiveFocus(Qt.TabFocusReason)
+                        }
+                        event.accepted = true
+                    } else if ((Qt.application.layoutDirection == Qt.LeftToRight && event.key == Qt.Key_Right) ||
+                               (Qt.application.layoutDirection == Qt.RightToLeft && event.key == Qt.Key_Left)) {
+                        var found=false
+                        for (var target = index +1; target<actionsRep.count; target++) {
+                            if (actionsLayout.children[target].visible) {
+                                break
+                            }
+                        }
+                        if (target < (actionsRep.count)) {
+                            actionsLayout.children[target].tabbedFromDelegate = tabbedFromDelegate
+                            actionsLayout.children[target].forceActiveFocus(Qt.TabFocusReason)
+                            event.accepted = true
+                        }
+                    }
+                }
+
+                Keys.onUpPressed: (event) => {
+                    if (actionsLayout.indexInListView >= 0) {
+                        listItem.ListView.view.currentIndex = actionsLayout.indexInListView
+                    }
+                    event.accepted = false // pass to ListView
+                }
+
+                Keys.onDownPressed: (event) => {
+                    if (actionsLayout.indexInListView >= 0) {
+                        listItem.ListView.view.currentIndex = actionsLayout.indexInListView
+                    }
+                    event.accepted = false // pass to ListView
+                }
+
+                onActiveFocusChanged: {
+                    if (focus) {
+                        listItem.ListView.view.positionViewAtIndex(actionsLayout.indexInListView, ListView.Contain)
+                    } else if (!focus) {
+                        tabbedFromDelegate = false
+                    }
                 }
 
                 Accessible.name: text
