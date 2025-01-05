@@ -185,7 +185,7 @@ QWindow *MnemonicAttached::window() const
 
 void MnemonicAttached::onAltPressed()
 {
-    if (m_active || m_richTextLabel.isEmpty()) {
+    if (m_active || !m_enabled || m_richTextLabel.isEmpty()) {
         return;
     }
 
@@ -207,7 +207,7 @@ void MnemonicAttached::onAltReleased()
     }
 
     // Disabling menmonics again is always fine, e.g. on window deactivation,
-    // don't check for window is active here.
+    // don't check for enabled or window is active here.
 
     m_actualRichTextLabel = removeAcceleratorMarker(m_label);
     Q_EMIT richTextLabelChanged();
