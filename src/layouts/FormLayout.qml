@@ -376,7 +376,14 @@ Item {
             property Item item
             property int index
 
-            enabled: item?.enabled ?? false
+            enabled: {
+                const buddy = item?.Kirigami.FormData.buddyFor;
+                if (buddy) {
+                    return buddy.enabled;
+                } else {
+                    return item?.enabled ?? false;
+                }
+            }
             visible: (item?.visible && (root.wideMode || text.length > 0)) ?? false
             Kirigami.MnemonicData.enabled: {
                 const buddy = item?.Kirigami.FormData.buddyFor;

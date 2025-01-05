@@ -286,4 +286,50 @@ TestCase {
         compare(form.buddyColumn.Kirigami.FormData.buddyFor, form.buddyColumn);
         compare(buddyChangeSpy.count, 2);
     }
+
+    Component {
+        id: enabledTestFormLayoutComponent
+
+        Kirigami.FormLayout {
+            property alias normalItem: normalItem
+            property alias buddyRow: buddyRow
+            property alias buddyItem: buddyItem
+
+            // Normal case, direct item
+            Item {
+                id: normalItem
+                Kirigami.FormData.label: "Normal case"
+            }
+
+            RowLayout {
+                id: buddyRow
+                Kirigami.FormData.label: "Buddy case"
+                Kirigami.FormData.buddyFor: buddyItem
+
+                Item {
+                    id: buddyItem
+                }
+            }
+        }
+    }
+
+    function test_enabledPropagation() {
+        const form = createTemporaryObject(enabledTestFormLayoutComponent, this);
+
+        const normalLabel = findChildLabel(form, "Normal case");
+        verify(normalLabel.enabled);
+
+        form.normalItem.enabled = false;
+        verify(!normalLabel.enabled);
+
+        const buddyLabel = findChildLabel(form, "Buddy case");
+        verify(buddyLabel.enabled);
+
+        form.buddyItem.enabled = false;
+        verify(!buddyLabel.enabled);
+
+        // Unset buddy, should be enabled again.
+        form.buddyRow.Kirigami.FormData.buddyFor = null;
+        verify(buddyLabel.enabled);
+    }
 }
