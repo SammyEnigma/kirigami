@@ -463,11 +463,12 @@ T.Dialog {
         // if there is nothing in the footer, still maintain a height so that we can create a rounded bottom buffer for the dialog
         property bool bufferMode: !root.footerLeadingComponent && !dialogButtonBox.visible
         implicitHeight: bufferMode ? Math.round(Kirigami.Units.smallSpacing / 2) : contentItem.implicitHeight + topPadding + bottomPadding
-        implicitWidth: dialogButtonBox.implicitWidth + leftPadding + rightPadding
+        implicitWidth: footerLayout.implicitWidth + leftPadding + rightPadding
 
         padding: !bufferMode ? Kirigami.Units.largeSpacing : 0
 
         contentItem: RowLayout {
+            id: footerLayout
             spacing: footerToolBar.spacing
             // Don't let user interact with footer during transitions
             enabled: root.opened
