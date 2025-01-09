@@ -143,6 +143,62 @@ Kirigami.Page {
     property bool keyboardNavigationEnabled: true
 //END properties
 
+//BEGIN FUNCTIONS
+/**
+ * @brief This method checks whether a particular child item is in view, and scrolls
+ * the page to center the item if it is not.
+ *
+ * If the page is a View, the view should handle this by itself, but if the page is a
+ * manually handled layout, this needs to be done manually. Otherwise, if the user
+ * passes focus to an item with e.g. keyboard navigation, this may be outside the
+ * visible area.
+ *
+ * When called, this method will place the visible area such that the item at the
+ * center if any part of it is currently outside. If the item is larger than the viewable
+ * area in either direction, the area will be scrolled such that the top left corner
+ * is visible.
+ *
+ * @code
+ * Kirigami.ScrollablePage {
+ *     id: page
+ *     ColumnLayout {
+ *         Repeater {
+ *             model: 100
+ *             delegate: QQC2.Button {
+ *                 text: modelData
+ *                 onFocusChanged: if (focus) page.ensureVisible(this)
+ *             }
+ *         }
+ *     }
+ * }
+ * @endcode
+ *
+ * @param item The item that should be in the visible area of the flickable. Item coordinates need to be in the flickable's coordinate system.
+ * @param xOffset,yOffset (optional) Offsets to align the item's and the flickable's coordinate system<
+ */
+    function ensureVisible(item: Item, xOffset: int, yOffset: int) {
+        var actualItemX = item.x + (xOffset ?? 0)
+        var actualItemY = item.y + (yOffset ?? 0)
+        var viewXPosition = (item.width <= root.flickable.width)
+            ? Math.round(actualItemX + item.width / 2 - root.flickable.width / 2)
+            : actualItemX
+        var viewYPosition = (item.height <= root.flickable.height)
+            ? Math.round(actualItemY + item.height / 2 - root.flickable.height / 2)
+            : actualItemY
+        if (actualItemX < root.flickable.contentX) {
+            root.flickable.contentX = Math.max(0, viewXPosition)
+        } else if ((actualItemX + item.width) > (root.flickable.contentX + root.flickable.width)) {
+            root.flickable.contentX = Math.min(root.flickable.contentWidth - root.flickable.width, viewXPosition)
+        }
+        if (actualItemY < root.flickable.contentY) {
+            root.flickable.contentY = Math.max(0, viewYPosition)
+        } else if ((actualItemY + item.height) > (root.flickable.contentY + root.flickable.height)) {
+            root.flickable.contentY = Math.min(root.flickable.contentHeight - root.flickable.height, viewYPosition)
+        }
+        root.flickable.returnToBounds()
+    }
+//END FUNCTIONS
+
     implicitWidth: flickable?.contentItem?.implicitWidth
         ?? Math.max(implicitBackgroundWidth + leftInset + rightInset,
                     contentWidth + leftPadding + rightPadding,
