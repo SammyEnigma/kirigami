@@ -524,13 +524,16 @@ QImage Icon::findIcon(const QSize &size)
         // Temporary icon while we wait for the real image to load...
         img = iconPixmap(QIcon::fromTheme(m_placeholder));
     } else {
+        QIcon icon;
         if (iconSource.startsWith(QLatin1String("qrc:/"))) {
             iconSource = iconSource.mid(3);
+            icon = QIcon(iconSource);
         } else if (iconSource.startsWith(QLatin1String("file:/"))) {
             iconSource = QUrl(iconSource).path();
+            icon = QIcon(iconSource);
+        } else {
+            icon = loadFromTheme(iconSource);
         }
-
-        const QIcon icon = loadFromTheme(iconSource);
 
         if (!icon.isNull()) {
             img = iconPixmap(icon);
