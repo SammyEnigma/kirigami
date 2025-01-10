@@ -190,6 +190,7 @@ QQC2.Control {
 
         moreButton: P.PrivateActionToolButton {
             flat: root.flat
+            Accessible.role: Accessible.ButtonMenu
 
             action: Kirigami.Action {
                 tooltip: qsTr("More Actions")
