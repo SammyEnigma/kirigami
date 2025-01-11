@@ -92,7 +92,7 @@ msgctxt "AbstractApplicationWindow|"
 msgid "Quit"
 msgstr "परिजहातु"
 
-#: controls/ActionToolBar.qml:195
+#: controls/ActionToolBar.qml:196
 msgctxt "ActionToolBar|"
 msgid "More Actions"
 msgstr "अधिकानि क्रियाः"
