@@ -112,17 +112,17 @@ msgctxt "ContextualHelpButton|"
 msgid "Show Contextual Help"
 msgstr "Sýna samhengishjálp"
 
-#: controls/GlobalDrawer.qml:306
+#: controls/GlobalDrawer.qml:345
 msgctxt "GlobalDrawer|"
 msgid "Back"
 msgstr "Til baka"
 
-#: controls/GlobalDrawer.qml:615
+#: controls/GlobalDrawer.qml:660
 msgctxt "GlobalDrawer|"
 msgid "Close Sidebar"
 msgstr "Loka hliðarstiku"
 
-#: controls/GlobalDrawer.qml:620
+#: controls/GlobalDrawer.qml:665
 msgctxt "GlobalDrawer|"
 msgid "Open Sidebar"
 msgstr "Opna hliðarstiku"

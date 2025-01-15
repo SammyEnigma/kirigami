@@ -148,17 +148,17 @@ msgctxt "ContextualHelpButton|"
 msgid "Show Contextual Help"
 msgstr ""
 
-#: controls/GlobalDrawer.qml:306
+#: controls/GlobalDrawer.qml:345
 msgctxt "GlobalDrawer|"
 msgid "Back"
 msgstr "Späť"
 
-#: controls/GlobalDrawer.qml:615
+#: controls/GlobalDrawer.qml:660
 msgctxt "GlobalDrawer|"
 msgid "Close Sidebar"
 msgstr "Zatvoriť bočný panel"
 
-#: controls/GlobalDrawer.qml:620
+#: controls/GlobalDrawer.qml:665
 #, fuzzy
 #| msgctxt "GlobalDrawer|"
 #| msgid "Close Sidebar"

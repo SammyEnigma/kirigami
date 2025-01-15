@@ -118,17 +118,17 @@ msgctxt "ContextualHelpButton|"
 msgid "Show Contextual Help"
 msgstr "Erakutsi testuinguru laguntza"
 
-#: controls/GlobalDrawer.qml:306
+#: controls/GlobalDrawer.qml:345
 msgctxt "GlobalDrawer|"
 msgid "Back"
 msgstr "Atzera"
 
-#: controls/GlobalDrawer.qml:615
+#: controls/GlobalDrawer.qml:660
 msgctxt "GlobalDrawer|"
 msgid "Close Sidebar"
 msgstr "Itxi alboko-barra"
 
-#: controls/GlobalDrawer.qml:620
+#: controls/GlobalDrawer.qml:665
 msgctxt "GlobalDrawer|"
 msgid "Open Sidebar"
 msgstr "Itxi alboko-barra"
