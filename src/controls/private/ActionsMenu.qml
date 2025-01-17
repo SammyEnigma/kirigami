@@ -52,13 +52,13 @@ QQC2.Menu {
                 } else if (root.submenuComponent) {
                     item = root.submenuComponent.createObject(null, {
                         parentAction: action,
+                        icon: action.icon,
                         title: action.text,
                         actions: action.children,
                     });
 
                     root.insertMenu(root.count, item);
                     item.parentItem = root.contentData[root.contentData.length - 1];
-                    item.parentItem.icon = action.icon;
                     isSubMenu = true;
                 }
             }
