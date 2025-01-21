@@ -1080,7 +1080,7 @@ QT.Control {
             } else {
                 // copy properties to the page
                 for (const prop in properties) {
-                    if (properties.hasOwnProperty(prop)) {
+                    if (page.hasOwnProperty(prop)) {
                         page[prop] = properties[prop];
                     }
                 }
