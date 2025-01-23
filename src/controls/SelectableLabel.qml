@@ -178,8 +178,8 @@ QQC2.Control {
                     icon.name: "edit-copy-symbolic"
                     text: qsTr("Copy")
                     shortcut: StandardKey.Copy
+                    enabled: root.visible && textEdit.selectedText.length > 0
                 }
-                enabled: textEdit.selectedText.length > 0
                 onTriggered: {
                     textEdit.copy();
                     textEdit.deselect();
@@ -191,6 +191,7 @@ QQC2.Control {
                     icon.name: "edit-select-all-symbolic"
                     text: qsTr("Select All")
                     shortcut: StandardKey.SelectAll
+                    enabled: root.visible
                 }
                 onTriggered: {
                     textEdit.selectAll();
