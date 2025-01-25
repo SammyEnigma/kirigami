@@ -13,7 +13,7 @@ deprecated: false
 release: true
 logo: logo.png
 libraries:
- - cmake: KF6::Kirigami
+    - cmake: KF6::Kirigami
 cmakename: KF6Kirigami
 irc: kde-kirigami
 mailinglist: plasma-devel

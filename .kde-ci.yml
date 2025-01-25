@@ -1,10 +1,10 @@
 Dependencies:
-- 'on': ['Linux', 'FreeBSD', 'Windows', 'Android', 'iOS']
-  'require':
+ - 'on': ['Linux', 'FreeBSD', 'Windows', 'Android', 'iOS']
+   'require':
     'frameworks/extra-cmake-modules': '@same'
 
 Options:
-  test-before-installing: True
-  require-passing-tests-on: [ 'Linux', 'FreeBSD', 'Windows' ]
-  cmake-options: -DBUILD_EXAMPLES=ON
-  cppcheck-ignore-files: ['templates/']
+ test-before-installing: True
+ require-passing-tests-on: ['Linux', 'FreeBSD', 'Windows']
+ cmake-options: -DBUILD_EXAMPLES=ON
+ cppcheck-ignore-files: ['templates/']
