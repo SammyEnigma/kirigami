@@ -59,7 +59,7 @@ Kirigami.LinkButton {
         width: size
         height: size
 
-        visible: button.externalLink
+        visible: button.externalLink && button.url.length > 0
 
         source: "open-link-symbolic"
         fallback: "link-symbolic"
@@ -80,7 +80,7 @@ Kirigami.LinkButton {
         }
     }
 
-    QQC2.ToolTip.visible: button.text !== button.url && button.mouseArea.containsMouse
+    QQC2.ToolTip.visible: button.text !== button.url && button.url.length > 0 && button.mouseArea.containsMouse
     QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
     QQC2.ToolTip.text: button.url
 
