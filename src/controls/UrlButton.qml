@@ -80,11 +80,9 @@ Kirigami.LinkButton {
         }
     }
 
-    QQC2.ToolTip {
-        // If button's text has been overridden, show a tooltip to expose the raw URL
-        visible: button.text !== button.url && button.mouseArea.containsMouse
-        text: button.url
-    }
+    QQC2.ToolTip.visible: button.text !== button.url && button.mouseArea.containsMouse
+    QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
+    QQC2.ToolTip.text: button.url
 
     QQC2.Menu {
         id: menu
