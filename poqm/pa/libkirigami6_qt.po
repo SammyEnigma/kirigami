@@ -261,7 +261,7 @@ msgctxt "UrlButton|@info:whatsthis"
 msgid "Open link"
 msgstr "ਮੇਨੂ ਖੋਲ੍ਹੋ"
 
-#: controls/UrlButton.qml:92
+#: controls/UrlButton.qml:90
 msgctxt "UrlButton|"
 msgid "Copy Link to Clipboard"
 msgstr "ਲਿੰਕ ਕਲਿੱਪਬੋਰਡ ਵਿੱਚ ਕਾਪੀ ਕਰੋ"

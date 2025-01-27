@@ -245,7 +245,7 @@ msgctxt "UrlButton|@info:whatsthis"
 msgid "Open link"
 msgstr "Bağlantıyı aç"
 
-#: controls/UrlButton.qml:92
+#: controls/UrlButton.qml:90
 msgctxt "UrlButton|"
 msgid "Copy Link to Clipboard"
 msgstr "Bağlantıyı Panoya Kopyala"

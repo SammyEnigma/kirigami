@@ -244,7 +244,7 @@ msgctxt "UrlButton|@info:whatsthis"
 msgid "Open link"
 msgstr "פתיחת קישור"
 
-#: controls/UrlButton.qml:92
+#: controls/UrlButton.qml:90
 msgctxt "UrlButton|"
 msgid "Copy Link to Clipboard"
 msgstr "העתקת הקישור ללוח הגזירים"

@@ -243,7 +243,7 @@ msgctxt "UrlButton|@info:whatsthis"
 msgid "Open link"
 msgstr "Opna tengil"
 
-#: controls/UrlButton.qml:92
+#: controls/UrlButton.qml:90
 msgctxt "UrlButton|"
 msgid "Copy Link to Clipboard"
 msgstr "Afrita tengil á klippispjald"

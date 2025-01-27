@@ -243,7 +243,7 @@ msgctxt "UrlButton|@info:whatsthis"
 msgid "Open link"
 msgstr "लिङ्कं उद्घाटयन्तु"
 
-#: controls/UrlButton.qml:92
+#: controls/UrlButton.qml:90
 msgctxt "UrlButton|"
 msgid "Copy Link to Clipboard"
 msgstr "क्लिप्बोर्ड् मध्ये लिङ्कं प्रतिलिख्यताम्"

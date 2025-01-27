@@ -249,7 +249,7 @@ msgctxt "UrlButton|@info:whatsthis"
 msgid "Open link"
 msgstr "Ireki esteka"
 
-#: controls/UrlButton.qml:92
+#: controls/UrlButton.qml:90
 msgctxt "UrlButton|"
 msgid "Copy Link to Clipboard"
 msgstr "Kopiatu esteka arbelera"
