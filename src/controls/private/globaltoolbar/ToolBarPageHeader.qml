@@ -15,6 +15,10 @@ AbstractPageHeader {
     implicitWidth: layout.implicitWidth + Kirigami.Units.smallSpacing * 2
     implicitHeight: Math.max(titleLoader.implicitHeight, toolBar.implicitHeight) + Kirigami.Units.smallSpacing * 2
 
+    onActiveFocusChanged: if (activeFocus && toolBar.actions.length > 0) {
+        toolBar.contentItem.visibleChildren[0].forceActiveFocus(Qt.TabFocusReason)
+    }
+
     MouseArea {
         anchors.fill: parent
         onPressed: mouse => {
