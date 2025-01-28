@@ -78,15 +78,23 @@ public:
                                  }
                              });
 
-            const auto reply = portal->ReadAll({PORTAL_GROUP});
-            auto watcher = new QDBusPendingCallWatcher(reply, q);
-            QObject::connect(watcher, &QDBusPendingCallWatcher::finished, q, [this, watcher]() {
-                watcher->deleteLater();
-                QDBusPendingReply<VariantMapMap> reply = *watcher;
-                const auto properties = reply.value().value(PORTAL_GROUP);
-                Q_EMIT q->tabletModeAvailableChanged(properties[KEY_AVAILABLE].toBool());
-                setIsTablet(properties[KEY_ENABLED].toBool());
-            });
+            auto readAllProps = [portal, this] {
+                const auto reply = portal->ReadAll({PORTAL_GROUP});
+                auto watcher = new QDBusPendingCallWatcher(reply, q);
+                QObject::connect(watcher, &QDBusPendingCallWatcher::finished, q, [this, watcher]() {
+                    watcher->deleteLater();
+                    QDBusPendingReply<VariantMapMap> reply = *watcher;
+                    const auto properties = reply.value().value(PORTAL_GROUP);
+                    Q_EMIT q->tabletModeAvailableChanged(properties[KEY_AVAILABLE].toBool());
+                    setIsTablet(properties[KEY_ENABLED].toBool());
+                });
+            };
+            // If app.exec() has not been called yet, give Qt the chance to register us with the host portal
+            if (QThread::currentThread()->loopLevel() == 0) {
+                QMetaObject::invokeMethod(q, readAllProps, Qt::QueuedConnection);
+            } else {
+                readAllProps();
+            }
         }
 // TODO: case for Windows
 #endif
