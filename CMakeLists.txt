@@ -32,6 +32,11 @@ endif()
 include(FeatureSummary)
 include(KDEInstallDirs)
 find_package(Qt6 ${REQUIRED_QT_VERSION} REQUIRED NO_MODULE COMPONENTS Core Quick Gui Svg QuickControls2 Concurrent ShaderTools)
+
+if (Qt6Gui_VERSION VERSION_GREATER_EQUAL "6.10.0")
+    find_package(Qt6GuiPrivate ${REQUIRED_QT_VERSION} REQUIRED NO_MODULE)
+endif()
+
 if (BUILD_TESTING)
     find_package(Qt6QuickTest ${REQUIRED_QT_VERSION} CONFIG QUIET)
 endif()
