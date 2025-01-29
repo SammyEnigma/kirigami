@@ -39,6 +39,34 @@ QQC2.Label {
      */
     property alias mouseArea: area
 
+    /**
+     * @brief This property holds the normal color of the link when not pressed
+     * or disabled.
+     *
+     * default: Kirigami.Theme.linkColor
+     *
+     * @property color normalColor
+     */
+    property color normalColor: Kirigami.Theme.linkColor
+
+    /**
+     * @brief This property holds the color of the link while pressed.
+     *
+     * default: Whatever the normal color is set to, but 200% darker
+     *
+     * @property color pressedColor
+     */
+    property color pressedColor: Qt.darker(normalColor)
+
+    /**
+     * @brief This property holds the color of the link when disabled.
+     *
+     * default: Kirigami.Theme.textColor
+     *
+     * @property color disabledColor
+     */
+    property color disabledColor: Kirigami.Theme.textColor
+
     activeFocusOnTab: true
     Accessible.role: Accessible.Button
     Accessible.name: text
@@ -51,7 +79,13 @@ QQC2.Label {
 
     font.bold: activeFocus
     font.underline: enabled
-    color: enabled ? Kirigami.Theme.linkColor : Kirigami.Theme.textColor
+    color: if (!enabled) {
+        return control.disabledColor;
+    } else if (area.containsPress) {
+        return control.pressedColor;
+    } else {
+        return control.normalColor;
+    }
     horizontalAlignment: Text.AlignHCenter
     verticalAlignment: Text.AlignVCenter
     elide: Text.ElideRight
