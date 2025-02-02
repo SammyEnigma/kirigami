@@ -97,7 +97,7 @@ msgstr "Çık"
 #: controls/ActionToolBar.qml:196
 msgctxt "ActionToolBar|"
 msgid "More Actions"
-msgstr "Daha Fazla Eylem"
+msgstr "Daha fazla eylem"
 
 #: controls/Chip.qml:86
 msgctxt "Chip|"
@@ -122,12 +122,12 @@ msgstr "Geri"
 #: controls/GlobalDrawer.qml:660
 msgctxt "GlobalDrawer|"
 msgid "Close Sidebar"
-msgstr "Kenar Çubuğunu Kapat"
+msgstr "Kenar çubuğunu kapat"
 
 #: controls/GlobalDrawer.qml:665
 msgctxt "GlobalDrawer|"
 msgid "Open Sidebar"
-msgstr "Kenar Çubuğunu Aç"
+msgstr "Kenar çubuğunu aç"
 
 #: controls/LoadingPlaceholder.qml:54
 msgctxt "LoadingPlaceholder|"
