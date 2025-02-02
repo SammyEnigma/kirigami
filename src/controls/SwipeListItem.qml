@@ -189,6 +189,8 @@ QQC2.SwipeDelegate {
 
 //END properties
 
+    property ListView listView;
+
     LayoutMirroring.childrenInherit: true
 
     hoverEnabled: true
@@ -587,22 +589,22 @@ QQC2.SwipeDelegate {
                 }
 
                 Keys.onUpPressed: (event) => {
-                    if (actionsLayout.indexInListView >= 0) {
-                        listItem.ListView.view.currentIndex = actionsLayout.indexInListView
+                    if (listview && actionsLayout.indexInListView >= 0) {
+                        listView.currentIndex = actionsLayout.indexInListView
                     }
                     event.accepted = false // pass to ListView
                 }
 
                 Keys.onDownPressed: (event) => {
-                    if (actionsLayout.indexInListView >= 0) {
-                        listItem.ListView.view.currentIndex = actionsLayout.indexInListView
+                    if (listView && actionsLayout.indexInListView >= 0) {
+                        listView.currentIndex = actionsLayout.indexInListView
                     }
                     event.accepted = false // pass to ListView
                 }
 
                 onActiveFocusChanged: {
-                    if (focus) {
-                        listItem.ListView.view.positionViewAtIndex(actionsLayout.indexInListView, ListView.Contain)
+                    if (focus && listView) {
+                        listView.positionViewAtIndex(actionsLayout.indexInListView, ListView.Contain)
                     } else if (!focus) {
                         tabbedFromDelegate = false
                     }
@@ -628,4 +630,12 @@ QQC2.SwipeDelegate {
         from: listItem.swipe.position
     }
 //END items
+
+    Component.onCompleted: {
+        listView: {
+            for (var targetItem = listItem; (targetItem.ListView.view === null); targetItem = targetItem.parent) {
+            }
+            listView = targetItem.ListView.view
+        }
+    }
 }
