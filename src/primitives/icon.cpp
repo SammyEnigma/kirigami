@@ -23,7 +23,6 @@
 #include <QSGSimpleTextureNode>
 #include <QSGTexture>
 #include <QScreen>
-#include <cstdlib>
 
 Q_GLOBAL_STATIC(ImageTexturesCache, s_iconImageCache)
 
@@ -259,11 +258,6 @@ QSGNode *Icon::updatePaintNode(QSGNode *node, QQuickItem::UpdatePaintNodeData * 
                 nodeRect = destination;
             }
         }
-
-        // Adjust the final node on the pixel grid
-        QPointF globalPixelPos = mapToScene(nodeRect.topLeft()) * m_devicePixelRatio;
-        QPointF posAdjust = QPointF(globalPixelPos.x() - std::round(globalPixelPos.x()), globalPixelPos.y() - std::round(globalPixelPos.y()));
-        nodeRect.moveTopLeft(nodeRect.topLeft() - posAdjust);
 
         for (int i = 0; i < node->childCount(); ++i) {
             auto mNode = static_cast<ManagedTextureNode *>(node->childAtIndex(i)->firstChild());
