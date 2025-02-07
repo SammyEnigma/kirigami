@@ -6,12 +6,13 @@
 # André Marcelo Alvarenga <alvarenga@kde.org>, 2018, 2019.
 # Thiago Masato Costa Sueto <herzenschein@gmail.com>, 2021.
 # SPDX-FileCopyrightText: 2023 Geraldo Simiao <geraldosimiao@fedoraproject.org>
+# SPDX-FileCopyrightText: 2025 Guilherme Marçal Silva <guimarcalsilva@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: libkirigami2plugin_qt\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"PO-Revision-Date: 2023-10-28 00:30-0300\n"
-"Last-Translator: Geraldo Simiao <geraldosimiao@fedoraproject.org>\n"
+"PO-Revision-Date: 2025-02-06 00:28-0300\n"
+"Last-Translator: Guilherme Marçal Silva <guimarcalsilva@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
@@ -19,7 +20,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Qt-Contexts: true\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 23.08.1\n"
+"X-Generator: Lokalize 24.12.1\n"
 
 #: controls/AboutItem.qml:163
 #, qt-format
@@ -118,7 +119,7 @@ msgstr "Ações"
 #: controls/ContextualHelpButton.qml:50
 msgctxt "ContextualHelpButton|"
 msgid "Show Contextual Help"
-msgstr ""
+msgstr "Exibir ajuda contextual"
 
 #: controls/GlobalDrawer.qml:345
 msgctxt "GlobalDrawer|"
@@ -181,45 +182,39 @@ msgid "Clear search"
 msgstr "Limpar pesquisa"
 
 #: controls/SelectableLabel.qml:179
-#, fuzzy
-#| msgctxt "AboutItem|"
-#| msgid "Copyright"
 msgctxt "SelectableLabel|"
 msgid "Copy"
-msgstr "Copyright"
+msgstr "Copiar"
 
 #: controls/SelectableLabel.qml:192
 msgctxt "SelectableLabel|"
 msgid "Select All"
-msgstr ""
+msgstr "Selecionar tudo"
 
 #: controls/templates/InlineMessage.qml:288
 msgctxt "InlineMessage|"
 msgid "Success"
-msgstr ""
+msgstr "Sucesso"
 
 #: controls/templates/InlineMessage.qml:290
 msgctxt "InlineMessage|"
 msgid "Warning"
-msgstr ""
+msgstr "Aviso"
 
 #: controls/templates/InlineMessage.qml:292
 msgctxt "InlineMessage|"
 msgid "Error"
-msgstr ""
+msgstr "Erro"
 
 #: controls/templates/InlineMessage.qml:294
 msgctxt "InlineMessage|"
 msgid "Note"
-msgstr ""
+msgstr "Nota"
 
 #: controls/templates/InlineMessage.qml:400
-#, fuzzy
-#| msgctxt "PageRowGlobalToolBarUI|"
-#| msgid "Close menu"
 msgctxt "InlineMessage|"
 msgid "Close"
-msgstr "Fechar menu"
+msgstr "Fechar"
 
 #: controls/templates/OverlayDrawer.qml:128
 msgctxt "OverlayDrawer|"
@@ -232,12 +227,9 @@ msgid "Open drawer"
 msgstr "Abrir gaveta"
 
 #: controls/templates/OverlaySheet.qml:290
-#, fuzzy
-#| msgctxt "PageRowGlobalToolBarUI|"
-#| msgid "Close menu"
 msgctxt "OverlaySheet|@action:button close dialog"
 msgid "Close"
-msgstr "Fechar menu"
+msgstr "Fechar"
 
 #: controls/templates/private/BackButton.qml:50
 msgctxt "BackButton|"
@@ -266,12 +258,9 @@ msgid "Copy Link to Clipboard"
 msgstr "Copiar link para a área de transferência"
 
 #: dialogs/Dialog.qml:442
-#, fuzzy
-#| msgctxt "PageRowGlobalToolBarUI|"
-#| msgid "Close menu"
 msgctxt "Dialog|@action:button close dialog"
 msgid "Close"
-msgstr "Fechar menu"
+msgstr "Fechar"
 
 #: platform/settings.cpp:219
 #, qt-format
