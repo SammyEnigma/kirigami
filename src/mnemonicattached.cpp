@@ -377,6 +377,7 @@ void MnemonicAttached::setLabel(const QString &text)
     m_label = text;
     updateSequence();
     Q_EMIT labelChanged();
+    Q_EMIT plainTextLabelChanged();
 }
 
 QString MnemonicAttached::richTextLabel() const
@@ -391,6 +392,11 @@ QString MnemonicAttached::richTextLabel() const
 QString MnemonicAttached::mnemonicLabel() const
 {
     return m_mnemonicLabel;
+}
+
+QString MnemonicAttached::plainTextLabel() const
+{
+    return removeAcceleratorMarker(m_label);
 }
 
 QString MnemonicAttached::label() const

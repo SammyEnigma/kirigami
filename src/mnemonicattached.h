@@ -52,6 +52,11 @@ class MnemonicAttached : public QObject
     Q_PROPERTY(QString mnemonicLabel READ mnemonicLabel NOTIFY mnemonicLabelChanged FINAL)
 
     /**
+     * The label in plain text with no markup nor & markers.
+     */
+    Q_PROPERTY(QString plainTextLabel READ plainTextLabel NOTIFY plainTextLabelChanged FINAL)
+
+    /**
      * Only if true this mnemonic will be considered for the global assignment
      * default: true
      */
@@ -94,6 +99,7 @@ public:
 
     QString richTextLabel() const;
     QString mnemonicLabel() const;
+    QString plainTextLabel() const;
 
     void setEnabled(bool enabled);
     bool enabled() const;
@@ -118,6 +124,7 @@ Q_SIGNALS:
     void sequenceChanged();
     void richTextLabelChanged();
     void mnemonicLabelChanged();
+    void plainTextLabelChanged();
     void controlTypeChanged();
     void activeChanged();
 
