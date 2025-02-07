@@ -55,6 +55,7 @@ QQC2.ItemDelegate {
             id: labelItem
             visible: !listItem.isSeparator
             text: width > height * 2 ? listItem.Kirigami.MnemonicData.mnemonicLabel : ""
+            Accessible.name: listItem.Kirigami.MnemonicData.plainTextLabel
 
             // Work around Qt bug where left aligned text is not right aligned
             // in RTL mode unless horizontalAlignment is explicitly set.
@@ -103,7 +104,7 @@ QQC2.ItemDelegate {
         }
     }
 
-    Accessible.name: listItem.tAction?.text ?? ""
+    Accessible.name: Kirigami.MnemonicData.plainTextLabel
     Kirigami.MnemonicData.enabled: enabled && visible
     Kirigami.MnemonicData.controlType: Kirigami.MnemonicData.MenuItem
     Kirigami.MnemonicData.label: tAction?.text ?? ""

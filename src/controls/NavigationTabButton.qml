@@ -122,6 +122,7 @@ T.TabButton {
     Kirigami.MnemonicData.controlType: Kirigami.MnemonicData.MenuItem
     Kirigami.MnemonicData.label: text
 
+    Accessible.description: Kirigami.MnemonicData.plainTextLabel
     Accessible.onPressAction: control.action.trigger()
 
     background: Rectangle {
@@ -184,6 +185,7 @@ T.TabButton {
             id: label
 
             text: control.Kirigami.MnemonicData.richTextLabel
+            Accessible.name: control.Kirigami.MnemonicData.plainTextLabel
             horizontalAlignment: (control.display === T.AbstractButton.TextBesideIcon) ? Text.AlignLeft : Text.AlignHCenter
 
             visible: control.display !== T.AbstractButton.IconOnly

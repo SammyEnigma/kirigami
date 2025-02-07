@@ -398,6 +398,7 @@ Item {
             Kirigami.MnemonicData.controlType: Kirigami.MnemonicData.FormLabel
             Kirigami.MnemonicData.label: item?.Kirigami.FormData.label ?? ""
             text: Kirigami.MnemonicData.richTextLabel
+            Accessible.name: Kirigami.MnemonicData.plainTextLabel
             type: item?.Kirigami.FormData.isSection ? Kirigami.Heading.Type.Primary : Kirigami.Heading.Type.Normal
 
             level: item?.Kirigami.FormData.isSection ? 3 : 5
