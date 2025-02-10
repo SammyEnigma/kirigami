@@ -21,6 +21,7 @@ Rectangle {
     implicitHeight: 1
     implicitWidth: 1
     Accessible.role: Accessible.Separator
+    Accessible.focusable: false
 
     enum Weight {
         Light,
