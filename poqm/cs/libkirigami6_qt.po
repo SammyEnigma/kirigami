@@ -204,12 +204,9 @@ msgid "Note"
 msgstr ""
 
 #: controls/templates/InlineMessage.qml:400
-#, fuzzy
-#| msgctxt "OverlaySheet|@action:button close dialog"
-#| msgid "Close"
 msgctxt "InlineMessage|"
 msgid "Close"
-msgstr "Zavřít"
+msgstr ""
 
 #: controls/templates/OverlayDrawer.qml:128
 msgctxt "OverlayDrawer|"
