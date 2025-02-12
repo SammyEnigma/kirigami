@@ -85,6 +85,33 @@ Item {
         }
     }
 
+    property Kirigami.ScrollablePage scrollablePage: findAncestor(root, (item) => item instanceof Kirigami.ScrollablePage)
+
+    function findAncestor(item: Item, predicate: /*function Item => bool*/ var): Item {
+        let target = item.parent
+        while (target && !predicate(target)) {
+            target = target.parent
+        }
+        return target
+    }
+
+    function ensureVisible(item: Item): void {
+        if (item && root.scrollablePage) {
+            const itemPosition = scrollablePage.flickable.contentItem.mapFromItem(item, 0, 0)
+            root.scrollablePage.ensureVisible(item, itemPosition.x - item.x, itemPosition.y - item.y)
+        }
+    }
+
+    Connections {
+        target: root.Window
+        enabled: root.scrollablePage
+        function onActiveFocusItemChanged(): void {
+            if (root.Window.activeFocusItem && findAncestor(root.Window.activeFocusItem, (item) => item === root)) {
+                root.ensureVisible(root.Window.activeFocusItem)
+            }
+        }
+    }
+
     Component.onCompleted: {
         relayoutTimer.triggered();
     }
