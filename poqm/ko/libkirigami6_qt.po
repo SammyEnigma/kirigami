@@ -112,17 +112,17 @@ msgctxt "ContextualHelpButton|"
 msgid "Show Contextual Help"
 msgstr "문맥 도움말 표시"
 
-#: controls/GlobalDrawer.qml:345
+#: controls/GlobalDrawer.qml:346
 msgctxt "GlobalDrawer|"
 msgid "Back"
 msgstr "뒤로"
 
-#: controls/GlobalDrawer.qml:660
+#: controls/GlobalDrawer.qml:661
 msgctxt "GlobalDrawer|"
 msgid "Close Sidebar"
 msgstr "사이드바 닫기"
 
-#: controls/GlobalDrawer.qml:665
+#: controls/GlobalDrawer.qml:666
 msgctxt "GlobalDrawer|"
 msgid "Open Sidebar"
 msgstr "사이드바 열기"

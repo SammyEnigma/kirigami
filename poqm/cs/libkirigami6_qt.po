@@ -113,17 +113,17 @@ msgctxt "ContextualHelpButton|"
 msgid "Show Contextual Help"
 msgstr "Zobrazit kontextovou nápovědu"
 
-#: controls/GlobalDrawer.qml:345
+#: controls/GlobalDrawer.qml:346
 msgctxt "GlobalDrawer|"
 msgid "Back"
 msgstr "Zpět"
 
-#: controls/GlobalDrawer.qml:660
+#: controls/GlobalDrawer.qml:661
 msgctxt "GlobalDrawer|"
 msgid "Close Sidebar"
 msgstr "Zavřít postranní panel"
 
-#: controls/GlobalDrawer.qml:665
+#: controls/GlobalDrawer.qml:666
 msgctxt "GlobalDrawer|"
 msgid "Open Sidebar"
 msgstr "Otevřít postranní panel"
