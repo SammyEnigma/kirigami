@@ -149,5 +149,6 @@ Item {
         id: shadowRectangle
         anchors.fill: parent
         source: (image.status === Image.Ready && !softwareRendering) ? textureSource : null
+        visible: !softwareRendering
     }
 }
