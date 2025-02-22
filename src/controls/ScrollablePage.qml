@@ -253,9 +253,7 @@ Kirigami.Page {
             implicitWidth: {
                 let implicit = 0;
                 for (const child of itemsParent.visibleChildren) {
-                    if (child.implicitWidth <= 0) {
-                        implicit = Math.max(implicit, child.width);
-                    } else {
+                    if (child.implicitWidth > 0) {
                         implicit = Math.max(implicit, child.implicitWidth);
                     }
                 }
@@ -264,9 +262,7 @@ Kirigami.Page {
             implicitHeight: {
                 let implicit = 0;
                 for (const child of itemsParent.visibleChildren) {
-                    if (child.implicitHeight <= 0) {
-                        implicit = Math.max(implicit, child.height);
-                    } else {
+                    if (child.implicitHeight > 0) {
                         implicit = Math.max(implicit, child.implicitHeight);
                     }
                 }
