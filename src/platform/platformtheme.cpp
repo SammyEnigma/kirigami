@@ -998,8 +998,16 @@ void PlatformTheme::update()
     if (!d->data) {
         d->data = std::make_shared<PlatformThemeData>();
         d->data->owner = this;
+
         d->data->setColorSet(this, static_cast<ColorSet>(d->colorSet));
         d->data->setColorGroup(this, static_cast<ColorGroup>(d->colorGroup));
+
+        // If we normally inherit but do not do so currently due to an override,
+        // copy over the old colorSet to ensure we do not suddenly change to a
+        // different colorSet.
+        if (d->inherit && !actualInherit && oldData) {
+            d->data->setColorSet(this, oldData->colorSet);
+        }
     }
 
     if (d->localOverrides) {
