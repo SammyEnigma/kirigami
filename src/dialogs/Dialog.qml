@@ -355,8 +355,8 @@ T.Dialog {
 
         property real calculatedMaximumWidth: Math.min(root.absoluteMaximumWidth, root.maximumWidth) - root.leftPadding - root.rightPadding
         property real calculatedMaximumHeight: Math.min(root.absoluteMaximumHeight, root.maximumHeight) - root.topPadding - root.bottomPadding
-        property real calculatedImplicitWidth: (contentChildren.length === 1 && contentChildren[0].implicitWidth > 0 ? contentChildren[0].implicitWidth : contentItem.implicitWidth) + leftPadding + rightPadding
-        property real calculatedImplicitHeight: (contentChildren.length === 1 && contentChildren[0].implicitHeight > 0? contentChildren[0].implicitHeight: contentItem.implicitHeight) + topPadding + bottomPadding
+        property real calculatedImplicitWidth: implicitContentWidth + leftPadding + rightPadding
+        property real calculatedImplicitHeight: implicitContentHeight + topPadding + bottomPadding
 
         onContentItemChanged: {
             const contentFlickable = contentItem as Flickable;
