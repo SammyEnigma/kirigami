@@ -1099,6 +1099,9 @@ QT.Control {
         id: columnViewLayout
         spacing: 1
         readonly property alias columnView: columnView
+        // set the pagestack of this and all children to root, otherwise
+        // they would automatically resolve to the layer's stackview
+        Kirigami.PageStack.pageStack: root
         anchors {
             fill: parent
             topMargin: -layersStack.y
