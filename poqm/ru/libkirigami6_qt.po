@@ -1,11 +1,11 @@
 # Alexander Potashev <aspotashev@gmail.com>, 2016, 2017, 2019.
 # Alexander Yavorsky <kekcuha@gmail.com>, 2019, 2020, 2021, 2024.
 # Мария Шикунова <translation-team@basealt.ru>, 2022, 2023.
-# SPDX-FileCopyrightText: 2024 Olesya Gerasimenko <translation-team@basealt.ru>
+# SPDX-FileCopyrightText: 2024, 2025 Olesya Gerasimenko <translation-team@basealt.ru>
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2024-09-05 15:47+0300\n"
+"PO-Revision-Date: 2025-02-28 16:43+0300\n"
 "Last-Translator: Olesya Gerasimenko <translation-team@basealt.ru>\n"
 "Language-Team: Basealt Translation Team\n"
 "Language: ru\n"
@@ -177,42 +177,36 @@ msgid "Clear search"
 msgstr "Очистить поиск"
 
 #: controls/SelectableLabel.qml:179
-#, fuzzy
-#| msgctxt "AboutItem|"
-#| msgid "Copyright"
 msgctxt "SelectableLabel|"
 msgid "Copy"
-msgstr "Авторские права"
+msgstr "Копировать"
 
 #: controls/SelectableLabel.qml:192
 msgctxt "SelectableLabel|"
 msgid "Select All"
-msgstr ""
+msgstr "Выбрать все"
 
 #: controls/templates/InlineMessage.qml:288
 msgctxt "InlineMessage|"
 msgid "Success"
-msgstr ""
+msgstr "Успешно"
 
 #: controls/templates/InlineMessage.qml:290
 msgctxt "InlineMessage|"
 msgid "Warning"
-msgstr ""
+msgstr "Предупреждение"
 
 #: controls/templates/InlineMessage.qml:292
 msgctxt "InlineMessage|"
 msgid "Error"
-msgstr ""
+msgstr "Ошибка"
 
 #: controls/templates/InlineMessage.qml:294
 msgctxt "InlineMessage|"
 msgid "Note"
-msgstr ""
+msgstr "Примечание"
 
 #: controls/templates/InlineMessage.qml:400
-#, fuzzy
-#| msgctxt "Dialog|@action:button close dialog"
-#| msgid "Close"
 msgctxt "InlineMessage|"
 msgid "Close"
 msgstr "Закрыть"
@@ -228,9 +222,6 @@ msgid "Open drawer"
 msgstr "Открыть панель"
 
 #: controls/templates/OverlaySheet.qml:290
-#, fuzzy
-#| msgctxt "Dialog|@action:button close dialog"
-#| msgid "Close"
 msgctxt "OverlaySheet|@action:button close dialog"
 msgid "Close"
 msgstr "Закрыть"
