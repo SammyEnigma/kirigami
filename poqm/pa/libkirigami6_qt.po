@@ -211,7 +211,7 @@ msgctxt "InlineMessage|"
 msgid "Note"
 msgstr ""
 
-#: controls/templates/InlineMessage.qml:400
+#: controls/templates/InlineMessage.qml:401
 #, fuzzy
 #| msgctxt "PageRowGlobalToolBarUI|"
 #| msgid "Close menu"

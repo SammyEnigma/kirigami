@@ -202,7 +202,7 @@ msgctxt "InlineMessage|"
 msgid "Note"
 msgstr "குறிப்பு"
 
-#: controls/templates/InlineMessage.qml:400
+#: controls/templates/InlineMessage.qml:401
 msgctxt "InlineMessage|"
 msgid "Close"
 msgstr "மூடு"
