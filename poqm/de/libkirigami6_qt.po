@@ -205,7 +205,7 @@ msgctxt "InlineMessage|"
 msgid "Note"
 msgstr "Anmerkung"
 
-#: controls/templates/InlineMessage.qml:401
+#: controls/templates/InlineMessage.qml:400
 msgctxt "InlineMessage|"
 msgid "Close"
 msgstr "Schließen"

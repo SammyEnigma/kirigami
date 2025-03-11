@@ -220,7 +220,7 @@ msgctxt "InlineMessage|"
 msgid "Note"
 msgstr ""
 
-#: controls/templates/InlineMessage.qml:401
+#: controls/templates/InlineMessage.qml:400
 #, fuzzy
 #| msgctxt "OverlayDrawer|"
 #| msgid "Close"

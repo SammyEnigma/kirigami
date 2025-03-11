@@ -203,7 +203,7 @@ msgctxt "InlineMessage|"
 msgid "Note"
 msgstr "Megjegyzés"
 
-#: controls/templates/InlineMessage.qml:401
+#: controls/templates/InlineMessage.qml:400
 msgctxt "InlineMessage|"
 msgid "Close"
 msgstr "Bezárás"
