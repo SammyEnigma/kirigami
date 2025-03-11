@@ -12,6 +12,7 @@ import QtQuick.Layouts
 import QtQuick.Templates as T
 import QtQuick.Controls as QQC2
 import org.kde.kirigami as Kirigami
+import org.kde.kirigami.dialogs as KDialogs
 
 /**
  * @brief Popup dialog that is used for short tasks and user interaction.
@@ -276,8 +277,8 @@ T.Dialog {
     z: Kirigami.OverlayZStacking.z
 
     // calculate dimensions and in case footer is wider than content, use that
-    implicitWidth: Math.max(contentItem.implicitWidth, footerToolBar.implicitWidth, heading.implicitWidth) + leftPadding + rightPadding // maximum width enforced from our content (one source of truth) to avoid binding loops
-    implicitHeight: contentItem.implicitHeight + topPadding + bottomPadding
+    implicitWidth: Math.max(implicitContentWidth, implicitFooterWidth, implicitHeaderWidth) + leftPadding + rightPadding // maximum width enforced from our content (one source of truth) to avoid binding loops
+    implicitHeight: implicitContentHeight + topPadding + bottomPadding
                     + (implicitHeaderHeight > 0 ? implicitHeaderHeight + spacing : 0)
                     + (implicitFooterHeight > 0 ? implicitFooterHeight + spacing : 0);
 
@@ -402,57 +403,10 @@ T.Dialog {
         }
     }
 
-    header: T.Control {
-        implicitWidth: Math.max(implicitBackgroundWidth + leftInset + rightInset,
-                                implicitContentWidth + leftPadding + rightPadding)
-        implicitHeight: Math.max(implicitBackgroundHeight + topInset + bottomInset,
-                                implicitContentHeight + topPadding + bottomPadding)
-
-        padding: Kirigami.Units.largeSpacing
-        bottomPadding: verticalPadding + headerSeparator.implicitHeight // add space for bottom separator
-
-        contentItem: RowLayout {
-            spacing: Kirigami.Units.smallSpacing
-
-            Kirigami.Heading {
-                id: heading
-                Layout.fillWidth: true
-                Layout.alignment: Qt.AlignVCenter
-                text: root.title.length === 0 ? " " : root.title // always have text to ensure header height
-                elide: Text.ElideRight
-
-                // use tooltip for long text that is elided
-                QQC2.ToolTip.visible: truncated && titleHoverHandler.hovered
-                QQC2.ToolTip.text: root.title
-                HoverHandler { id: titleHoverHandler }
-            }
-
-            QQC2.ToolButton {
-                id: closeIcon
-
-                // We want to position the close button in the top-right
-                // corner if the header is very tall, but we want to
-                // vertically center it in a short header
-                readonly property bool tallHeader: parent.height > (Kirigami.Units.iconSizes.smallMedium + Kirigami.Units.largeSpacing * 2)
-                Layout.alignment: tallHeader ? Qt.AlignRight | Qt.AlignTop : Qt.AlignRight | Qt.AlignVCenter
-                Layout.topMargin: tallHeader ? Kirigami.Units.largeSpacing : 0
-
-                visible: root.showCloseButton
-                icon.name: closeIcon.hovered ? "window-close" : "window-close-symbolic"
-                text: qsTr("Close", "@action:button close dialog")
-                onClicked: root.reject()
-                display: QQC2.AbstractButton.IconOnly
-            }
-        }
-
-        // header background
-        background: Item {
-            Kirigami.Separator {
-                id: headerSeparator
-                width: parent.width
-                anchors.bottom: parent.bottom
-                visible: contentControl.contentHeight > contentControl.implicitHeight
-            }
+    header: KDialogs.DialogHeader {
+        dialog: root
+        contentItem: KDialogs.DialogHeaderTopContent {
+            dialog: root
         }
     }
 
@@ -462,7 +416,7 @@ T.Dialog {
 
         // if there is nothing in the footer, still maintain a height so that we can create a rounded bottom buffer for the dialog
         property bool bufferMode: !root.footerLeadingComponent && !dialogButtonBox.visible
-        implicitHeight: bufferMode ? Math.round(Kirigami.Units.smallSpacing / 2) : contentItem.implicitHeight + topPadding + bottomPadding
+        implicitHeight: bufferMode ? Math.round(Kirigami.Units.smallSpacing / 2) : implicitContentHeight + topPadding + bottomPadding
         implicitWidth: footerLayout.implicitWidth + leftPadding + rightPadding
 
         padding: !bufferMode ? Kirigami.Units.largeSpacing : 0
@@ -526,7 +480,11 @@ T.Dialog {
         background: Item {
             Kirigami.Separator {
                 id: footerSeparator
-                visible: contentControl.contentHeight > contentControl.implicitHeight && footerToolBar.padding !== 0
+                visible: if (root.contentItem instanceof T.Pane || root.contentItem instanceof Flickable) {
+                    return root.contentItem.contentHeight > root.implicitContentHeight;
+                } else {
+                    return false;
+                }
                 width: parent.width
                 anchors.top: parent.top
             }
