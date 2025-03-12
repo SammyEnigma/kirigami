@@ -255,8 +255,11 @@ msgctxt "UrlButton|"
 msgid "Copy Link to Clipboard"
 msgstr "Копіювати посилання до буфера"
 
-#: dialogs/Dialog.qml:442
-msgctxt "Dialog|@action:button close dialog"
+#: dialogs/DialogHeaderTopContent.qml:94
+#, fuzzy
+#| msgctxt "InlineMessage|"
+#| msgid "Close"
+msgctxt "DialogHeaderTopContent|@action:button close dialog"
 msgid "Close"
 msgstr "Закрити"
 
@@ -277,6 +280,10 @@ msgstr "Система керування вікнами %1"
 msgctxt "Kirigami::Platform::Settings|"
 msgid "Qt %2 (built against %3)"
 msgstr "Qt %2 (зібрано з використанням %3)"
+
+#~ msgctxt "Dialog|@action:button close dialog"
+#~ msgid "Close"
+#~ msgstr "Закрити"
 
 #~ msgctxt "CategorizedSettings|"
 #~ msgid "Settings"

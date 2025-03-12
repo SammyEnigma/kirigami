@@ -314,11 +314,11 @@ msgctxt "UrlButton|"
 msgid "Copy Link to Clipboard"
 msgstr ""
 
-#: dialogs/Dialog.qml:442
+#: dialogs/DialogHeaderTopContent.qml:94
 #, fuzzy
 #| msgctxt "OverlayDrawer|"
 #| msgid "Close"
-msgctxt "Dialog|@action:button close dialog"
+msgctxt "DialogHeaderTopContent|@action:button close dialog"
 msgid "Close"
 msgstr "Zatvoriť"
 
@@ -345,6 +345,13 @@ msgstr "The %1 systém okien"
 msgctxt "Kirigami::Platform::Settings|"
 msgid "Qt %2 (built against %3)"
 msgstr "Qt %2 (zostavené s %3)"
+
+#, fuzzy
+#~| msgctxt "OverlayDrawer|"
+#~| msgid "Close"
+#~ msgctxt "Dialog|@action:button close dialog"
+#~ msgid "Close"
+#~ msgstr "Zatvoriť"
 
 #~ msgctxt "CategorizedSettings|"
 #~ msgid "Settings"

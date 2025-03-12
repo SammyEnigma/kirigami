@@ -248,8 +248,11 @@ msgctxt "UrlButton|"
 msgid "Copy Link to Clipboard"
 msgstr "Afrita tengil á klippispjald"
 
-#: dialogs/Dialog.qml:442
-msgctxt "Dialog|@action:button close dialog"
+#: dialogs/DialogHeaderTopContent.qml:94
+#, fuzzy
+#| msgctxt "InlineMessage|"
+#| msgid "Close"
+msgctxt "DialogHeaderTopContent|@action:button close dialog"
 msgid "Close"
 msgstr "Loka"
 
@@ -270,3 +273,7 @@ msgstr "%1 gluggakerfið"
 msgctxt "Kirigami::Platform::Settings|"
 msgid "Qt %2 (built against %3)"
 msgstr "Qt %2 (byggt út frá %3)"
+
+#~ msgctxt "Dialog|@action:button close dialog"
+#~ msgid "Close"
+#~ msgstr "Loka"

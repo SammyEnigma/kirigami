@@ -248,8 +248,11 @@ msgctxt "UrlButton|"
 msgid "Copy Link to Clipboard"
 msgstr "இணைப்பை பிடிப்புப்பலகைக்கு நகலெடு"
 
-#: dialogs/Dialog.qml:442
-msgctxt "Dialog|@action:button close dialog"
+#: dialogs/DialogHeaderTopContent.qml:94
+#, fuzzy
+#| msgctxt "InlineMessage|"
+#| msgid "Close"
+msgctxt "DialogHeaderTopContent|@action:button close dialog"
 msgid "Close"
 msgstr "மூடு"
 
@@ -270,6 +273,10 @@ msgstr "%1 சாளர நெறிமுறை"
 msgctxt "Kirigami::Platform::Settings|"
 msgid "Qt %2 (built against %3)"
 msgstr "Qt %2 (%3 கொண்டு தொகுக்கப்பட்டது)"
+
+#~ msgctxt "Dialog|@action:button close dialog"
+#~ msgid "Close"
+#~ msgstr "மூடு"
 
 #~ msgctxt "CategorizedSettings|"
 #~ msgid "Settings"

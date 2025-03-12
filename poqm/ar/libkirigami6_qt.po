@@ -250,8 +250,11 @@ msgctxt "UrlButton|"
 msgid "Copy Link to Clipboard"
 msgstr "انسخ الوصلة إلى الحافظة"
 
-#: dialogs/Dialog.qml:442
-msgctxt "Dialog|@action:button close dialog"
+#: dialogs/DialogHeaderTopContent.qml:94
+#, fuzzy
+#| msgctxt "InlineMessage|"
+#| msgid "Close"
+msgctxt "DialogHeaderTopContent|@action:button close dialog"
 msgid "Close"
 msgstr "أغلق"
 
@@ -272,6 +275,10 @@ msgstr "نظام نوافذ %1"
 msgctxt "Kirigami::Platform::Settings|"
 msgid "Qt %2 (built against %3)"
 msgstr "كيوت %2 (بني على %3)"
+
+#~ msgctxt "Dialog|@action:button close dialog"
+#~ msgid "Close"
+#~ msgstr "أغلق"
 
 #~ msgctxt "CategorizedSettings|"
 #~ msgid "Settings"

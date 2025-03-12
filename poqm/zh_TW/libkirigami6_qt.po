@@ -254,8 +254,11 @@ msgctxt "UrlButton|"
 msgid "Copy Link to Clipboard"
 msgstr "複製連結至剪貼簿"
 
-#: dialogs/Dialog.qml:442
-msgctxt "Dialog|@action:button close dialog"
+#: dialogs/DialogHeaderTopContent.qml:94
+#, fuzzy
+#| msgctxt "InlineMessage|"
+#| msgid "Close"
+msgctxt "DialogHeaderTopContent|@action:button close dialog"
 msgid "Close"
 msgstr "關閉"
 
@@ -276,6 +279,10 @@ msgstr "%1 視窗系統"
 msgctxt "Kirigami::Platform::Settings|"
 msgid "Qt %2 (built against %3)"
 msgstr "Qt %2 (建置於 %3 上)"
+
+#~ msgctxt "Dialog|@action:button close dialog"
+#~ msgid "Close"
+#~ msgstr "關閉"
 
 #~ msgctxt "CategorizedSettings|"
 #~ msgid "Settings"

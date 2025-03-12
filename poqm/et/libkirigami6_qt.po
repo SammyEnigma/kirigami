@@ -300,11 +300,11 @@ msgctxt "UrlButton|"
 msgid "Copy Link to Clipboard"
 msgstr ""
 
-#: dialogs/Dialog.qml:442
+#: dialogs/DialogHeaderTopContent.qml:94
 #, fuzzy
 #| msgctxt "GlobalDrawer|"
 #| msgid "Close Sidebar"
-msgctxt "Dialog|@action:button close dialog"
+msgctxt "DialogHeaderTopContent|@action:button close dialog"
 msgid "Close"
 msgstr "Sulge külgriba"
 
@@ -331,6 +331,13 @@ msgstr "%1 aknahaldur"
 msgctxt "Kirigami::Platform::Settings|"
 msgid "Qt %2 (built against %3)"
 msgstr "Qt %2 (ehitatud %3 peale)"
+
+#, fuzzy
+#~| msgctxt "GlobalDrawer|"
+#~| msgid "Close Sidebar"
+#~ msgctxt "Dialog|@action:button close dialog"
+#~ msgid "Close"
+#~ msgstr "Sulge külgriba"
 
 #, fuzzy
 #~| msgctxt "ForwardButton|"

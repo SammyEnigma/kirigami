@@ -249,8 +249,11 @@ msgctxt "UrlButton|"
 msgid "Copy Link to Clipboard"
 msgstr "Hivatkozás másolása a vágólapra"
 
-#: dialogs/Dialog.qml:442
-msgctxt "Dialog|@action:button close dialog"
+#: dialogs/DialogHeaderTopContent.qml:94
+#, fuzzy
+#| msgctxt "InlineMessage|"
+#| msgid "Close"
+msgctxt "DialogHeaderTopContent|@action:button close dialog"
 msgid "Close"
 msgstr "Bezárás"
 
@@ -271,6 +274,10 @@ msgstr "A(z) %1 ablakkezelő rendszer"
 msgctxt "Kirigami::Platform::Settings|"
 msgid "Qt %2 (built against %3)"
 msgstr "Qt %2 (fordítva ezzel: %3)"
+
+#~ msgctxt "Dialog|@action:button close dialog"
+#~ msgid "Close"
+#~ msgstr "Bezárás"
 
 #~ msgctxt "CategorizedSettings|"
 #~ msgid "Settings"

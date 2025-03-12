@@ -306,11 +306,11 @@ msgctxt "UrlButton|"
 msgid "Copy Link to Clipboard"
 msgstr ""
 
-#: dialogs/Dialog.qml:442
+#: dialogs/DialogHeaderTopContent.qml:94
 #, fuzzy
 #| msgctxt "OverlayDrawer|"
 #| msgid "Close"
-msgctxt "Dialog|@action:button close dialog"
+msgctxt "DialogHeaderTopContent|@action:button close dialog"
 msgid "Close"
 msgstr "बंद करें"
 
@@ -337,6 +337,13 @@ msgstr "%1 विंडो प्रणाली"
 msgctxt "Kirigami::Platform::Settings|"
 msgid "Qt %2 (built against %3)"
 msgstr "क्यूट %2 (%3 के प्रती निर्मित)"
+
+#, fuzzy
+#~| msgctxt "OverlayDrawer|"
+#~| msgid "Close"
+#~ msgctxt "Dialog|@action:button close dialog"
+#~ msgid "Close"
+#~ msgstr "बंद करें"
 
 #~ msgctxt "CategorizedSettings|"
 #~ msgid "Settings"

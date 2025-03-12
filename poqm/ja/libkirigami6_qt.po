@@ -268,11 +268,11 @@ msgctxt "UrlButton|"
 msgid "Copy Link to Clipboard"
 msgstr "リンクをクリップボードにコピー"
 
-#: dialogs/Dialog.qml:442
+#: dialogs/DialogHeaderTopContent.qml:94
 #, fuzzy
 #| msgctxt "PageRowGlobalToolBarUI|"
 #| msgid "Close menu"
-msgctxt "Dialog|@action:button close dialog"
+msgctxt "DialogHeaderTopContent|@action:button close dialog"
 msgid "Close"
 msgstr "メニューを閉じる"
 
@@ -299,3 +299,10 @@ msgstr "%1 ウィンドウシステム"
 msgctxt "Kirigami::Platform::Settings|"
 msgid "Qt %2 (built against %3)"
 msgstr "Qt %2 (%3 を用いてビルドされました)"
+
+#, fuzzy
+#~| msgctxt "PageRowGlobalToolBarUI|"
+#~| msgid "Close menu"
+#~ msgctxt "Dialog|@action:button close dialog"
+#~ msgid "Close"
+#~ msgstr "メニューを閉じる"

@@ -275,11 +275,11 @@ msgctxt "UrlButton|"
 msgid "Copy Link to Clipboard"
 msgstr "Keçidi mübadilə yaddaşına kopyalayın"
 
-#: dialogs/Dialog.qml:442
+#: dialogs/DialogHeaderTopContent.qml:94
 #, fuzzy
 #| msgctxt "OverlayDrawer|"
 #| msgid "Close"
-msgctxt "Dialog|@action:button close dialog"
+msgctxt "DialogHeaderTopContent|@action:button close dialog"
 msgid "Close"
 msgstr "Bağlamaq"
 
@@ -306,6 +306,13 @@ msgstr "%1 qrafik server platforması"
 msgctxt "Kirigami::Platform::Settings|"
 msgid "Qt %2 (built against %3)"
 msgstr "Qt %2 (%3 versiyadan yığılıb)"
+
+#, fuzzy
+#~| msgctxt "OverlayDrawer|"
+#~| msgid "Close"
+#~ msgctxt "Dialog|@action:button close dialog"
+#~ msgid "Close"
+#~ msgstr "Bağlamaq"
 
 #~ msgctxt "CategorizedSettings|"
 #~ msgid "Settings"

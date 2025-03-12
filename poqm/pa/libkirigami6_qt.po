@@ -266,11 +266,11 @@ msgctxt "UrlButton|"
 msgid "Copy Link to Clipboard"
 msgstr "ਲਿੰਕ ਕਲਿੱਪਬੋਰਡ ਵਿੱਚ ਕਾਪੀ ਕਰੋ"
 
-#: dialogs/Dialog.qml:442
+#: dialogs/DialogHeaderTopContent.qml:94
 #, fuzzy
 #| msgctxt "PageRowGlobalToolBarUI|"
 #| msgid "Close menu"
-msgctxt "Dialog|@action:button close dialog"
+msgctxt "DialogHeaderTopContent|@action:button close dialog"
 msgid "Close"
 msgstr "ਮੇਨੂ ਬੰਦ ਕਰੋ"
 
@@ -297,6 +297,13 @@ msgstr "%1 ਵਿੰਡੋਇੰਗ ਸਿਸਟਮ"
 msgctxt "Kirigami::Platform::Settings|"
 msgid "Qt %2 (built against %3)"
 msgstr "Qt %2 (%3 ਨਾਲ ਬਣਾਇਆ)"
+
+#, fuzzy
+#~| msgctxt "PageRowGlobalToolBarUI|"
+#~| msgid "Close menu"
+#~ msgctxt "Dialog|@action:button close dialog"
+#~ msgid "Close"
+#~ msgstr "ਮੇਨੂ ਬੰਦ ਕਰੋ"
 
 #~ msgctxt "CategorizedSettings|"
 #~ msgid "Settings"

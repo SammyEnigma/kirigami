@@ -269,11 +269,11 @@ msgctxt "UrlButton|"
 msgid "Copy Link to Clipboard"
 msgstr "Salin Tautan ke Papan Klip"
 
-#: dialogs/Dialog.qml:442
+#: dialogs/DialogHeaderTopContent.qml:94
 #, fuzzy
 #| msgctxt "OverlayDrawer|"
 #| msgid "Close drawer"
-msgctxt "Dialog|@action:button close dialog"
+msgctxt "DialogHeaderTopContent|@action:button close dialog"
 msgid "Close"
 msgstr "Tutup penggambar"
 
@@ -300,6 +300,13 @@ msgstr "Sistem perjendelaan %1"
 msgctxt "Kirigami::Platform::Settings|"
 msgid "Qt %2 (built against %3)"
 msgstr "Qt %2 (dibangun terhadap %3)"
+
+#, fuzzy
+#~| msgctxt "OverlayDrawer|"
+#~| msgid "Close drawer"
+#~ msgctxt "Dialog|@action:button close dialog"
+#~ msgid "Close"
+#~ msgstr "Tutup penggambar"
 
 #~ msgctxt "CategorizedSettings|"
 #~ msgid "Settings"
