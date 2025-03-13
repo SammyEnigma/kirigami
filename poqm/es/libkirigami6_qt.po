@@ -1,11 +1,11 @@
-# Translation of libkirigami6_qt to Spanish
+# Spanish translations for libkirigami6_qt.po package.
 #
-# SPDX-FileCopyrightText: 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024 Eloy Cuadra <ecuadra@eloihr.net>
+# SPDX-FileCopyrightText: 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025 Eloy Cuadra <ecuadra@eloihr.net>
 msgid ""
 msgstr ""
 "Project-Id-Version: libkirigami6_qt\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"PO-Revision-Date: 2024-12-02 02:55+0100\n"
+"PO-Revision-Date: 2025-03-13 01:05+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -14,7 +14,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Qt-Contexts: true\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.08.3\n"
+"X-Generator: Lokalize 24.12.3\n"
 
 #: controls/AboutItem.qml:163
 #, qt-format
@@ -133,7 +133,7 @@ msgstr "Abrir la barra lateral"
 #: controls/LoadingPlaceholder.qml:54
 msgctxt "LoadingPlaceholder|"
 msgid "Loading…"
-msgstr "Cargando..."
+msgstr "Cargando…"
 
 #: controls/PasswordField.qml:42
 msgctxt "PasswordField|"
@@ -163,7 +163,7 @@ msgstr "Abrir menú"
 #: controls/SearchField.qml:86
 msgctxt "SearchField|"
 msgid "Search…"
-msgstr "Buscar..."
+msgstr "Buscar…"
 
 #: controls/SearchField.qml:88
 msgctxt "SearchField|"
@@ -252,9 +252,6 @@ msgid "Copy Link to Clipboard"
 msgstr "Copiar enlace en el portapapeles"
 
 #: dialogs/DialogHeaderTopContent.qml:94
-#, fuzzy
-#| msgctxt "InlineMessage|"
-#| msgid "Close"
 msgctxt "DialogHeaderTopContent|@action:button close dialog"
 msgid "Close"
 msgstr "Cerrar"
@@ -276,71 +273,3 @@ msgstr "El sistema de ventanas %1"
 msgctxt "Kirigami::Platform::Settings|"
 msgid "Qt %2 (built against %3)"
 msgstr "Qt %2 (compilado para %3)"
-
-#~ msgctxt "Dialog|@action:button close dialog"
-#~ msgid "Close"
-#~ msgstr "Cerrar"
-
-#~ msgctxt "CategorizedSettings|"
-#~ msgid "Settings"
-#~ msgstr "Preferencias"
-
-#~ msgctxt "CategorizedSettings|"
-#~ msgid "Settings — %1"
-#~ msgstr "Preferencias — %1"
-
-#~ msgctxt "Avatar|"
-#~ msgid "%1 — %2"
-#~ msgstr "%1 — %2"
-
-#~ msgctxt "PageTab|"
-#~ msgid "Current page. Progress: %1 percent."
-#~ msgstr "Página actual. Avance: %1 por ciento."
-
-#~ msgctxt "PageTab|"
-#~ msgid "Navigate to %1. Progress: %2 percent."
-#~ msgstr "Navegar hasta %1. Avance: %2 por ciento."
-
-#~ msgctxt "PageTab|"
-#~ msgid "Current page."
-#~ msgstr "Página actual."
-
-#~ msgctxt "PageTab|"
-#~ msgid "Navigate to %1. Demanding attention."
-#~ msgstr "Navegar hasta %1. Solicitando atención."
-
-#~ msgctxt "PageTab|"
-#~ msgid "Navigate to %1."
-#~ msgstr "Navegar hasta %1."
-
-#~ msgctxt "ToolBarApplicationHeader|"
-#~ msgid "More Actions"
-#~ msgstr "Más acciones"
-
-#~ msgctxt "AboutItem|"
-#~ msgid "Visit %1's KDE Store page"
-#~ msgstr "Visitar la página de %1 en KDE Store"
-
-#~ msgctxt "UrlButton|"
-#~ msgid "Copy link address"
-#~ msgstr "Copiar la dirección del enlace"
-
-#~ msgctxt "LoadingPlaceholder|"
-#~ msgid "Still loading, please wait."
-#~ msgstr "Todavía en carga. Espere por favor..."
-
-#~ msgctxt "AboutItem|"
-#~ msgid "(%1)"
-#~ msgstr "(%1)"
-
-#~ msgctxt "SearchField|"
-#~ msgid "Search..."
-#~ msgstr "Buscar..."
-
-#~ msgctxt "AboutPage|"
-#~ msgid "%1 <%2>"
-#~ msgstr "%1 <%2>"
-
-#~ msgctxt "ToolBarPageHeader|"
-#~ msgid "More Actions"
-#~ msgstr "Más acciones"

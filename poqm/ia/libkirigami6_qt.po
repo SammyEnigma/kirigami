@@ -1,8 +1,8 @@
-# SPDX-FileCopyrightText: 2017, 2019, 2020, 2021, 2022, 2023, 2024 giovanni <g.sora@tiscali.it>
+# SPDX-FileCopyrightText: 2017, 2019, 2020, 2021, 2022, 2023, 2024, 2025 giovanni <g.sora@tiscali.it>
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2024-12-03 16:54+0100\n"
+"PO-Revision-Date: 2025-03-12 09:08+0100\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -249,9 +249,6 @@ msgid "Copy Link to Clipboard"
 msgstr "Copia ligame a area de transferentia"
 
 #: dialogs/DialogHeaderTopContent.qml:94
-#, fuzzy
-#| msgctxt "InlineMessage|"
-#| msgid "Close"
 msgctxt "DialogHeaderTopContent|@action:button close dialog"
 msgid "Close"
 msgstr "Claude"

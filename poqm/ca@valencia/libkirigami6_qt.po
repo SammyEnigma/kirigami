@@ -1,16 +1,17 @@
 # Translation of libkirigami6_qt.po to Catalan (Valencian)
-# Copyright (C) 2016-2024 This_file_is_part_of_KDE
+# Copyright (C) 2016-2025 This_file_is_part_of_KDE
 # This file is distributed under the license LGPL version 2.1 or
 # version 3 or later versions approved by the membership of KDE e.V.
 #
 # SPDX-FileCopyrightText: 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024 Josep M. Ferrer <txemaq@gmail.com>
 # Antoni Bella Pérez <antonibella5@yahoo.com>, 2016, 2020, 2021.
 # Empar Montoro Martín <montoro_mde@gva.es>, 2019.
+# Josep M. Ferrer <txemaq@gmail.com>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: kirigami\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"PO-Revision-Date: 2024-12-02 08:58+0100\n"
+"PO-Revision-Date: 2025-03-12 09:43+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -258,9 +259,6 @@ msgid "Copy Link to Clipboard"
 msgstr "Copia l'enllaç a dins del porta-retalls"
 
 #: dialogs/DialogHeaderTopContent.qml:94
-#, fuzzy
-#| msgctxt "InlineMessage|"
-#| msgid "Close"
 msgctxt "DialogHeaderTopContent|@action:button close dialog"
 msgid "Close"
 msgstr "Tanca"
@@ -282,7 +280,3 @@ msgstr "El sistema de finestres %1"
 msgctxt "Kirigami::Platform::Settings|"
 msgid "Qt %2 (built against %3)"
 msgstr "Qt %2 (construïdes amb %3)"
-
-#~ msgctxt "Dialog|@action:button close dialog"
-#~ msgid "Close"
-#~ msgstr "Tanca"

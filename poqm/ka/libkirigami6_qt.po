@@ -249,9 +249,6 @@ msgid "Copy Link to Clipboard"
 msgstr "ბმულის ბმულის ბაფერში კოპირება"
 
 #: dialogs/DialogHeaderTopContent.qml:94
-#, fuzzy
-#| msgctxt "InlineMessage|"
-#| msgid "Close"
 msgctxt "DialogHeaderTopContent|@action:button close dialog"
 msgid "Close"
 msgstr "დახურვა"

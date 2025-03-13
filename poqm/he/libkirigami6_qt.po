@@ -1,8 +1,8 @@
-# SPDX-FileCopyrightText: 2024 Yaron Shahrabani <sh.yaron@gmail.com>
+# SPDX-FileCopyrightText: 2024, 2025 Yaron Shahrabani <sh.yaron@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2024-12-02 07:26+0200\n"
+"PO-Revision-Date: 2025-03-12 07:39+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -12,7 +12,7 @@ msgstr ""
 "X-Qt-Contexts: true\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Lokalize 24.08.3\n"
+"X-Generator: Lokalize 24.12.2\n"
 
 #: controls/AboutItem.qml:163
 #, qt-format
@@ -250,9 +250,6 @@ msgid "Copy Link to Clipboard"
 msgstr "העתקת הקישור ללוח הגזירים"
 
 #: dialogs/DialogHeaderTopContent.qml:94
-#, fuzzy
-#| msgctxt "InlineMessage|"
-#| msgid "Close"
 msgctxt "DialogHeaderTopContent|@action:button close dialog"
 msgid "Close"
 msgstr "סגירה"
