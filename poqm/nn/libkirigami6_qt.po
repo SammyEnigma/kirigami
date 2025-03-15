@@ -276,7 +276,3 @@ msgstr "Vindaugssystemet %1"
 msgctxt "Kirigami::Platform::Settings|"
 msgid "Qt %2 (built against %3)"
 msgstr "Qt %2 (bygd mot %3)"
-
-#~ msgctxt "Dialog|@action:button close dialog"
-#~ msgid "Close"
-#~ msgstr "Lukk"

@@ -1,22 +1,21 @@
-# SPDX-FileCopyrightText: 2020, 2021, 2022, 2023, 2024, 2025 Xavier Besnard <xavier.besnard@kde.org>
-# Vincent Pinon <vpinon@kde.org>, 2016, 2017.
-# Simon Depiets <sdepiets@gmail.com>, 2018, 2019.
+# Translation of libkirigami6_qt to Norwegian Bokmål
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2025-03-13 07:21+0100\n"
-"Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
-"Language-Team: French <French <kde-francophone@kde.org>>\n"
-"Language: fr\n"
+"PO-Revision-Date: 2025-03-13 15:04+0100\n"
+"Last-Translator: Martin Hansen <mh306602@gmail.com>\n"
+"Language-Team: Norwegian Bokmål <l10n-no@lister.huftis.org>\n"
+"Language: nb\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Accelerator-Marker: &\n"
-"X-Environment: kde\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Lokalize 24.12.3\n"
-"X-Qt-Contexts: true\n"
+"X-Environment: kde\n"
+"X-Accelerator-Marker: &\n"
 "X-Text-Markup: qtrich\n"
+"X-Qt-Contexts: true\n"
 
 #: controls/AboutItem.qml:163
 #, qt-format
@@ -28,318 +27,250 @@ msgstr "%1 (%2)"
 #, qt-format
 msgctxt "AboutItem|"
 msgid "Send an email to %1"
-msgstr "Envoyer un courriel à %1"
+msgstr "Send e-post til %1"
 
 #: controls/AboutItem.qml:222
 msgctxt "AboutItem|"
 msgid "Get Involved"
-msgstr "Impliquez vous"
+msgstr "Bli med"
 
 #: controls/AboutItem.qml:228
 msgctxt "AboutItem|"
 msgid "Donate"
-msgstr "Faire un don"
+msgstr "Gi pengegave"
 
 #: controls/AboutItem.qml:245
 msgctxt "AboutItem|"
 msgid "Report a Bug"
-msgstr "Signaler un bogue"
+msgstr "Meld fra om feil"
 
 #: controls/AboutItem.qml:258
 msgctxt "AboutItem|"
 msgid "Copyright"
-msgstr "Droit d'auteur"
+msgstr "Opphavsrett"
 
 #: controls/AboutItem.qml:302
 msgctxt "AboutItem|"
 msgid "License:"
-msgstr "Licence :"
+msgstr "Lisens:"
 
 #: controls/AboutItem.qml:324
 #, qt-format
 msgctxt "AboutItem|"
 msgid "License: %1"
-msgstr "Licence : %1"
+msgstr "Lisens: %1"
 
 #: controls/AboutItem.qml:335
 msgctxt "AboutItem|"
 msgid "Libraries in use"
-msgstr "Bibliothèques en cours d'utilisation"
+msgstr "Brukte bibliotek"
 
 #: controls/AboutItem.qml:365
 msgctxt "AboutItem|"
 msgid "Authors"
-msgstr "Auteurs"
+msgstr "Opphavspersoner"
 
 #: controls/AboutItem.qml:375
 msgctxt "AboutItem|"
 msgid "Show author photos"
-msgstr "Afficher les photos des auteurs"
+msgstr "Vis bilde av opphavspersonene"
 
 #: controls/AboutItem.qml:386
 msgctxt "AboutItem|"
 msgid "Credits"
-msgstr "Crédits"
+msgstr "Bidragsytere"
 
 #: controls/AboutItem.qml:398
 msgctxt "AboutItem|"
 msgid "Translators"
-msgstr "Traducteurs"
+msgstr "Oversettere"
 
 #: controls/AboutPage.qml:100
 #, qt-format
 msgctxt "AboutPage|"
 msgid "About %1"
-msgstr "À propos de %1"
+msgstr "Om %1"
 
 #: controls/AbstractApplicationWindow.qml:176
 msgctxt "AbstractApplicationWindow|"
 msgid "Quit"
-msgstr "Quitter"
+msgstr "Avslutt"
 
 #: controls/ActionToolBar.qml:196
 msgctxt "ActionToolBar|"
 msgid "More Actions"
-msgstr "Plus d'actions"
+msgstr "Flere handlinger"
 
 #: controls/Chip.qml:86
 msgctxt "Chip|"
 msgid "Remove Tag"
-msgstr "Supprimer une étiquette"
+msgstr "Fjern merkelapp"
 
 #: controls/ContextDrawer.qml:59
 msgctxt "ContextDrawer|"
 msgid "Actions"
-msgstr "Actions"
+msgstr "Handlinger"
 
 #: controls/ContextualHelpButton.qml:50
 msgctxt "ContextualHelpButton|"
 msgid "Show Contextual Help"
-msgstr "Afficher l'aide contextuelle"
+msgstr "Vis emnehjelp"
 
 #: controls/GlobalDrawer.qml:346
 msgctxt "GlobalDrawer|"
 msgid "Back"
-msgstr "Retour"
+msgstr "Tilbake"
 
 #: controls/GlobalDrawer.qml:661
 msgctxt "GlobalDrawer|"
 msgid "Close Sidebar"
-msgstr "Fermer la barre latérale"
+msgstr "Lukk sidestolpen"
 
 #: controls/GlobalDrawer.qml:666
 msgctxt "GlobalDrawer|"
 msgid "Open Sidebar"
-msgstr "Ouvrir une barre latérale"
+msgstr "Åpne sidestolpe"
 
 #: controls/LoadingPlaceholder.qml:54
 msgctxt "LoadingPlaceholder|"
 msgid "Loading…"
-msgstr "Chargement en cours..."
+msgstr "Laster …"
 
 #: controls/PasswordField.qml:42
 msgctxt "PasswordField|"
 msgid "Password"
-msgstr "Mot de passe"
+msgstr "Passord"
 
 #: controls/PasswordField.qml:45
 msgctxt "PasswordField|"
 msgid "Hide Password"
-msgstr "Masquer un mot de passe"
+msgstr "Skjul passord"
 
 #: controls/PasswordField.qml:45
 msgctxt "PasswordField|"
 msgid "Show Password"
-msgstr "Afficher un mot de passe"
+msgstr "Vis passord"
 
 #: controls/private/globaltoolbar/PageRowGlobalToolBarUI.qml:83
 msgctxt "PageRowGlobalToolBarUI|"
 msgid "Close menu"
-msgstr "Fermer le menu"
+msgstr "Lukk meny"
 
 #: controls/private/globaltoolbar/PageRowGlobalToolBarUI.qml:83
 msgctxt "PageRowGlobalToolBarUI|"
 msgid "Open menu"
-msgstr "Ouvrir le menu"
+msgstr "Åpne meny"
 
 #: controls/SearchField.qml:86
 msgctxt "SearchField|"
 msgid "Search…"
-msgstr "Rechercher…"
+msgstr "Søk …"
 
 #: controls/SearchField.qml:88
 msgctxt "SearchField|"
 msgid "Search"
-msgstr "Rechercher"
+msgstr "Søk"
 
 #: controls/SearchField.qml:99
 msgctxt "SearchField|"
 msgid "Clear search"
-msgstr "Effacer une recherche"
+msgstr "Tøm søkefelt"
 
 #: controls/SelectableLabel.qml:179
 msgctxt "SelectableLabel|"
 msgid "Copy"
-msgstr "Copier"
+msgstr "Kopier"
 
 #: controls/SelectableLabel.qml:192
 msgctxt "SelectableLabel|"
 msgid "Select All"
-msgstr "Tout sélectionner"
+msgstr "Merk alle"
 
 #: controls/templates/InlineMessage.qml:288
 msgctxt "InlineMessage|"
 msgid "Success"
-msgstr "Réussite"
+msgstr "Vellykket"
 
 #: controls/templates/InlineMessage.qml:290
 msgctxt "InlineMessage|"
 msgid "Warning"
-msgstr "Avertissement"
+msgstr "Advarsel"
 
 #: controls/templates/InlineMessage.qml:292
 msgctxt "InlineMessage|"
 msgid "Error"
-msgstr "Erreur"
+msgstr "Feil"
 
 #: controls/templates/InlineMessage.qml:294
 msgctxt "InlineMessage|"
 msgid "Note"
-msgstr "Remarque"
+msgstr "Merk"
 
 #: controls/templates/InlineMessage.qml:400
 msgctxt "InlineMessage|"
 msgid "Close"
-msgstr "Fermer"
+msgstr "Lukk"
 
 #: controls/templates/OverlayDrawer.qml:128
 msgctxt "OverlayDrawer|"
 msgid "Close drawer"
-msgstr "Fermer un tiroir"
+msgstr "Lukk skuff"
 
 #: controls/templates/OverlayDrawer.qml:134
 msgctxt "OverlayDrawer|"
 msgid "Open drawer"
-msgstr "Ouvrir un tiroir"
+msgstr "Åpne skuff"
 
 #: controls/templates/OverlaySheet.qml:290
 msgctxt "OverlaySheet|@action:button close dialog"
 msgid "Close"
-msgstr "Fermer"
+msgstr "Lukk"
 
 #: controls/templates/private/BackButton.qml:50
 msgctxt "BackButton|"
 msgid "Navigate Back"
-msgstr "Navigation arrière"
+msgstr "Naviger tilbake"
 
 #: controls/templates/private/ForwardButton.qml:27
 msgctxt "ForwardButton|"
 msgid "Navigate Forward"
-msgstr "Navigation avant"
+msgstr "Naviger frem"
 
 #: controls/UrlButton.qml:47
 #, qt-format
 msgctxt "UrlButton|@info:whatsthis"
 msgid "Open link %1"
-msgstr "Ouvrir le lien %1"
+msgstr "Åpne lenka %1"
 
 #: controls/UrlButton.qml:48
 msgctxt "UrlButton|@info:whatsthis"
 msgid "Open link"
-msgstr "Ouvrir un lien"
+msgstr "Åpne lenka"
 
 #: controls/UrlButton.qml:90
 msgctxt "UrlButton|"
 msgid "Copy Link to Clipboard"
-msgstr "Copier un lien dans le presse-papier"
+msgstr "Kopier lenka til utklippstavla"
 
 #: dialogs/DialogHeaderTopContent.qml:94
 msgctxt "DialogHeaderTopContent|@action:button close dialog"
 msgid "Close"
-msgstr "Fermer"
+msgstr "Lukk"
 
 #: platform/settings.cpp:219
 #, qt-format
 msgctxt "Kirigami::Platform::Settings|"
 msgid "KDE Frameworks %1"
-msgstr "Environnements de développement %1 de KDE"
+msgstr "KDE Frameworks %1"
 
 #: platform/settings.cpp:221
 #, qt-format
 msgctxt "Kirigami::Platform::Settings|"
 msgid "The %1 windowing system"
-msgstr "Le système de fenêtrage %1"
+msgstr "Vindussystemet %1"
 
 #: platform/settings.cpp:222
 #, qt-format
 msgctxt "Kirigami::Platform::Settings|"
 msgid "Qt %2 (built against %3)"
-msgstr "Qt %2 (Compilé avec %3)"
-
-#~ msgctxt "Dialog|@action:button close dialog"
-#~ msgid "Close"
-#~ msgstr "Fermer"
-
-#~ msgctxt "CategorizedSettings|"
-#~ msgid "Settings"
-#~ msgstr "Configuration"
-
-#~ msgctxt "CategorizedSettings|"
-#~ msgid "Settings — %1"
-#~ msgstr "Configuration — %1"
-
-#~ msgctxt "Avatar|"
-#~ msgid "%1 — %2"
-#~ msgstr "%1 — %2"
-
-#~ msgctxt "PageTab|"
-#~ msgid "Current page. Progress: %1 percent."
-#~ msgstr "Page actuelle. Avancement : %1 pourcent."
-
-#~ msgctxt "PageTab|"
-#~ msgid "Navigate to %1. Progress: %2 percent."
-#~ msgstr "Naviguer vers %1. Avancement : %2 pourcent."
-
-#~ msgctxt "PageTab|"
-#~ msgid "Current page."
-#~ msgstr "Page actuelle."
-
-#~ msgctxt "PageTab|"
-#~ msgid "Navigate to %1. Demanding attention."
-#~ msgstr "Naviguer vers %1. Attention requise."
-
-#~ msgctxt "PageTab|"
-#~ msgid "Navigate to %1."
-#~ msgstr "Navigation vers %1"
-
-#~ msgctxt "ToolBarApplicationHeader|"
-#~ msgid "More Actions"
-#~ msgstr "Actions supplémentaires"
-
-#~ msgctxt "AboutItem|"
-#~ msgid "Visit %1's KDE Store page"
-#~ msgstr "Visiter la page de la boutique de KDE pour %1"
-
-#~ msgctxt "UrlButton|"
-#~ msgid "Copy link address"
-#~ msgstr "Copier l'adresse du lien"
-
-#~ msgctxt "LoadingPlaceholder|"
-#~ msgid "Still loading, please wait."
-#~ msgstr "Encore en cours de téléchargement, veuillez patienter."
-
-#~ msgctxt "AboutItem|"
-#~ msgid "(%1)"
-#~ msgstr "(%1)"
-
-#~ msgctxt "SearchField|"
-#~ msgid "Search..."
-#~ msgstr "Chercher…"
-
-#~ msgctxt "AboutPage|"
-#~ msgid "%1 <%2>"
-#~ msgstr "%1 <%2>"
-
-#~ msgctxt "ToolBarPageHeader|"
-#~ msgid "More Actions"
-#~ msgstr "Actions supplémentaires"
+msgstr "Qt %2 (bygd mot %3)"
