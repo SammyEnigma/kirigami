@@ -88,7 +88,8 @@ RowLayout {
         // vertically center it in a short header
         readonly property bool tallHeader: root.dialog.implicitHeaderHeight > (Kirigami.Units.iconSizes.smallMedium + Kirigami.Units.largeSpacing * 2)
         Layout.alignment: tallHeader ? Qt.AlignRight | Qt.AlignTop : Qt.AlignRight | Qt.AlignVCenter
-        Layout.topMargin: tallHeader ? Kirigami.Units.largeSpacing : 0
+        Layout.topMargin:  tallHeader ? - root.dialog.header.padding : 0
+        Layout.rightMargin:  tallHeader ? - root.dialog.header.padding : 0
 
         icon.name: hovered ? "window-close" : "window-close-symbolic"
         text: qsTr("Close", "@action:button close dialog")
