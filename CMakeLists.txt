@@ -127,8 +127,8 @@ if (UBUNTU_TOUCH)
 endif()
 
 ecm_set_disabled_deprecation_versions(
-    QT 5.15.2
-    KF 5.95
+    QT 6.2
+    KF 6.12.0
 )
 
 if(CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
