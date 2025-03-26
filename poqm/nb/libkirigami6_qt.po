@@ -252,7 +252,7 @@ msgctxt "UrlButton|"
 msgid "Copy Link to Clipboard"
 msgstr "Kopier lenka til utklippstavla"
 
-#: dialogs/DialogHeaderTopContent.qml:94
+#: dialogs/DialogHeaderTopContent.qml:89
 msgctxt "DialogHeaderTopContent|@action:button close dialog"
 msgid "Close"
 msgstr "Lukk"

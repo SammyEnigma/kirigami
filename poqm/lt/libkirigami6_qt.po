@@ -258,7 +258,7 @@ msgctxt "UrlButton|"
 msgid "Copy Link to Clipboard"
 msgstr "Kopijuoti nuorodą į iškarpinę"
 
-#: dialogs/DialogHeaderTopContent.qml:94
+#: dialogs/DialogHeaderTopContent.qml:89
 #, fuzzy
 #| msgctxt "Dialog|@action:button close dialog"
 #| msgid "Close"

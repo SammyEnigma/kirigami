@@ -8,7 +8,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kirigami\n"
-"PO-Revision-Date: 2025-03-22 15:32+0100\n"
+"PO-Revision-Date: 2025-03-25 18:01+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -126,12 +126,12 @@ msgstr "Atzera"
 #: controls/GlobalDrawer.qml:661
 msgctxt "GlobalDrawer|"
 msgid "Close Sidebar"
-msgstr "Itxi alboko-barra"
+msgstr "Itxi alboko barra"
 
 #: controls/GlobalDrawer.qml:666
 msgctxt "GlobalDrawer|"
 msgid "Open Sidebar"
-msgstr "Itxi alboko-barra"
+msgstr "Itxi alboko barra"
 
 #: controls/LoadingPlaceholder.qml:54
 msgctxt "LoadingPlaceholder|"
@@ -254,7 +254,7 @@ msgctxt "UrlButton|"
 msgid "Copy Link to Clipboard"
 msgstr "Kopiatu esteka arbelera"
 
-#: dialogs/DialogHeaderTopContent.qml:94
+#: dialogs/DialogHeaderTopContent.qml:89
 msgctxt "DialogHeaderTopContent|@action:button close dialog"
 msgid "Close"
 msgstr "Itxi"

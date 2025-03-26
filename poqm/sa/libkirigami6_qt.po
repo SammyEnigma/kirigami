@@ -248,7 +248,7 @@ msgctxt "UrlButton|"
 msgid "Copy Link to Clipboard"
 msgstr "क्लिप्बोर्ड् मध्ये लिङ्कं प्रतिलिख्यताम्"
 
-#: dialogs/DialogHeaderTopContent.qml:94
+#: dialogs/DialogHeaderTopContent.qml:89
 #, fuzzy
 #| msgctxt "InlineMessage|"
 #| msgid "Close"

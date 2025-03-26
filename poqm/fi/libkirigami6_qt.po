@@ -252,7 +252,7 @@ msgctxt "UrlButton|"
 msgid "Copy Link to Clipboard"
 msgstr "Kopioi linkki leikepöydälle"
 
-#: dialogs/DialogHeaderTopContent.qml:94
+#: dialogs/DialogHeaderTopContent.qml:89
 #, fuzzy
 #| msgctxt "OverlaySheet|@action:button close dialog"
 #| msgid "Close"
