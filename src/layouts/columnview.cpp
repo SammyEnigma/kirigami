@@ -1295,6 +1295,7 @@ void ColumnView::insertItem(int pos, QQuickItem *item)
     attached->setOriginalParent(item->parentItem());
     attached->setShouldDeleteOnRemove(item->parentItem() == nullptr && QQmlEngine::objectOwnership(item) == QQmlEngine::JavaScriptOwnership);
     item->setParentItem(m_contentItem);
+    connect(item, &QQuickItem::implicitWidthChanged, this, &ColumnView::polish);
 
     item->forceActiveFocus();
 
@@ -1364,6 +1365,7 @@ void ColumnView::replaceItem(int pos, QQuickItem *item)
         attached->setOriginalParent(item->parentItem());
         attached->setShouldDeleteOnRemove(item->parentItem() == nullptr && QQmlEngine::objectOwnership(item) == QQmlEngine::JavaScriptOwnership);
         item->setParentItem(m_contentItem);
+        connect(item, &QQuickItem::implicitWidthChanged, this, &ColumnView::polish);
 
         if (attached->globalHeader()) {
             m_contentItem->connectHeader(nullptr, attached->globalHeader());
