@@ -211,7 +211,9 @@ QQC2.Page {
         height: item ? item.implicitHeight : 0
 
         width: root.width
-        property Kirigami.PageRow row
+        // NOTE: This is an Item instead of a Kirigami.PageRow as a workaround for QTBUG-120189
+        // Once Frameworks can depend from Qt 6.9, this property can be a PageRow again
+        property Item row
         property T.StackView stack
 
         // don't load async so that on slower devices we don't have the page content height changing while loading in
