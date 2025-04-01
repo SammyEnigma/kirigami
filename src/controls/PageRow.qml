@@ -292,6 +292,7 @@ QT.Control {
                 dialog.open();
             } else {
                 // open as a layer
+                properties.globalToolBarStyle = root.globalToolBar.style
                 item = layers.push(page, properties);
                 Object.defineProperty(item, 'closeDialog', {
                     value: function() {
