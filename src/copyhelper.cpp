@@ -15,3 +15,5 @@ void CopyHelperPrivate::copyTextToClipboard(const QString &text)
 {
     qGuiApp->clipboard()->setText(text);
 }
+
+#include "moc_copyhelper.cpp"

@@ -500,3 +500,5 @@ void MnemonicAttached::setActive(bool active)
 }
 
 #include "mnemonicattached.moc"
+
+#include "moc_mnemonicattached.cpp"

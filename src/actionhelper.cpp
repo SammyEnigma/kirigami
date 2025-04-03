@@ -21,3 +21,5 @@ QList<QKeySequence> ActionHelper::alternateShortcuts(QAction *action) const
         return action->shortcuts().mid(1);
     }
 }
+
+#include "moc_actionhelper.cpp"

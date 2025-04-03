@@ -25,3 +25,5 @@ QAction *ActionData::disabledAction() const
 {
     return m_disabledAction;
 }
+
+#include "moc_actiondata.cpp"
