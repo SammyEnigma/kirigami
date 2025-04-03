@@ -1596,6 +1596,16 @@ bool ColumnView::childMouseEventFilter(QQuickItem *item, QEvent *event)
             return false;
         }
 
+        // It's possible the synthetyzed mouse press event was not passed
+        // but now we get the mouse move events, consider the first move
+        // as the press
+        if (!m_mouseDown) {
+            m_mouseDown = true;
+            m_oldMouseX = m_startMouseX = mapFromItem(item, me->position()).x();
+            m_oldMouseY = m_startMouseY = mapFromItem(item, me->position()).y();
+            return false;
+        }
+
         const QPointF pos = mapFromItem(item, me->position());
 
         bool verticalScrollIntercepted = false;
