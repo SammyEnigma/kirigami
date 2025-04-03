@@ -46,6 +46,14 @@ class HeaderFooterLayout : public QQuickItem
      */
     Q_PROPERTY(QQuickItem *footer READ footer WRITE setFooter NOTIFY footerChanged FINAL)
 
+    /**
+     * @brief Space between contentItem and the header and footer items
+     *
+     * The content Item of the page will be positioned at this distance in pixels
+     * from the header and footer Items. The default value is zero.
+     */
+    Q_PROPERTY(qreal spacing READ spacing WRITE setSpacing NOTIFY spacingChanged FINAL)
+
 public:
     HeaderFooterLayout(QQuickItem *parent = nullptr);
     ~HeaderFooterLayout() override;
@@ -59,6 +67,9 @@ public:
     void setFooter(QQuickItem *item);
     QQuickItem *footer();
 
+    void setSpacing(qreal spacing);
+    qreal spacing() const;
+
     /**
      * @brief HeaderFooterLayout normally positions its header, footer and
      * contentItem once per frame (at polish event). This method forces the it
@@ -68,6 +79,7 @@ public:
 
 Q_SIGNALS:
     void headerChanged();
+    void spacingChanged();
     void contentItemChanged();
     void footerChanged();
 
@@ -85,6 +97,8 @@ private:
     QPointer<QQuickItem> m_header;
     QPointer<QQuickItem> m_contentItem;
     QPointer<QQuickItem> m_footer;
+
+    qreal m_spacing = 0;
 
     bool m_isDirty : 1;
     bool m_performingLayout : 1;

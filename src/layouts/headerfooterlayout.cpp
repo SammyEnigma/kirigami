@@ -132,6 +132,24 @@ QQuickItem *HeaderFooterLayout::footer()
     return m_footer;
 }
 
+void HeaderFooterLayout::setSpacing(qreal spacing)
+{
+    if (spacing == m_spacing) {
+        return;
+    }
+
+    m_spacing = spacing;
+
+    markAsDirty();
+
+    Q_EMIT spacingChanged();
+}
+
+qreal HeaderFooterLayout::spacing() const
+{
+    return m_spacing;
+}
+
 void HeaderFooterLayout::forceLayout()
 {
     updatePolish();
@@ -189,14 +207,14 @@ void HeaderFooterLayout::performLayout()
     if (m_header) {
         m_header->setWidth(newSize.width());
         if (m_header->isVisible()) {
-            headerHeight = m_header->height();
+            headerHeight = m_header->height() + m_spacing;
         }
     }
     if (m_footer) {
         m_footer->setY(newSize.height() - m_footer->height());
         m_footer->setWidth(newSize.width());
         if (m_footer->isVisible()) {
-            footerHeight = m_footer->height();
+            footerHeight = m_footer->height() + m_spacing;
         }
     }
     if (m_contentItem) {
@@ -215,11 +233,11 @@ void HeaderFooterLayout::updateImplicitSize()
 
     if (m_header && m_header->isVisible()) {
         impWidth = std::max(impWidth, m_header->implicitWidth());
-        impHeight += m_header->implicitHeight();
+        impHeight += m_header->implicitHeight() + m_spacing;
     }
     if (m_footer && m_footer->isVisible()) {
         impWidth = std::max(impWidth, m_footer->implicitWidth());
-        impHeight += m_footer->implicitHeight();
+        impHeight += m_footer->implicitHeight() + m_spacing;
     }
     if (m_contentItem && m_contentItem->isVisible()) {
         impWidth = std::max(impWidth, m_contentItem->implicitWidth());

@@ -159,6 +159,12 @@ TestCase {
         compare(layout.implicitHeight, 105);
         verify(waitForItemPolished(layout));
         compare(layout.implicitHeight, 105);
+
+        // Change the spacing
+        layout.spacing = 5;
+        verify(waitForItemPolished(layout));
+        compare(layout.contentItem.height, 55);
+        compare(layout.implicitHeight, 115);
     }
 
     function test_implicit_sizes_nested_layout() {
