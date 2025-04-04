@@ -109,6 +109,7 @@ public:
 
     QFont defaultFont;
     QFont smallFont = QFontDatabase::systemFont(QFontDatabase::SmallestReadableFont);
+    QFont fixedWidthFont = QFontDatabase::systemFont(QFontDatabase::FixedFont);
 
     QPalette palette;
 
@@ -184,6 +185,19 @@ public:
         smallFont = font;
 
         notifyWatchers<QFont>(sender, oldValue, smallFont);
+    }
+
+    inline void setFixedWidthFont(PlatformTheme *sender, const QFont &font)
+    {
+        if (sender != owner || font == fixedWidthFont) {
+            return;
+        }
+
+        auto oldValue = fixedWidthFont;
+
+        fixedWidthFont = font;
+
+        notifyWatchers<QFont>(sender, oldValue, fixedWidthFont);
     }
 
     inline void addChangeWatcher(PlatformTheme *object)
@@ -688,6 +702,19 @@ void PlatformTheme::setSmallFont(const QFont &font)
     }
 }
 
+QFont PlatformTheme::fixedWidthFont() const
+{
+    return d->data ? d->data->fixedWidthFont : QFont{};
+}
+
+void PlatformTheme::setFixedWidthFont(const QFont &font)
+{
+    PlatformThemeChangeTracker tracker(this, PlatformThemeChangeTracker::PropertyChange::Font);
+    if (d->data) {
+        d->data->setFixedWidthFont(this, font);
+    }
+}
+
 qreal PlatformTheme::frameContrast() const
 {
     // This value must be kept in sync with
@@ -901,6 +928,7 @@ void PlatformTheme::emitSignalsForChanges(int changes)
     if (propertyChanges & PlatformThemeChangeTracker::PropertyChange::Font) {
         Q_EMIT defaultFontChanged(d->data->defaultFont);
         Q_EMIT smallFontChanged(d->data->smallFont);
+        Q_EMIT fixedWidthFontChanged(d->data->fixedWidthFont);
     }
 
     if (propertyChanges & PlatformThemeChangeTracker::PropertyChange::Data) {
