@@ -348,11 +348,7 @@ void ToolBarLayout::componentComplete()
 void ToolBarLayout::geometryChange(const QRectF &newGeometry, const QRectF &oldGeometry)
 {
     if (newGeometry != oldGeometry) {
-        if (newGeometry.size() != QSizeF{implicitWidth(), implicitHeight()}) {
-            relayout();
-        } else {
-            polish();
-        }
+        relayout();
     }
     QQuickItem::geometryChange(newGeometry, oldGeometry);
 }
