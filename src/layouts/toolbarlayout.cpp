@@ -441,6 +441,8 @@ void ToolBarLayoutPrivate::calculateImplicitSize()
 
     visibleActionsWidth = 0.0;
 
+    q->setImplicitWidth(maxWidth);
+
     if (maxWidth > q->width() - (hiddenActions.isEmpty() ? 0.0 : moreButtonInstance->width() + spacing)) {
         // We have more items than fit into the view, so start hiding some.
 
@@ -473,7 +475,8 @@ void ToolBarLayoutPrivate::calculateImplicitSize()
         maxHeight = std::max(maxHeight, moreButtonInstance->implicitHeight());
     };
 
-    q->setImplicitSize(maxWidth, maxHeight);
+    q->setImplicitHeight(maxHeight);
+
     Q_EMIT q->hiddenActionsChanged();
 
     implicitSizeValid = true;
