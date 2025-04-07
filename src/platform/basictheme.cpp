@@ -9,6 +9,7 @@
 #include "styleselector.h"
 
 #include <QFile>
+#include <QFontDatabase>
 #include <QGuiApplication>
 
 #include "kirigamiplatform_logging.h"
@@ -23,8 +24,7 @@ BasicThemeDefinition::BasicThemeDefinition(QObject *parent)
 {
     defaultFont = qGuiApp->font();
 
-    smallFont = qGuiApp->font();
-    smallFont.setPointSize(smallFont.pointSize() - 2);
+    smallFont = QFontDatabase::systemFont(QFontDatabase::SmallestReadableFont);
 }
 
 void BasicThemeDefinition::syncToQml(PlatformTheme *object)

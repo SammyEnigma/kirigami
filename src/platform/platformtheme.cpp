@@ -10,6 +10,7 @@
 #include "platformpluginfactory.h"
 #include <QDebug>
 #include <QDir>
+#include <QFontDatabase>
 #include <QGuiApplication>
 #include <QPluginLoader>
 #include <QPointer>
@@ -107,7 +108,7 @@ public:
     std::array<QColor, ColorRoleCount> colors;
 
     QFont defaultFont;
-    QFont smallFont;
+    QFont smallFont = QFontDatabase::systemFont(QFontDatabase::SmallestReadableFont);
 
     QPalette palette;
 
