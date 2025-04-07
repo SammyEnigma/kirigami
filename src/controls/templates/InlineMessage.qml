@@ -216,13 +216,9 @@ T.Control {
 
         Accessible.ignored: true
 
-        readonly property real remainingWidth: width - (
-            icon.width
-            + label.anchors.leftMargin + label.implicitWidth + label.anchors.rightMargin
-            + (root.showCloseButton ? closeButton.width : 0)
-        )
+        readonly property real fixedContentWidth: icon.width + Kirigami.Units.smallSpacing * 3 + (root.showCloseButton ? closeButton.width + Kirigami.Units.smallSpacing : 0)
+        readonly property real remainingWidth: width - fixedContentWidth - label.implicitWidth
         readonly property bool multiline: remainingWidth <= 0 || atBottom
-
         readonly property bool atBottom: (root.actions.length > 0) && (label.lineCount > 1 || actionsLayout.implicitWidth > remainingWidth)
 
         Kirigami.Icon {
@@ -302,10 +298,10 @@ T.Control {
             anchors {
                 left: icon.right
                 leftMargin: Kirigami.Units.largeSpacing
-                right: root.showCloseButton ? closeButton.left : parent.right
-                rightMargin: root.showCloseButton ? Kirigami.Units.smallSpacing : 0
                 top: parent.top
             }
+
+            width: Math.min(parent.width - parent.fixedContentWidth, implicitWidth)
 
             color: Kirigami.Theme.textColor
             wrapMode: Text.WordWrap
@@ -358,12 +354,13 @@ T.Control {
             alignment: Qt.AlignRight
 
             anchors {
-                left: parent.left
                 top: contentLayout.atBottom ? label.bottom : parent.top
                 topMargin: contentLayout.atBottom ? Kirigami.Units.largeSpacing : 0
                 right: (!contentLayout.atBottom && root.showCloseButton) ? closeButton.left : parent.right
                 rightMargin: !contentLayout.atBottom && root.showCloseButton ? Kirigami.Units.smallSpacing : 0
             }
+
+            width: Math.min(implicitWidth, parent.width)
         }
 
         QQC2.ToolButton {
