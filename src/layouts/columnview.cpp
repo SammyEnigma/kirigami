@@ -59,7 +59,12 @@ QmlComponentsPool *QmlComponentsPoolSingleton::instance(QQmlEngine *engine)
 QmlComponentsPool::QmlComponentsPool(QQmlEngine *engine)
     : QObject(engine)
 {
+#ifdef KIRIGAMI_BUILD_TYPE_STATIC
+    QQmlComponent component(engine);
+    component.loadFromModule("org.kde.kirigami.layouts", "ColumnViewSeparator");
+#else
     QQmlComponent component(engine, QUrl(QStringLiteral("qrc:/ColumnViewSeparator.qml")));
+#endif
 
     m_instance = component.create();
 
