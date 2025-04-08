@@ -12,6 +12,7 @@
 #include <QQmlEngine>
 
 class PaintedRectangleItem;
+class ShaderNode;
 
 class BorderGroup : public QObject
 {
@@ -303,7 +304,10 @@ Q_SIGNALS:
 protected:
     PaintedRectangleItem *softwareItem() const;
     void itemChange(QQuickItem::ItemChange change, const QQuickItem::ItemChangeData &value) override;
+    bool isLowPowerRendering() const;
+
     QSGNode *updatePaintNode(QSGNode *node, QQuickItem::UpdatePaintNodeData *data) override;
+    void updateShaderNode(ShaderNode *shaderNode);
 
 private:
     void checkSoftwareItem();
