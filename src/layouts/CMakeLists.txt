@@ -32,10 +32,17 @@ target_sources(KirigamiLayouts PRIVATE
     ${LAYOUTRESOURCES}
 )
 
+if (NOT BUILD_SHARED_LIBS)
+ecm_target_qml_sources(KirigamiLayouts SOURCES
+    ColumnViewSeparator.qml
+    FormLayout.qml
+)
+else()
 ecm_target_qml_sources(KirigamiLayouts SOURCES
     # Don't add ColumnViewSeparator here as is private in a qrc
     FormLayout.qml
 )
+endif()
 
 set_target_properties(KirigamiLayouts PROPERTIES
     VERSION     ${PROJECT_VERSION}
