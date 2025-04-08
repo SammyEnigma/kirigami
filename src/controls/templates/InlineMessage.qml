@@ -300,6 +300,7 @@ T.Control {
                 left: icon.right
                 leftMargin: Kirigami.Units.largeSpacing
                 top: parent.top
+                bottom: parent.bottom
             }
 
             width: Math.min(parent.width - parent.fixedContentWidth, implicitWidth)
@@ -325,16 +326,6 @@ T.Control {
                     PropertyChanges {
                         target: label
                         height: label.implicitHeight
-                    }
-                },
-                // States are evaluated in the order they are declared.
-                // This is a fallback state.
-                State {
-                    name: "single-line"
-                    when: true
-                    AnchorChanges {
-                        target: label
-                        anchors.bottom: label.parent.bottom
                     }
                 }
             ]
@@ -368,31 +359,22 @@ T.Control {
 
             visible: root.showCloseButton
 
-            anchors.right: parent.right
+            anchors {
+                verticalCenter: parent.verticalCenter
+                right: parent.right
+            }
 
             // Incompatible anchors need to be evaluated in a given order,
             // which simple declarative bindings cannot assure
-            states: [
-                State {
-                    name: "onTop"
-                    when: contentLayout.atBottom
-                    AnchorChanges {
-                        target: closeButton
-                        anchors.top: parent.top
-                        anchors.verticalCenter: undefined
-                    }
-                } ,
-                State {
-                    name: "centered"
-                    AnchorChanges {
-                        target: closeButton
-                        anchors.top: undefined
-                        anchors.verticalCenter: parent.verticalCenter
-                    }
+            states: State {
+                name: "onTop"
+                when: contentLayout.atBottom
+                AnchorChanges {
+                    target: closeButton
+                    anchors.top: parent.top
+                    anchors.verticalCenter: undefined
                 }
-            ]
-
-            height: contentLayout.atBottom ? implicitHeight : implicitHeight
+            }
 
             text: qsTr("Close")
             display: QQC2.ToolButton.IconOnly
