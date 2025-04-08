@@ -207,10 +207,11 @@ T.Control {
         }
 
         implicitHeight: {
+            let maximumTopHeight = Math.max(label.implicitHeight, icon.implicitHeight, (root.showCloseButton ? closeButton.implicitHeight : 0))
             if (atBottom) {
-                return label.implicitHeight + actionsLayout.implicitHeight + actionsLayout.anchors.topMargin
+                return maximumTopHeight + actionsLayout.implicitHeight + Kirigami.Units.smallSpacing
             } else {
-                return Math.max(icon.implicitHeight, label.implicitHeight, closeButton.implicitHeight, actionsLayout.implicitHeight)
+                return Math.max(maximumTopHeight, actionsLayout.implicitHeight)
             }
         }
 
@@ -354,8 +355,7 @@ T.Control {
             alignment: Qt.AlignRight
 
             anchors {
-                top: contentLayout.atBottom ? label.bottom : parent.top
-                topMargin: contentLayout.atBottom ? Kirigami.Units.largeSpacing : 0
+                bottom: parent.bottom
                 right: (!contentLayout.atBottom && root.showCloseButton) ? closeButton.left : parent.right
                 rightMargin: !contentLayout.atBottom && root.showCloseButton ? Kirigami.Units.smallSpacing : 0
             }
