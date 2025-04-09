@@ -715,9 +715,21 @@ void ContentItem::updateVisibleItems()
             });
             attached->setInViewport(true);
             item->setEnabled(true);
+            if (attached->globalHeader()) {
+                attached->globalHeader()->setEnabled(true);
+            }
+            if (attached->globalFooter()) {
+                attached->globalFooter()->setEnabled(true);
+            }
         } else {
             attached->setInViewport(false);
             item->setEnabled(false);
+            if (attached->globalHeader()) {
+                attached->globalHeader()->setEnabled(false);
+            }
+            if (attached->globalFooter()) {
+                attached->globalFooter()->setEnabled(false);
+            }
         }
     }
 
