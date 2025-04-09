@@ -187,27 +187,27 @@ msgctxt "SelectableLabel|"
 msgid "Select All"
 msgstr "Tout sélectionner"
 
-#: controls/templates/InlineMessage.qml:288
+#: controls/templates/InlineMessage.qml:285
 msgctxt "InlineMessage|"
 msgid "Success"
 msgstr "Réussite"
 
-#: controls/templates/InlineMessage.qml:290
+#: controls/templates/InlineMessage.qml:287
 msgctxt "InlineMessage|"
 msgid "Warning"
 msgstr "Avertissement"
 
-#: controls/templates/InlineMessage.qml:292
+#: controls/templates/InlineMessage.qml:289
 msgctxt "InlineMessage|"
 msgid "Error"
 msgstr "Erreur"
 
-#: controls/templates/InlineMessage.qml:294
+#: controls/templates/InlineMessage.qml:291
 msgctxt "InlineMessage|"
 msgid "Note"
 msgstr "Remarque"
 
-#: controls/templates/InlineMessage.qml:400
+#: controls/templates/InlineMessage.qml:379
 msgctxt "InlineMessage|"
 msgid "Close"
 msgstr "Fermer"

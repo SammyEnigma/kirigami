@@ -184,27 +184,27 @@ msgctxt "SelectableLabel|"
 msgid "Select All"
 msgstr "Tümünü Seç"
 
-#: controls/templates/InlineMessage.qml:288
+#: controls/templates/InlineMessage.qml:285
 msgctxt "InlineMessage|"
 msgid "Success"
 msgstr "Başarılı"
 
-#: controls/templates/InlineMessage.qml:290
+#: controls/templates/InlineMessage.qml:287
 msgctxt "InlineMessage|"
 msgid "Warning"
 msgstr "Uyarı"
 
-#: controls/templates/InlineMessage.qml:292
+#: controls/templates/InlineMessage.qml:289
 msgctxt "InlineMessage|"
 msgid "Error"
 msgstr "Hata"
 
-#: controls/templates/InlineMessage.qml:294
+#: controls/templates/InlineMessage.qml:291
 msgctxt "InlineMessage|"
 msgid "Note"
 msgstr "Not"
 
-#: controls/templates/InlineMessage.qml:400
+#: controls/templates/InlineMessage.qml:379
 msgctxt "InlineMessage|"
 msgid "Close"
 msgstr "Kapat"

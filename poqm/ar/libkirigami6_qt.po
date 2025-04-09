@@ -184,27 +184,27 @@ msgctxt "SelectableLabel|"
 msgid "Select All"
 msgstr "حدّد الكلّ"
 
-#: controls/templates/InlineMessage.qml:288
+#: controls/templates/InlineMessage.qml:285
 msgctxt "InlineMessage|"
 msgid "Success"
 msgstr "اكتمل"
 
-#: controls/templates/InlineMessage.qml:290
+#: controls/templates/InlineMessage.qml:287
 msgctxt "InlineMessage|"
 msgid "Warning"
 msgstr "تحذير"
 
-#: controls/templates/InlineMessage.qml:292
+#: controls/templates/InlineMessage.qml:289
 msgctxt "InlineMessage|"
 msgid "Error"
 msgstr "خطأ"
 
-#: controls/templates/InlineMessage.qml:294
+#: controls/templates/InlineMessage.qml:291
 msgctxt "InlineMessage|"
 msgid "Note"
 msgstr "ملاحظة"
 
-#: controls/templates/InlineMessage.qml:400
+#: controls/templates/InlineMessage.qml:379
 msgctxt "InlineMessage|"
 msgid "Close"
 msgstr "أغلق"
