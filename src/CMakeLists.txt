@@ -282,6 +282,7 @@ if (NOT BUILD_SHARED_LIBS)
             KirigamiPrimitivesplugin
             KirigamiDialogsplugin
             KirigamiLayoutsplugin
+            KF6KirigamiLayoutsprivateplugin
             KirigamiPrivateplugin
     )
     # for tests to find this under the name it's actually installed with'
