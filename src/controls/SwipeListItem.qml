@@ -534,9 +534,12 @@ QQC2.SwipeDelegate {
 
                 action: modelData
                 display: T.AbstractButton.IconOnly
-                visible: actionsLayout.isActionVisible(action)
+                visible: {
+                    let newVisible = actionsLayout.isActionVisible(action)
+                    actionsLayout.updateVisibleActions(newVisible)
+                    return newVisible
+                }
 
-                onVisibleChanged: actionsLayout.updateVisibleActions(visible);
                 Component.onCompleted: actionsLayout.updateVisibleActions(visible);
                 Component.onDestruction: actionsLayout.updateVisibleActions(visible);
 
