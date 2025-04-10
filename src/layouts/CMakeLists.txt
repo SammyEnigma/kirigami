@@ -3,7 +3,7 @@ add_library(KirigamiLayoutsPrivate)
 ecm_add_qml_module(KirigamiLayoutsPrivate URI "org.kde.kirigami.layouts.private"
     VERSION 2.0
     GENERATE_PLUGIN_SOURCE
-    INSTALLED_PLUGIN_TARGET KF6KirigamiLayoutsprivateplugin
+    INSTALLED_PLUGIN_TARGET KF6KirigamiLayoutsPrivateplugin
     DEPENDENCIES QtQuick org.kde.kirigami.platform
 )
 
