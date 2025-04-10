@@ -186,7 +186,10 @@ T.Drawer {
 
     edge: Qt.LeftEdge
     modal: true
-    dim: modal
+    // Doesn't dim on isSidebarTransitioning to not flash a dark background
+    // see https://bugs.kde.org/502260
+    dim: modal && !__internal.isSidebarTransitioning
+
     QQC2.Overlay.modal: Rectangle {
         color: Qt.rgba(0, 0, 0, 0.35)
     }
@@ -200,6 +203,7 @@ T.Drawer {
     implicitHeight: contentHeight + topPadding + bottomPadding
 
     enter: Transition {
+        enabled: !__internal.isSidebarTransitioning
         SequentialAnimation {
             id: enterAnimation
             /* NOTE: why this? the running status of the enter transition is not relaible and
@@ -226,6 +230,7 @@ T.Drawer {
     }
 
     exit: Transition {
+        enabled: !__internal.isSidebarTransitioning
         SequentialAnimation {
             id: exitAnimation
             property bool animating
@@ -275,6 +280,11 @@ T.Drawer {
         if (modal) {
             collapsible = false;
         }
+        __internal.isSidebarTransitioning = true
+        if (modal) {
+            position = 0
+            drawerOpen = false
+        }
     }
 
     onPositionChanged: {
@@ -287,6 +297,10 @@ T.Drawer {
             visible = true
         } else {
             drawerOpen = visible;
+        }
+        if (__internal.isSidebarTransitioning) {
+            position = visible ? 1 : 0
+            __internal.isSidebarTransitioning = false
         }
     }
     onPeekingChanged:  {
@@ -332,6 +346,7 @@ T.Drawer {
     property QtObject __internal: QtObject {
         //here in order to not be accessible from outside
         property bool completed: false
+        property bool isSidebarTransitioning: false
         property SequentialAnimation positionResetAnim: SequentialAnimation {
             id: positionResetAnim
             property alias to: internalAnim.to

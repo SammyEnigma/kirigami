@@ -60,7 +60,9 @@ KT.OverlayDrawer {
                 Kirigami.Theme.inherit: false
                 color: root.handle.pressed ? Kirigami.Theme.highlightColor : Kirigami.Theme.backgroundColor
 
-                visible: !parent.parent.handleAnchor || !parent.parent.handleAnchor.visible || root.handle.pressed || (root.modal && root.position > 0)
+                visible: root.modal && (!parent.parent.handleAnchor || !parent.parent.handleAnchor.visible || root.handle.pressed || root.position > 0)
+                opacity: (parent.parent.handleAnchor && parent.parent.handleAnchor.visible) ? root.position : 1
+
 
                 shadow.color: Qt.rgba(0, 0, 0, root.handle.pressed ? 0.6 : 0.4)
                 shadow.yOffset: 1
