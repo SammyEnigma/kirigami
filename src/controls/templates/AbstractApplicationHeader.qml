@@ -35,8 +35,10 @@ Item {
 
     property int position: QQC2.ToolBar.Header
 
-    property Kirigami.PageRow pageRow: __appWindow?.pageStack ?? null
-    property Kirigami.Page page: pageRow?.currentItem as Kirigami.Page ?? null
+    // These properties are items due to issues with multiple engine type registration
+    // The stronger types can probably be used after we depend on Qt 6.9
+    property /*Kirigami.PageRow*/ Item pageRow: __appWindow?.pageStack ?? null
+    property /*Kirigami.Page*/ Item page: pageRow?.currentItem as Kirigami.Page ?? null
 
     default property alias contentItem: mainItem.data
     readonly property int paintedHeight: headerItem.y + headerItem.height - 1
