@@ -141,7 +141,8 @@ Item {
             when: !root.wideMode
             target: lay
             property: "width"
-            value: root.width
+            // Works out to 576px by default; any higher and it's not really very narrow!
+            value: Math.min(lay.implicitWidth, Kirigami.Units.gridUnit * 32)
             restoreMode: Binding.RestoreBinding
         }
         Binding {
@@ -151,10 +152,7 @@ Item {
             value: root.implicitWidth
             restoreMode: Binding.RestoreBinding
         }
-        anchors {
-            horizontalCenter: root.wideMode ? root.horizontalCenter : undefined
-            left: root.wideMode ? undefined : root.left
-        }
+        anchors.horizontalCenter: root.horizontalCenter
 
         property var reverseTwins: []
         property var knownItems: []
