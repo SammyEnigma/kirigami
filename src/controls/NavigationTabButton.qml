@@ -114,6 +114,11 @@ T.TabButton {
     padding: Kirigami.Units.smallSpacing
     spacing: Kirigami.Units.smallSpacing
 
+    leftInset: Kirigami.Units.smallSpacing
+    rightInset: Kirigami.Units.smallSpacing
+    topInset: Kirigami.Units.smallSpacing
+    bottomInset: Kirigami.Units.smallSpacing
+
     icon.height: display === T.AbstractButton.TextBesideIcon ? Kirigami.Units.iconSizes.small : Kirigami.Units.iconSizes.smallMedium
     icon.width: display === T.AbstractButton.TextBesideIcon ? Kirigami.Units.iconSizes.small : Kirigami.Units.iconSizes.smallMedium
     icon.color: checked ? __highlightForegroundColor : __foregroundColor
@@ -133,24 +138,16 @@ T.TabButton {
         Kirigami.Theme.colorSet: Kirigami.Theme.Button
         Kirigami.Theme.inherit: false
 
-        implicitHeight: (control.display === T.AbstractButton.TextBesideIcon) ? 0 : (Kirigami.Units.gridUnit * 3 + Kirigami.Units.smallSpacing * 2)
+        implicitHeight: control.display === T.AbstractButton.TextBesideIcon ? 0 : Kirigami.Units.gridUnit * 3
 
-        color: "transparent"
+        radius: Kirigami.Units.cornerRadius
+        color: control.down ? control.__pressedColor : (control.checked || control.hovered ? control.__hoverSelectColor : "transparent")
 
-        Rectangle {
-            width: parent.width - Kirigami.Units.largeSpacing
-            height: parent.height - Kirigami.Units.largeSpacing
-            anchors.centerIn: parent
+        border.color: control.visualFocus ? control.__checkedBorderColor : (control.down ? control.__pressedBorderColor : color)
+        border.width: 1
 
-            radius: Kirigami.Units.cornerRadius
-            color: control.down ? control.__pressedColor : (control.checked || control.hovered ? control.__hoverSelectColor : "transparent")
-
-            border.color: control.visualFocus ? control.__checkedBorderColor : (control.down ? control.__pressedBorderColor : color)
-            border.width: 1
-
-            Behavior on color { ColorAnimation { duration: Kirigami.Units.shortDuration } }
-            Behavior on border.color { ColorAnimation { duration: Kirigami.Units.shortDuration } }
-        }
+        Behavior on color { ColorAnimation { duration: Kirigami.Units.shortDuration } }
+        Behavior on border.color { ColorAnimation { duration: Kirigami.Units.shortDuration } }
     }
 
     contentItem: GridLayout {
