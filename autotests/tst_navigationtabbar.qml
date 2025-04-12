@@ -27,7 +27,9 @@ TestCase {
 
     Component {
         id: tActionComponent
-        T.Action {}
+        T.Action {
+            text: "Action"
+        }
     }
 
     Component {
@@ -125,5 +127,26 @@ TestCase {
             verify(bar instanceof Kirigami.NavigationTabBar);
             compare(bar.position, QQC2.ToolBar.Footer);
         }
+    }
+
+    SignalSpy {
+        id: actionTriggeredSpy
+        signalName: "triggered"
+    }
+
+    function test_mnemonics() {
+        const tabbar = createTemporaryObject(emptyComponent, this);
+
+        const action = createTemporaryObject(tActionComponent, this);
+
+        tabbar.actions = [action];
+
+        actionTriggeredSpy.target = action;
+
+        // action text "Action" should automatically get "A" mnemonic.
+        keyClick(Qt.Key_A, Qt.AltModifier);
+
+        actionTriggeredSpy.wait();
+        compare(actionTriggeredSpy.count, 1);
     }
 }
