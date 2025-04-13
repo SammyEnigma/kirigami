@@ -71,6 +71,7 @@ RowLayout {
         Layout.alignment: Qt.AlignVCenter
 
         text: root.dialog.title.length === 0 ? " " : root.dialog.title // always have text to ensure header height
+        textFormat: Text.PlainText
         elide: Text.ElideRight
 
         // use tooltip for long text that is elided
