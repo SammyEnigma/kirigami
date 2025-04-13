@@ -118,6 +118,10 @@ T.TabButton {
     icon.width: display === T.AbstractButton.TextBesideIcon ? Kirigami.Units.iconSizes.small : Kirigami.Units.iconSizes.smallMedium
     icon.color: checked ? __highlightForegroundColor : __foregroundColor
 
+    QQC2.ToolTip.text: (control.action instanceof Kirigami.Action) ? control.action.tooltip : ""
+    QQC2.ToolTip.visible: (Kirigami.Settings.tabletMode ? pressed : hovered) && QQC2.ToolTip.text.length > 0
+    QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
+
     Kirigami.MnemonicData.enabled: enabled && visible
     Kirigami.MnemonicData.controlType: Kirigami.MnemonicData.MenuItem
     Kirigami.MnemonicData.label: text
