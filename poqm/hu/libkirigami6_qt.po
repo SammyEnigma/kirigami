@@ -249,7 +249,7 @@ msgctxt "UrlButton|"
 msgid "Copy Link to Clipboard"
 msgstr "Hivatkozás másolása a vágólapra"
 
-#: dialogs/DialogHeaderTopContent.qml:89
+#: dialogs/DialogHeaderTopContent.qml:90
 #, fuzzy
 #| msgctxt "InlineMessage|"
 #| msgid "Close"

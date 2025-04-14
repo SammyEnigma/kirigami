@@ -248,7 +248,7 @@ msgctxt "UrlButton|"
 msgid "Copy Link to Clipboard"
 msgstr "Afrita tengil á klippispjald"
 
-#: dialogs/DialogHeaderTopContent.qml:89
+#: dialogs/DialogHeaderTopContent.qml:90
 #, fuzzy
 #| msgctxt "InlineMessage|"
 #| msgid "Close"

@@ -314,7 +314,7 @@ msgctxt "UrlButton|"
 msgid "Copy Link to Clipboard"
 msgstr ""
 
-#: dialogs/DialogHeaderTopContent.qml:89
+#: dialogs/DialogHeaderTopContent.qml:90
 #, fuzzy
 #| msgctxt "OverlayDrawer|"
 #| msgid "Close"

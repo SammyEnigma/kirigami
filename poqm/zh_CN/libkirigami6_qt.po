@@ -250,7 +250,7 @@ msgctxt "UrlButton|"
 msgid "Copy Link to Clipboard"
 msgstr "复制链接至剪贴板"
 
-#: dialogs/DialogHeaderTopContent.qml:89
+#: dialogs/DialogHeaderTopContent.qml:90
 msgctxt "DialogHeaderTopContent|@action:button close dialog"
 msgid "Close"
 msgstr "关闭"
