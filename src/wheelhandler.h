@@ -361,7 +361,6 @@ private Q_SLOTS:
 private:
     void classBegin() override;
     void componentComplete() override;
-    void initSmoothScrollDuration();
 
     void setScrolling(bool scrolling);
     bool scrollFlickable(QPointF pixelDelta, QPointF angleDelta = {}, Qt::KeyboardModifiers modifiers = Qt::NoModifier);

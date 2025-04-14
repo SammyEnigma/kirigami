@@ -388,23 +388,10 @@ void WheelHandler::classBegin()
     m_engine = qmlEngine(this);
     m_units = m_engine->singletonInstance<Kirigami::Platform::Units *>("org.kde.kirigami.platform", "Units");
     m_settings = m_engine->singletonInstance<Kirigami::Platform::Settings *>("org.kde.kirigami.platform", "Settings");
-    initSmoothScrollDuration();
-
-    connect(m_units, &Kirigami::Platform::Units::longDurationChanged, this, &WheelHandler::initSmoothScrollDuration);
-    connect(m_settings, &Kirigami::Platform::Settings::smoothScrollChanged, this, &WheelHandler::initSmoothScrollDuration);
 }
 
 void WheelHandler::componentComplete()
 {
-}
-
-void WheelHandler::initSmoothScrollDuration()
-{
-    if (m_settings->smoothScroll()) {
-        m_yScrollAnimation.setDuration(m_units->longDuration());
-    } else {
-        m_yScrollAnimation.setDuration(0);
-    }
 }
 
 void WheelHandler::setScrolling(bool scrolling)
@@ -514,11 +501,39 @@ bool WheelHandler::scrollFlickable(QPointF pixelDelta, QPointF angleDelta, Qt::K
         newContentY = std::round(newContentY * devicePixelRatio) / devicePixelRatio;
         if (contentY != newContentY) {
             scrolled = true;
-            if (m_wasTouched || !m_engine) {
-                m_flickable->setProperty("contentY", newContentY);
+            // Can't use wheelEvent->deviceType() to determine device type since
+            // on Wayland mouse is always regarded as touchpad:
+            // https://invent.kde.org/qt/qt/qtwayland/-/blob/e695a39519a7629c1549275a148cfb9ab99a07a9/src/client/qwaylandinputdevice.cpp#L445
+            // Mouse wheel can generate angle delta like 240, 360 and so on when
+            // scrolling very fast on some mice such as the Logitech M150.
+            // Mice with hi-res mouse wheels such as the Logitech MX Master 3 can
+            // generate angle deltas as small as 16.
+            // On X11, trackpads can also generate very fine angle deltas.
+            qreal refreshRate = window && window->screen() ? window->screen()->refreshRate() : 0;
+            if (m_settings->smoothScroll() && m_engine && refreshRate > 0) {
+                // Duration is based on the duration and movement for 120 angle delta.
+                // Shorten duration for smaller movements, limit duration for big movements.
+                // We don't want fine deltas to feel extra slow and fast scrolling should still feel fast.
+                // Minimum 3 frames for a 60hz display if delta > 2 physical pixels
+                // (start already rendered -> 1/3 rendered -> 2/3 rendered -> end rendered).
+                // Skip animation if <= 2 real frames for low refresh rate screens.
+                // Otherwise, we don't scale the duration based on refresh rate or
+                // device pixel ratio to avoid making the animation unexpectedly
+                // longer or shorter on different screens.
+                qreal absPixelDelta = std::abs(newContentY - contentY);
+                int duration = absPixelDelta * devicePixelRatio > 2 //
+                    ? std::clamp(qRound(absPixelDelta * m_units->longDuration() / m_verticalStepSize), qCeil(1000.0 / 60.0 * 3), m_units->longDuration())
+                    : 0;
+                m_yScrollAnimation.setDuration(duration <= qCeil(1000.0 / refreshRate * 2) ? 0 : duration);
+                if (m_yScrollAnimation.duration() > 0) {
+                    m_yScrollAnimation.setEndValue(newContentY);
+                    m_yScrollAnimation.start(QAbstractAnimation::KeepWhenStopped);
+                } else {
+                    m_flickable->setProperty("contentY", newContentY);
+                }
             } else {
-                m_yScrollAnimation.setEndValue(newContentY);
-                m_yScrollAnimation.start(QAbstractAnimation::KeepWhenStopped);
+                m_yScrollAnimation.setDuration(0);
+                m_flickable->setProperty("contentY", newContentY);
             }
         }
     }
@@ -602,13 +617,6 @@ bool WheelHandler::eventFilter(QObject *watched, QEvent *event)
         }
         QWheelEvent *wheelEvent = static_cast<QWheelEvent *>(event);
 
-        // Can't use wheelEvent->deviceType() to determine device type since on Wayland mouse is always regarded as touchpad
-        // https://invent.kde.org/qt/qt/qtwayland/-/blob/e695a39519a7629c1549275a148cfb9ab99a07a9/src/client/qwaylandinputdevice.cpp#L445
-        // and we can only expect a touchpad never generates the same angle delta as a mouse
-
-        // mouse wheel can also generate angle delta like 240, 360 and so on when scrolling very fast
-        // only checking wheelEvent->angleDelta().y() because we only animate for contentY
-        m_wasTouched = (std::abs(wheelEvent->angleDelta().y()) != 0 && std::abs(wheelEvent->angleDelta().y()) % 120 != 0);
         // NOTE: On X11 with libinput, pixelDelta is identical to angleDelta when using a mouse that shouldn't use pixelDelta.
         // If faulty pixelDelta, reset pixelDelta to (0,0).
         if (wheelEvent->pixelDelta() == wheelEvent->angleDelta()) {
