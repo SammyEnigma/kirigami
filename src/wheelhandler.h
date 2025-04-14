@@ -395,6 +395,7 @@ private:
 
     // Smooth scrolling
     QQmlEngine *m_engine = nullptr;
+    QPropertyAnimation m_xScrollAnimation{nullptr, "contentX"};
     QPropertyAnimation m_yScrollAnimation{nullptr, "contentY"};
     bool m_wasTouched = false;
 };

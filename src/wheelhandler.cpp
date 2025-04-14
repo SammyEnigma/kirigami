@@ -100,6 +100,7 @@ WheelHandler::WheelHandler(QObject *parent)
         setScrolling(false);
     });
 
+    m_xScrollAnimation.setEasingCurve(QEasingCurve::OutCubic);
     m_yScrollAnimation.setEasingCurve(QEasingCurve::OutCubic);
 
     connect(QGuiApplication::styleHints(), &QStyleHints::wheelScrollLinesChanged, this, [this](int scrollLines) {
@@ -144,6 +145,10 @@ void WheelHandler::setTarget(QQuickItem *target)
 
     m_flickable = target;
     m_filterItem->setParentItem(target);
+    if (m_xScrollAnimation.targetObject()) {
+        m_xScrollAnimation.stop();
+    }
+    m_xScrollAnimation.setTargetObject(target);
     if (m_yScrollAnimation.targetObject()) {
         m_yScrollAnimation.stop();
     }
@@ -427,7 +432,9 @@ bool WheelHandler::scrollFlickable(QPointF pixelDelta, QPointF angleDelta, Qt::K
     const qreal pageWidth = width - leftMargin - rightMargin;
     const qreal pageHeight = height - topMargin - bottomMargin;
     const auto window = m_flickable->window();
+    const auto screen = window ? window->screen() : nullptr;
     const qreal devicePixelRatio = window != nullptr ? window->devicePixelRatio() : qGuiApp->devicePixelRatio();
+    const qreal refreshRate = screen ? screen->refreshRate() : 0;
 
     // HACK: Only transpose deltas when not using xcb in order to not conflict with xcb's own delta transposing
     if (modifiers & m_defaultHorizontalScrollModifiers && qGuiApp->platformName() != QLatin1String("xcb")) {
@@ -437,106 +444,101 @@ bool WheelHandler::scrollFlickable(QPointF pixelDelta, QPointF angleDelta, Qt::K
 
     const qreal xTicks = angleDelta.x() / 120;
     const qreal yTicks = angleDelta.y() / 120;
-    qreal xChange;
-    qreal yChange;
     bool scrolled = false;
 
-    // Scroll X
-    if (contentWidth > pageWidth) {
+    auto getChange = [pageScrollModifiers = modifiers & m_pageScrollModifiers](qreal ticks, qreal pixelDelta, qreal stepSize, qreal pageSize) {
         // Use page size with pageScrollModifiers. Matches QScrollBar, which uses QAbstractSlider behavior.
-        if (modifiers & m_pageScrollModifiers) {
-            xChange = qBound(-pageWidth, xTicks * pageWidth, pageWidth);
-        } else if (pixelDelta.x() != 0) {
-            xChange = pixelDelta.x();
+        if (pageScrollModifiers) {
+            return qBound(-pageSize, ticks * pageSize, pageSize);
+        } else if (pixelDelta != 0) {
+            return pixelDelta;
         } else {
-            xChange = xTicks * m_horizontalStepSize;
+            return ticks * stepSize;
+        }
+    };
+
+    auto getPosition = [devicePixelRatio](qreal size,
+                                          qreal contentSize,
+                                          qreal contentPos,
+                                          qreal originPos,
+                                          qreal pageSize,
+                                          qreal leadingMargin,
+                                          qreal trailingMargin,
+                                          qreal change,
+                                          const QPropertyAnimation &animation) {
+        if (contentSize <= pageSize) {
+            return contentPos;
         }
 
         // contentX and contentY use reversed signs from what x and y would normally use, so flip the signs
 
-        qreal minXExtent = leftMargin - originX;
-        qreal maxXExtent = width - (contentWidth + rightMargin + originX);
+        qreal minExtent = leadingMargin - originPos;
+        qreal maxExtent = size - (contentSize + trailingMargin + originPos);
 
-        qreal newContentX = qBound(-minXExtent, contentX - xChange, -maxXExtent);
-        // Flickable::pixelAligned rounds the position, so round to mimic that behavior.
-        // Rounding prevents fractional positioning from causing text to be
-        // clipped off on the top and bottom.
-        // Multiply by devicePixelRatio before rounding and divide by devicePixelRatio
-        // after to make position match pixels on the screen more closely.
-        newContentX = std::round(newContentX * devicePixelRatio) / devicePixelRatio;
-        if (contentX != newContentX) {
-            scrolled = true;
-            m_flickable->setProperty("contentX", newContentX);
-        }
-    }
-
-    // Scroll Y
-    if (contentHeight > pageHeight) {
-        if (modifiers & m_pageScrollModifiers) {
-            yChange = qBound(-pageHeight, yTicks * pageHeight, pageHeight);
-        } else if (pixelDelta.y() != 0) {
-            yChange = pixelDelta.y();
-        } else {
-            yChange = yTicks * m_verticalStepSize;
-        }
-
-        // contentX and contentY use reversed signs from what x and y would normally use, so flip the signs
-
-        qreal minYExtent = topMargin - originY;
-        qreal maxYExtent = height - (contentHeight + bottomMargin + originY);
-
-        qreal newContentY;
-        if (m_yScrollAnimation.state() == QPropertyAnimation::Running) {
-            m_yScrollAnimation.stop();
-            newContentY = std::clamp(m_yScrollAnimation.endValue().toReal() + -yChange, -minYExtent, -maxYExtent);
-        } else {
-            newContentY = std::clamp(contentY - yChange, -minYExtent, -maxYExtent);
-        }
+        qreal newContentPos =
+            std::clamp((animation.state() == QPropertyAnimation::Running ? animation.endValue().toReal() : contentPos) - change, -minExtent, -maxExtent);
 
         // Flickable::pixelAligned rounds the position, so round to mimic that behavior.
         // Rounding prevents fractional positioning from causing text to be
         // clipped off on the top and bottom.
         // Multiply by devicePixelRatio before rounding and divide by devicePixelRatio
         // after to make position match pixels on the screen more closely.
-        newContentY = std::round(newContentY * devicePixelRatio) / devicePixelRatio;
-        if (contentY != newContentY) {
-            scrolled = true;
-            // Can't use wheelEvent->deviceType() to determine device type since
-            // on Wayland mouse is always regarded as touchpad:
-            // https://invent.kde.org/qt/qt/qtwayland/-/blob/e695a39519a7629c1549275a148cfb9ab99a07a9/src/client/qwaylandinputdevice.cpp#L445
-            // Mouse wheel can generate angle delta like 240, 360 and so on when
-            // scrolling very fast on some mice such as the Logitech M150.
-            // Mice with hi-res mouse wheels such as the Logitech MX Master 3 can
-            // generate angle deltas as small as 16.
-            // On X11, trackpads can also generate very fine angle deltas.
-            qreal refreshRate = window && window->screen() ? window->screen()->refreshRate() : 0;
-            if (m_settings->smoothScroll() && m_engine && refreshRate > 0) {
-                // Duration is based on the duration and movement for 120 angle delta.
-                // Shorten duration for smaller movements, limit duration for big movements.
-                // We don't want fine deltas to feel extra slow and fast scrolling should still feel fast.
-                // Minimum 3 frames for a 60hz display if delta > 2 physical pixels
-                // (start already rendered -> 1/3 rendered -> 2/3 rendered -> end rendered).
-                // Skip animation if <= 2 real frames for low refresh rate screens.
-                // Otherwise, we don't scale the duration based on refresh rate or
-                // device pixel ratio to avoid making the animation unexpectedly
-                // longer or shorter on different screens.
-                qreal absPixelDelta = std::abs(newContentY - contentY);
-                int duration = absPixelDelta * devicePixelRatio > 2 //
-                    ? std::clamp(qRound(absPixelDelta * m_units->longDuration() / m_verticalStepSize), qCeil(1000.0 / 60.0 * 3), m_units->longDuration())
-                    : 0;
-                m_yScrollAnimation.setDuration(duration <= qCeil(1000.0 / refreshRate * 2) ? 0 : duration);
-                if (m_yScrollAnimation.duration() > 0) {
-                    m_yScrollAnimation.setEndValue(newContentY);
-                    m_yScrollAnimation.start(QAbstractAnimation::KeepWhenStopped);
-                } else {
-                    m_flickable->setProperty("contentY", newContentY);
-                }
-            } else {
-                m_yScrollAnimation.setDuration(0);
-                m_flickable->setProperty("contentY", newContentY);
-            }
+        return std::round(newContentPos * devicePixelRatio) / devicePixelRatio;
+    };
+
+    auto setPosition = [this, devicePixelRatio, refreshRate](qreal oldPos, qreal newPos, qreal stepSize, const char *property, QPropertyAnimation &animation) {
+        animation.stop();
+        if (oldPos == newPos) {
+            return false;
         }
-    }
+        if (!m_settings->smoothScroll() || !m_engine || refreshRate <= 0) {
+            animation.setDuration(0);
+            m_flickable->setProperty(property, newPos);
+            return true;
+        }
+
+        // Can't use wheelEvent->deviceType() to determine device type since
+        // on Wayland mouse is always regarded as touchpad:
+        // https://invent.kde.org/qt/qt/qtwayland/-/blob/e695a39519a7629c1549275a148cfb9ab99a07a9/src/client/qwaylandinputdevice.cpp#L445
+        // Mouse wheel can generate angle delta like 240, 360 and so on when
+        // scrolling very fast on some mice such as the Logitech M150.
+        // Mice with hi-res mouse wheels such as the Logitech MX Master 3 can
+        // generate angle deltas as small as 16.
+        // On X11, trackpads can also generate very fine angle deltas.
+
+        // Duration is based on the duration and movement for 120 angle delta.
+        // Shorten duration for smaller movements, limit duration for big movements.
+        // We don't want fine deltas to feel extra slow and fast scrolling should still feel fast.
+        // Minimum 3 frames for a 60hz display if delta > 2 physical pixels
+        // (start already rendered -> 1/3 rendered -> 2/3 rendered -> end rendered).
+        // Skip animation if <= 2 real frames for low refresh rate screens.
+        // Otherwise, we don't scale the duration based on refresh rate or
+        // device pixel ratio to avoid making the animation unexpectedly
+        // longer or shorter on different screens.
+
+        qreal absPixelDelta = std::abs(newPos - oldPos);
+        int duration = absPixelDelta * devicePixelRatio > 2 //
+            ? std::clamp(qRound(absPixelDelta * m_units->longDuration() / stepSize), qCeil(1000.0 / 60.0 * 3), m_units->longDuration())
+            : 0;
+        animation.setDuration(duration <= qCeil(1000.0 / refreshRate * 2) ? 0 : duration);
+        if (animation.duration() > 0) {
+            animation.setEndValue(newPos);
+            animation.start(QAbstractAnimation::KeepWhenStopped);
+        } else {
+            m_flickable->setProperty(property, newPos);
+        }
+        return true;
+    };
+
+    qreal xChange = getChange(xTicks, pixelDelta.x(), m_horizontalStepSize, pageWidth);
+    qreal newContentX = getPosition(width, contentWidth, contentX, originX, pageWidth, leftMargin, rightMargin, xChange, m_xScrollAnimation);
+
+    qreal yChange = getChange(yTicks, pixelDelta.y(), m_verticalStepSize, pageHeight);
+    qreal newContentY = getPosition(height, contentHeight, contentY, originY, pageHeight, topMargin, bottomMargin, yChange, m_yScrollAnimation);
+
+    // Don't use `||` because we need the position to be set for contentX and contentY.
+    scrolled |= setPosition(contentX, newContentX, m_horizontalStepSize, "contentX", m_xScrollAnimation);
+    scrolled |= setPosition(contentY, newContentY, m_verticalStepSize, "contentY", m_yScrollAnimation);
 
     return scrolled;
 }
