@@ -1149,28 +1149,4 @@ QT.Control {
             }
         }
     }
-
-    Rectangle {
-        anchors.bottom: parent.bottom
-        height: Kirigami.Units.smallSpacing
-        x: (columnView.width - width) * (columnView.contentX / (columnView.contentWidth - columnView.width))
-        width: columnView.width * (columnView.width/columnView.contentWidth)
-        color: Kirigami.Theme.textColor
-        opacity: 0
-        onXChanged: {
-            opacity = 0.3
-            scrollIndicatorTimer.restart();
-        }
-        Behavior on opacity {
-            OpacityAnimator {
-                duration: Kirigami.Units.longDuration
-                easing.type: Easing.InOutQuad
-            }
-        }
-        Timer {
-            id: scrollIndicatorTimer
-            interval: Kirigami.Units.longDuration * 4
-            onTriggered: parent.opacity = 0;
-        }
-    }
 }
