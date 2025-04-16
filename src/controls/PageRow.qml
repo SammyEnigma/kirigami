@@ -655,184 +655,39 @@ QT.Control {
     }
 
     QQC2.StackView {
-        id: layerToolbarStack
-        anchors {
-            left: parent.left
-            top: parent.top
-            right: parent.right
-        }
-        z: 100 // 100 is layersStack.z + 1
-        height: currentItem?.implicitHeight ?? 0
-        initialItem: Item {implicitHeight: 0}
-
-        Component {
-            id: emptyToolbar
-            Item {
-                implicitHeight: 0
-            }
-        }
-        popEnter: Transition {
-            OpacityAnimator {
-                from: 0
-                to: 1
-                duration: Kirigami.Units.longDuration
-                easing.type: Easing.InOutCubic
-            }
-        }
-        popExit: Transition {
-            OpacityAnimator {
-                from: 1
-                to: 0
-                duration: Kirigami.Units.longDuration
-                easing.type: Easing.InOutCubic
-            }
-        }
-        pushEnter: Transition {
-            OpacityAnimator {
-                from: 0
-                to: 1
-                duration: Kirigami.Units.longDuration
-                easing.type: Easing.InOutCubic
-            }
-        }
-        pushExit: Transition {
-            OpacityAnimator {
-                from: 1
-                to: 0
-                duration: Kirigami.Units.longDuration
-                easing.type: Easing.InOutCubic
-            }
-        }
-        replaceEnter: Transition {
-            OpacityAnimator {
-                from: 0
-                to: 1
-                duration: Kirigami.Units.longDuration
-                easing.type: Easing.InOutCubic
-            }
-        }
-        replaceExit: Transition {
-            OpacityAnimator {
-                from: 1
-                to: 0
-                duration: Kirigami.Units.longDuration
-                easing.type: Easing.InOutCubic
-            }
-        }
-    }
-
-    QQC2.StackView {
-        id: layerFooterStack
-        anchors {
-            left: parent.left
-            bottom: parent.bottom
-            right: parent.right
-        }
-        z: 100 // 100 is layersStack.z + 1
-        height: currentItem?.implicitHeight ?? 0
-        initialItem: Item {implicitHeight: 0}
-
-        popEnter: Transition {
-            OpacityAnimator {
-                from: 0
-                to: 1
-                duration: Kirigami.Units.longDuration
-                easing.type: Easing.InOutCubic
-            }
-        }
-        popExit: Transition {
-            OpacityAnimator {
-                from: 1
-                to: 0
-                duration: Kirigami.Units.longDuration
-                easing.type: Easing.InOutCubic
-            }
-        }
-        pushEnter: Transition {
-            OpacityAnimator {
-                from: 0
-                to: 1
-                duration: Kirigami.Units.longDuration
-                easing.type: Easing.InOutCubic
-            }
-        }
-        pushExit: Transition {
-            OpacityAnimator {
-                from: 1
-                to: 0
-                duration: Kirigami.Units.longDuration
-                easing.type: Easing.InOutCubic
-            }
-        }
-        replaceEnter: Transition {
-            OpacityAnimator {
-                from: 0
-                to: 1
-                duration: Kirigami.Units.longDuration
-                easing.type: Easing.InOutCubic
-            }
-        }
-        replaceExit: Transition {
-            OpacityAnimator {
-                from: 1
-                to: 0
-                duration: Kirigami.Units.longDuration
-                easing.type: Easing.InOutCubic
-            }
-        }
-    }
-
-    QQC2.StackView {
         id: layersStack
         z: 99
         anchors {
             left: parent.left
-            top: layerToolbarStack.bottom
+            top: parent.top
             right: parent.right
-            bottom: layerFooterStack.top
+            bottom: parent.bottom
+            topMargin: depth < 2
+                        ? globalToolBarUI.height
+                        : currentItem.Kirigami.ColumnView.globalHeader?.height ?? 0
+            bottomMargin: currentItem.Kirigami.ColumnView.globalFooter?.height ?? 0
         }
         // placeholder as initial item
         initialItem: columnViewLayout
 
         onDepthChanged: {
+            if (depth < 2) {
+                return;
+            }
             let item = layersStack.get(depth - 1)
 
-            if (layerToolbarStack.depth > depth) {
-                while (layerToolbarStack.depth > depth) {
-                    layerToolbarStack.pop();
-                }
-            } else if (layerToolbarStack.depth < depth) {
-                for (let i = layerToolbarStack.depth; i < depth; ++i) {
-                    const toolBar = layersStack.get(i).Kirigami.ColumnView.globalHeader;
-                    layerToolbarStack.push(toolBar || emptyToolbar);
-                }
-            }
-            let toolBarItem = layerToolbarStack.get(layerToolbarStack.depth - 1)
-            if (item.Kirigami.ColumnView.globalHeader != toolBarItem) {
-                const toolBar = item.Kirigami.ColumnView.globalHeader;
-                layerToolbarStack.replace(toolBar ?? emptyToolbar);
-            }
-            // WORKAROUND: the second time the transition on opacity doesn't seem to be executed
-            toolBarItem = layerToolbarStack.get(layerToolbarStack.depth - 1)
-            toolBarItem.opacity = 1;
+            // For layers reparent the global header to the page
+            const header = item.Kirigami.ColumnView.globalHeader
+            header.parent = item
+            header.anchors.bottom = item.top
+            header.anchors.left = item.left
+            header.anchors.right = item.right
 
-            if (layerFooterStack.depth > depth) {
-                while (layerFooterStack.depth > depth) {
-                    layerFooterStack.pop();
-                }
-            } else if (layerFooterStack.depth < depth) {
-                for (let i = layerFooterStack.depth; i < depth; ++i) {
-                    const footer = layersStack.get(i).Kirigami.ColumnView.globalFooter;
-                    layerFooterStack.push(footer ?? emptyToolbar);
-                }
-            }
-            let footerItem = layerFooterStack.get(layerFooterStack.depth - 1)
-            if (item.Kirigami.ColumnView.globalHeader != footerItem) {
-                const footer = item.Kirigami.ColumnView.globalFooter;
-                layerFooterStack.replace(footer ?? emptyToolbar);
-            }
-            footerItem = layerFooterStack.get(layerFooterStack.depth - 1)
-            footerItem.opacity = 1;
+            const footer = item.Kirigami.ColumnView.globalFooter
+            footer.parent = item
+            footer.anchors.top = item.bottom
+            footer.anchors.left = item.left
+            footer.anchors.right = item.right
         }
 
         function clear(): void {
@@ -844,11 +699,8 @@ QT.Control {
         }
 
         popEnter: Transition {
-            OpacityAnimator {
-                from: 0
-                to: 1
+            PauseAnimation {
                 duration: Kirigami.Units.longDuration
-                easing.type: Easing.InOutCubic
             }
         }
         popExit: Transition {
@@ -888,12 +740,10 @@ QT.Control {
         }
 
 
+
         pushExit: Transition {
-            OpacityAnimator {
-                from: 1
-                to: 0
+            PauseAnimation {
                 duration: Kirigami.Units.longDuration
-                easing.type: Easing.InOutCubic
             }
         }
 
@@ -1095,55 +945,60 @@ QT.Control {
         }
     }
 
-    RowLayout {
-        id: columnViewLayout
-        spacing: 1
-        readonly property alias columnView: columnView
-        // set the pagestack of this and all children to root, otherwise
-        // they would automatically resolve to the layer's stackview
-        Kirigami.PageStack.pageStack: root
-        anchors {
-            fill: parent
-            topMargin: -layersStack.y
-        }
-        QQC2.Control {
-            id: sidebarControl
-            Layout.fillHeight: true
-            visible: contentItem !== null
-            leftPadding: root.leftSidebar ? root.leftSidebar.leftPadding : 0
-            topPadding: root.leftSidebar ? root.leftSidebar.topPadding : 0
-            rightPadding: root.leftSidebar ? root.leftSidebar.rightPadding : 0
-            bottomPadding: root.leftSidebar ? root.leftSidebar.bottomPadding : 0
-        }
-        Kirigami.ColumnView {
-            id: columnView
-            Layout.fillWidth: true
-            Layout.fillHeight: true
+    Item {
+        RowLayout {
+            id: columnViewLayout
+            anchors {
+                fill: parent
+                // Use this instead Layout.topMargin in RowLayout seems to be unreliable
+                topMargin: -layersStack.y
+            }
+            spacing: 1
+            readonly property alias columnView: columnView
+            // set the pagestack of this and all children to root, otherwise
+            // they would automatically resolve to the layer's stackview
+            Kirigami.PageStack.pageStack: root
 
-            topPadding: globalToolBarUI.item && globalToolBarUI.item.breadcrumbVisible
-                        ? globalToolBarUI.height : 0
+            QQC2.Control {
+                id: sidebarControl
+                Layout.fillHeight: true
+                visible: contentItem !== null
+                leftPadding: root.leftSidebar ? root.leftSidebar.leftPadding : 0
+                topPadding: root.leftSidebar ? root.leftSidebar.topPadding : 0
+                rightPadding: root.leftSidebar ? root.leftSidebar.rightPadding : 0
+                bottomPadding: root.leftSidebar ? root.leftSidebar.bottomPadding : 0
+            }
 
-            // Internal hidden api for Page
-            readonly property Item __pageRow: root
-            acceptsMouse: Kirigami.Settings.isMobile
-            columnResizeMode: root.wideMode ? Kirigami.ColumnView.FixedColumns : Kirigami.ColumnView.SingleColumn
-            columnWidth: root.defaultColumnWidth
-            interactive: Qt.platform.os !== 'android'
+            Kirigami.ColumnView {
+                id: columnView
+                Layout.fillWidth: true
+                Layout.fillHeight: true
 
-            onItemInserted: (position, item) => root.pageInserted(position, item);
-            onItemRemoved: item => root.pageRemoved(item);
+                topPadding: globalToolBarUI.item && globalToolBarUI.item.breadcrumbVisible
+                            ? globalToolBarUI.height : 0
 
-            onVisibleItemsChanged: {
-                // implementation of `popHiddenPages` option
-                if (root.popHiddenPages) {
-                    // manually fetch lastItem here rather than use root.lastItem property, since that binding may not have updated yet
-                    let lastItem = columnView.contentChildren[columnView.contentChildren.length - 1];
-                    let trailingVisibleItem = columnView.trailingVisibleItem;
+                // Internal hidden api for Page
+                readonly property Item __pageRow: root
+                acceptsMouse: Kirigami.Settings.isMobile
+                columnResizeMode: root.wideMode ? Kirigami.ColumnView.FixedColumns : Kirigami.ColumnView.SingleColumn
+                columnWidth: root.defaultColumnWidth
+                interactive: Qt.platform.os !== 'android'
 
-                    // pop every page that isn't visible and at the top of the stack
-                    while (lastItem && columnView.trailingVisibleItem &&
-                        lastItem !== columnView.trailingVisibleItem && columnView.containsItem(lastItem)) {
-                        root.pop();
+                onItemInserted: (position, item) => root.pageInserted(position, item);
+                onItemRemoved: item => root.pageRemoved(item);
+
+                onVisibleItemsChanged: {
+                    // implementation of `popHiddenPages` option
+                    if (root.popHiddenPages) {
+                        // manually fetch lastItem here rather than use root.lastItem property, since that binding may not have updated yet
+                        let lastItem = columnView.contentChildren[columnView.contentChildren.length - 1];
+                        let trailingVisibleItem = columnView.trailingVisibleItem;
+
+                        // pop every page that isn't visible and at the top of the stack
+                        while (lastItem && columnView.trailingVisibleItem &&
+                            lastItem !== columnView.trailingVisibleItem && columnView.containsItem(lastItem)) {
+                            root.pop();
+                        }
                     }
                 }
             }
