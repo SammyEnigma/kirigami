@@ -286,7 +286,7 @@ QQC2.ApplicationWindow {
     // This is needed because discover in mobile mode does not
     // close with the global drawer open.
     Shortcut {
-        sequence: root.quitAction.shortcut
+        sequences: [root.quitAction.shortcut]
         enabled: root.quitAction.enabled
         context: Qt.ApplicationShortcut
         onActivated: root.close();
