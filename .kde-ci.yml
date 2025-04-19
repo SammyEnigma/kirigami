@@ -5,6 +5,7 @@ Dependencies:
 
 Options:
  test-before-installing: True
+ tests-run-in-parallel: True
  require-passing-tests-on: ['Linux', 'FreeBSD', 'Windows']
  cmake-options: -DBUILD_EXAMPLES=ON
  cppcheck-ignore-files: ['templates/']

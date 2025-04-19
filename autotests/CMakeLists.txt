@@ -85,3 +85,11 @@ set_tests_properties(
     PROPERTIES
         ENVIRONMENT "QT_QUICK_CONTROLS_MOBILE=1"
 )
+
+set_tests_properties(
+    tst_navigationtabbar.qml
+    wheelhandler/tst_scrolling.qml
+
+    PROPERTIES
+        RUN_SERIAL ON
+)
