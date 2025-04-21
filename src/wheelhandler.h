@@ -370,6 +370,7 @@ private:
     QPointer<QQuickItem> m_flickable;
     QPointer<QQuickItem> m_verticalScrollBar;
     QPointer<QQuickItem> m_horizontalScrollBar;
+    QPointer<QQuickItem> m_scrollView;
     QMetaObject::Connection m_verticalChangedConnection;
     QMetaObject::Connection m_horizontalChangedConnection;
     QPointer<QQuickItem> m_filterItem;

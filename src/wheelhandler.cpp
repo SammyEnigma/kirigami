@@ -203,8 +203,15 @@ void WheelHandler::_k_rebindScrollBars()
         // We need to check if the parent inherits QQuickScrollView in case the
         // parent is another Flickable that already has a Kirigami WheelHandler.
         auto flickableParent = m_flickable->parentItem();
+        if (m_scrollView && m_scrollView != flickableParent) {
+            m_scrollView->removeEventFilter(this);
+        }
         if (flickableParent && flickableParent->inherits("QQuickScrollView")) {
-            const auto siblings = flickableParent->children();
+            if (m_scrollView != flickableParent) {
+                m_scrollView = flickableParent;
+                m_scrollView->installEventFilter(this);
+            }
+            const auto siblings = m_scrollView->children();
             for (const auto child : siblings) {
                 if (child->inherits("QQuickScrollBarAttached")) {
                     attachedToScrollView.attached = child;
