@@ -16,6 +16,7 @@ QQC2.ApplicationWindow {
     Flickable {
         id: flickable
         anchors.fill: parent
+        focus: true
         implicitWidth: wheelHandler.horizontalStepSize * 10 + leftMargin + rightMargin
         implicitHeight: wheelHandler.verticalStepSize * 10 + topMargin + bottomMargin
 

@@ -23,6 +23,7 @@ T.ScrollView {
         Kirigami.WheelHandler {
             id: wheelHandler
             target: control.contentItem
+            keyNavigationEnabled: true
         }
     ]
 

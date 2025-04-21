@@ -16,6 +16,7 @@ QQC2.ApplicationWindow {
     visible: true
     ScrollView {
         id: scrollView
+        focus: true
         anchors.fill: parent
         Grid {
             columns: Math.sqrt(visibleChildren.length)
@@ -42,12 +43,14 @@ QQC2.ApplicationWindow {
                     wrapMode: Text.Wrap
                 }
                 checked: true
+                checkable: true
             }
             QQC2.Slider {
                 id: slider
                 enabled: enableSliderButton.checked
                 width: 20 * Qt.styleHints.wheelScrollLines
                 height: 20 * Qt.styleHints.wheelScrollLines
+                wheelEnabled: true
             }
             Repeater {
                 model: 500
