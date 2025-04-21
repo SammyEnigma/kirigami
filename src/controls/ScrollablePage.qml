@@ -250,15 +250,6 @@ Kirigami.Page {
             id: scrollingArea
             width: root.horizontalScrollBarPolicy === QQC2.ScrollBar.AlwaysOff ? root.flickable.width : Math.max(root.flickable.width, implicitWidth)
             height: Math.max(root.flickable.height, implicitHeight)
-            implicitWidth: {
-                let implicit = 0;
-                for (const child of itemsParent.visibleChildren) {
-                    if (child.implicitWidth > 0) {
-                        implicit = Math.max(implicit, child.implicitWidth);
-                    }
-                }
-                return implicit + itemsParent.anchors.leftMargin + itemsParent.anchors.rightMargin;
-            }
             implicitHeight: {
                 let implicit = 0;
                 for (const child of itemsParent.visibleChildren) {
@@ -349,7 +340,6 @@ Kirigami.Page {
             scrollingArea.parent = root.flickable.contentItem;
             scrollingArea.visible = true;
             root.flickable.contentHeight = Qt.binding(() => scrollingArea.implicitHeight - root.flickable.topMargin - root.flickable.bottomMargin);
-            root.flickable.contentWidth = Qt.binding(() => scrollingArea.implicitWidth);
             scrollView.forceActiveFocus(Qt.TabFocusReason); // QTBUG-44043 : Focus on currentItem instead of pageStack itself
         }
         root.flickable.flickableDirection = Flickable.VerticalFlick;
