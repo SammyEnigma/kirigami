@@ -9,69 +9,71 @@ import QtTest
 
 TestCase {
     id: root
+    readonly property Kirigami.WheelHandler wheelHandler: loader.item.wheelHandler
+    readonly property Flickable flickable: (loader.item instanceof ScrollView) ? loader.item.contentItem : loader.item
+    readonly property Item inputItem: flickable
     readonly property real hstep: wheelHandler.horizontalStepSize
     readonly property real vstep: wheelHandler.verticalStepSize
     readonly property real pageWidth: flickable.width - flickable.leftMargin - flickable.rightMargin
     readonly property real pageHeight: flickable.height - flickable.topMargin - flickable.bottomMargin
     readonly property real contentWidth: flickable.contentWidth
     readonly property real contentHeight: flickable.contentHeight
-    property alias wheelHandler: wheelHandler
-    property alias flickable: flickable
+    readonly property real leftMargin: (loader.item instanceof ScrollView) ? loader.item.leftPadding : loader.item.leftMargin
 
     name: "WheelHandler scrolling"
     visible: true
     when: windowShown
-    width: flickable.implicitWidth
-    height: flickable.implicitHeight
+    width: loader.implicitWidth
+    height: loader.implicitHeight
 
     function wheelScrolling(angleDelta = 120) {
         let x = flickable.contentX
         let y = flickable.contentY
         const angleDeltaFactor = angleDelta / 120
-        mouseWheel(flickable, flickable.leftMargin, 0, -angleDelta, -angleDelta, Qt.NoButton)
+        mouseWheel(inputItem, leftMargin, 0, -angleDelta, -angleDelta, Qt.NoButton)
         tryCompare(flickable, "contentX", Math.round(x + hstep * angleDeltaFactor), Kirigami.Units.longDuration * 2, "+xTick")
         x = flickable.contentX
         tryCompare(flickable, "contentY", Math.round(y + vstep * angleDeltaFactor), Kirigami.Units.longDuration * 2, "+yTick")
         y = flickable.contentY
 
-        mouseWheel(flickable, flickable.leftMargin, 0, angleDelta, angleDelta, Qt.NoButton)
+        mouseWheel(inputItem, leftMargin, 0, angleDelta, angleDelta, Qt.NoButton)
         tryCompare(flickable, "contentX", Math.round(x - hstep * angleDeltaFactor), Kirigami.Units.longDuration * 2, "-xTick")
         x = flickable.contentX
         tryCompare(flickable, "contentY", Math.round(y - vstep * angleDeltaFactor), Kirigami.Units.longDuration * 2, "-yTick")
         y = flickable.contentY
 
         if (Qt.platform.pluginName !== "xcb") {
-            mouseWheel(flickable, flickable.leftMargin, 0, 0, -angleDelta, Qt.NoButton, Qt.AltModifier)
+            mouseWheel(inputItem, leftMargin, 0, 0, -angleDelta, Qt.NoButton, Qt.AltModifier)
             tryCompare(flickable, "contentX", Math.round(x + hstep * angleDeltaFactor), Kirigami.Units.longDuration * 2, "+h_yTick")
             x = flickable.contentX
             tryCompare(flickable, "contentY", y, Kirigami.Units.longDuration * 2, "no +yTick")
 
-            mouseWheel(flickable, flickable.leftMargin, 0, 0, angleDelta, Qt.NoButton, Qt.AltModifier)
+            mouseWheel(inputItem, leftMargin, 0, 0, angleDelta, Qt.NoButton, Qt.AltModifier)
             tryCompare(flickable, "contentX", Math.round(x - hstep * angleDeltaFactor), Kirigami.Units.longDuration * 2, "-h_yTick")
             x = flickable.contentX
             tryCompare(flickable, "contentY", y, Kirigami.Units.longDuration * 2, "no -yTick")
         }
 
-        mouseWheel(flickable, flickable.leftMargin, 0, -angleDelta, -angleDelta, Qt.NoButton, wheelHandler.pageScrollModifiers)
+        mouseWheel(inputItem, leftMargin, 0, -angleDelta, -angleDelta, Qt.NoButton, wheelHandler.pageScrollModifiers)
         tryCompare(flickable, "contentX", Math.round(x + pageWidth * angleDeltaFactor), Kirigami.Units.longDuration * 2, "+xPage")
         x = flickable.contentX
         tryCompare(flickable, "contentY", Math.round(y + pageHeight * angleDeltaFactor), Kirigami.Units.longDuration * 2, "+yPage")
         y = flickable.contentY
 
-        mouseWheel(flickable, flickable.leftMargin, 0, angleDelta, angleDelta, Qt.NoButton, wheelHandler.pageScrollModifiers)
+        mouseWheel(inputItem, leftMargin, 0, angleDelta, angleDelta, Qt.NoButton, wheelHandler.pageScrollModifiers)
         tryCompare(flickable, "contentX", Math.round(x - pageWidth * angleDeltaFactor), Kirigami.Units.longDuration * 2, "-xPage")
         x = flickable.contentX
         tryCompare(flickable, "contentY", Math.round(y - pageHeight * angleDeltaFactor), Kirigami.Units.longDuration * 2, "-yPage")
         y = flickable.contentY
 
         if (Qt.platform.pluginName !== "xcb") {
-            mouseWheel(flickable, flickable.leftMargin, 0, 0, -angleDelta, Qt.NoButton,
+            mouseWheel(inputItem, leftMargin, 0, 0, -angleDelta, Qt.NoButton,
                     Qt.AltModifier | wheelHandler.pageScrollModifiers)
             tryCompare(flickable, "contentX", Math.round(x + pageWidth * angleDeltaFactor), Kirigami.Units.longDuration * 2, "+h_yPage")
             x = flickable.contentX
             tryCompare(flickable, "contentY", y, Kirigami.Units.longDuration * 2, "no +yPage")
 
-            mouseWheel(flickable, flickable.leftMargin, 0, 0, angleDelta, Qt.NoButton,
+            mouseWheel(inputItem, leftMargin, 0, 0, angleDelta, Qt.NoButton,
                     Qt.AltModifier | wheelHandler.pageScrollModifiers)
             tryCompare(flickable, "contentX", Math.round(x - pageWidth * angleDeltaFactor), Kirigami.Units.longDuration * 2, "-h_yPage")
             x = flickable.contentX
@@ -82,18 +84,27 @@ TestCase {
     function test_WheelScrolling() {
         // HID 1bcf:08a0 Mouse
         // Angle delta is 120, like most mice.
+        loader.sourceComponent = flickableComponent
+        wheelScrolling()
+        loader.sourceComponent = scrollViewComponent
         wheelScrolling()
     }
 
     function test_HiResWheelScrolling() {
         // Logitech MX Master 3
         // Main wheel angle delta is at least 16, plus multiples of 8 when scrolling faster.
+        loader.sourceComponent = flickableComponent
+        wheelScrolling(16)
+        loader.sourceComponent = scrollViewComponent
         wheelScrolling(16)
     }
 
     function test_TouchpadScrolling() {
         // UNIW0001:00 093A:0255 Touchpad
         // 2 finger scroll angle delta is at least 3, but larger increments are used when scrolling faster.
+        loader.sourceComponent = flickableComponent
+        wheelScrolling(3)
+        loader.sourceComponent = scrollViewComponent
         wheelScrolling(3)
     }
 
@@ -151,10 +162,14 @@ TestCase {
     }
 
     function test_KeyboardScrolling() {
+        loader.sourceComponent = flickableComponent
+        keyboardScrolling()
+        loader.sourceComponent = scrollViewComponent
         keyboardScrolling()
     }
 
     function test_StepSize() {
+        loader.sourceComponent = flickableComponent
         // 101 is a value unlikely to be used by any user's combination of settings and hardware
         wheelHandler.verticalStepSize = 101
         wheelHandler.horizontalStepSize = 101
@@ -165,16 +180,56 @@ TestCase {
         wheelHandler.horizontalStepSize = undefined
         verify(wheelHandler.verticalStepSize == 20 * Qt.styleHints.wheelScrollLines, "default verticalStepSize")
         verify(wheelHandler.horizontalStepSize == 20 * Qt.styleHints.wheelScrollLines, "default horizontalStepSize")
+
+        loader.sourceComponent = scrollViewComponent
+        wheelHandler.verticalStepSize = 101
+        wheelHandler.horizontalStepSize = 101
+        wheelScrolling()
+        keyboardScrolling()
+        wheelHandler.verticalStepSize = undefined
+        wheelHandler.horizontalStepSize = undefined
+        verify(wheelHandler.verticalStepSize == 20 * Qt.styleHints.wheelScrollLines, "default verticalStepSize")
+        verify(wheelHandler.horizontalStepSize == 20 * Qt.styleHints.wheelScrollLines, "default horizontalStepSize")
     }
 
-    ScrollableFlickable {
-        id: flickable
-        focus: true
+    Loader {
+        id: loader
         anchors.fill: parent
-        Kirigami.WheelHandler {
-            id: wheelHandler
-            target: flickable
-            keyNavigationEnabled: true
+        focus: true
+        sourceComponent: flickableComponent
+    }
+
+    Component {
+        id: flickableComponent
+        ScrollableFlickable {
+            id: flickable
+            readonly property alias wheelHandler: wheelHandler
+            focus: true
+            Kirigami.WheelHandler {
+                id: wheelHandler
+                target: flickable
+                keyNavigationEnabled: true
+            }
+        }
+    }
+
+    Component {
+        id: scrollViewComponent
+        ScrollView {
+            readonly property alias wheelHandler: wheelHandler
+            focus: true
+            implicitWidth: flickable.implicitWidth + leftPadding + rightPadding
+            implicitHeight: flickable.implicitHeight + topPadding + bottomPadding
+            contentItem: ContentFlickable {
+                id: flickable
+            }
+            data: [
+                Kirigami.WheelHandler {
+                    id: wheelHandler
+                    target: flickable
+                    keyNavigationEnabled: true
+                }
+            ]
         }
     }
 }
