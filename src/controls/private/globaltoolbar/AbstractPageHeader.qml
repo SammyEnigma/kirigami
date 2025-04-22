@@ -30,37 +30,54 @@ Kirigami.AbstractApplicationHeader {
         when: __stackPage.QQC.StackView.status !== QQC.StackView.Deactivating
 
         restoreMode: Binding.RestoreNone
-        value: pageRow
-            ? Math.min(
-                width / 2,
-                Math.max(
-                    (page.title.length > 0 ? pageRow.globalToolBar.titleLeftPadding : 0),
-                    Qt.application.layoutDirection === Qt.LeftToRight
-                        ? Math.min(pageRow.globalToolBar.leftReservedSpace,
-                            pageRow.Kirigami.ScenePosition.x
-                            - page.Kirigami.ScenePosition.x
-                            + pageRow.globalToolBar.leftReservedSpace)
-                            + Kirigami.Units.smallSpacing
-                        : Math.min(pageRow.globalToolBar.leftReservedSpace,
-                            -pageRow.width
-                            + pageRow.Kirigami.ScenePosition.x
-                            + page.Kirigami.ScenePosition.x
-                            + page.width
-                            + pageRow.globalToolBar.leftReservedSpace)
-                            + Kirigami.Units.smallSpacing))
-            : Kirigami.Units.smallSpacing
+        value: {
+            if (!pageRow) {
+                return Kirigami.Units.smallSpacing
+            }
+
+            if (!pageRow.wideMode) {
+                return Math.max(pageRow.globalToolBar.leftReservedSpace, pageRow.globalToolBar.titleLeftPadding)
+            }
+
+            let displacement = 0
+
+            if (Qt.application.layoutDirection === Qt.RightToLeft) {
+                displacement = (page.Kirigami.ScenePosition.x + page.width)
+                                - (pageRow.Kirigami.ScenePosition.x + pageRow.width - pageRow.globalToolBar.leftReservedSpace)
+            } else {
+                displacement = pageRow.Kirigami.ScenePosition.x
+                                - page.Kirigami.ScenePosition.x
+                                + pageRow.globalToolBar.leftReservedSpace
+            }
+
+            return Math.min(pageRow.globalToolBar.leftReservedSpace,
+                    Math.max(pageRow.globalToolBar.titleLeftPadding,
+                            displacement))
+        }
     }
 
-    rightPadding: pageRow
-        ? Math.min(pageRow.globalToolBar.rightReservedSpace, Math.max(0,
-            Qt.application.layoutDirection === Qt.LeftToRight
-            ? (-pageRow.width
+    rightPadding: {
+        if (!pageRow) {
+            return 0
+        }
+
+        if (!pageRow.wideMode) {
+            return pageRow.globalToolBar.rightReservedSpace
+        }
+
+        let displacement = 0
+        if (Qt.application.layoutDirection === Qt.RightToLeft) {
+            displacement = pageRow.Kirigami.ScenePosition.x
+                            - page.Kirigami.ScenePosition.x
+                            + pageRow.globalToolBar.rightReservedSpace
+        } else {
+            displacement = -pageRow.width
                 - pageRow.Kirigami.ScenePosition.x
                 + page.width
                 + page.Kirigami.ScenePosition.x
-                + pageRow.globalToolBar.rightReservedSpace)
-            : (pageRow.Kirigami.ScenePosition.x
-                - page.Kirigami.ScenePosition.x
-                + pageRow.globalToolBar.rightReservedSpace)))
-        : 0
+                + pageRow.globalToolBar.rightReservedSpace
+        }
+
+        return Math.max(0, displacement)
+    }
 }
