@@ -24,8 +24,7 @@ NavigationButton {
             && pageStack.contentItem.contentWidth > pageStack.width + Kirigami.Units.gridUnit
             && (showNavButtons & Kirigami.ApplicationHeaderStyle.ShowForwardButton)) {
             return ""
-        } else {
-            return "invisible"
         }
+        return "invisible"
     }
 }
