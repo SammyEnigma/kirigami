@@ -19,7 +19,14 @@ NavigationButton {
 
     state: {
         const pageStack = applicationWindow().pageStack;
-        const showNavButtons = globalToolBar?.showNavigationButtons ?? Kirigami.ApplicationHeaderStyle.NoNavigationButtons;
+        const globalToolBar = pageStack.globalToolBar;
+        let showNavButtons = Kirigami.ApplicationHeaderStyle.NoNavigationButtons;
+        if (pageStack.leadingVisibleItem instanceof Kirigami.Page
+            && pageStack.leadingVisibleItem.globalToolBarStyle == Kirigami.ApplicationHeaderStyle.None) {
+            showNavButtons = Kirigami.ApplicationHeaderStyle.NoNavigationButtons
+        } else {
+            showNavButtons = showNavButtons = globalToolBar?.showNavigationButtons ?? Kirigami.ApplicationHeaderStyle.NoNavigationButtons;
+        }
         if (pageStack.layers.depth === 1
             && pageStack.contentItem.contentWidth > pageStack.width + Kirigami.Units.gridUnit
             && (showNavButtons & Kirigami.ApplicationHeaderStyle.ShowForwardButton)) {
