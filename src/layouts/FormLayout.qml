@@ -142,7 +142,7 @@ Item {
             target: lay
             property: "width"
             // Works out to 576px by default; any higher and it's not really very narrow!
-            value: Math.min(lay.implicitWidth, Kirigami.Units.gridUnit * 32)
+            value: Math.min(lay.implicitWidth, Kirigami.Units.gridUnit * 32, root.width)
             restoreMode: Binding.RestoreBinding
         }
         Binding {
