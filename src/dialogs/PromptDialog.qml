@@ -86,7 +86,7 @@ Kirigami.Dialog {
     /**
      * This property holds the dialogType. It can be either:
      *
-     * - `PromptDialog.Success`: For a sucess message
+     * - `PromptDialog.Success`: For a success message
      * - `PromptDialog.Warning`: For a warning message
      * - `PromptDialog.Error`: For an actual error
      * - `PromptDialog.Information`: For an informational message
