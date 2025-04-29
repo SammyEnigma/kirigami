@@ -675,6 +675,8 @@ QT.Control {
                 return;
             }
             let item = layersStack.get(depth - 1)
+            // headers are parented to items in layers, so items can't clip otherwise headers become invisible
+            item.clip = false
 
             // For layers reparent the global header to the page
             const header = item.Kirigami.ColumnView.globalHeader
