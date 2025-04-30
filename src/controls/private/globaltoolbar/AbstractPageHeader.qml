@@ -50,9 +50,9 @@ Kirigami.AbstractApplicationHeader {
                                 + pageRow.globalToolBar.leftReservedSpace
             }
 
-            return Math.min(pageRow.globalToolBar.leftReservedSpace,
-                    Math.max(pageRow.globalToolBar.titleLeftPadding,
-                            displacement))
+            return Math.max(pageRow.globalToolBar.titleLeftPadding,
+                            Math.min(displacement,
+                                     pageRow.globalToolBar.leftReservedSpace))
         }
     }
 
