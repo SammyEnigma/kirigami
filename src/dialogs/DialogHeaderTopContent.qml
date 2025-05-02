@@ -64,6 +64,15 @@ RowLayout {
      */
     required property T.Dialog dialog
 
+    /**
+     * @brief Whether the close button should be visible.
+     *
+     * Defaults to true.
+     *
+     * @property bool showCloseButton
+     */
+    property alias showCloseButton: closeButton.visible
+
     spacing: Kirigami.Units.smallSpacing
 
     Kirigami.Heading {
@@ -84,12 +93,13 @@ RowLayout {
     }
 
     QQC2.ToolButton {
+        id: closeButton
         Layout.alignment: Qt.AlignRight | Qt.AlignTop
 
         icon.name: hovered ? "window-close" : "window-close-symbolic"
         text: qsTr("Close", "@action:button close dialog")
         display: QQC2.AbstractButton.IconOnly
-        visible: root.dialog.showCloseButton
+        visible: root.dialog?.showCloseButton ?? true
 
         onClicked: root.dialog.reject()
     }
