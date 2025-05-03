@@ -252,7 +252,7 @@ msgctxt "UrlButton|"
 msgid "Copy Link to Clipboard"
 msgstr "Копировать ссылку в буфер обмена"
 
-#: dialogs/DialogHeaderTopContent.qml:90
+#: dialogs/DialogHeaderTopContent.qml:100
 #, fuzzy
 #| msgctxt "InlineMessage|"
 #| msgid "Close"

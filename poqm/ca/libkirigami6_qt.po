@@ -258,7 +258,7 @@ msgctxt "UrlButton|"
 msgid "Copy Link to Clipboard"
 msgstr "Copia l'enllaç al porta-retalls"
 
-#: dialogs/DialogHeaderTopContent.qml:90
+#: dialogs/DialogHeaderTopContent.qml:100
 msgctxt "DialogHeaderTopContent|@action:button close dialog"
 msgid "Close"
 msgstr "Tanca"
