@@ -40,6 +40,12 @@ Rectangle {
      */
     property color pressedBorderColor: Qt.rgba(Kirigami.Theme.highlightColor.r, Kirigami.Theme.highlightColor.g, Kirigami.Theme.highlightColor.b, 0.7)
 
+    /*!
+     * \brief This property holds the color of the Chip's border when it is hovered.
+     * \sa QtQuick.Control::hovered
+     */
+    property color hoveredBorderColor: Kirigami.Theme.hoverColor
+
     Kirigami.Theme.colorSet: Kirigami.Theme.Header
     Kirigami.Theme.inherit: false
 
@@ -57,6 +63,8 @@ Rectangle {
             return pressedBorderColor
         } else if (parent.checked) {
             return checkedBorderColor
+        } else if (parent.hovered) {
+            return hoveredBorderColor
         } else {
             return defaultBorderColor
         }
