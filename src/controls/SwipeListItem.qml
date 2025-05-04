@@ -161,11 +161,11 @@ QQC2.SwipeDelegate {
     /*!
       \brief This property sets whether actions behind this SwipeListItem will always be visible.
 
-      default: true in desktop and tablet mode`  *
-                                                 *
-     */                                          *
-    property bool alwaysVisibleActions: !Kirigami*.Settings.isMobile
-                                                 *
+      default: true in desktop and tablet mode
+
+     */
+    property bool alwaysVisibleActions: !Kirigami.Settings.isMobile
+
     /*!
       \brief This property holds actions of the list item.
 
