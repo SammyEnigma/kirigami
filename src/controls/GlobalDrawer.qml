@@ -491,7 +491,10 @@ Kirigami.OverlayDrawer {
 
         anchors {
             fill: parent
-            topMargin: root.collapsed && !showHeaderWhenCollapsed ? -contentItem.y : 0
+            topMargin: (root.collapsed && !root.showHeaderWhenCollapsed ? -contentItem.y : 0) + root.topPadding
+            bottomMargin: root.bottomPadding
+            leftMargin: root.leftPadding
+            rightMargin: root.rightPadding
         }
 
         Behavior on anchors.topMargin {
