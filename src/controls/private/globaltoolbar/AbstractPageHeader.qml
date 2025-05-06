@@ -15,8 +15,8 @@ Kirigami.AbstractApplicationHeader {
     property bool current
 
     minimumHeight: pageRow ? pageRow.globalToolBar.minimumHeight : Kirigami.Units.iconSizes.medium + Kirigami.Units.smallSpacing * 2
-    maximumHeight: pageRow ? pageRow.globalToolBar.maximumHeight : minimumHeight
-    preferredHeight: pageRow ? pageRow.globalToolBar.preferredHeight : minimumHeight
+    maximumHeight: (pageRow ? pageRow.globalToolBar.maximumHeight : minimumHeight) + root.topPadding + root.bottomPadding
+    preferredHeight: (pageRow ? pageRow.globalToolBar.preferredHeight : minimumHeight) + root.topPadding + root.bottomPadding
 
     separatorVisible: pageRow ? pageRow.globalToolBar.separatorVisible : true
 

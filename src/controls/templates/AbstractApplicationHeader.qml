@@ -42,7 +42,7 @@ Item {
 
     /*!
      */
-    property int maximumHeight: Kirigami.Units.gridUnit * 3
+    property int maximumHeight: Kirigami.Units.gridUnit * 3 + topPadding + bottomPadding
 
     /*!
      */

@@ -44,9 +44,9 @@ Kirigami.AbstractApplicationHeader {
     }
 
     height: visible ? implicitHeight : 0
-    minimumHeight: globalToolBar.minimumHeight
-    preferredHeight: globalToolBar.preferredHeight
-    maximumHeight: globalToolBar.maximumHeight
+    minimumHeight: globalToolBar.minimumHeight + header.topPadding + header.bottomPadding
+    preferredHeight: globalToolBar.preferredHeight + header.topPadding + header.bottomPadding
+    maximumHeight: globalToolBar.maximumHeight + header.topPadding + header.bottomPadding
     separatorVisible: globalToolBar.separatorVisible
 
     Kirigami.Theme.colorSet: globalToolBar.colorSet
