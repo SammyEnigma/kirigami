@@ -35,10 +35,13 @@ QtObject {
 
     readonly property Component trailingSeparator: Kirigami.Separator {
         property Item column
+        property bool inToolBar
 
         anchors.top: column.top
         anchors.right: column.right
         anchors.bottom: column.bottom
+        anchors.topMargin: inToolBar ? Kirigami.Units.largeSpacing : 0
+        anchors.bottomMargin: inToolBar ? Kirigami.Units.largeSpacing : 0
         Kirigami.Theme.colorSet: Kirigami.Theme.Header
         Kirigami.Theme.inherit: false
     }
