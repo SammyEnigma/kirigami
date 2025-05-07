@@ -328,9 +328,9 @@ class ColumnView : public QQuickItem
     Q_PROPERTY(bool interactive READ interactive WRITE setInteractive NOTIFY interactiveChanged FINAL)
 
     /*!
-     * \qmlproperty bool ColumnView::acceptsMouse
+     * \deprecated \qmlproperty bool ColumnView::acceptsMouse
      *
-     * True if the contents can be dragged also with mouse besides touch
+     * This property is deprecated and doesn't have any effect
      */
     Q_PROPERTY(bool acceptsMouse READ acceptsMouse WRITE setAcceptsMouse NOTIFY acceptsMouseChanged FINAL)
 
@@ -575,10 +575,9 @@ protected:
     void itemChange(QQuickItem::ItemChange change, const QQuickItem::ItemChangeData &value) override;
     void geometryChange(const QRectF &newGeometry, const QRectF &oldGeometry) override;
     bool childMouseEventFilter(QQuickItem *item, QEvent *event) override;
+    bool event(QEvent *event) override;
     void mousePressEvent(QMouseEvent *event) override;
-    void mouseMoveEvent(QMouseEvent *event) override;
     void mouseReleaseEvent(QMouseEvent *event) override;
-    void mouseUngrabEvent() override;
 
 Q_SIGNALS:
     /*!
@@ -638,17 +637,15 @@ private:
     ContentItem *m_contentItem;
     QPointer<QQuickItem> m_currentItem;
 
-    qreal m_oldMouseX = -1.0;
-    qreal m_startMouseX = -1.0;
-    qreal m_oldMouseY = -1.0;
-    qreal m_startMouseY = -1.0;
     int m_currentIndex = -1;
     qreal m_topPadding = 0;
     qreal m_bottomPadding = 0;
 
-    bool m_mouseDown = false;
     bool m_interactive = true;
+    // The user is dragging horizontally the ColumnView
     bool m_dragging = false;
+    // The user is dragging vertically the contents of a page
+    bool m_verticalScrollIntercepted = false;
     bool m_moving = false;
     bool m_separatorVisible = true;
     bool m_complete = false;
