@@ -142,12 +142,12 @@ msgctxt "GlobalDrawer|"
 msgid "Back"
 msgstr "Ба қафо"
 
-#: controls/GlobalDrawer.qml:665
+#: controls/GlobalDrawer.qml:668
 msgctxt "GlobalDrawer|"
 msgid "Close Sidebar"
 msgstr ""
 
-#: controls/GlobalDrawer.qml:670
+#: controls/GlobalDrawer.qml:673
 msgctxt "GlobalDrawer|"
 msgid "Open Sidebar"
 msgstr ""

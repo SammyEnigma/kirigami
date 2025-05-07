@@ -126,12 +126,12 @@ msgctxt "GlobalDrawer|"
 msgid "Back"
 msgstr "Voltar"
 
-#: controls/GlobalDrawer.qml:665
+#: controls/GlobalDrawer.qml:668
 msgctxt "GlobalDrawer|"
 msgid "Close Sidebar"
 msgstr "Fechar barra lateral"
 
-#: controls/GlobalDrawer.qml:670
+#: controls/GlobalDrawer.qml:673
 msgctxt "GlobalDrawer|"
 msgid "Open Sidebar"
 msgstr "Abrir barra lateral"

@@ -124,12 +124,12 @@ msgctxt "GlobalDrawer|"
 msgid "Back"
 msgstr "Назад"
 
-#: controls/GlobalDrawer.qml:665
+#: controls/GlobalDrawer.qml:668
 msgctxt "GlobalDrawer|"
 msgid "Close Sidebar"
 msgstr "Закрити бічну панель"
 
-#: controls/GlobalDrawer.qml:670
+#: controls/GlobalDrawer.qml:673
 msgctxt "GlobalDrawer|"
 msgid "Open Sidebar"
 msgstr "Відкрити бічну панель"

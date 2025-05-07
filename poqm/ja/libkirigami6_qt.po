@@ -119,12 +119,12 @@ msgctxt "GlobalDrawer|"
 msgid "Back"
 msgstr "戻る"
 
-#: controls/GlobalDrawer.qml:665
+#: controls/GlobalDrawer.qml:668
 msgctxt "GlobalDrawer|"
 msgid "Close Sidebar"
 msgstr "サイドバーを閉じる"
 
-#: controls/GlobalDrawer.qml:670
+#: controls/GlobalDrawer.qml:673
 msgctxt "GlobalDrawer|"
 msgid "Open Sidebar"
 msgstr "サイドバーを開く"
