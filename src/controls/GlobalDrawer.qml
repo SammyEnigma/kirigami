@@ -59,6 +59,8 @@ Kirigami.OverlayDrawer {
     handleClosedIcon.source: null
     handleOpenIcon.source: null
 
+    padding: 0
+
     handleVisible: {
         // When drawer is inline with content and opened, there is no point is showing handle.
         if (!modal && drawerOpen) {

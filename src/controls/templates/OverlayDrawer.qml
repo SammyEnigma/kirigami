@@ -182,11 +182,7 @@ T.Drawer {
     }
 
 //BEGIN reassign properties
-    //default paddings
-    leftPadding: Kirigami.Units.smallSpacing
-    topPadding: Kirigami.Units.smallSpacing
-    rightPadding: Kirigami.Units.smallSpacing
-    bottomPadding: Kirigami.Units.smallSpacing
+    padding: Kirigami.Units.smallSpacing
 
     y: modal ? 0 : ((T.ApplicationWindow.menuBar && T.ApplicationWindow.menuBar.visible ? T.ApplicationWindow.menuBar.height : 0) + (T.ApplicationWindow.header && T.ApplicationWindow.header.visible ? T.ApplicationWindow.header.height : 0))
 
