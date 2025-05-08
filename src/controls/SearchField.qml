@@ -72,7 +72,6 @@ Kirigami.ActionTextField {
 
     Kirigami.Icon {
         id: searchIcon
-        LayoutMirroring.enabled: root.effectiveHorizontalAlignment === TextInput.AlignRight
         anchors.left: root.left
         anchors.leftMargin: Kirigami.Units.smallSpacing * 2
         anchors.verticalCenter: root.verticalCenter
