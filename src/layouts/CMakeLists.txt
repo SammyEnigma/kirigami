@@ -69,12 +69,6 @@ target_include_directories(KirigamiLayouts PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/.
 
 target_link_libraries(KirigamiLayouts PRIVATE Qt6::Quick Qt6::QuickControls2 KirigamiPlatform KirigamiLayoutsPrivate)
 
-if ("${CMAKE_BUILD_TYPE}" STREQUAL "Debug")
-    set(_extra_options DEBUGINFO)
-else()
-    set(_extra_options PRECOMPILE OPTIMIZED)
-endif()
-
 ecm_finalize_qml_module(KirigamiLayouts EXPORT KirigamiTargets)
 
 install(TARGETS KirigamiLayouts EXPORT KirigamiTargets ${KF_INSTALL_DEFAULT_ARGUMENTS})
