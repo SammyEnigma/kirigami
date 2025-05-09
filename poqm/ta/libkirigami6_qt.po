@@ -112,17 +112,17 @@ msgctxt "ContextualHelpButton|"
 msgid "Show Contextual Help"
 msgstr "சூழல்சார் உதவியைக் காட்டு"
 
-#: controls/GlobalDrawer.qml:350
+#: controls/GlobalDrawer.qml:352
 msgctxt "GlobalDrawer|"
 msgid "Back"
 msgstr "பின்னே"
 
-#: controls/GlobalDrawer.qml:668
+#: controls/GlobalDrawer.qml:670
 msgctxt "GlobalDrawer|"
 msgid "Close Sidebar"
 msgstr "ஓரப்பட்டையை மூடு"
 
-#: controls/GlobalDrawer.qml:673
+#: controls/GlobalDrawer.qml:675
 msgctxt "GlobalDrawer|"
 msgid "Open Sidebar"
 msgstr "ஓரப்பட்டையை திற"
@@ -157,17 +157,17 @@ msgctxt "PageRowGlobalToolBarUI|"
 msgid "Open menu"
 msgstr "பட்டியைத் திற"
 
-#: controls/SearchField.qml:87
+#: controls/SearchField.qml:86
 msgctxt "SearchField|"
 msgid "Search…"
 msgstr "தேடு..."
 
-#: controls/SearchField.qml:89
+#: controls/SearchField.qml:88
 msgctxt "SearchField|"
 msgid "Search"
 msgstr "தேடல்"
 
-#: controls/SearchField.qml:100
+#: controls/SearchField.qml:99
 msgctxt "SearchField|"
 msgid "Clear search"
 msgstr "தேடலை காலியாக்கு"

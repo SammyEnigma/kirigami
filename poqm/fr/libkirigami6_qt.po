@@ -117,17 +117,17 @@ msgctxt "ContextualHelpButton|"
 msgid "Show Contextual Help"
 msgstr "Afficher l'aide contextuelle"
 
-#: controls/GlobalDrawer.qml:350
+#: controls/GlobalDrawer.qml:352
 msgctxt "GlobalDrawer|"
 msgid "Back"
 msgstr "Retour"
 
-#: controls/GlobalDrawer.qml:668
+#: controls/GlobalDrawer.qml:670
 msgctxt "GlobalDrawer|"
 msgid "Close Sidebar"
 msgstr "Fermer la barre latérale"
 
-#: controls/GlobalDrawer.qml:673
+#: controls/GlobalDrawer.qml:675
 msgctxt "GlobalDrawer|"
 msgid "Open Sidebar"
 msgstr "Ouvrir une barre latérale"
@@ -162,17 +162,17 @@ msgctxt "PageRowGlobalToolBarUI|"
 msgid "Open menu"
 msgstr "Ouvrir le menu"
 
-#: controls/SearchField.qml:87
+#: controls/SearchField.qml:86
 msgctxt "SearchField|"
 msgid "Search…"
 msgstr "Rechercher…"
 
-#: controls/SearchField.qml:89
+#: controls/SearchField.qml:88
 msgctxt "SearchField|"
 msgid "Search"
 msgstr "Rechercher"
 
-#: controls/SearchField.qml:100
+#: controls/SearchField.qml:99
 msgctxt "SearchField|"
 msgid "Clear search"
 msgstr "Effacer une recherche"

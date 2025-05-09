@@ -148,17 +148,17 @@ msgctxt "ContextualHelpButton|"
 msgid "Show Contextual Help"
 msgstr ""
 
-#: controls/GlobalDrawer.qml:350
+#: controls/GlobalDrawer.qml:352
 msgctxt "GlobalDrawer|"
 msgid "Back"
 msgstr "Späť"
 
-#: controls/GlobalDrawer.qml:668
+#: controls/GlobalDrawer.qml:670
 msgctxt "GlobalDrawer|"
 msgid "Close Sidebar"
 msgstr "Zatvoriť bočný panel"
 
-#: controls/GlobalDrawer.qml:673
+#: controls/GlobalDrawer.qml:675
 #, fuzzy
 #| msgctxt "GlobalDrawer|"
 #| msgid "Close Sidebar"
@@ -208,17 +208,17 @@ msgctxt "PageRowGlobalToolBarUI|"
 msgid "Open menu"
 msgstr "Otvoriť"
 
-#: controls/SearchField.qml:87
+#: controls/SearchField.qml:86
 msgctxt "SearchField|"
 msgid "Search…"
 msgstr "Hľadať..."
 
-#: controls/SearchField.qml:89
+#: controls/SearchField.qml:88
 msgctxt "SearchField|"
 msgid "Search"
 msgstr "Hľadať"
 
-#: controls/SearchField.qml:100
+#: controls/SearchField.qml:99
 msgctxt "SearchField|"
 msgid "Clear search"
 msgstr ""

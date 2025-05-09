@@ -112,17 +112,17 @@ msgctxt "ContextualHelpButton|"
 msgid "Show Contextual Help"
 msgstr "सन्दर्भसहायतां दर्शयतु"
 
-#: controls/GlobalDrawer.qml:350
+#: controls/GlobalDrawer.qml:352
 msgctxt "GlobalDrawer|"
 msgid "Back"
 msgstr "पृष्ठभागः"
 
-#: controls/GlobalDrawer.qml:668
+#: controls/GlobalDrawer.qml:670
 msgctxt "GlobalDrawer|"
 msgid "Close Sidebar"
 msgstr "पार्श्वपट्टिकां बन्दं कुर्वन्तु"
 
-#: controls/GlobalDrawer.qml:673
+#: controls/GlobalDrawer.qml:675
 msgctxt "GlobalDrawer|"
 msgid "Open Sidebar"
 msgstr "पार्श्वपट्टिका उद्घाटयन्तु"
@@ -157,17 +157,17 @@ msgctxt "PageRowGlobalToolBarUI|"
 msgid "Open menu"
 msgstr "मेनू उद्घाटयन्तु"
 
-#: controls/SearchField.qml:87
+#: controls/SearchField.qml:86
 msgctxt "SearchField|"
 msgid "Search…"
 msgstr "अन्वेषण…"
 
-#: controls/SearchField.qml:89
+#: controls/SearchField.qml:88
 msgctxt "SearchField|"
 msgid "Search"
 msgstr "अन्वेषण"
 
-#: controls/SearchField.qml:100
+#: controls/SearchField.qml:99
 msgctxt "SearchField|"
 msgid "Clear search"
 msgstr "अन्वेषणं स्पष्टं कुरुत"
