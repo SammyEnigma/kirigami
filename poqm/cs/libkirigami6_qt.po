@@ -250,12 +250,9 @@ msgid "Copy Link to Clipboard"
 msgstr "Kopírovat odkaz do schránky"
 
 #: dialogs/DialogHeaderTopContent.qml:103
-#, fuzzy
-#| msgctxt "OverlaySheet|@action:button close dialog"
-#| msgid "Close"
 msgctxt "DialogHeaderTopContent|@action:button close dialog"
 msgid "Close"
-msgstr "Zavřít"
+msgstr ""
 
 #: platform/settings.cpp:219
 #, qt-format
@@ -274,7 +271,3 @@ msgstr "Okenní systém %1"
 msgctxt "Kirigami::Platform::Settings|"
 msgid "Qt %2 (built against %3)"
 msgstr "Qt %2 (sestaveno oproti %3)"
-
-#~ msgctxt "Dialog|@action:button close dialog"
-#~ msgid "Close"
-#~ msgstr "Zavřít"
