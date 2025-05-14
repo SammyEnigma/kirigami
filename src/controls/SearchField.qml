@@ -59,12 +59,12 @@ Kirigami.ActionTextField {
     property bool delaySearch: false
 
     // padding to accommodate search icon nicely
-    leftPadding: if (effectiveHorizontalAlignment === TextInput.AlignRight) {
+    leftPadding: if (Qt.application.layoutDirection === Qt.RightToLeft) {
         return _rightActionsRow.width + Kirigami.Units.smallSpacing
     } else {
         return searchIcon.width + Kirigami.Units.smallSpacing * 3
     }
-    rightPadding: if (effectiveHorizontalAlignment === TextInput.AlignRight) {
+    rightPadding: if (Qt.application.layoutDirection === Qt.RightToLeft) {
         return searchIcon.width + Kirigami.Units.smallSpacing * 3
     } else {
         return _rightActionsRow.width + Kirigami.Units.smallSpacing
@@ -93,8 +93,7 @@ Kirigami.ActionTextField {
     EnterKey.type: Qt.EnterKeySearch
     rightActions: [
         Kirigami.Action {
-            //ltr confusingly refers to the direction of the arrow in the icon, not the text direction which it should be used in
-            icon.name: root.effectiveHorizontalAlignment === TextInput.AlignRight ? "edit-clear-locationbar-ltr" : "edit-clear-locationbar-rtl"
+            icon.name: root.LayoutMirroring.enabled ? "edit-clear-locationbar-ltr" : "edit-clear-locationbar-rtl"
             visible: root.text.length > 0
             text: qsTr("Clear search")
             onTriggered: {

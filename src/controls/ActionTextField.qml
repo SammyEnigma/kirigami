@@ -79,11 +79,12 @@ QQC2.TextField {
 
     hoverEnabled: true
 
-    // Manually setting this fixes alignment in RTL layouts
-    horizontalAlignment: TextInput.AlignLeft
+    horizontalAlignment: Qt.AlignLeft
+    LayoutMirroring.enabled: Qt.application.layoutDirection === Qt.RightToLeft
+    LayoutMirroring.childrenInherit: true
 
-    leftPadding: Kirigami.Units.smallSpacing + (root.effectiveHorizontalAlignment === TextInput.AlignRight ? rightActionsRow : leftActionsRow).width
-    rightPadding: Kirigami.Units.smallSpacing + (root.effectiveHorizontalAlignment === TextInput.AlignRight ? leftActionsRow : rightActionsRow).width
+    leftPadding: Kirigami.Units.smallSpacing + (LayoutMirroring.enabled ? rightActionsRow : leftActionsRow).width
+    rightPadding: Kirigami.Units.smallSpacing + (LayoutMirroring.enabled ? leftActionsRow : rightActionsRow).width
 
     Behavior on leftPadding {
         NumberAnimation {
@@ -164,7 +165,6 @@ QQC2.TextField {
         padding: Kirigami.Units.smallSpacing
         spacing: Kirigami.Units.smallSpacing
         layoutDirection: Qt.LeftToRight
-        LayoutMirroring.enabled: root.effectiveHorizontalAlignment === TextInput.AlignRight
         anchors.left: parent.left
         anchors.leftMargin: Kirigami.Units.smallSpacing
         anchors.top: parent.top
@@ -182,7 +182,6 @@ QQC2.TextField {
         padding: Kirigami.Units.smallSpacing
         spacing: Kirigami.Units.smallSpacing
         layoutDirection: Qt.RightToLeft
-        LayoutMirroring.enabled: root.effectiveHorizontalAlignment === TextInput.AlignRight
         anchors.right: parent.right
         anchors.rightMargin: Kirigami.Units.smallSpacing
         anchors.top: parent.top
