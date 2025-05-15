@@ -204,7 +204,7 @@ msgctxt "SearchField|"
 msgid "Search"
 msgstr "Ҷустуҷӯ..."
 
-#: controls/SearchField.qml:99
+#: controls/SearchField.qml:98
 msgctxt "SearchField|"
 msgid "Clear search"
 msgstr ""

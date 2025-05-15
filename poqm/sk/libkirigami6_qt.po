@@ -218,7 +218,7 @@ msgctxt "SearchField|"
 msgid "Search"
 msgstr "Hľadať"
 
-#: controls/SearchField.qml:99
+#: controls/SearchField.qml:98
 msgctxt "SearchField|"
 msgid "Clear search"
 msgstr ""
