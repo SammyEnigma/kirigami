@@ -13,3 +13,5 @@ exampledirs = . ../examples primitives/examples
 depends = kde qtcore qtquick qtquickcontrols kcoreaddons kirigamiplatform
 
 excludedirs = platform
+
+navigation.landingpage  = "Kirigami"
