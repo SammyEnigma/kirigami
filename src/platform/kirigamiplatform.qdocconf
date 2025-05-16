@@ -9,3 +9,5 @@ headerdirs += .
 sourcedirs += .
 
 depends = kde qtcore qtquick qtquickcontrols
+
+navigation.landingpage = "Kirigami"
