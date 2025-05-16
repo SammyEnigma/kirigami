@@ -59,7 +59,6 @@ Item {
     property /*Kirigami.Page*/ Item page: pageRow?.currentItem as Kirigami.Page ?? null
 
     /*!
-     *
      */
     default property alias contentItem: mainItem.data
 
