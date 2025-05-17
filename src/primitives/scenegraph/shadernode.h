@@ -95,8 +95,8 @@ public:
     /*!
      * Set the texture for a channel to an image.
      *
-     * This will create a texture from \p image using \p window and the options
-     * specified by \p options, then assign it to texture channel \p channel.
+     * This will create a texture from \a image using \a window and the options
+     * specified by \a options, then assign it to texture channel \a channel.
      * Textures created from images are cached, if an image has the same cache
      * ID as a previous call to setTexture(), no new texture will be created.
      */
@@ -105,9 +105,9 @@ public:
     /*!
      * Set the texture for a channel to a texture provider.
      *
-     * This will use \p provider to provide the texture for channel \p channel.
-     * \p options will be used whenever a new texture is created from
-     * \p provider.
+     * This will use \a provider to provide the texture for channel \a channel.
+     * \a options will be used whenever a new texture is created from
+     * \a provider.
      */
     void setTexture(TextureChannel channel, QSGTextureProvider *provider, QQuickWindow::CreateTextureOptions options = {});
 
@@ -134,7 +134,7 @@ protected:
     /*!
      * Create a new instance of a certain material variant.
      *
-     * This should return a new instance of the material that matches \p variant,
+     * This should return a new instance of the material that matches \a variant,
      * or nullptr if the specified variant cannot be handled by the current node.
      */
     virtual QSGMaterial *createMaterialVariant(QSGMaterialType *variant);
