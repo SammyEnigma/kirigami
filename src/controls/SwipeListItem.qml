@@ -48,7 +48,7 @@ QQC2.SwipeDelegate {
 
 //BEGIN properties
     /*!
-      \property bool SwipeListItem::supportsMouseEvents
+      \qmlproperty bool SwipeListItem::supportsMouseEvents
       \brief This property sets whether the item should emit signals related to mouse interaction.
 
       \default true
@@ -58,7 +58,7 @@ QQC2.SwipeDelegate {
     property alias supportsMouseEvents: listItem.hoverEnabled
 
     /*!
-      \property bool SwipeListItem::containsMouse
+      \qmlproperty bool SwipeListItem::containsMouse
       \brief This property tells whether the cursor is currently hovering over the item.
 
       On mobile touch devices, this will be true only when pressed.
