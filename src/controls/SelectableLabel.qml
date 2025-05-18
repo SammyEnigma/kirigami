@@ -6,6 +6,8 @@
  *  SPDX-License-Identifier: LGPL-2.0-or-later
  */
 
+pragma ComponentBehavior: Bound
+
 import QtQuick
 import org.kde.kirigami as Kirigami
 import QtQuick.Controls as QQC2
@@ -265,6 +267,8 @@ QQC2.Control {
         }
 
         TapHandler {
+            id: leftClickAndPressTapHandler
+
             // For custom click actions we want selection to be turned off
             enabled: !textEdit.selectByMouse
 
@@ -310,6 +314,24 @@ QQC2.Control {
                 onTriggered: {
                     textEdit.selectAll();
                 }
+            }
+        }
+
+        readonly property int toolTipX: hoverHandler.point.position.x - Math.round(QQC2.ToolTip.toolTip.implicitWidth / 2)
+        readonly property int toolTipY: hoverHandler.point.position.y - QQC2.ToolTip.toolTip.implicitHeight - Kirigami.Units.gridUnit
+
+        QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
+        QQC2.ToolTip.visible: textEdit.hoveredLink
+        QQC2.ToolTip.toolTip.x: toolTipX
+        QQC2.ToolTip.toolTip.y: toolTipY
+        QQC2.ToolTip.onVisibleChanged: {
+            if (visible) {
+                // Set this stuff imperatively because:
+                // - We don't want the text to get unset before the tooltip disappears, because that's ugly
+                // - We want the position to stay fixed, not jump around as the pointer moves
+                QQC2.ToolTip.text = textEdit.hoveredLink
+                QQC2.ToolTip.toolTip.x = toolTipX
+                QQC2.ToolTip.toolTip.y = toolTipY
             }
         }
     }
