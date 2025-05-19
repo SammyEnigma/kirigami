@@ -508,7 +508,7 @@ QQC2.SwipeDelegate {
                 : overlayLoader
 
         property bool hasVisibleActions: false
-        property int indexInListView: index ?? -1 // might not be set if using required properties
+        property int indexInListView: (typeof index !== 'undefined' && index !== null) ? index : -1 // might not be set if using required properties
 
         function updateVisibleActions(definitelyVisible: bool) {
             hasVisibleActions = definitelyVisible || listItem.actions.some(isActionVisible);
