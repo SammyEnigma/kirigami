@@ -181,6 +181,8 @@ QSGNode *Icon::updatePaintNode(QSGNode *node, QQuickItem::UpdatePaintNodeData * 
         return nullptr;
     }
 
+    m_sizeChanged = false;
+
     if (isSoftwareRendering()) {
         auto rectangleNode = static_cast<SoftwareRectangleNode *>(node);
         if (!rectangleNode) {
@@ -194,13 +196,8 @@ QSGNode *Icon::updatePaintNode(QSGNode *node, QQuickItem::UpdatePaintNodeData * 
     }
 
     auto shaderNode = static_cast<ShaderNode *>(node);
-    bool updateRect = m_sizeChanged;
     if (!shaderNode) {
         shaderNode = new ShaderNode{};
-        // We may end up in a situation where this Icon has not changed but our
-        // scene node needs to be recreated, in that case we need to make sure
-        // to set the geometry of the node.
-        updateRect = true;
     }
 
     QString shaderName = u"icon_"_s;
@@ -236,11 +233,7 @@ QSGNode *Icon::updatePaintNode(QSGNode *node, QQuickItem::UpdatePaintNodeData * 
         shaderNode->setTexture(1, m_oldIcon, window(), QQuickWindow::TextureCanUseAtlas);
     }
 
-    if (updateRect) {
-        shaderNode->setRect(calculateNodeRect());
-        m_sizeChanged = false;
-    }
-
+    shaderNode->setRect(calculateNodeRect());
     shaderNode->update();
 
     return shaderNode;
