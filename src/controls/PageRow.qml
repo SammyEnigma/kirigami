@@ -698,6 +698,7 @@ QT.Control {
     QQC2.StackView {
         id: layersStack
         z: 99
+        Accessible.role: Accessible.Pane
         anchors {
             left: parent.left
             top: parent.top
