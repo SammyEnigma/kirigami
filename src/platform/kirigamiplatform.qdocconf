@@ -31,3 +31,5 @@ qhp.KirigamiPlatform.subprojects.classes.title = Kirigami Platform C++ Classes
 qhp.KirigamiPlatform.subprojects.classes.indexTitle = Kirigami Platform C++ Classes
 qhp.KirigamiPlatform.subprojects.classes.selectors = class fake:headerfile
 qhp.KirigamiPlatform.subprojects.classes.sortPages = true
+
+tagfile = kirigamiplatform.tags
