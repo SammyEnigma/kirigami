@@ -260,7 +260,7 @@ QSGMaterial *ShaderNode::createMaterialVariant(QSGMaterialType *variant)
 void ShaderNode::preprocessTexture(const TextureInfo &info)
 {
     auto provider = info.provider;
-    if (!provider || !m_shaderMaterial) {
+    if (!provider || !provider->texture() || !m_shaderMaterial) {
         return;
     }
 
