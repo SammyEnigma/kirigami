@@ -299,14 +299,24 @@ QQC2.SwipeDelegate {
 
             return want
         }
-        anchors {
-            right: validate(listItem.mirrored ? undefined : (contentItem ? contentItem.right : undefined), contentItem ? contentItem.right : undefined)
-            rightMargin: validate(-paddingOffset, 0)
-            left: validate(!listItem.mirrored ? undefined : (contentItem ? contentItem.left : undefined), undefined)
-            leftMargin: validate(-paddingOffset, 0)
-            top: parent.top
-            bottom: parent.bottom
+
+        states: State {
+            name: "reanchored"
+            AnchorChanges {
+                target: overlayLoader
+                anchors.right: validate(listItem.mirrored ? undefined : (contentItem ? contentItem.right : undefined), contentItem ? contentItem.right : undefined)
+                anchors.left: validate(!listItem.mirrored ? undefined : (contentItem ? contentItem.left : undefined), undefined)
+                anchors.top: parent.top
+                anchors.bottom: parent.bottom
+            }
+            PropertyChanges {
+                target: overlayLoader
+                anchors.rightMargin: validate(-paddingOffset, 0)
+                anchors.leftMargin: validate(-paddingOffset, 0)
+            }
         }
+        Component.onCompleted: overlayLoader.state = "reanchored"
+
         LayoutMirroring.enabled: false
 
         parent: listItem
