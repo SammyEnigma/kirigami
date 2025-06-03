@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2024-10-27 14:43+0100\n"
+"PO-Revision-Date: 2025-06-01 15:08+0200\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
 "Language: nn\n"
@@ -11,7 +11,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.11.70\n"
+"X-Generator: Lokalize 25.07.70\n"
 "X-Environment: kde\n"
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: qtrich\n"
@@ -189,25 +189,24 @@ msgstr "Merk alle"
 #: controls/templates/InlineMessage.qml:315
 msgctxt "InlineMessage|"
 msgid "Success"
-msgstr ""
+msgstr "Vellukka"
 
 #: controls/templates/InlineMessage.qml:317
 msgctxt "InlineMessage|"
 msgid "Warning"
-msgstr ""
+msgstr "Åtvaring"
 
 #: controls/templates/InlineMessage.qml:319
 msgctxt "InlineMessage|"
 msgid "Error"
-msgstr ""
+msgstr "Feil"
 
 #: controls/templates/InlineMessage.qml:321
 msgctxt "InlineMessage|"
 msgid "Note"
-msgstr ""
+msgstr "Merknad"
 
 #: controls/templates/InlineMessage.qml:409
-#, fuzzy
 msgctxt "InlineMessage|"
 msgid "Close"
 msgstr "Lukk"
@@ -254,7 +253,6 @@ msgid "Copy Link to Clipboard"
 msgstr "Kopier lenkja til utklippstavla"
 
 #: dialogs/DialogHeaderTopContent.qml:103
-#, fuzzy
 msgctxt "DialogHeaderTopContent|@action:button close dialog"
 msgid "Close"
 msgstr "Lukk"
