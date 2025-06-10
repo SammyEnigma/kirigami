@@ -200,11 +200,13 @@ QSGNode *Icon::updatePaintNode(QSGNode *node, QQuickItem::UpdatePaintNodeData * 
         shaderNode = new ShaderNode{};
     }
 
+    bool shouldBeAnimated = !m_oldIcon.isNull() && m_animated;
+
     QString shaderName = u"icon_"_s;
     if (isMask()) {
         shaderName += u"mask_"_s;
     }
-    if (m_animated) {
+    if (shouldBeAnimated) {
         shaderName += u"mix"_s;
     } else {
         shaderName += u"default"_s;
@@ -212,7 +214,7 @@ QSGNode *Icon::updatePaintNode(QSGNode *node, QQuickItem::UpdatePaintNodeData * 
     shaderNode->setShader(shaderName);
     shaderNode->setUniformBufferSize(sizeof(float) * 24);
 
-    if (m_animated) {
+    if (shouldBeAnimated) {
         shaderNode->setTextureChannels(2);
     } else {
         shaderNode->setTextureChannels(1);
@@ -229,7 +231,7 @@ QSGNode *Icon::updatePaintNode(QSGNode *node, QQuickItem::UpdatePaintNodeData * 
 
     shaderNode->setTexture(0, m_icon, window(), QQuickWindow::TextureCanUseAtlas);
 
-    if (!m_oldIcon.isNull() && m_animated) {
+    if (shouldBeAnimated) {
         shaderNode->setTexture(1, m_oldIcon, window(), QQuickWindow::TextureCanUseAtlas);
     }
 
