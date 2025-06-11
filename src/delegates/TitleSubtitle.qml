@@ -68,7 +68,7 @@ Item {
      */
     property color subtitleColor: selected
         ? Platform.Theme.highlightedTextColor
-        : Platform.ColorUtils.linearInterpolation(color, Platform.Theme.backgroundColor, 0.3)
+        : Platform.ColorUtils.linearInterpolation(color, Platform.Theme.backgroundColor, 0.25)
     /*!
       The font used to display the title.
      */

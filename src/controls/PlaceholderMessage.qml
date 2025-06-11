@@ -257,7 +257,7 @@ ColumnLayout {
 
     Kirigami.Icon {
         visible: source !== undefined
-        opacity: root.type === PlaceholderMessage.Type.Actionable ? 1 : 0.5
+        opacity: root.type === PlaceholderMessage.Type.Actionable ? 1 : 0.75
 
         Layout.alignment: Qt.AlignHCenter
         Layout.preferredWidth: root.icon.width
@@ -280,7 +280,7 @@ ColumnLayout {
         visible: text.length > 0
 
         type: Kirigami.Heading.Primary
-        opacity: root.type === PlaceholderMessage.Type.Actionable ? 1 : 0.65
+        opacity: root.type === PlaceholderMessage.Type.Actionable ? 1 : 0.75
 
 
         Layout.fillWidth: true
@@ -295,7 +295,7 @@ ColumnLayout {
 
         text: root.explanation
         visible:  root.explanation.length > 0
-        opacity: root.type === PlaceholderMessage.Type.Actionable ? 1 : 0.65
+        opacity: root.type === PlaceholderMessage.Type.Actionable ? 1 : 0.75
 
         horizontalAlignment: Qt.AlignHCenter
         wrapMode: Text.WordWrap

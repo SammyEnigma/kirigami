@@ -31,7 +31,7 @@ QQC2.ItemDelegate {
 
     enabled: !isExpandable && tAction.enabled
     visible: kAction?.visible ?? true
-    opacity: enabled || isExpandable ? 1.0 : 0.6
+    opacity: enabled || isExpandable ? 1.0 : 0.75
 
     Accessible.onPressAction: listItem.clicked()
 

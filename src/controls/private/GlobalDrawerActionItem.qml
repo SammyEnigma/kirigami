@@ -71,7 +71,7 @@ QQC2.ItemDelegate {
                 if (root.collapsed) {
                     return 0;
                 } else if (!listItem.enabled) {
-                    return 0.6;
+                    return 0.75;
                 } else {
                     return 1.0;
                 }
@@ -96,7 +96,7 @@ QQC2.ItemDelegate {
             Layout.alignment: Qt.AlignVCenter
             Layout.leftMargin: !root.collapsed ? 0 : -width
             Layout.preferredHeight: !root.collapsed ? Kirigami.Units.iconSizes.small : Kirigami.Units.iconSizes.small/2
-            opacity: 0.7
+            opacity: 0.75
             selected: listItem.checked || listItem.down
             Layout.preferredWidth: Layout.preferredHeight
             source: listItem.mirrored ? "go-next-symbolic-rtl" : "go-next-symbolic"

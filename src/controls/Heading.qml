@@ -100,7 +100,7 @@ QQC2.Label {
     }
     font.weight: type === Heading.Type.Primary ? Font.DemiBold : Font.Normal
 
-    opacity: type === Heading.Type.Secondary ? 0.7 : 1
+    opacity: type === Heading.Type.Secondary ? 0.75 : 1
 
     Accessible.role: Accessible.Heading
 }
