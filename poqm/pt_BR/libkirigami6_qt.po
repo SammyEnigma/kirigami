@@ -111,7 +111,7 @@ msgctxt "Chip|"
 msgid "Remove Tag"
 msgstr "Remover etiqueta"
 
-#: controls/ContextDrawer.qml:61
+#: controls/ContextDrawer.qml:62
 msgctxt "ContextDrawer|"
 msgid "Actions"
 msgstr "Ações"
@@ -121,17 +121,17 @@ msgctxt "ContextualHelpButton|"
 msgid "Show Contextual Help"
 msgstr "Exibir ajuda contextual"
 
-#: controls/GlobalDrawer.qml:352
+#: controls/GlobalDrawer.qml:356
 msgctxt "GlobalDrawer|"
 msgid "Back"
 msgstr "Voltar"
 
-#: controls/GlobalDrawer.qml:670
+#: controls/GlobalDrawer.qml:674
 msgctxt "GlobalDrawer|"
 msgid "Close Sidebar"
 msgstr "Fechar barra lateral"
 
-#: controls/GlobalDrawer.qml:675
+#: controls/GlobalDrawer.qml:679
 msgctxt "GlobalDrawer|"
 msgid "Open Sidebar"
 msgstr "Abrir barra lateral"

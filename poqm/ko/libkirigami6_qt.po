@@ -102,7 +102,7 @@ msgctxt "Chip|"
 msgid "Remove Tag"
 msgstr "태그 삭제"
 
-#: controls/ContextDrawer.qml:61
+#: controls/ContextDrawer.qml:62
 msgctxt "ContextDrawer|"
 msgid "Actions"
 msgstr "동작"
@@ -112,17 +112,17 @@ msgctxt "ContextualHelpButton|"
 msgid "Show Contextual Help"
 msgstr "문맥 도움말 표시"
 
-#: controls/GlobalDrawer.qml:352
+#: controls/GlobalDrawer.qml:356
 msgctxt "GlobalDrawer|"
 msgid "Back"
 msgstr "뒤로"
 
-#: controls/GlobalDrawer.qml:670
+#: controls/GlobalDrawer.qml:674
 msgctxt "GlobalDrawer|"
 msgid "Close Sidebar"
 msgstr "사이드바 닫기"
 
-#: controls/GlobalDrawer.qml:675
+#: controls/GlobalDrawer.qml:679
 msgctxt "GlobalDrawer|"
 msgid "Open Sidebar"
 msgstr "사이드바 열기"

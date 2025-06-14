@@ -108,7 +108,7 @@ msgctxt "Chip|"
 msgid "Remove Tag"
 msgstr "移除標籤"
 
-#: controls/ContextDrawer.qml:61
+#: controls/ContextDrawer.qml:62
 msgctxt "ContextDrawer|"
 msgid "Actions"
 msgstr "動作"
@@ -118,17 +118,17 @@ msgctxt "ContextualHelpButton|"
 msgid "Show Contextual Help"
 msgstr "顯示內文說明"
 
-#: controls/GlobalDrawer.qml:352
+#: controls/GlobalDrawer.qml:356
 msgctxt "GlobalDrawer|"
 msgid "Back"
 msgstr "返回"
 
-#: controls/GlobalDrawer.qml:670
+#: controls/GlobalDrawer.qml:674
 msgctxt "GlobalDrawer|"
 msgid "Close Sidebar"
 msgstr "關閉側邊欄"
 
-#: controls/GlobalDrawer.qml:675
+#: controls/GlobalDrawer.qml:679
 msgctxt "GlobalDrawer|"
 msgid "Open Sidebar"
 msgstr "開啟側邊欄"
