@@ -12,29 +12,37 @@ import org.kde.kirigami as Kirigami
   \qmltype Heading
   \inqmlmodule org.kde.kirigami
 
-  \brief A heading label used for subsections of texts.
+  \brief A pre-formatted label used for titles and section headers
 
-  The characteristics of the text will be automatically set according to the
-  Kirigami.Theme. Use this components for section titles or headings in your UI,
-  for example page or section titles.
+  Use this component for titles and section headers. The characteristics of the
+  text will be automatically set according to the \c Kirigami.Theme.
+
+  The most important property is \l text; use this to set the heading text to
+  be displayed.
 
   Example usage:
   \code
+  import QtQuick.Layouts
+  import QtQuick.Controls as QQC2
   import org.kde.kirigami as Kirigami
   [...]
-  Column {
+  ColumnLayout {
+      spacing: 0
+
       Kirigami.Heading {
+          Layout.fillWidth: true
+          wrapMode: Text.Wrap
           text: "Apples in the sunlight"
           level: 2
+      }
+      QQC2.Label {
+          Layout.fillWidth: true
+          wrapMode: Text.Wrap
+          text: "And this is why apples are amazing: let me tell you a story about this one time I was napping below a tree…"
       }
     [...]
   }
   \endcode
-
-  The most important property is text, which applies to the text property of
-  Label. See the Label component from QtQuick.Controls 2 and primitive QML Text
-  element API for additional properties, methods and signals.
-
  */
 QQC2.Label {
     id: heading
