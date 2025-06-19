@@ -15,26 +15,34 @@ import org.kde.kirigami.templates.private as TP
   \qmltype InlineMessage
   \inqmlmodule org.kde.kirigami
 
-  \brief An inline message item with support for informational, positive,
-  warning and error types, and with support for associated actions.
+  \brief An inline message item with support for associated actions
 
-  InlineMessage can be used to give information to the user or
-  interact with the user, without requiring the use of a dialog.
+  InlineMessage can be used to provide non-modal information or interactivity
+  without requiring the use of a dialog. To learn when to use it, see
+  https://develop.kde.org/hig/status_changes/#in-app-notifications.
+
+  InlineMessage has two visibility modes: inline (default) and borderless. The
+  inline version includes outer padding suitable for being displayed amidst
+  page content. The borderless version is best used used as a header or footer
+  where it is expected to touch the edges of its parent view, and is activated
+  using the \l position property.
 
   The InlineMessage item is hidden by default. It also manages its
   height (and implicitHeight) during an animated reveal when shown.
   You should avoid setting height on an InlineMessage unless it is
   already visible.
 
-  Optionally an icon can be set, defaulting to an icon appropriate
-  to the message type otherwise.
+  The \l type property determines the message's coloration and default icon.
+  This icon can be overridden using the \l icon property.
 
-  Optionally a close button can be shown.
+  No close button is shown by default, which means you're responsible for
+  hiding the message when it's no longer relevant. Optionally, a close button
+  can be added using the \l showCloseButton property.
 
-  Actions are added from left to right. If more actions are set than
-  can fit, an overflow menu is provided.
+  Actions are added from leading to trailing, and aligned to the trailing
+  position. If more actions are set than can fit, an overflow menu is provided.
 
-  Example:
+  Example displayed inline:
   \qml
   import org.kde.kirigami as Kirigami
 
@@ -61,6 +69,33 @@ import org.kde.kirigami.templates.private as TP
       ]
   }
   \endqml
+
+  Example displayed in the header position:
+  \qml
+  import org.kde.kirigami as Kirigami
+
+  Kirigami.Page {
+      header: Kirigami.InlineMessage {
+          position: Kirigami.InlineMessage.Position.Header
+          type: Kirigami.MessageType.Warning
+
+          text: i18n("My warning message")
+
+          actions: [
+              Kirigami.Action {
+                  icon.name: "edit-undo"
+                  text: i18n("Undo")
+                  onTriggered: source => {
+                      // do stuff
+                  }
+              }
+          ]
+      }
+
+      // Add page content here
+  }
+}
+\endqml
 
   \since 5.45
  */
@@ -165,9 +200,9 @@ T.Control {
     /*!
       \qmlproperty list<Action> actions
 
-      This property holds the list of actions to show. Actions are added from left to
-      right. If more actions are set than can fit, an overflow menu is
-      provided.
+      This property holds the list of actions to show. Actions are added from
+      leading to trailing. If more actions are set than can fit, an overflow
+      menu is provided.
      */
     property list<T.Action> actions
 
