@@ -13,30 +13,32 @@ import org.kde.kirigami as Kirigami
   \qmltype ActionTextField
   \inqmlmodule org.kde.kirigami
 
-  \brief An advanced control to create custom textfields
-  with action buttons (for example, with a Clear button).
+  \brief An advanced control to create custom textfields with inline buttons
 
-  Example usage for a search field:
+
+  ActionTextField can display inline action buttons on the leading or trailing
+  sides, and is used as the base class for other kinds of specialized text
+  fields, including \l SearchField and \l PasswordField.
+
+  Example usage:
   \code
   import org.kde.kirigami as Kirigami
 
   Kirigami.ActionTextField {
-      id: searchField
+      id: inputField
 
-      placeholderText: i18n("Search…")
-
-      focusSequence: StandardKey.Find
+      placeholderText: i18n("Enter name")
 
       rightActions: Kirigami.Action {
           icon.name: "edit-clear"
-          visible: searchField.text.length > 0
+          visible: inputField.text.length > 0
           onTriggered: {
-              searchField.clear();
-              searchField.accepted();
+              inputField.clear();
+              inputField.accepted();
           }
       }
 
-      onAccepted: console.log("Search text is " + searchField.text);
+      onAccepted: console.log("Entered text is " + inputField.text);
   }
   \endcode
 
@@ -49,13 +51,16 @@ QQC2.TextField {
       \qmlproperty keysequence ActionTextField::focusSequence
       This property holds a shortcut sequence that will focus the text field.
       \since 5.56
+
+      By default no shortcut is set.
      */
     property alias focusSequence: focusShortcut.sequence
 
     /*!
       \qmlproperty list<Action> leftActions
 
-      This property holds a list of actions that will be displayed on the left side of the text field.
+      This property holds a list of actions that will be displayed on the
+      leading side of the text field.
 
       By default this list is empty.
 
@@ -66,7 +71,8 @@ QQC2.TextField {
     /*!
       \qmlproperty list<Action> rightActions
 
-      This property holds a list of actions that will be displayed on the right side of the text field.
+      This property holds a list of actions that will be displayed on the
+      trailing side of the text field.
 
       By default this list is empty.
 
