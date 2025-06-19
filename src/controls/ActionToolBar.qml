@@ -16,16 +16,18 @@ import "private" as P
   \qmltype ActionToolBar
   \inqmlmodule org.kde.kirigami
 
-  \brief A toolbar built out of a list of actions.
+  \brief A toolbar built from a list of actions.
 
-  The default representation for visible actions is a QtQuick.Controls.ToolButton, but
-  it can be changed by setting the Action.displayComponent for an action.
-  The default behavior of ActionToolBar is to display as many actions as possible,
-  placing those that will not fit into an overflow menu. This can be changed by
-  setting the displayHint property on an Action. For example, when setting the
-  DisplayHint.KeepVisible display hint, ActionToolBar will try to keep that action
-  in view as long as possible, using an icon-only button if a button with text
-  does not fit.
+  Creates a toolbar out of a list of \l actions. Each item is a
+  QtQuick.Controls.ToolButton by default, but this can be overridden by setting
+  the Action.displayComponent property on that item's Action.
+
+  The default behavior of ActionToolBar is to display as many items as possible,
+  placing the ones that don't fit into an overflow menu. You can control this
+  behavior by setting the displayHint property on an item's Action. For example,
+  when setting the DisplayHint.KeepVisible display hint, ActionToolBar will try
+  to keep that action's item in view as long as possible, transforming it into
+  an icon-only button if a button with an icon and text doesn't fit.
 
   \since 2.5
  */
@@ -39,12 +41,13 @@ QQC2.Control {
       \brief This property holds a list of visible actions.
 
       The ActionToolBar will try to display as many actions as possible.
-      Those that won't fit will go into an overflow menu.
+      The ones that don't fit will go into an overflow menu.
      */
     readonly property alias actions: layout.actions
 
     /*!
-      This property holds whether the buttons will have a flat appearance.
+      This property holds whether the buttons will have a flat/ToolButton style
+      appearance.
 
       default: \c true
      */
@@ -61,7 +64,7 @@ QQC2.Control {
       \li Button.TextUnderIcon
       \endlist
 
-      default: Controls.Button.TextBesideIcon
+      default: \c Controls.Button.TextBesideIcon
 
       \sa AbstractButton
      */
@@ -78,7 +81,7 @@ QQC2.Control {
       When there is more space available than required by the visible action delegates,
       we need to determine where to position them.
 
-      default: Qt.AlignLeft
+      default: \c Qt.AlignLeft
 
       \sa Qt::AlignmentFlag
      */
@@ -87,32 +90,36 @@ QQC2.Control {
     /*!
       \brief This property holds the position of the toolbar.
 
-      If this ActionToolBar is the contentItem of a QQC2 Toolbar, the position is bound to the ToolBar's position
+      If this ActionToolBar is the contentItem of a QQC2 Toolbar, the position
+      is automatically bound to the ToolBar's position.
 
       Permitted values are:
       \list
       \li ToolBar.Header: The toolbar is at the top, as a window or page header.
       \li ToolBar.Footer: The toolbar is at the bottom, as a window or page footer.
       \endlist
+
+      default: \c QQC2.ToolBar.Header
      */
     property int position: parent instanceof T.ToolBar ? parent.position : QQC2.ToolBar.Header
 
     /*!
       \qmlproperty int ActionToolBar::maximumContentWidth
 
-      \brief This property holds the maximum width of the content of this ToolBar.
+      \brief This property holds the maximum width of the content.
 
-      If the toolbar's width is larger than this value, empty space will
+      If the ActionToolBar's width is larger than this value, empty space will
       be added on the sides, according to the Alignment property.
 
-      The value of this property is derived from the ToolBar's actions and their properties.
+      The value of this property is derived from the ActionToolBar's actions and
+      their properties.
      */
     readonly property alias maximumContentWidth: layout.implicitWidth
 
     /*!
       This property holds the name of the icon to use for the overflow menu button.
 
-      default: "overflow-menu"
+      default: \c overflow-menu
 
       \since 5.65
      */
@@ -127,10 +134,8 @@ QQC2.Control {
     /*!
       \qmlproperty enumeration ActionToolBar::heightMode
 
-      \brief This property sets the handling method for items that do not match the toolbar's height.
-
-      When toolbar items do not match the height of the toolbar, there are
-      several ways we can deal with this. This property sets the preferred way.
+      \brief This property determines how to handle items that do not match
+      the ActionToolBar's height.
 
       Permitted values are:
       \list
@@ -139,7 +144,7 @@ QQC2.Control {
       \li HeightMode.ConstrainIfLarger
       \endlist
 
-      default: HeightMode::ConstrainIfLarger
+      default: \c HeightMode::ConstrainIfLarger
      */
     property alias heightMode: layout.heightMode
 //END properties
