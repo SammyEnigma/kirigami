@@ -22,8 +22,8 @@ import org.kde.kirigami as Kirigami
   of its view to the user in an attractive and standardized way.
 
   Actions globally relevant to the view can be defined using the \l actions property.
-  They will appear on the right side of the header as buttons, and collapse into an
-  overflow menu when there isn't room to show them all.
+  They will appear on the trailing side of the header as buttons, and collapse
+  into an overflow menu when there isn't room to show them all.
 
   The \l width property must be manually set to the parent view's width.
 
