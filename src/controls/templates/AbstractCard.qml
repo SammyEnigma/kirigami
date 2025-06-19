@@ -13,16 +13,18 @@ import org.kde.kirigami as Kirigami
   \qmltype AbstractCard
   \inqmlmodule org.kde.kirigami
 
-  \brief AbstractCard is the base for cards.
+  \brief The base item for all kinds of cards
 
-  A Card is a visual object that serves as an entry point for more detailed information.
+  A card is a visual object that groups its contents into a logical unit,
+  connecting them all together visually. Cards can be interactive and clickable,
+  or visual only, purely used for grouping.
 
-  An AbstractCard is empty, providing just the look and the base properties and signals
-  for an ItemDelegate. It can be filled with any custom layout of items,
-  its content is organized in 3 properties: header, contentItem and footer.
+  AbstractCard is an empty card, providing just the styling and basic
+  properties. Use an AbstractCard when you want the visual styling and grouping
+  of a card, but plan to fill it with your own custom content layout. Content is
+  organized into three properties: \c header, \c contentItem, and \c footer.
 
-  Use this only when you need particular custom contents. For a standard layout
-  for cards, use the Card component.
+  The \l Card component provides a standard layout if your needs are less custom.
 
   \since 2.4
  */
@@ -36,6 +38,8 @@ T.ItemDelegate {
 
       This item will be positioned on top if headerOrientation is Qt.Vertical
       or on the left if it is Qt.Horizontal.
+
+      default: \c null; set something to make it the header.
      */
     property alias header: headerFooterLayout.header
 
@@ -43,10 +47,10 @@ T.ItemDelegate {
       \brief This property sets the card's orientation.
       \list
       \li Qt.Vertical: the header will be positioned on top
-      \li Qt.Horizontal: the header will be positioned on the left (or right if an RTL layout is used)
+      \li Qt.Horizontal: the header will be positioned on the leading side
       \endlist
 
-      default: Qt.Vertical
+      default: \c Qt.Vertical
      */
     property int headerOrientation: Qt.Vertical
 
@@ -56,15 +60,19 @@ T.ItemDelegate {
 
       This item will be positioned at the bottom if headerOrientation is Qt.Vertical
       or on the right if it is Qt.Horizontal.
+
+      default: \c null; set something to make it the footer.
      */
     property alias footer: headerFooterLayout.footer
 
     /*!
-      \brief This property sets whether clicking or tapping on the card area shows a visual click feedback.
+      \brief This property sets whether clicking or tapping on the card shows
+      visual click feedback.
 
-      Use this if you want to do an action in the onClicked signal handler of the card.
+      Use this if you want the card to perform an action in its \c onClicked signal
+      handler.
 
-      default: false
+      default: \c false
      */
     property bool showClickFeedback: false
 

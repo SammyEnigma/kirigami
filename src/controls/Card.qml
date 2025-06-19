@@ -15,19 +15,25 @@ import "private" as P
   \qmltype Card
   \inqmlmodule org.kde.kirigami
 
-  \brief This is the standard layout of a Card.
+  \brief Card with a standard layout
 
-  It is recommended to use this class when the concept of Cards is needed
-  in the application.
+  Card implements a particular standardized layout inside an AbstractCard, with
+  pre-defined header and  footer items.
 
-  This Card has default items as header and footer. The header is an
-  image that can contain an optional title and icon, accessible via the
-  banner grouped property.
+  The header is an image that can contain an optional title and icon, accessible
+  via the \l banner grouped property.
 
-  The footer will show a series of toolbuttons (and eventual overflow menu)
-  representing the actions list accessible with the list property actions.
-  It is possible even tough is discouraged to override the footer:
-  in this case the actions property shouldn't be used.
+  The footer will show a series of ToolButtons (and eventually an overflow menu)
+  representing the \c action property's actions.
+
+  Override the \c contentItem with the content you want to be displayed in the
+  card between the pre-made header and footer.
+
+  Overriding the \c header and \c footer properties is discouraged, as this will
+  result in the \c title, \c icon, and \c actions properties having no effect.
+
+  If you want to make your own completely custom layout, use \l AbstractCard
+  instead.
 
   \since 2.4
  */
@@ -35,11 +41,13 @@ Kirigami.AbstractCard {
     id: root
 
     /*!
-      \brief This property holds the clickable actions that will be available in the footer
-      of the card.
+      \brief This property holds the clickable actions that will be available in
+      the footer.
 
-      The actions will be represented by a list of ToolButtons with an optional overflow
-      menu, when not all of them will fit in the available Card width.
+      The actions will be represented by a list of ToolButtons with an overflow
+      menu when not all of them will fit in the available space.
+
+      default: \c null; set it to define some actions.
 
      */
     property list<T.Action> actions
