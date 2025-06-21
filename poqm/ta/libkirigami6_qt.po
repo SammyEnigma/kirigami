@@ -92,7 +92,7 @@ msgctxt "AbstractApplicationWindow|"
 msgid "Quit"
 msgstr "வெளியேறு"
 
-#: controls/ActionToolBar.qml:197
+#: controls/ActionToolBar.qml:202
 msgctxt "ActionToolBar|"
 msgid "More Actions"
 msgstr "மேலும் செயல்கள்"
@@ -182,27 +182,27 @@ msgctxt "SelectableLabel|"
 msgid "Select All"
 msgstr "அனைத்தையும் தேர்ந்தெடு"
 
-#: controls/templates/InlineMessage.qml:315
+#: controls/templates/InlineMessage.qml:350
 msgctxt "InlineMessage|"
 msgid "Success"
 msgstr "வெற்றி"
 
-#: controls/templates/InlineMessage.qml:317
+#: controls/templates/InlineMessage.qml:352
 msgctxt "InlineMessage|"
 msgid "Warning"
 msgstr "எச்சரிக்கை"
 
-#: controls/templates/InlineMessage.qml:319
+#: controls/templates/InlineMessage.qml:354
 msgctxt "InlineMessage|"
 msgid "Error"
 msgstr "சிக்கல்"
 
-#: controls/templates/InlineMessage.qml:321
+#: controls/templates/InlineMessage.qml:356
 msgctxt "InlineMessage|"
 msgid "Note"
 msgstr "குறிப்பு"
 
-#: controls/templates/InlineMessage.qml:409
+#: controls/templates/InlineMessage.qml:444
 msgctxt "InlineMessage|"
 msgid "Close"
 msgstr "மூடு"
@@ -217,7 +217,7 @@ msgctxt "OverlayDrawer|"
 msgid "Open drawer"
 msgstr "மேல்தோன்றும் பலகையைத் திற"
 
-#: controls/templates/OverlaySheet.qml:291
+#: controls/templates/OverlaySheet.qml:297
 msgctxt "OverlaySheet|@action:button close dialog"
 msgid "Close"
 msgstr "மூடு"
