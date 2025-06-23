@@ -206,6 +206,31 @@ void ColumnViewAttached::setMinimumWidth(qreal width)
     }
 }
 
+qreal ColumnViewAttached::preferredWidth() const
+{
+    qreal preferred = m_preferredWidth;
+    // Fallback to the item implicitWidth
+    if (preferred < 0) {
+        preferred = static_cast<QQuickItem *>(parent())->implicitWidth();
+    }
+    return std::max(m_minimumWidth, std::min(m_maximumWidth, preferred));
+}
+
+void ColumnViewAttached::setPreferredWidth(qreal width)
+{
+    if (qFuzzyCompare(width, m_preferredWidth)) {
+        return;
+    }
+
+    m_preferredWidth = width;
+
+    Q_EMIT preferredWidthChanged();
+
+    if (m_view) {
+        m_view->polish();
+    }
+}
+
 qreal ColumnViewAttached::maximumWidth() const
 {
     return m_maximumWidth;
@@ -535,7 +560,7 @@ qreal ContentItem::childWidth(QQuickItem *child)
         // DynamicColumns
     } else {
         // TODO:look for Layout size hints
-        qreal width = child->implicitWidth();
+        qreal width = attached->preferredWidth();
 
         if (width < 1.0) {
             width = m_columnWidth;
@@ -674,7 +699,7 @@ void ContentItem::layoutItems()
             attached->setIndex(i++);
         }
 
-        implicitWidth += child->implicitWidth();
+        implicitWidth += attached->preferredWidth();
 
         implicitHeight = qMax(implicitHeight, child->implicitHeight());
 
@@ -1335,7 +1360,7 @@ void ColumnView::insertItem(int pos, QQuickItem *item)
     if (attached->interactiveResizeEnabled()) {
         const qreal preferredWidth = m_state.value(pos);
         if (preferredWidth > 0) {
-            item->setImplicitWidth(preferredWidth);
+            attached->setPreferredWidth(preferredWidth);
         }
     }
     // Animate shift to new item.
@@ -1489,8 +1514,8 @@ QString ColumnView::savedState()
             continue;
         }
 
-        obj.insert(QString::number(i), item->implicitWidth());
-        m_state[i] = item->implicitWidth();
+        obj.insert(QString::number(i), attached->preferredWidth());
+        m_state[i] = attached->preferredWidth();
         ++i;
     }
 
@@ -1545,7 +1570,7 @@ void ColumnView::setSavedState(const QString &state)
             continue;
         }
 
-        item->setImplicitWidth(value);
+        attached->setPreferredWidth(value);
     }
 
     polish();

@@ -160,12 +160,12 @@ Item {
 
 
                 if (!leadingColumn.Kirigami.ColumnView.fillWidth) {
-                    leadingColumn.implicitWidth = Math.max(leadingMinimumWidth,
+                    leadingColumn.Kirigami.ColumnView.preferredWidth = Math.max(leadingMinimumWidth,
                                                         Math.min(leadingMaximumWidth,
                                                                  newX - leadingX));
                 }
                 if (!trailingColumn.Kirigami.ColumnView.fillWidth) {
-                    trailingColumn.implicitWidth = Math.max(trailingMinimumWidth,
+                    trailingColumn.Kirigami.ColumnView.preferredWidth = Math.max(trailingMinimumWidth,
                                                         Math.min(trailingMaximumWidth,
                                                                  trailingX + trailingColumn.width - newX));
                 }

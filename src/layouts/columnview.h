@@ -67,6 +67,17 @@ class ColumnViewAttached : public QObject
     Q_PROPERTY(qreal minimumWidth READ minimumWidth WRITE setMinimumWidth NOTIFY minimumWidthChanged FINAL)
 
     /*!
+     * \qmlattachedproperty real ColumnView::preferredWidth
+     *
+     * When we are in DynamicColumns mode, the columns will be resized to preferredWidth.
+     * When the column are resized with the mouse, this propoerty will be updated by the drag
+     * And will always be between minimumWidth and maximumWidth
+     *
+     * \since 6.16
+     */
+    Q_PROPERTY(qreal preferredWidth READ preferredWidth WRITE setPreferredWidth NOTIFY preferredWidthChanged FINAL)
+
+    /*!
      * \qmlattachedproperty real ColumnView::maximumWidth
      *
      * When a column is interactiveResizeEnabled, when resizing manually it will bound
@@ -170,6 +181,9 @@ public:
     qreal minimumWidth() const;
     void setMinimumWidth(qreal space);
 
+    qreal preferredWidth() const;
+    void setPreferredWidth(qreal space);
+
     qreal maximumWidth() const;
     void setMaximumWidth(qreal space);
 
@@ -209,6 +223,7 @@ Q_SIGNALS:
     void fillWidthChanged();
     void reservedSpaceChanged();
     void minimumWidthChanged();
+    void preferredWidthChanged();
     void maximumWidthChanged();
     void viewChanged();
     void preventStealingChanged();
@@ -225,6 +240,7 @@ private:
     bool m_fillWidth = false;
     qreal m_reservedSpace = 0;
     qreal m_minimumWidth = -1;
+    qreal m_preferredWidth = -1;
     qreal m_maximumWidth = -1;
     QPointer<ColumnView> m_view;
     QPointer<QQuickItem> m_originalParent;
