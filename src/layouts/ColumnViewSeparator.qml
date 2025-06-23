@@ -133,7 +133,8 @@ Item {
                 let leadingMinimumWidth = leadingColumn.Kirigami.ColumnView.minimumWidth;
                 if (leadingColumn.Kirigami.ColumnView.fillWidth) {
                     leadingMinimumWidth = view.columnWidth;
-                } else if (leadingMinimumWidth < 0) {
+                }
+                if (leadingMinimumWidth < 0) {
                     leadingMinimumWidth = Kirigami.Units.gridUnit * 8;
                 }
 
@@ -141,7 +142,8 @@ Item {
                 let trailingMinimumWidth = trailingColumn.Kirigami.ColumnView.minimumWidth;
                 if (trailingColumn.Kirigami.ColumnView.fillWidth) {
                     trailingMinimumWidth = view.columnWidth;
-                } else if (trailingMinimumWidth < 0) {
+                }
+                if (trailingMinimumWidth < 0) {
                     trailingMinimumWidth = Kirigami.Units.gridUnit * 8;
                 }
 
