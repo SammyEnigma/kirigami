@@ -21,11 +21,12 @@ TestCase {
     width: 500
     height: 500
 
-    component AppItemComponent : Kirigami.ApplicationItem {
+    component AppItemComponent : Kirigami.ApplicationWindow {
         id: app
 
         property alias headerItem: headerItem
         property alias topItem: topItem
+        property alias sidebarSizeItem: sidebarSizeItemDelegate
 
         width: 500
         height: 500
@@ -42,6 +43,26 @@ TestCase {
                 radius: 20 // to see its bounds
             }
 
+            actions: [
+                Kirigami.Action {
+                    text: "View"
+                    icon.name: "view-list-icons"
+                    Kirigami.Action {
+                        text: "action 1"
+                    }
+                    Kirigami.Action {
+                        text: "action 2"
+                    }
+                    Kirigami.Action {
+                        text: "action 3"
+                    }
+                },
+                Kirigami.Action {
+                    text: "Sync"
+                    icon.name: "folder-sync"
+                }
+            ]
+
             // Create some item which we can use to measure actual header height
             Rectangle {
                 id: topItem
@@ -49,6 +70,15 @@ TestCase {
                 Layout.fillHeight: true
                 color: "green"
                 radius: 20 // to see its bounds
+            }
+        }
+
+        pageStack.initialPage: startPage
+        Kirigami.Page {
+            id: startPage
+            QQC2.ItemDelegate {
+                id: sidebarSizeItemDelegate
+                icon.name: "go-back"
             }
         }
     }
@@ -148,5 +178,15 @@ TestCase {
 
         compare(app.globalDrawer.parent, app.T.Overlay.overlay);
         compare(app.contextDrawer.parent, app.T.Overlay.overlay);
+    }
+
+    function test_collapsedColumnSize() {
+        const app = createTemporaryObject(appItemComponent, this);
+        verify(app);
+        app.globalDrawer.open();
+        app.globalDrawer.collapsible = true;
+        app.globalDrawer.collapsed = true;
+        tryVerify(() => {return app.globalDrawer.width == app.sidebarSizeItem.implicitWidth + app.globalDrawer.leftPadding + app.globalDrawer.rightPadding});
+        verify(app.globalDrawer.width  > 0);
     }
 }
