@@ -102,7 +102,7 @@ msgctxt "ActionToolBar|"
 msgid "More Actions"
 msgstr "Plus d'actions"
 
-#: controls/Chip.qml:52
+#: controls/Chip.qml:57
 msgctxt "Chip|"
 msgid "Remove Tag"
 msgstr "Supprimer une étiquette"
@@ -117,17 +117,17 @@ msgctxt "ContextualHelpButton|"
 msgid "Show Contextual Help"
 msgstr "Afficher l'aide contextuelle"
 
-#: controls/GlobalDrawer.qml:356
+#: controls/GlobalDrawer.qml:358
 msgctxt "GlobalDrawer|"
 msgid "Back"
 msgstr "Retour"
 
-#: controls/GlobalDrawer.qml:674
+#: controls/GlobalDrawer.qml:686
 msgctxt "GlobalDrawer|"
 msgid "Close Sidebar"
 msgstr "Fermer la barre latérale"
 
-#: controls/GlobalDrawer.qml:679
+#: controls/GlobalDrawer.qml:691
 msgctxt "GlobalDrawer|"
 msgid "Open Sidebar"
 msgstr "Ouvrir une barre latérale"

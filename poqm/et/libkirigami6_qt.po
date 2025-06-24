@@ -122,7 +122,7 @@ msgctxt "ActionToolBar|"
 msgid "More Actions"
 msgstr "Veel toiminguid"
 
-#: controls/Chip.qml:52
+#: controls/Chip.qml:57
 msgctxt "Chip|"
 msgid "Remove Tag"
 msgstr ""
@@ -137,17 +137,17 @@ msgctxt "ContextualHelpButton|"
 msgid "Show Contextual Help"
 msgstr ""
 
-#: controls/GlobalDrawer.qml:356
+#: controls/GlobalDrawer.qml:358
 msgctxt "GlobalDrawer|"
 msgid "Back"
 msgstr "Tagasi"
 
-#: controls/GlobalDrawer.qml:674
+#: controls/GlobalDrawer.qml:686
 msgctxt "GlobalDrawer|"
 msgid "Close Sidebar"
 msgstr "Sulge külgriba"
 
-#: controls/GlobalDrawer.qml:679
+#: controls/GlobalDrawer.qml:691
 #, fuzzy
 #| msgctxt "GlobalDrawer|"
 #| msgid "Close Sidebar"

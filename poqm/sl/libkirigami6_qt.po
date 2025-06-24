@@ -103,7 +103,7 @@ msgctxt "ActionToolBar|"
 msgid "More Actions"
 msgstr "Več dejanj"
 
-#: controls/Chip.qml:52
+#: controls/Chip.qml:57
 msgctxt "Chip|"
 msgid "Remove Tag"
 msgstr "Odstrani značko"
@@ -118,17 +118,17 @@ msgctxt "ContextualHelpButton|"
 msgid "Show Contextual Help"
 msgstr "Prikaži kontekstno pomoč"
 
-#: controls/GlobalDrawer.qml:356
+#: controls/GlobalDrawer.qml:358
 msgctxt "GlobalDrawer|"
 msgid "Back"
 msgstr "Nazaj"
 
-#: controls/GlobalDrawer.qml:674
+#: controls/GlobalDrawer.qml:686
 msgctxt "GlobalDrawer|"
 msgid "Close Sidebar"
 msgstr "Zapri stransko letvico"
 
-#: controls/GlobalDrawer.qml:679
+#: controls/GlobalDrawer.qml:691
 msgctxt "GlobalDrawer|"
 msgid "Open Sidebar"
 msgstr "Odpri stransko letvico"

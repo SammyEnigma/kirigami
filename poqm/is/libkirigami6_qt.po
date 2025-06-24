@@ -97,7 +97,7 @@ msgctxt "ActionToolBar|"
 msgid "More Actions"
 msgstr "Fleiri aðgerðir"
 
-#: controls/Chip.qml:52
+#: controls/Chip.qml:57
 msgctxt "Chip|"
 msgid "Remove Tag"
 msgstr "Fjarlægja merki"
@@ -112,17 +112,17 @@ msgctxt "ContextualHelpButton|"
 msgid "Show Contextual Help"
 msgstr "Sýna samhengishjálp"
 
-#: controls/GlobalDrawer.qml:356
+#: controls/GlobalDrawer.qml:358
 msgctxt "GlobalDrawer|"
 msgid "Back"
 msgstr "Til baka"
 
-#: controls/GlobalDrawer.qml:674
+#: controls/GlobalDrawer.qml:686
 msgctxt "GlobalDrawer|"
 msgid "Close Sidebar"
 msgstr "Loka hliðarstiku"
 
-#: controls/GlobalDrawer.qml:679
+#: controls/GlobalDrawer.qml:691
 msgctxt "GlobalDrawer|"
 msgid "Open Sidebar"
 msgstr "Opna hliðarstiku"

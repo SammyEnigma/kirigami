@@ -99,7 +99,7 @@ msgctxt "ActionToolBar|"
 msgid "More Actions"
 msgstr "その他のアクション"
 
-#: controls/Chip.qml:52
+#: controls/Chip.qml:57
 msgctxt "Chip|"
 msgid "Remove Tag"
 msgstr "タグを削除"
@@ -114,17 +114,17 @@ msgctxt "ContextualHelpButton|"
 msgid "Show Contextual Help"
 msgstr ""
 
-#: controls/GlobalDrawer.qml:356
+#: controls/GlobalDrawer.qml:358
 msgctxt "GlobalDrawer|"
 msgid "Back"
 msgstr "戻る"
 
-#: controls/GlobalDrawer.qml:674
+#: controls/GlobalDrawer.qml:686
 msgctxt "GlobalDrawer|"
 msgid "Close Sidebar"
 msgstr "サイドバーを閉じる"
 
-#: controls/GlobalDrawer.qml:679
+#: controls/GlobalDrawer.qml:691
 msgctxt "GlobalDrawer|"
 msgid "Open Sidebar"
 msgstr "サイドバーを開く"
