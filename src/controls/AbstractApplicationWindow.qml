@@ -232,8 +232,7 @@ QQC2.ApplicationWindow {
         anchors.horizontalCenter: parent.horizontalCenter
 
         parent: T.Overlay.overlay
-        Kirigami.OverlayZStacking.layer: Kirigami.OverlayZStacking.Notification
-        z: Kirigami.OverlayZStacking.z
+        z: 999999
     }
 
     contentItem.z: 1
