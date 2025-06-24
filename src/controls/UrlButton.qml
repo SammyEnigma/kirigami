@@ -50,12 +50,16 @@ Kirigami.LinkButton {
     rightPadding: LayoutMirroring.enabled || !icon.visible ? 0 : icon.size + Kirigami.Units.smallSpacing
     leftPadding: LayoutMirroring.enabled && icon.visible ? icon.size + Kirigami.Units.smallSpacing : 0
 
+    LayoutMirroring.childrenInherit: true
+
     Kirigami.Icon {
         id: icon
 
         readonly property int size: Kirigami.Units.iconSizes.sizeForLabels
 
-        x: LayoutMirroring.enabled ? button.width - button.implicitWidth : button.implicitWidth - size
+        x: LayoutMirroring.enabled
+            ? (button.width - button.contentWidth - size - Kirigami.Units.smallSpacing) / 2
+            : (button.width + button.contentWidth + size + Kirigami.Units.smallSpacing) / 2 - size
         width: size
         height: size
 
