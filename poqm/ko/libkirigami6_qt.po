@@ -243,7 +243,7 @@ msgctxt "UrlButton|@info:whatsthis"
 msgid "Open link"
 msgstr "링크 열기"
 
-#: controls/UrlButton.qml:90
+#: controls/UrlButton.qml:94
 msgctxt "UrlButton|"
 msgid "Copy Link to Clipboard"
 msgstr "클립보드에 링크 복사"

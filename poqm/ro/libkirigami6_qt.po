@@ -271,7 +271,7 @@ msgctxt "UrlButton|@info:whatsthis"
 msgid "Open link"
 msgstr "Deschide"
 
-#: controls/UrlButton.qml:90
+#: controls/UrlButton.qml:94
 msgctxt "UrlButton|"
 msgid "Copy Link to Clipboard"
 msgstr "Copiază legătura în clipboard"

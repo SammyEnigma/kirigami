@@ -243,7 +243,7 @@ msgctxt "UrlButton|@info:whatsthis"
 msgid "Open link"
 msgstr "Öppna länk"
 
-#: controls/UrlButton.qml:90
+#: controls/UrlButton.qml:94
 msgctxt "UrlButton|"
 msgid "Copy Link to Clipboard"
 msgstr "Kopiera länk till klippbordet"
