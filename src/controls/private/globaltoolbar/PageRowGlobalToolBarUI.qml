@@ -14,9 +14,25 @@ import "../" as P
 
 Kirigami.AbstractApplicationHeader {
     id: header
-    readonly property int leftReservedSpace: (buttonsLayout.visible && buttonsLayout.visibleChildren.length > 0 ? buttonsLayout.width + Kirigami.Units.smallSpacing : 0) // Take into account the layout margins the nav buttons have
-        + (leftHandleAnchor.visible ? leftHandleAnchor.width : 0)
-        + (menuButton.visible ? menuButton.width : 0)
+    readonly property int leftReservedSpace: {
+        let space = 0;
+        let populated = false;
+        if (buttonsLayout.visible && buttonsLayout.visibleChildren.length > 0) {
+            space += buttonsLayout.width;
+            populated = true;
+        }
+        if (leftHandleAnchor.visible) {
+            space += leftHandleAnchor.width;
+            populated = true;
+        }
+        if (menuButton.visible) {
+            space += menuButton.width;
+            populated = true;
+        }
+        if (populated) {
+            space += Kirigami.Units.mediumSpacing;
+        }
+    }
     readonly property int rightReservedSpace: rightHandleAnchor.visible ? rightHandleAnchor.width + Kirigami.Units.smallSpacing : 0
 
     readonly property alias leftHandleAnchor: leftHandleAnchor
