@@ -147,12 +147,12 @@ msgctxt "PasswordField|"
 msgid "Show Password"
 msgstr "गुप्तशब्दं दर्शयतु"
 
-#: controls/private/globaltoolbar/PageRowGlobalToolBarUI.qml:83
+#: controls/private/globaltoolbar/PageRowGlobalToolBarUI.qml:99
 msgctxt "PageRowGlobalToolBarUI|"
 msgid "Close menu"
 msgstr "मेनू बन्दं कुर्वन्तु"
 
-#: controls/private/globaltoolbar/PageRowGlobalToolBarUI.qml:83
+#: controls/private/globaltoolbar/PageRowGlobalToolBarUI.qml:99
 msgctxt "PageRowGlobalToolBarUI|"
 msgid "Open menu"
 msgstr "मेनू उद्घाटयन्तु"

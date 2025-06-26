@@ -148,12 +148,12 @@ msgctxt "PasswordField|"
 msgid "Show Password"
 msgstr "Rodyti slaptažodį"
 
-#: controls/private/globaltoolbar/PageRowGlobalToolBarUI.qml:83
+#: controls/private/globaltoolbar/PageRowGlobalToolBarUI.qml:99
 msgctxt "PageRowGlobalToolBarUI|"
 msgid "Close menu"
 msgstr "Užverti meniu"
 
-#: controls/private/globaltoolbar/PageRowGlobalToolBarUI.qml:83
+#: controls/private/globaltoolbar/PageRowGlobalToolBarUI.qml:99
 msgctxt "PageRowGlobalToolBarUI|"
 msgid "Open menu"
 msgstr "Atverti meniu"
