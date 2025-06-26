@@ -59,6 +59,11 @@ QQC2.ItemDelegate {
 
     activeFocusOnTab: false
 
+    icon {
+        width: Kirigami.Units.iconSizes.smallMedium
+        height: Kirigami.Units.iconSizes.smallMedium
+    }
+
     // we do not need a background
     background: Item {}
 
@@ -70,6 +75,14 @@ QQC2.ItemDelegate {
         id: rowLayout
         spacing: Kirigami.Units.largeSpacing
 
+        Kirigami.Icon {
+            Layout.alignment: Qt.AlignVCenter
+            implicitWidth: listSection.icon.width
+            implicitHeight: listSection.icon.height
+            color: listSection.icon.color
+            source: listSection.icon.name.length > 0 ? listSection.icon.name : listSection.icon.source
+            visible: valid
+        }
         Kirigami.Heading {
             Layout.maximumWidth: rowLayout.width
             Layout.alignment: Qt.AlignVCenter
