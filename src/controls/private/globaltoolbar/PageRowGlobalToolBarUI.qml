@@ -32,6 +32,7 @@ Kirigami.AbstractApplicationHeader {
         if (populated) {
             space += Kirigami.Units.mediumSpacing;
         }
+        return space
     }
     readonly property int rightReservedSpace: rightHandleAnchor.visible ? rightHandleAnchor.width + Kirigami.Units.smallSpacing : 0
 
