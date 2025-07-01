@@ -102,6 +102,10 @@ Kirigami.AbstractApplicationWindow {
      */
     readonly property alias pageStack: __pageStack
 
+    // Since out pageStack property replaces the one in AbstractApplicationWindow,
+    // this is the only way to actually assign it
+    __pageStackAlias: __pageStack
+
     // Redefined here as here we can know a pointer to PageRow.
     // We negate the canBeEnabled check because we don't want to factor in the automatic drawer provided by Kirigami for page actions for our calculations
     wideScreen: width >= (root.pageStack.defaultColumnWidth) + ((contextDrawer && !(contextDrawer instanceof Kirigami.ContextDrawer)) ? contextDrawer.width : 0) + (globalDrawer ? globalDrawer.width : 0)

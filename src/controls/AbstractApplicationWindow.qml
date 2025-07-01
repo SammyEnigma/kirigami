@@ -235,6 +235,8 @@ QQC2.ApplicationWindow {
         z: 999999
     }
 
+    // This is to make ApplicationWindow actually assign pageStack, as it replaces the property
+    property alias __pageStackAlias: root.pageStack
     contentItem.z: 1
     contentItem.anchors.left: contentItem.parent.left
     contentItem.anchors.right: contentItem.parent.right
