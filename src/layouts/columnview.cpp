@@ -143,6 +143,8 @@ qreal ColumnViewAttached::reservedSpace() const
 {
     if (m_customReservedSpace) {
         return m_reservedSpace;
+    } else if (!m_view) {
+        return 0.0;
     } else if (m_view->columnResizeMode() == ColumnView::FixedColumns) {
         return m_view->columnWidth();
     } else {
