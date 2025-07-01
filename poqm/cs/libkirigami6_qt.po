@@ -148,12 +148,12 @@ msgctxt "PasswordField|"
 msgid "Show Password"
 msgstr "Zobrazit heslo"
 
-#: controls/private/globaltoolbar/PageRowGlobalToolBarUI.qml:99
+#: controls/private/globaltoolbar/PageRowGlobalToolBarUI.qml:100
 msgctxt "PageRowGlobalToolBarUI|"
 msgid "Close menu"
 msgstr "Uzavřít nabídku"
 
-#: controls/private/globaltoolbar/PageRowGlobalToolBarUI.qml:99
+#: controls/private/globaltoolbar/PageRowGlobalToolBarUI.qml:100
 msgctxt "PageRowGlobalToolBarUI|"
 msgid "Open menu"
 msgstr "Otevřít nabídku"
