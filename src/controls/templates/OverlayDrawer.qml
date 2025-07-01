@@ -226,8 +226,9 @@ T.Drawer {
                     }
                 }
             }
-            SmoothedAnimation {
-                velocity: 5
+            NumberAnimation {
+                easing.type: Easing.OutQuad
+                duration: Kirigami.Units.longDuration
             }
             ScriptAction {
                 script: enterAnimation.animating = false
@@ -243,8 +244,9 @@ T.Drawer {
             ScriptAction {
                 script: exitAnimation.animating = true
             }
-            SmoothedAnimation {
-                velocity: 5
+            NumberAnimation {
+                easing.type: Easing.InQuad
+                duration: Kirigami.Units.longDuration
             }
             ScriptAction {
                 script: exitAnimation.animating = false
