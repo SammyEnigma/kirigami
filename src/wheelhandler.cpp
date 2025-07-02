@@ -450,7 +450,7 @@ void WheelHandler::startInertiaScrolling()
     for (const QPoint delta : m_wheelEvents) {
         totalDelta += delta;
     }
-    qint64 elapsed = m_timestamps.first() - m_timestamps.last();
+    const uint64_t elapsed = std::max<uint64_t>(m_timestamps.first() - m_timestamps.last(), 1);
 
     // The inertia is more natural if we multiply
     // the actual scrolling speed by some factor,
