@@ -888,7 +888,10 @@ QQuickItem *ContentItem::ensureSeparator(QQuickItem *previousColumn, QQuickItem 
         separatorItem = qobject_cast<QQuickItem *>(
             QmlComponentsPoolSingleton::instance(qmlEngine(column))->m_separatorComponent.beginCreate(QQmlEngine::contextForObject(column)));
         if (separatorItem) {
-            separatorItem->setParent(column);
+            // Do NOT parent the separator to the column
+            // we are managing the lifetime of the separator on this side,
+            // therefore if is column itself deleting it, we will have a double dellete
+            separatorItem->setParent(this);
             separatorItem->setParentItem(column);
             separatorItem->setZ(9999);
             separatorItem->setProperty("column", QVariant::fromValue(column));
