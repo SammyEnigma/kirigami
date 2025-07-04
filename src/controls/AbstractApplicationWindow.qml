@@ -232,7 +232,8 @@ QQC2.ApplicationWindow {
         anchors.horizontalCenter: parent.horizontalCenter
 
         parent: T.Overlay.overlay
-        z: 999999
+        Kirigami.OverlayZStacking.layer: Kirigami.OverlayZStacking.Notification
+        z: Kirigami.OverlayZStacking.z
     }
 
     // This is to make ApplicationWindow actually assign pageStack, as it replaces the property

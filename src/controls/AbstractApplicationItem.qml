@@ -310,7 +310,8 @@ Item {
         anchors.horizontalCenter: parent.horizontalCenter
 
         parent: T.Overlay.overlay
-        z: 999999
+        Kirigami.OverlayZStacking.layer: Kirigami.OverlayZStacking.Notification
+        z: Kirigami.OverlayZStacking.z
     }
 
     Item {
