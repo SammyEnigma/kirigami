@@ -305,13 +305,9 @@ Item {
 
     TP.PassiveNotificationsManager {
         id: notificationsObject
-
         anchors.bottom: parent.bottom
         anchors.horizontalCenter: parent.horizontalCenter
-
-        parent: T.Overlay.overlay
-        Kirigami.OverlayZStacking.layer: Kirigami.OverlayZStacking.Notification
-        z: Kirigami.OverlayZStacking.z
+        z: 1
     }
 
     Item {
