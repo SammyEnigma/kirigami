@@ -479,7 +479,7 @@ T.Dialog {
             Kirigami.Separator {
                 id: footerSeparator
                 visible: if (root.contentItem instanceof T.Pane || root.contentItem instanceof Flickable) {
-                    return root.dialog.contentItem.height < root.dialog.contentItem.contentHeight;
+                    return root.contentItem.height < root.contentItem.contentHeight;
                 } else {
                     return false;
                 }
