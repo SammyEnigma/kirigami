@@ -183,7 +183,7 @@ KirigamiDialogs.Dialog {
 
                     Kirigami.Heading {
                         text: root.title
-                        visible: root.title.length > 0
+                        visible: (!root.hasOwnProperty("popupType") || root.popupType === QQC2.Popup.Item) && root.title.length > 0
                         elide: QQC2.Label.ElideRight
                         wrapMode: Text.WordWrap
                         Layout.fillWidth: true

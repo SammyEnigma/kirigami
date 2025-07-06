@@ -402,6 +402,7 @@ T.Dialog {
     }
 
     header: KDialogs.DialogHeader {
+        visible: !root.hasOwnProperty("popupType") || root.popupType === T.Popup.Item
         dialog: root
         contentItem: KDialogs.DialogHeaderTopContent {
             dialog: root
