@@ -152,7 +152,7 @@ T.Dialog {
      */
     readonly property real absoluteMaximumWidth: ((parent && parent.width) || Infinity) - Kirigami.Units.largeSpacing * 2
 
-    readonly property real __borderWidth: 1
+    readonly property real __borderWidth: !root.hasOwnProperty("popupType") || popupType === T.Popup.Item ? 1 : 0
 
     /*!
       \brief This property holds the maximum height the dialog can have
@@ -326,7 +326,7 @@ T.Dialog {
         Kirigami.Theme.colorSet: Kirigami.Theme.View
         Kirigami.Theme.inherit: false
         color: Kirigami.Theme.backgroundColor
-        radius: Kirigami.Units.cornerRadius
+        radius: !root.hasOwnProperty("popupType") || root.popupType === T.Popup.Item ? Kirigami.Units.cornerRadius : 0
         shadow {
             size: radius * 2
             color: Qt.rgba(0, 0, 0, 0.3)
