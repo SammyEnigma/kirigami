@@ -28,18 +28,8 @@ Item {
         }
         leadingColumn: LayoutMirroring.enabled ? column : previousColumn
         trailingColumn: LayoutMirroring.enabled ? nextColumn : column
-    }
-
-    Kirigami.Separator {
-        anchors {
-            left: parent.left
-            bottom: leftHandle.top
-            bottomMargin: Kirigami.Units.largeSpacing
-        }
-        Kirigami.Theme.colorSet: Kirigami.Theme.Header
-        Kirigami.Theme.inherit: false
-        visible: column.Kirigami.ColumnView.globalHeader.visible && leftHandle.visible
-        height: column.Kirigami.ColumnView.globalHeader.height - Kirigami.Units.largeSpacing * 2
+        // If this handle touched the left ColumnView edge, hide it
+        visible: leadingColumn && trailingColumn && column.Kirigami.ColumnView.view.leadingVisibleItem !== column
     }
 
     SeparatorHandle {
@@ -52,19 +42,7 @@ Item {
         }
         leadingColumn: LayoutMirroring.enabled ? previousColumn : column
         trailingColumn: LayoutMirroring.enabled ? column : nextColumn
-    }
-
-    Kirigami.Separator {
-        anchors {
-            bottom: rightHandle.top
-            right: parent.right
-            rightMargin: -1
-            bottomMargin: Kirigami.Units.largeSpacing
-        }
-        Kirigami.Theme.colorSet: Kirigami.Theme.Header
-        Kirigami.Theme.inherit: false
-        visible: column.Kirigami.ColumnView.globalHeader.visible && rightHandle.visible
-        height: column.Kirigami.ColumnView.globalHeader.height - Kirigami.Units.largeSpacing * 2
+        visible: leadingColumn && trailingColumn && column.Kirigami.ColumnView.view.leadingVisibleItem !== previousColumn
     }
 
     component SeparatorHandle: Kirigami.Separator {

@@ -6,6 +6,7 @@
 
 import QtQuick
 import QtQuick.Layouts
+import org.kde.kirigami as Kirigami
 
 AbstractPageHeader {
     id: root
@@ -28,5 +29,17 @@ AbstractPageHeader {
         // If the title delegate really needs to load async, it should be its responsibility to do it itself.
         asynchronous: false
         sourceComponent: page ? page.titleDelegate : null
+
+        Kirigami.Separator {
+            anchors {
+                left: parent.left
+                top: parent.top
+                bottom: parent.bottom
+                leftMargin: -root.leftPadding
+            }
+            Kirigami.Theme.colorSet: Kirigami.Theme.Header
+            Kirigami.Theme.inherit: false
+            visible: pageRow?.separatorVisible && page?.Kirigami.ColumnView.view.leadingVisibleItem !== page
+        }
     }
 }

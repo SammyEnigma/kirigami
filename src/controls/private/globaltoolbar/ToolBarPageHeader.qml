@@ -35,7 +35,7 @@ AbstractPageHeader {
 
         Loader {
             id: titleLoader
-
+            // Don't need space on the first item
             Layout.alignment: Qt.AlignLeft | Qt.AlignVCenter
             Layout.fillWidth: item?.Layout.fillWidth ?? false
             Layout.minimumWidth: item?.Layout.minimumWidth ?? -1
@@ -46,6 +46,19 @@ AbstractPageHeader {
             // If the title delegate really needs to load async, it should be its responsibility to do it itself.
             asynchronous: false
             sourceComponent: page?.titleDelegate ?? null
+
+            // Here rather than in the main layout in order to make it much simpler otherwise the spacing will be a bit wrong
+            Kirigami.Separator {
+                anchors {
+                    left: parent.left
+                    top: parent.top
+                    bottom: parent.bottom
+                    leftMargin: -root.leftPadding
+                }
+                Kirigami.Theme.colorSet: Kirigami.Theme.Header
+                Kirigami.Theme.inherit: false
+                visible: pageRow?.separatorVisible && page?.Kirigami.ColumnView.view.leadingVisibleItem !== page
+            }
         }
 
         Kirigami.ActionToolBar {
