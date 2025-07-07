@@ -620,12 +620,6 @@ void ContentItem::layoutItems()
 
         if (child->isVisible()) {
             if (attached->isPinned() && m_view->columnResizeMode() != ColumnView::SingleColumn) {
-                QQuickItem *sep = nullptr;
-                int sepWidth = 0;
-                if (m_view->separatorVisible()) {
-                    sep = ensureSeparator(previousChild, child, nextChild);
-                    sepWidth = (sep ? sep->width() : 0);
-                }
                 const qreal width = childWidth(child);
                 const qreal widthDiff = std::max(0.0, m_view->width() - child->width()); // it's possible for the view width to be smaller than the child width
                 const qreal pageX = std::clamp(partialWidth, -x(), -x() + widthDiff);
@@ -633,24 +627,24 @@ void ContentItem::layoutItems()
                 qreal footerHeight = .0;
                 if (QQuickItem *header = attached->globalHeader()) {
                     headerHeight = header->isVisible() ? header->height() : .0;
-                    header->setWidth(width + sepWidth);
+                    header->setWidth(width);
                     header->setPosition(QPointF(pageX, .0));
                     header->setZ(2);
                 }
                 if (QQuickItem *footer = attached->globalFooter()) {
                     footerHeight = footer->isVisible() ? footer->height() : .0;
-                    footer->setWidth(width + sepWidth);
+                    footer->setWidth(width);
                     footer->setPosition(QPointF(pageX, height() - footerHeight));
                     footer->setZ(2);
                 }
 
-                child->setSize(QSizeF(width + sepWidth, height() - headerHeight - footerHeight));
+                child->setSize(QSizeF(width, height() - headerHeight - footerHeight));
                 child->setPosition(QPointF(pageX, headerHeight));
                 child->setZ(1);
 
                 if (partialWidth <= -x()) {
                     m_leftPinnedSpace = qMax(m_leftPinnedSpace, width);
-                } else if (partialWidth > -x() + m_view->width() - child->width() + sepWidth) {
+                } else if (partialWidth > -x() + m_view->width() - child->width()) {
                     m_rightPinnedSpace = qMax(m_rightPinnedSpace, child->width());
                 }
 
@@ -747,14 +741,7 @@ void ContentItem::layoutPinnedItems()
 
         if (child->isVisible()) {
             if (attached->isPinned()) {
-                QQuickItem *sep = nullptr;
-                int sepWidth = 0;
-                if (m_view->separatorVisible()) {
-                    sep = ensureSeparator(previousChild, child, nextChild);
-                    sepWidth = (sep ? sep->width() : 0);
-                }
-
-                const qreal pageX = qMin(qMax(-x(), partialWidth), -x() + m_view->width() - child->width() + sepWidth);
+                const qreal pageX = qMin(qMax(-x(), partialWidth), -x() + m_view->width() - child->width());
                 qreal headerHeight = .0;
                 qreal footerHeight = .0;
                 if (QQuickItem *header = attached->globalHeader()) {
@@ -768,8 +755,8 @@ void ContentItem::layoutPinnedItems()
                 child->setPosition(QPointF(pageX, headerHeight));
 
                 if (partialWidth <= -x()) {
-                    m_leftPinnedSpace = qMax(m_leftPinnedSpace, child->width() - sepWidth);
-                } else if (partialWidth > -x() + m_view->width() - child->width() + sepWidth) {
+                    m_leftPinnedSpace = qMax(m_leftPinnedSpace, child->width());
+                } else if (partialWidth > -x() + m_view->width() - child->width()) {
                     m_rightPinnedSpace = qMax(m_rightPinnedSpace, child->width());
                 }
             }
