@@ -119,8 +119,6 @@ Item {
     onMinimumHeightChanged: implicitHeight = preferredHeight;
     onPreferredHeightChanged: implicitHeight = preferredHeight;
 
-   // opacity: height > 0 ? 1 : 0
-
     NumberAnimation {
         id: heightAnim
         target: root
