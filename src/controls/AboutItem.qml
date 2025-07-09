@@ -198,7 +198,7 @@ Item {
                 Layout.preferredWidth: height
                 Layout.maximumWidth: aboutItem.width / 3;
                 Layout.rightMargin: Kirigami.Units.largeSpacing
-                source: Kirigami.Settings.applicationWindowIcon || aboutItem.aboutData.programLogo || aboutItem.aboutData.programIconName || aboutItem.aboutData.componentName
+                source: Kirigami.Settings.applicationWindowIcon || aboutItem.aboutData.programLogo || aboutItem.aboutData.componentName
             }
 
             Kirigami.Heading {
