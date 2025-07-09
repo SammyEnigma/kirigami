@@ -38,6 +38,39 @@ TestCase {
         }
     }
 
+    Component {
+        id: multipleElementsComponent
+        Window {
+            id: rootWindow
+            property var item: formLayout
+            property var expectedMinimumSize: 200
+            width: 600
+            height: 400
+            Kirigami.FormLayout {
+                id: formLayout
+                anchors.fill: parent
+                Repeater {
+                    model: 200
+                    Item {
+                        implicitWidth: rootWindow.expectedMinimumSize
+                        implicitHeight: 20
+                        Layout.fillWidth: true
+                    }
+                }
+            }
+        }
+    }
+
+    function test_quick_relayout() {
+        let window = createTemporaryObject(multipleElementsComponent);
+        let item = window.item;
+        window.show();
+
+        verify(item.implicitWidth >= window.expectedMinimumSize, "implicit width of layout should match the implicit width of the elements within upon component creation");
+
+        window.close();
+    }
+
     function test_fractional_width_rounding() {
         let window = createTemporaryObject(fractionalSizeRoundingComponent);
         let item = window.item;

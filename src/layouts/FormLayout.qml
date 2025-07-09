@@ -116,10 +116,6 @@ Item {
         }
     }
 
-    Component.onCompleted: {
-        relayout();
-    }
-
     Component.onDestruction: {
         for (const twinFormLayout of twinFormLayouts) {
             const child = twinFormLayout.children[0];
@@ -329,6 +325,7 @@ Item {
     }
 
     onChildrenChanged: relayout();
+    Component.onCompleted: relayout();
 
     Component {
         id: itemComponent
@@ -440,7 +437,7 @@ Item {
                         return implicitHeight + Kirigami.Units.largeSpacing * 2;
                     }
                     else if (root.wideMode && !(item.Kirigami.FormData.buddyFor instanceof TextEdit)) {
-                        return Math.max(implicitHeight, item.Kirigami.FormData.buddyFor.height)
+                        return Math.max(implicitHeight, item.Kirigami.FormData.buddyFor?.height ?? implicitHeight)
                     }
                     return implicitHeight;
                 }
@@ -457,7 +454,7 @@ Item {
                 if (!item) {
                     return 0;
                 }
-                if (root.wideMode && item.Kirigami.FormData.buddyFor.parent !== root) {
+                if (item.Kirigami.FormData.buddyFor && root.wideMode && item.Kirigami.FormData.buddyFor.parent !== root) {
                     return item.Kirigami.FormData.buddyFor.y;
                 }
                 if (index === 0 || root.wideMode) {
