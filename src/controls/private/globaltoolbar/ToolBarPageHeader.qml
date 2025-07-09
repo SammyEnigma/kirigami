@@ -68,7 +68,7 @@ Kirigami.AbstractApplicationHeader {
             id: leftHandleSpacer
             visible: {
                 const drawer = applicationWindow().globalDrawer as KT.OverlayDrawer;
-                if (!drawer || !drawer.enabled || !drawer.handleVisible) {
+                if (!drawer || (!drawer.isMenu && (!drawer.enabled || !drawer.handleVisible))) {
                     return false;
                 }
                 if (page.Kirigami.ColumnView.index <= 0) {
