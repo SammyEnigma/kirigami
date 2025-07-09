@@ -31,6 +31,13 @@ Loader {
             return true;
         }
 
+        // If we are on the first page and we don't want to show the forward button, don't
+        // show the back button either
+        if (!(pageStack.globalToolBar.showNavigationButtons & Kirigami.ApplicationHeaderStyle.ShowForwardButton) &&
+            page.Kirigami.ColumnView.index === 0) {
+            return false;
+        }
+
         // If we are in single page mode, always show if depth > 1
         if (pageStack.columnView.columnResizeMode === Kirigami.ColumnView.SingleColumn) {
             return pageStack.depth > 1;
