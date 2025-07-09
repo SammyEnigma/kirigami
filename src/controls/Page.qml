@@ -240,27 +240,18 @@ QQC2.Page {
         }
 
         function syncSource() {
+            if (!row) {
+                return;
+            }
             if (root.globalToolBarStyle !== Kirigami.ApplicationHeaderStyle.ToolBar &&
                 root.globalToolBarStyle !== Kirigami.ApplicationHeaderStyle.Titles &&
                 root.titleDelegate !== defaultTitleDelegate) {
                 sourceComponent = root.titleDelegate;
             } else if (active) {
-                const url = root.globalToolBarStyle === Kirigami.ApplicationHeaderStyle.ToolBar
-                    ? "private/globaltoolbar/ToolBarPageHeader.qml"
-                    : "private/globaltoolbar/TitlesPageHeader.qml";
-                // TODO: find container reliably, remove assumption
+                const url = "private/globaltoolbar/ToolBarPageHeader.qml";
                 setSource(Qt.resolvedUrl(url), {
                     pageRow: Qt.binding(() => row),
-                    page: root,
-                    current: Qt.binding(() => {
-                        if (!row && !stack) {
-                            return true;
-                        } else if (stack) {
-                            return stack;
-                        } else {
-                            return row.currentIndex === root.Kirigami.ColumnView.level;
-                        }
-                    }),
+                    page: root
                 });
             }
         }

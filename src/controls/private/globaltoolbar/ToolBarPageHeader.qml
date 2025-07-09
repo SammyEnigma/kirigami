@@ -5,12 +5,23 @@
  */
 
 import QtQuick
+import QtQuick.Controls as QQC
+import QtQuick.Window
 import QtQml
 import QtQuick.Layouts
 import org.kde.kirigami as Kirigami
+import "../../templates" as KT
 
-AbstractPageHeader {
+Kirigami.AbstractApplicationHeader {
     id: root
+
+    minimumHeight: pageRow ? pageRow.globalToolBar.minimumHeight : Kirigami.Units.iconSizes.medium + Kirigami.Units.smallSpacing * 2
+    maximumHeight: (pageRow ? pageRow.globalToolBar.maximumHeight : minimumHeight) + root.topPadding + root.bottomPadding
+    preferredHeight: (pageRow ? pageRow.globalToolBar.preferredHeight : minimumHeight) + root.topPadding + root.bottomPadding
+
+    separatorVisible: pageRow ? pageRow.globalToolBar.separatorVisible : true
+
+    Kirigami.Theme.colorSet: pageRow ? pageRow.globalToolBar.colorSet : Kirigami.Theme.Header
 
     implicitWidth: layout.implicitWidth + Kirigami.Units.smallSpacing * 2
     implicitHeight: Math.max(titleLoader.implicitHeight, toolBar.implicitHeight) + Kirigami.Units.smallSpacing * 2
@@ -18,6 +29,16 @@ AbstractPageHeader {
     onActiveFocusChanged: if (activeFocus && toolBar.actions.length > 0) {
         toolBar.contentItem.visibleChildren[0].forceActiveFocus(Qt.TabFocusReason)
     }
+
+    rightPadding: {
+        if (LayoutMirroring.enabled) {
+            return Math.max(0, (pageRow.Kirigami.ScenePosition.x + pageRow.globalToolBar.rightReservedSpace) - page.Kirigami.ScenePosition.x);
+        } else {
+            return Math.max(0, (page.Kirigami.ScenePosition.x + page.width) - (pageRow.Kirigami.ScenePosition.x + pageRow.width - pageRow.globalToolBar.rightReservedSpace));
+        }
+        return 0;
+    }
+
 
     MouseArea {
         anchors.fill: parent
@@ -33,6 +54,49 @@ AbstractPageHeader {
         anchors.rightMargin: Kirigami.Units.smallSpacing
         spacing: Kirigami.Units.smallSpacing
 
+        Kirigami.Separator {
+            id: separator
+            Layout.fillHeight: true
+            Layout.topMargin: Kirigami.Units.largeSpacing
+            Layout.bottomMargin: Kirigami.Units.largeSpacing
+            Kirigami.Theme.colorSet: Kirigami.Theme.Header
+            Kirigami.Theme.inherit: false
+            visible: pageRow?.separatorVisible && !navButtons.visible && page?.Kirigami.ColumnView.view?.leadingVisibleItem !== page
+        }
+
+        Item {
+            id: leftHandleSpacer
+            visible: {
+                const drawer = applicationWindow().globalDrawer as KT.OverlayDrawer;
+                if (!drawer || !drawer.enabled || !drawer.handleVisible) {
+                    return false;
+                }
+                if (page.Kirigami.ColumnView.index <= 0) {
+                    return true;
+                }
+                const previousPage = root.pageRow.get(page.Kirigami.ColumnView.index - 1);
+                if (LayoutMirroring.enabled) {
+                    if (root.pageRow.width - (page.x + page.width - root.pageRow.columnView.contentX) < previousPage.width / 2) {
+                        return true;
+                    }
+                } else {
+                    if (previousPage.x - root.pageRow.columnView.contentX < -previousPage.width / 2) {
+                        return true;
+                    }
+                }
+                return false;
+            }
+
+            Layout.preferredWidth: pageRow.globalToolBar.leftReservedSpace
+            Layout.fillHeight: true
+        }
+
+        NavigationButtons {
+            id: navButtons
+            page: root.page
+            pageStack: root.pageRow
+        }
+
         Loader {
             id: titleLoader
             // Don't need space on the first item
@@ -41,24 +105,19 @@ AbstractPageHeader {
             Layout.minimumWidth: item?.Layout.minimumWidth ?? -1
             Layout.preferredWidth: item?.Layout.preferredWidth ?? -1
             Layout.maximumWidth: item?.Layout.maximumWidth ?? -1
+            Layout.leftMargin: {
+                if (navButtons.visible || leftHandleSpacer.visible) {
+                    return 0;
+                } else if (separator.visible) {
+                    return pageRow.globalToolBar.titleLeftPadding - layout.spacing;
+                }
+                return pageRow.globalToolBar.titleLeftPadding;
+            }
 
             // Don't load async to prevent jumpy behaviour on slower devices as it loads in.
             // If the title delegate really needs to load async, it should be its responsibility to do it itself.
             asynchronous: false
             sourceComponent: page?.titleDelegate ?? null
-
-            // Here rather than in the main layout in order to make it much simpler otherwise the spacing will be a bit wrong
-            Kirigami.Separator {
-                anchors {
-                    left: parent.left
-                    top: parent.top
-                    bottom: parent.bottom
-                    leftMargin: -root.leftPadding
-                }
-                Kirigami.Theme.colorSet: Kirigami.Theme.Header
-                Kirigami.Theme.inherit: false
-                visible: pageRow?.separatorVisible && page?.Kirigami.ColumnView.view.leadingVisibleItem !== page
-            }
         }
 
         Kirigami.ActionToolBar {
@@ -68,11 +127,10 @@ AbstractPageHeader {
             Layout.fillWidth: true
             Layout.fillHeight: true
 
-            visible: actions.length > 0
             alignment: pageRow?.globalToolBar.toolbarActionAlignment ?? Qt.AlignRight
             heightMode: pageRow?.globalToolBar.toolbarActionHeightMode ?? Kirigami.ToolBarLayout.ConstrainIfLarger
 
-            actions: page?.actions ?? []
+            actions: page && page.globalToolBarStyle === Kirigami.ApplicationHeaderStyle.ToolBar ? page?.actions : []
         }
     }
 }

@@ -35,9 +35,7 @@ MouseArea {
     hoverEnabled: handleAnchor?.visible ?? false
 
     QQC2.ToolButton {
-        anchors.centerIn: parent
-        width: parent.height - Kirigami.Units.smallSpacing * 1.5
-        height: parent.height - Kirigami.Units.smallSpacing * 1.5
+        anchors.fill: parent
         visible: !Kirigami.Settings.tabletMode && !Kirigami.Settings.hasTransientTouchInput
 
         Accessible.name: root.drawer.drawerOpen ? root.drawer.handleOpenToolTip : root.drawer.handleClosedToolTip
