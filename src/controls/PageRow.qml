@@ -990,14 +990,13 @@ QT.Control {
     }
 
     Item {
-        RowLayout {
+        Item {
             id: columnViewLayout
             anchors {
                 fill: parent
                 // Use this instead Layout.topMargin in RowLayout seems to be unreliable
                 topMargin: -layersStack.y
             }
-            spacing: 1
             readonly property alias columnView: columnView
             // set the pagestack of this and all children to root, otherwise
             // they would automatically resolve to the layer's stackview
@@ -1005,7 +1004,11 @@ QT.Control {
 
             QQC2.Control {
                 id: sidebarControl
-                Layout.fillHeight: true
+                anchors {
+                    left: parent.left
+                    top: parent.top
+                    bottom: parent.bottom
+                }
                 visible: contentItem !== null
                 leftPadding: root.leftSidebar ? root.leftSidebar.leftPadding : 0
                 topPadding: root.leftSidebar ? root.leftSidebar.topPadding : 0
@@ -1015,8 +1018,13 @@ QT.Control {
 
             Kirigami.ColumnView {
                 id: columnView
-                Layout.fillWidth: true
-                Layout.fillHeight: true
+                anchors {
+                    left: sidebarControl.right
+                    top: parent.top
+                    right: parent.right
+                    bottom: parent.bottom
+                    leftMargin: 1
+                }
 
                 topPadding: globalToolBarUI.item && globalToolBarUI.item.breadcrumbVisible
                             ? globalToolBarUI.height : 0
