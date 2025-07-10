@@ -277,8 +277,9 @@ Item {
             Layout.leftMargin: Kirigami.Units.gridUnit
             url: aboutItem.aboutData.homepage
             visible: url.length > 0
-            wrapMode: Text.WordWrap
+            wrapMode: Text.Wrap
             Layout.fillWidth: true
+            Layout.maximumWidth: aboutItem.width
         }
 
         OverlaySheet {

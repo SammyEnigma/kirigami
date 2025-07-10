@@ -109,7 +109,20 @@ QQC2.Label {
 
     MouseArea {
         id: area
-        anchors.fill: parent
+        width: control.contentWidth + control.leftPadding + control.rightPadding
+        height: control.implicitHeight
+        x: {
+            switch (control.effectiveHorizontalAlignment) {
+                case Text.AlignLeft:
+                case Text.AlignJustify:
+                    return 0;
+                case Text.AlignRight:
+                    return control.width - width;
+                case Text.AlignHCenter:
+                    return (control.width - width) / 2;
+            }
+        }
+
         hoverEnabled: true
         cursorShape: Qt.PointingHandCursor
 

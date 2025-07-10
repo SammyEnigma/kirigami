@@ -47,8 +47,12 @@ Kirigami.LinkButton {
         ? qsTr("Open link %1", "@info:whatsthis").arg(url)
         : qsTr("Open link", "@info:whatsthis")
 
-    rightPadding: LayoutMirroring.enabled || !icon.visible ? 0 : icon.size + Kirigami.Units.smallSpacing
-    leftPadding: LayoutMirroring.enabled && icon.visible ? icon.size + Kirigami.Units.smallSpacing : 0
+    rightPadding: icon.visible && !LayoutMirroring.enabled
+        ? icon.size + Kirigami.Units.smallSpacing
+        : 0
+    leftPadding: icon.visible && LayoutMirroring.enabled
+        ? icon.size + Kirigami.Units.smallSpacing
+        : 0
 
     LayoutMirroring.childrenInherit: true
 
@@ -57,9 +61,6 @@ Kirigami.LinkButton {
 
         readonly property int size: Kirigami.Units.iconSizes.sizeForLabels
 
-        x: LayoutMirroring.enabled
-            ? (button.width - button.contentWidth - size - Kirigami.Units.smallSpacing) / 2
-            : (button.width + button.contentWidth + size + Kirigami.Units.smallSpacing) / 2 - size
         width: size
         height: size
 
@@ -69,6 +70,7 @@ Kirigami.LinkButton {
         fallback: "link-symbolic"
         color: button.color
 
+        anchors.right: button.mouseArea.right
         anchors.verticalCenter: button.verticalCenter
     }
 
