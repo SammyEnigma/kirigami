@@ -220,20 +220,6 @@ Item {
             }
         }
 
-        Connections {
-            target: pageRow
-            function onCurrentItemChanged() {
-                if (!root.page) {
-                    return;
-                }
-
-                heightAnim.from = root.implicitHeight;
-                heightAnim.to = root.preferredHeight;
-
-                heightAnim.restart();
-            }
-        }
-
         Item {
             id: mainItem
             clip: childrenRect.width > width
@@ -244,7 +230,7 @@ Item {
                 }
             }
 
-            height: Math.max(root.preferredHeight, root.height)
+            height: heightAnim.running ? root.preferredHeight : root.height - root.topPadding - root.bottomPadding
             anchors {
                 left: parent.left
                 right: parent.right
