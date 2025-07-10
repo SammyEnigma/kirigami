@@ -184,7 +184,23 @@ msgctxt "PasswordField|"
 msgid "Show Password"
 msgstr "कूटशब्द"
 
-#: controls/private/globaltoolbar/PageRowGlobalToolBarUI.qml:100
+#: controls/private/globaltoolbar/NavigationButtons.qml:86
+#, fuzzy
+#| msgctxt "BackButton|"
+#| msgid "Navigate Back"
+msgctxt "NavigationButtons|"
+msgid "Navigate Back"
+msgstr "पीछे जाएँ"
+
+#: controls/private/globaltoolbar/NavigationButtons.qml:93
+#, fuzzy
+#| msgctxt "ForwardButton|"
+#| msgid "Navigate Forward"
+msgctxt "NavigationButtons|"
+msgid "Navigate Forward"
+msgstr "आगे जाएँ"
+
+#: controls/private/globaltoolbar/PageRowGlobalToolBarUI.qml:88
 #, fuzzy
 #| msgctxt "OverlayDrawer|"
 #| msgid "Close"
@@ -192,7 +208,7 @@ msgctxt "PageRowGlobalToolBarUI|"
 msgid "Close menu"
 msgstr "बंद करें"
 
-#: controls/private/globaltoolbar/PageRowGlobalToolBarUI.qml:100
+#: controls/private/globaltoolbar/PageRowGlobalToolBarUI.qml:88
 #, fuzzy
 #| msgctxt "OverlayDrawer|"
 #| msgid "Open"
@@ -276,16 +292,6 @@ msgstr ""
 msgctxt "OverlaySheet|@action:button close dialog"
 msgid "Close"
 msgstr "बंद करें"
-
-#: controls/templates/private/BackButton.qml:14
-msgctxt "BackButton|"
-msgid "Navigate Back"
-msgstr "पीछे जाएँ"
-
-#: controls/templates/private/ForwardButton.qml:14
-msgctxt "ForwardButton|"
-msgid "Navigate Forward"
-msgstr "आगे जाएँ"
 
 #: controls/UrlButton.qml:47
 #, qt-format

@@ -154,12 +154,28 @@ msgctxt "PasswordField|"
 msgid "Show Password"
 msgstr "Показати пароль"
 
-#: controls/private/globaltoolbar/PageRowGlobalToolBarUI.qml:100
+#: controls/private/globaltoolbar/NavigationButtons.qml:86
+#, fuzzy
+#| msgctxt "BackButton|"
+#| msgid "Navigate Back"
+msgctxt "NavigationButtons|"
+msgid "Navigate Back"
+msgstr "Перейти назад"
+
+#: controls/private/globaltoolbar/NavigationButtons.qml:93
+#, fuzzy
+#| msgctxt "ForwardButton|"
+#| msgid "Navigate Forward"
+msgctxt "NavigationButtons|"
+msgid "Navigate Forward"
+msgstr "Перейти далі"
+
+#: controls/private/globaltoolbar/PageRowGlobalToolBarUI.qml:88
 msgctxt "PageRowGlobalToolBarUI|"
 msgid "Close menu"
 msgstr "Закрити меню"
 
-#: controls/private/globaltoolbar/PageRowGlobalToolBarUI.qml:100
+#: controls/private/globaltoolbar/PageRowGlobalToolBarUI.qml:88
 msgctxt "PageRowGlobalToolBarUI|"
 msgid "Open menu"
 msgstr "Відкрити меню"
@@ -228,16 +244,6 @@ msgstr "Відкрити висувну панель"
 msgctxt "OverlaySheet|@action:button close dialog"
 msgid "Close"
 msgstr "Закрити"
-
-#: controls/templates/private/BackButton.qml:14
-msgctxt "BackButton|"
-msgid "Navigate Back"
-msgstr "Перейти назад"
-
-#: controls/templates/private/ForwardButton.qml:14
-msgctxt "ForwardButton|"
-msgid "Navigate Forward"
-msgstr "Перейти далі"
 
 #: controls/UrlButton.qml:47
 #, qt-format

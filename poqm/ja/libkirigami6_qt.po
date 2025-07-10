@@ -155,12 +155,28 @@ msgctxt "PasswordField|"
 msgid "Show Password"
 msgstr "パスワード"
 
-#: controls/private/globaltoolbar/PageRowGlobalToolBarUI.qml:100
+#: controls/private/globaltoolbar/NavigationButtons.qml:86
+#, fuzzy
+#| msgctxt "BackButton|"
+#| msgid "Navigate Back"
+msgctxt "NavigationButtons|"
+msgid "Navigate Back"
+msgstr "戻る"
+
+#: controls/private/globaltoolbar/NavigationButtons.qml:93
+#, fuzzy
+#| msgctxt "ForwardButton|"
+#| msgid "Navigate Forward"
+msgctxt "NavigationButtons|"
+msgid "Navigate Forward"
+msgstr "進む"
+
+#: controls/private/globaltoolbar/PageRowGlobalToolBarUI.qml:88
 msgctxt "PageRowGlobalToolBarUI|"
 msgid "Close menu"
 msgstr "メニューを閉じる"
 
-#: controls/private/globaltoolbar/PageRowGlobalToolBarUI.qml:100
+#: controls/private/globaltoolbar/PageRowGlobalToolBarUI.qml:88
 msgctxt "PageRowGlobalToolBarUI|"
 msgid "Open menu"
 msgstr "メニューを開く"
@@ -238,16 +254,6 @@ msgstr "ドロアを開く"
 msgctxt "OverlaySheet|@action:button close dialog"
 msgid "Close"
 msgstr "メニューを閉じる"
-
-#: controls/templates/private/BackButton.qml:14
-msgctxt "BackButton|"
-msgid "Navigate Back"
-msgstr "戻る"
-
-#: controls/templates/private/ForwardButton.qml:14
-msgctxt "ForwardButton|"
-msgid "Navigate Forward"
-msgstr "進む"
 
 #: controls/UrlButton.qml:47
 #, qt-format

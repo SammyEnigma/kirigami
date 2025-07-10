@@ -153,12 +153,28 @@ msgctxt "PasswordField|"
 msgid "Show Password"
 msgstr "顯示密碼"
 
-#: controls/private/globaltoolbar/PageRowGlobalToolBarUI.qml:100
+#: controls/private/globaltoolbar/NavigationButtons.qml:86
+#, fuzzy
+#| msgctxt "BackButton|"
+#| msgid "Navigate Back"
+msgctxt "NavigationButtons|"
+msgid "Navigate Back"
+msgstr "返回"
+
+#: controls/private/globaltoolbar/NavigationButtons.qml:93
+#, fuzzy
+#| msgctxt "ForwardButton|"
+#| msgid "Navigate Forward"
+msgctxt "NavigationButtons|"
+msgid "Navigate Forward"
+msgstr "往前"
+
+#: controls/private/globaltoolbar/PageRowGlobalToolBarUI.qml:88
 msgctxt "PageRowGlobalToolBarUI|"
 msgid "Close menu"
 msgstr "關閉選單"
 
-#: controls/private/globaltoolbar/PageRowGlobalToolBarUI.qml:100
+#: controls/private/globaltoolbar/PageRowGlobalToolBarUI.qml:88
 msgctxt "PageRowGlobalToolBarUI|"
 msgid "Open menu"
 msgstr "開啟選單"
@@ -227,16 +243,6 @@ msgstr "開啟抽屜"
 msgctxt "OverlaySheet|@action:button close dialog"
 msgid "Close"
 msgstr "關閉"
-
-#: controls/templates/private/BackButton.qml:14
-msgctxt "BackButton|"
-msgid "Navigate Back"
-msgstr "返回"
-
-#: controls/templates/private/ForwardButton.qml:14
-msgctxt "ForwardButton|"
-msgid "Navigate Forward"
-msgstr "往前"
 
 #: controls/UrlButton.qml:47
 #, qt-format

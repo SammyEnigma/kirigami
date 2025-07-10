@@ -181,7 +181,23 @@ msgctxt "PasswordField|"
 msgid "Show Password"
 msgstr "Parool"
 
-#: controls/private/globaltoolbar/PageRowGlobalToolBarUI.qml:100
+#: controls/private/globaltoolbar/NavigationButtons.qml:86
+#, fuzzy
+#| msgctxt "BackButton|"
+#| msgid "Navigate Back"
+msgctxt "NavigationButtons|"
+msgid "Navigate Back"
+msgstr "Liigu tagasi"
+
+#: controls/private/globaltoolbar/NavigationButtons.qml:93
+#, fuzzy
+#| msgctxt "ForwardButton|"
+#| msgid "Navigate Forward"
+msgctxt "NavigationButtons|"
+msgid "Navigate Forward"
+msgstr "Liigu edasi"
+
+#: controls/private/globaltoolbar/PageRowGlobalToolBarUI.qml:88
 #, fuzzy
 #| msgctxt "GlobalDrawer|"
 #| msgid "Close Sidebar"
@@ -189,7 +205,7 @@ msgctxt "PageRowGlobalToolBarUI|"
 msgid "Close menu"
 msgstr "Sulge külgriba"
 
-#: controls/private/globaltoolbar/PageRowGlobalToolBarUI.qml:100
+#: controls/private/globaltoolbar/PageRowGlobalToolBarUI.qml:88
 msgctxt "PageRowGlobalToolBarUI|"
 msgid "Open menu"
 msgstr ""
@@ -273,16 +289,6 @@ msgstr ""
 msgctxt "OverlaySheet|@action:button close dialog"
 msgid "Close"
 msgstr "Sulge külgriba"
-
-#: controls/templates/private/BackButton.qml:14
-msgctxt "BackButton|"
-msgid "Navigate Back"
-msgstr "Liigu tagasi"
-
-#: controls/templates/private/ForwardButton.qml:14
-msgctxt "ForwardButton|"
-msgid "Navigate Forward"
-msgstr "Liigu edasi"
 
 #: controls/UrlButton.qml:47
 #, qt-format
