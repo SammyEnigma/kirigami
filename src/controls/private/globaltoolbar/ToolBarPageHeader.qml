@@ -95,6 +95,7 @@ Kirigami.AbstractApplicationHeader {
             id: navButtons
             page: root.page
             pageStack: root.pageRow
+            Layout.leftMargin: !leftHandleSpacer.visible ? Kirigami.Units.smallSpacing : 0
         }
 
         Loader {

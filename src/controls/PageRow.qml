@@ -1023,7 +1023,7 @@ QT.Control {
                     top: parent.top
                     right: parent.right
                     bottom: parent.bottom
-                    leftMargin: 1
+                    leftMargin: sidebarControl.visible ? 1 : 0
                 }
 
                 topPadding: globalToolBarUI.item && globalToolBarUI.item.breadcrumbVisible
