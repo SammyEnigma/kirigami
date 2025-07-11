@@ -20,15 +20,16 @@ Loader {
         if (!pageStack) {
             return false;
         }
-        // The application doesn't want nav buttons
-        if (pageStack.globalToolBar.showNavigationButtons === Kirigami.ApplicationHeaderStyle.NoNavigationButtons) {
-            return false
-        }
 
         // We are in a layer, show buttons
         // page can be null when the nav buttons are in the breadcrumbs header
         if (page && page.QQC.StackView.view) {
             return true;
+        }
+
+        // The application doesn't want nav buttons
+        if (pageStack.globalToolBar.showNavigationButtons === Kirigami.ApplicationHeaderStyle.NoNavigationButtons) {
+            return false
         }
 
         // If we are on the first page and we don't want to show the forward button, don't
@@ -85,7 +86,7 @@ Loader {
             icon.name: (LayoutMirroring.enabled ? "go-previous-symbolic-rtl" : "go-previous-symbolic")
             text: qsTr("Navigate Back")
             enabled: page.QQC.StackView.view || (pageStack.depth > 1 && pageStack.currentIndex > 0);
-            visible: pageStack.globalToolBar.showNavigationButtons & Kirigami.ApplicationHeaderStyle.ShowBackButton
+            visible: page.QQC.StackView.view || pageStack.globalToolBar.showNavigationButtons & Kirigami.ApplicationHeaderStyle.ShowBackButton
             onClicked: pageStack.goBack();
         }
         NavButton {
