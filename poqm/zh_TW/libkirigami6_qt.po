@@ -51,38 +51,38 @@ msgctxt "AboutItem|"
 msgid "Copyright"
 msgstr "著作權"
 
-#: controls/AboutItem.qml:301
+#: controls/AboutItem.qml:302
 msgctxt "AboutItem|"
 msgid "License:"
 msgstr "授權條款："
 
-#: controls/AboutItem.qml:323
+#: controls/AboutItem.qml:324
 #, qt-format
 msgctxt "AboutItem|"
 msgid "License: %1"
 msgstr "授權條款：%1"
 
-#: controls/AboutItem.qml:334
+#: controls/AboutItem.qml:335
 msgctxt "AboutItem|"
 msgid "Libraries in use"
 msgstr "使用函式庫"
 
-#: controls/AboutItem.qml:364
+#: controls/AboutItem.qml:365
 msgctxt "AboutItem|"
 msgid "Authors"
 msgstr "作者群"
 
-#: controls/AboutItem.qml:374
+#: controls/AboutItem.qml:375
 msgctxt "AboutItem|"
 msgid "Show author photos"
 msgstr "顯示作者照片"
 
-#: controls/AboutItem.qml:385
+#: controls/AboutItem.qml:386
 msgctxt "AboutItem|"
 msgid "Credits"
 msgstr "致謝"
 
-#: controls/AboutItem.qml:397
+#: controls/AboutItem.qml:398
 msgctxt "AboutItem|"
 msgid "Translators"
 msgstr "翻譯者"
@@ -255,7 +255,7 @@ msgctxt "UrlButton|@info:whatsthis"
 msgid "Open link"
 msgstr "開啟連結"
 
-#: controls/UrlButton.qml:94
+#: controls/UrlButton.qml:96
 msgctxt "UrlButton|"
 msgid "Copy Link to Clipboard"
 msgstr "複製連結至剪貼簿"

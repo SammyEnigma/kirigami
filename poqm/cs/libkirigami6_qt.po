@@ -46,38 +46,38 @@ msgctxt "AboutItem|"
 msgid "Copyright"
 msgstr "Autorská práva"
 
-#: controls/AboutItem.qml:301
+#: controls/AboutItem.qml:302
 msgctxt "AboutItem|"
 msgid "License:"
 msgstr "Licence:"
 
-#: controls/AboutItem.qml:323
+#: controls/AboutItem.qml:324
 #, qt-format
 msgctxt "AboutItem|"
 msgid "License: %1"
 msgstr "Licence: %1"
 
-#: controls/AboutItem.qml:334
+#: controls/AboutItem.qml:335
 msgctxt "AboutItem|"
 msgid "Libraries in use"
 msgstr "Použité knihovny"
 
-#: controls/AboutItem.qml:364
+#: controls/AboutItem.qml:365
 msgctxt "AboutItem|"
 msgid "Authors"
 msgstr "Autoři"
 
-#: controls/AboutItem.qml:374
+#: controls/AboutItem.qml:375
 msgctxt "AboutItem|"
 msgid "Show author photos"
 msgstr "Zobrazit fotografie autora"
 
-#: controls/AboutItem.qml:385
+#: controls/AboutItem.qml:386
 msgctxt "AboutItem|"
 msgid "Credits"
 msgstr "Poděkování"
 
-#: controls/AboutItem.qml:397
+#: controls/AboutItem.qml:398
 msgctxt "AboutItem|"
 msgid "Translators"
 msgstr "Překladatelé"
@@ -250,7 +250,7 @@ msgctxt "UrlButton|@info:whatsthis"
 msgid "Open link"
 msgstr "Otevřít odkaz"
 
-#: controls/UrlButton.qml:94
+#: controls/UrlButton.qml:96
 msgctxt "UrlButton|"
 msgid "Copy Link to Clipboard"
 msgstr "Kopírovat odkaz do schránky"

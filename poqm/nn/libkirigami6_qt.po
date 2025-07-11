@@ -49,38 +49,38 @@ msgctxt "AboutItem|"
 msgid "Copyright"
 msgstr "Opphavsrett"
 
-#: controls/AboutItem.qml:301
+#: controls/AboutItem.qml:302
 msgctxt "AboutItem|"
 msgid "License:"
 msgstr "Lisens:"
 
-#: controls/AboutItem.qml:323
+#: controls/AboutItem.qml:324
 #, qt-format
 msgctxt "AboutItem|"
 msgid "License: %1"
 msgstr "Lisens: %1"
 
-#: controls/AboutItem.qml:334
+#: controls/AboutItem.qml:335
 msgctxt "AboutItem|"
 msgid "Libraries in use"
 msgstr "Brukte bibliotek"
 
-#: controls/AboutItem.qml:364
+#: controls/AboutItem.qml:365
 msgctxt "AboutItem|"
 msgid "Authors"
 msgstr "Opphavspersonar"
 
-#: controls/AboutItem.qml:374
+#: controls/AboutItem.qml:375
 msgctxt "AboutItem|"
 msgid "Show author photos"
 msgstr "Vis bilete av opphavspersonane"
 
-#: controls/AboutItem.qml:385
+#: controls/AboutItem.qml:386
 msgctxt "AboutItem|"
 msgid "Credits"
 msgstr "Kreditering"
 
-#: controls/AboutItem.qml:397
+#: controls/AboutItem.qml:398
 msgctxt "AboutItem|"
 msgid "Translators"
 msgstr "Omsetjarar"
@@ -253,7 +253,7 @@ msgctxt "UrlButton|@info:whatsthis"
 msgid "Open link"
 msgstr "Opna lenkja"
 
-#: controls/UrlButton.qml:94
+#: controls/UrlButton.qml:96
 msgctxt "UrlButton|"
 msgid "Copy Link to Clipboard"
 msgstr "Kopier lenkja til utklippstavla"

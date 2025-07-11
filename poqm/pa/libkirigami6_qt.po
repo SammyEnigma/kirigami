@@ -45,38 +45,38 @@ msgctxt "AboutItem|"
 msgid "Copyright"
 msgstr "ਕਾਪੀਰਾਈਟ"
 
-#: controls/AboutItem.qml:301
+#: controls/AboutItem.qml:302
 msgctxt "AboutItem|"
 msgid "License:"
 msgstr "ਲਸੰਸ"
 
-#: controls/AboutItem.qml:323
+#: controls/AboutItem.qml:324
 #, qt-format
 msgctxt "AboutItem|"
 msgid "License: %1"
 msgstr "ਲਸੰਸ: %1"
 
-#: controls/AboutItem.qml:334
+#: controls/AboutItem.qml:335
 msgctxt "AboutItem|"
 msgid "Libraries in use"
 msgstr "ਵਰਤਣ ਲਈ ਲਾਇਬਰੇਰੀਆਂ"
 
-#: controls/AboutItem.qml:364
+#: controls/AboutItem.qml:365
 msgctxt "AboutItem|"
 msgid "Authors"
 msgstr "ਲੇਖਕ"
 
-#: controls/AboutItem.qml:374
+#: controls/AboutItem.qml:375
 msgctxt "AboutItem|"
 msgid "Show author photos"
 msgstr "ਲੇਖਕ ਦੀ ਫ਼ੋਟੋ ਵੇਖਾਓ"
 
-#: controls/AboutItem.qml:385
+#: controls/AboutItem.qml:386
 msgctxt "AboutItem|"
 msgid "Credits"
 msgstr "ਮਾਣ"
 
-#: controls/AboutItem.qml:397
+#: controls/AboutItem.qml:398
 msgctxt "AboutItem|"
 msgid "Translators"
 msgstr "ਉਲੱਥਾਕਾਰ"
@@ -267,7 +267,7 @@ msgctxt "UrlButton|@info:whatsthis"
 msgid "Open link"
 msgstr "ਮੇਨੂ ਖੋਲ੍ਹੋ"
 
-#: controls/UrlButton.qml:94
+#: controls/UrlButton.qml:96
 msgctxt "UrlButton|"
 msgid "Copy Link to Clipboard"
 msgstr "ਲਿੰਕ ਕਲਿੱਪਬੋਰਡ ਵਿੱਚ ਕਾਪੀ ਕਰੋ"
