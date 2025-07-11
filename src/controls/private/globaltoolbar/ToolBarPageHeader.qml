@@ -31,6 +31,9 @@ Kirigami.AbstractApplicationHeader {
     }
 
     rightPadding: {
+        if (page?.Kirigami.ColumnView.view?.columnResizeMode === Kirigami.ColumnView.SingleColumn) {
+            return pageRow.globalToolBar.rightReservedSpace
+        }
         if (LayoutMirroring.enabled) {
             return Math.max(0, (pageRow.Kirigami.ScenePosition.x + pageRow.globalToolBar.rightReservedSpace) - page.Kirigami.ScenePosition.x);
         } else {
