@@ -153,7 +153,7 @@ msgctxt "PasswordField|"
 msgid "Show Password"
 msgstr "ਪਾਸਵਰਡ"
 
-#: controls/private/globaltoolbar/NavigationButtons.qml:86
+#: controls/private/globaltoolbar/NavigationButtons.qml:87
 #, fuzzy
 #| msgctxt "BackButton|"
 #| msgid "Navigate Back"
@@ -161,7 +161,7 @@ msgctxt "NavigationButtons|"
 msgid "Navigate Back"
 msgstr "ਪਿੱਛੇ ਜਾਓ"
 
-#: controls/private/globaltoolbar/NavigationButtons.qml:93
+#: controls/private/globaltoolbar/NavigationButtons.qml:94
 #, fuzzy
 #| msgctxt "ForwardButton|"
 #| msgid "Navigate Forward"
@@ -253,13 +253,13 @@ msgctxt "OverlaySheet|@action:button close dialog"
 msgid "Close"
 msgstr "ਮੇਨੂ ਬੰਦ ਕਰੋ"
 
-#: controls/UrlButton.qml:47
+#: controls/UrlButton.qml:50
 #, qt-format
 msgctxt "UrlButton|@info:whatsthis"
 msgid "Open link %1"
 msgstr ""
 
-#: controls/UrlButton.qml:48
+#: controls/UrlButton.qml:51
 #, fuzzy
 #| msgctxt "PageRowGlobalToolBarUI|"
 #| msgid "Open menu"
@@ -267,7 +267,7 @@ msgctxt "UrlButton|@info:whatsthis"
 msgid "Open link"
 msgstr "ਮੇਨੂ ਖੋਲ੍ਹੋ"
 
-#: controls/UrlButton.qml:96
+#: controls/UrlButton.qml:99
 msgctxt "UrlButton|"
 msgid "Copy Link to Clipboard"
 msgstr "ਲਿੰਕ ਕਲਿੱਪਬੋਰਡ ਵਿੱਚ ਕਾਪੀ ਕਰੋ"

@@ -156,12 +156,12 @@ msgctxt "PasswordField|"
 msgid "Show Password"
 msgstr "Mostra la contrasenya"
 
-#: controls/private/globaltoolbar/NavigationButtons.qml:86
+#: controls/private/globaltoolbar/NavigationButtons.qml:87
 msgctxt "NavigationButtons|"
 msgid "Navigate Back"
 msgstr "Navega enrere"
 
-#: controls/private/globaltoolbar/NavigationButtons.qml:93
+#: controls/private/globaltoolbar/NavigationButtons.qml:94
 msgctxt "NavigationButtons|"
 msgid "Navigate Forward"
 msgstr "Navega endavant"
@@ -241,18 +241,18 @@ msgctxt "OverlaySheet|@action:button close dialog"
 msgid "Close"
 msgstr "Tanca"
 
-#: controls/UrlButton.qml:47
+#: controls/UrlButton.qml:50
 #, qt-format
 msgctxt "UrlButton|@info:whatsthis"
 msgid "Open link %1"
 msgstr "Obre l'enllaç %1"
 
-#: controls/UrlButton.qml:48
+#: controls/UrlButton.qml:51
 msgctxt "UrlButton|@info:whatsthis"
 msgid "Open link"
 msgstr "Obre l'enllaç"
 
-#: controls/UrlButton.qml:96
+#: controls/UrlButton.qml:99
 msgctxt "UrlButton|"
 msgid "Copy Link to Clipboard"
 msgstr "Copia l'enllaç al porta-retalls"

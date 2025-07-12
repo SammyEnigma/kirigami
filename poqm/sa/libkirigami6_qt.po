@@ -147,7 +147,7 @@ msgctxt "PasswordField|"
 msgid "Show Password"
 msgstr "गुप्तशब्दं दर्शयतु"
 
-#: controls/private/globaltoolbar/NavigationButtons.qml:86
+#: controls/private/globaltoolbar/NavigationButtons.qml:87
 #, fuzzy
 #| msgctxt "BackButton|"
 #| msgid "Navigate Back"
@@ -155,7 +155,7 @@ msgctxt "NavigationButtons|"
 msgid "Navigate Back"
 msgstr "Back इति नेविगेट् कुर्वन्तु"
 
-#: controls/private/globaltoolbar/NavigationButtons.qml:93
+#: controls/private/globaltoolbar/NavigationButtons.qml:94
 #, fuzzy
 #| msgctxt "ForwardButton|"
 #| msgid "Navigate Forward"
@@ -238,18 +238,18 @@ msgctxt "OverlaySheet|@action:button close dialog"
 msgid "Close"
 msgstr "पिधानं करोतु"
 
-#: controls/UrlButton.qml:47
+#: controls/UrlButton.qml:50
 #, qt-format
 msgctxt "UrlButton|@info:whatsthis"
 msgid "Open link %1"
 msgstr "%1 इति लिङ्क् उद्घाटयन्तु"
 
-#: controls/UrlButton.qml:48
+#: controls/UrlButton.qml:51
 msgctxt "UrlButton|@info:whatsthis"
 msgid "Open link"
 msgstr "लिङ्कं उद्घाटयन्तु"
 
-#: controls/UrlButton.qml:96
+#: controls/UrlButton.qml:99
 msgctxt "UrlButton|"
 msgid "Copy Link to Clipboard"
 msgstr "क्लिप्बोर्ड् मध्ये लिङ्कं प्रतिलिख्यताम्"
