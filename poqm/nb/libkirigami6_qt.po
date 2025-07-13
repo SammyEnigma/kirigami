@@ -153,16 +153,12 @@ msgstr "Vis passord"
 
 #: controls/private/globaltoolbar/NavigationButtons.qml:87
 #, fuzzy
-#| msgctxt "BackButton|"
-#| msgid "Navigate Back"
 msgctxt "NavigationButtons|"
 msgid "Navigate Back"
 msgstr "Naviger tilbake"
 
 #: controls/private/globaltoolbar/NavigationButtons.qml:94
 #, fuzzy
-#| msgctxt "ForwardButton|"
-#| msgid "Navigate Forward"
 msgctxt "NavigationButtons|"
 msgid "Navigate Forward"
 msgstr "Naviger frem"
