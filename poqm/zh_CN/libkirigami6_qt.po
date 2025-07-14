@@ -150,17 +150,11 @@ msgid "Show Password"
 msgstr "显示密码"
 
 #: controls/private/globaltoolbar/NavigationButtons.qml:87
-#, fuzzy
-#| msgctxt "BackButton|"
-#| msgid "Navigate Back"
 msgctxt "NavigationButtons|"
 msgid "Navigate Back"
 msgstr "后退"
 
 #: controls/private/globaltoolbar/NavigationButtons.qml:94
-#, fuzzy
-#| msgctxt "ForwardButton|"
-#| msgid "Navigate Forward"
 msgctxt "NavigationButtons|"
 msgid "Navigate Forward"
 msgstr "前进"
