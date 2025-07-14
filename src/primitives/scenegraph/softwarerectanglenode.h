@@ -39,6 +39,8 @@ public:
     void render(const RenderState *state) override;
 
 private:
+    void cleanupImageNode();
+
     QQuickWindow *m_window = nullptr;
 
     QSGImageNode *m_imageNode = nullptr;

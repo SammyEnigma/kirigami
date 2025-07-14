@@ -54,16 +54,8 @@ void SoftwareRectangleNode::setImage(const QImage &image)
     }
 
     if (m_imageNode) {
-        removeChildNode(m_imageNode);
-        delete m_imageNode;
+        cleanupImageNode();
     }
-
-    m_imageNode = m_window->createImageNode();
-    if (!m_imageNode) {
-        return;
-    }
-
-    m_imageNode->setFiltering(QSGTexture::Filtering::Linear);
 
     m_textureInfo = ShaderNode::TextureInfo{
         .channel = 0,
@@ -73,8 +65,16 @@ void SoftwareRectangleNode::setImage(const QImage &image)
         .providerConnection = {},
     };
 
-    m_imageNode->setTexture(m_textureInfo.texture.get());
-    appendChildNode(m_imageNode);
+    if (!m_textureInfo.texture) {
+        return;
+    }
+
+    m_imageNode = m_window->createImageNode();
+    if (m_imageNode) {
+        m_imageNode->setTexture(m_textureInfo.texture.get());
+        m_imageNode->setFiltering(QSGTexture::Filtering::Linear);
+        appendChildNode(m_imageNode);
+    }
 }
 
 void SoftwareRectangleNode::setTextureProvider(QSGTextureProvider *provider)
@@ -84,16 +84,8 @@ void SoftwareRectangleNode::setTextureProvider(QSGTextureProvider *provider)
     }
 
     if (m_imageNode) {
-        removeChildNode(m_imageNode);
-        delete m_imageNode;
+        cleanupImageNode();
     }
-
-    m_imageNode = m_window->createImageNode();
-    if (!m_imageNode) {
-        return;
-    }
-
-    m_imageNode->setFiltering(QSGTexture::Filtering::Linear);
 
     m_textureInfo = ShaderNode::TextureInfo{
         .channel = 0,
@@ -103,8 +95,7 @@ void SoftwareRectangleNode::setTextureProvider(QSGTextureProvider *provider)
         .providerConnection = {},
     };
 
-    m_imageNode->setTexture(m_textureInfo.provider->texture());
-    appendChildNode(m_imageNode);
+    // The render node will be created in preprocess().
 }
 
 void SoftwareRectangleNode::setRadius(qreal radius)
@@ -145,10 +136,23 @@ QSGRenderNode::RenderingFlags SoftwareRectangleNode::flags() const
 void SoftwareRectangleNode::preprocess()
 {
     auto provider = m_textureInfo.provider;
-    if (provider && m_imageNode) {
-        m_imageNode->setTexture(provider->texture());
-        if (QSGDynamicTexture *dynamic_texture = qobject_cast<QSGDynamicTexture *>(provider->texture())) {
+    if (provider) {
+        QSGTexture *texture = provider->texture();
+        if (QSGDynamicTexture *dynamic_texture = qobject_cast<QSGDynamicTexture *>(texture)) {
             dynamic_texture->updateTexture();
+        }
+
+        if (texture) {
+            if (!m_imageNode) {
+                m_imageNode = m_window->createImageNode();
+                m_imageNode->setTexture(texture);
+                m_imageNode->setFiltering(QSGTexture::Filtering::Linear);
+                appendChildNode(m_imageNode);
+            } else {
+                m_imageNode->setTexture(texture);
+            }
+        } else if (m_imageNode) {
+            cleanupImageNode();
         }
     }
 }
@@ -186,4 +190,11 @@ void SoftwareRectangleNode::render(const RenderState *state)
         auto withoutCorners = m_rect.adjusted(cornerAdjustment, cornerAdjustment, -cornerAdjustment, -cornerAdjustment);
         m_imageNode->setRect(withoutCorners);
     }
+}
+
+void SoftwareRectangleNode::cleanupImageNode()
+{
+    removeChildNode(m_imageNode);
+    delete m_imageNode;
+    m_imageNode = nullptr;
 }
