@@ -69,6 +69,9 @@ T.Drawer {
 
       Only collapsible drawers can be collapsed.
 
+      When collapsed, drawers can't be manually resized even when
+      interactiveResizeEnabled is true
+
       default: \c false
 
       \sa collapsible
@@ -159,6 +162,62 @@ T.Drawer {
         }
         // For a generic-purpose OverlayDrawer its handle is visible by default
         return true;
+    }
+
+    /*!
+      \brief When true it will be possible to resize the drawer by dragging its edge with the mouse
+
+      When the drawer is collapsed, drawers can't be manually resized even when
+      interactiveResizeEnabled is true
+     */
+    property bool interactiveResizeEnabled: false
+
+    /*!
+      \brief True when the user is resizing the drawer with the mouse
+     */
+    property alias interactiveResizing: resizeHandle.pressed
+
+    /*!
+      \brief The minimum size (width or height, depending on the edge) this drawer is allowed to be resized
+
+      For left and right drawers the default is Kirigami.Units.gridUnit * 8
+      For top and bottom drawers the default is Kirigami.Units.gridUnit * 4
+     */
+    property real minimumSize: {
+        switch (edge) {
+        case Qt.TopEdge:
+        case Qt.BottomEdge:
+            return Kirigami.Units.gridUnit * 4;
+        default:
+            return Kirigami.Units.gridUnit * 8;
+        }
+    }
+
+    /*!
+      \brief The size (width or height, depending on the edge) the drawer wants to have when on left or right edges and not collapsed.
+
+      Wnen interactiveResizing is true and the app wants to restore its saved custom drawer size, it should write to this property, width, height, implicitWidth and implicitHeight should not be touched.
+
+      Default value is -1, which means the drawer will be sized following its contents size hints
+     */
+    property real preferredSize: -1
+
+    /*!
+      \brief The maximum size (width or height, depending on the edge) this drawer is allowed to be resized
+
+      For left and right drawers the default is the minimum between Kirigami.Units.gridUnit * 25
+      and 80% of the window width
+      For Top and bottom drawers the default is the minimum between Kirigami.Units.gridUnit * 15 and half of
+      the window height
+    */
+    property real maximumSize: {
+        switch (edge) {
+        case Qt.TopEdge:
+        case Qt.BottomEdge:
+            return Math.round(Math.min(T.ApplicationWindow.window.height * 0.5, Kirigami.Units.gridUnit * 15));
+        default:
+            return Math.round(Math.min(T.ApplicationWindow.window.width * 0.8, Kirigami.Units.gridUnit * 25));
+        }
     }
 
     /*!
@@ -386,9 +445,23 @@ T.Drawer {
                     when: !root.collapsed
                     PropertyChanges {
                         target: root
-                        implicitWidth: edge === Qt.TopEdge || edge === Qt.BottomEdge ? root.T.ApplicationWindow.window.width : Math.min(contentItem.implicitWidth, Math.round(root.T.ApplicationWindow.window.width*0.8))
+                        implicitWidth: {
+                            if (edge === Qt.TopEdge || edge === Qt.BottomEdge) {
+                                return root.T.ApplicationWindow.window?.width ?? Kirigami.Units.gridUnit * 30;
+                            } else {
+                                const implicitWidth = root.preferredSize > 0 ? root.preferredSize : contentItem.implicitWidth;
+                                return Math.max(root.minimumSize, Math.min(implicitWidth + leftPadding + rightPadding, root.maximumSize))
+                            }
+                        }
 
-                        implicitHeight: edge === Qt.LeftEdge || edge === Qt.RightEdge ? root.T.ApplicationWindow.window.height : Math.min(contentHeight + topPadding + bottomPadding, Math.round(root.T.ApplicationWindow.window.height*0.4))
+                        implicitHeight: {
+                            if (edge === Qt.LeftEdge || edge === Qt.RightEdge) {
+                                return root.T.ApplicationWindow.window?.height ?? Kirigami.Units.gridUnit * 5;
+                            } else {
+                                const implicitHeight = root.preferredSize > 0 ? root.preferredSize : contentItem.implicitHeight;
+                                return Math.max(root.minimumSize, Math.min(implicitHeight + topPadding + bottomPadding, root.maximumSize))
+                            }
+                        }
 
                         contentWidth: contentItem.implicitWidth || (contentChildren.length === 1 ? contentChildren[0].implicitWidth : 0)
                         contentHeight: contentItem.implicitHeight || (contentChildren.length === 1 ? contentChildren[0].implicitHeight : 0)
@@ -397,12 +470,101 @@ T.Drawer {
             ]
             transitions: Transition {
                 reversible: true
+                enabled: root.collapsible === true
                 NumberAnimation {
                     properties: root.edge === Qt.TopEdge || root.edge === Qt.BottomEdge ? "implicitHeight" : "implicitWidth"
                     duration: Kirigami.Units.longDuration
                     easing.type: Easing.InOutQuad
                 }
             }
+        }
+        readonly property MouseArea resizeHandle: MouseArea {
+            id: resizeHandle
+            anchors.margins: -Kirigami.Units.smallSpacing
+            parent: root.background.parent
+            z: 999
+            visible: root.interactiveResizeEnabled && !root.collapsed
+            width: Kirigami.Units.smallSpacing * 2
+            height: Kirigami.Units.smallSpacing * 2
+            cursorShape: {
+                switch (root.edge) {
+                case Qt.TopEdge:
+                case Qt.BottomEdge:
+                    return Qt.SplitVCursor;
+                default:
+                    return Qt.SplitHCursor;
+                }
+            }
+            preventStealing: true
+            property real startX
+            property real startY
+            property real startWidth;
+            property real startHeight;
+
+            onPressed: mouse => {
+                const pos = mapToItem(null, mouse.x, mouse.y);
+                startX = pos.x;
+                startY = pos.y;
+                startWidth = root.width;
+                startHeight = root.height;
+            }
+            onPositionChanged: mouse => {
+                const pos = mapToItem(null, mouse.x, mouse.y);
+                switch (root.edge) {
+                case Qt.TopEdge:
+                    root.preferredSize = startHeight + pos.y - startY;
+                    break;
+                case Qt.BottomEdge:
+                    root.preferredSize = startHeight - pos.y + startY;
+                    break;
+                case Qt.RightEdge:
+                    root.preferredSize = startWidth - pos.x + startX;
+                    break;
+                case Qt.LeftEdge:
+                default:
+                    root.preferredSize = startWidth + pos.x - startX;
+                }
+            }
+
+            states: [
+                State {
+                    when: root.edge === Qt.LeftEdge
+                    AnchorChanges {
+                        target: resizeHandle
+                        anchors.top: root.background.top
+                        anchors.right: root.background.right
+                        anchors.bottom: root.background.bottom
+                    }
+                },
+                State {
+                    when: root.edge === Qt.RightEdge
+                    AnchorChanges {
+                        target: resizeHandle
+                        anchors.top: root.background.top
+                        anchors.left: root.background.left
+                        anchors.bottom: root.background.bottom
+                    }
+                },
+                State {
+                    when: root.edge === Qt.TopEdge
+                    AnchorChanges {
+                        target: resizeHandle
+                        anchors.left: root.background.left
+                        anchors.right: root.background.right
+                        anchors.bottom: root.background.bottom
+                    }
+                }
+                ,
+                State {
+                    when: root.edge === Qt.BottomEdge
+                    AnchorChanges {
+                        target: resizeHandle
+                        anchors.left: root.background.left
+                        anchors.right: root.background.right
+                        anchors.top: root.background.top
+                    }
+                }
+            ]
         }
     }
 }
