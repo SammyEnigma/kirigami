@@ -219,12 +219,12 @@ msgctxt "InlineMessage|"
 msgid "Close"
 msgstr "Kapat"
 
-#: controls/templates/OverlayDrawer.qml:139
+#: controls/templates/OverlayDrawer.qml:142
 msgctxt "OverlayDrawer|"
 msgid "Close drawer"
 msgstr "Çekmeceyi kapat"
 
-#: controls/templates/OverlayDrawer.qml:145
+#: controls/templates/OverlayDrawer.qml:148
 msgctxt "OverlayDrawer|"
 msgid "Open drawer"
 msgstr "Çekmeceyi aç"

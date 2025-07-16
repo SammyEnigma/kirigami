@@ -229,12 +229,12 @@ msgctxt "InlineMessage|"
 msgid "Close"
 msgstr "關閉"
 
-#: controls/templates/OverlayDrawer.qml:139
+#: controls/templates/OverlayDrawer.qml:142
 msgctxt "OverlayDrawer|"
 msgid "Close drawer"
 msgstr "關閉抽屜"
 
-#: controls/templates/OverlayDrawer.qml:145
+#: controls/templates/OverlayDrawer.qml:148
 msgctxt "OverlayDrawer|"
 msgid "Open drawer"
 msgstr "開啟抽屜"

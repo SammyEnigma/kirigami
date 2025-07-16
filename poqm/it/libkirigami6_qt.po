@@ -217,12 +217,12 @@ msgctxt "InlineMessage|"
 msgid "Close"
 msgstr "Chiudi"
 
-#: controls/templates/OverlayDrawer.qml:139
+#: controls/templates/OverlayDrawer.qml:142
 msgctxt "OverlayDrawer|"
 msgid "Close drawer"
 msgstr "Chiudi il cassetto"
 
-#: controls/templates/OverlayDrawer.qml:145
+#: controls/templates/OverlayDrawer.qml:148
 msgctxt "OverlayDrawer|"
 msgid "Open drawer"
 msgstr "Apri il cassetto"
