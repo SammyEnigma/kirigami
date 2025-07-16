@@ -649,26 +649,20 @@ QT.Control {
         target: leftSidebar
         function onModalChanged(): void {
             if (leftSidebar.modal) {
-                const sidebar = sidebarControl.contentItem;
-                const background = sidebarControl.background;
-                sidebarControl.contentItem = null;
-                leftSidebar.contentItem = sidebar;
-                sidebarControl.background = null;
-                leftSidebar.background = background;
-
-                sidebar.visible = true;
-                background.visible = true;
+                leftSidebar.parent = root.QQC2.Overlay.overlay
+                leftSidebar.background.parent.parent = null
             } else {
-                const sidebar = leftSidebar.contentItem
-                const background = leftSidebar.background
-                leftSidebar.contentItem=null
-                sidebarControl.contentItem = sidebar
-                leftSidebar.background=null
-                sidebarControl.background = background
-
-                sidebar.visible = true;
-                background.visible = true;
+                leftSidebar.parent = sidebarControl
+                leftSidebar.background.parent.parent = sidebarControl
             }
+        }
+    }
+    // Enforce the parent when we are in sidebar mode
+    Connections {
+        enabled: leftSidebar && leftSidebar.contentItem && !leftSidebar.modal
+        target: leftSidebar.contentItem.parent
+        function onParentChanged () {
+            leftSidebar.contentItem.parent.parent = sidebarControl
         }
     }
 
@@ -1002,18 +996,15 @@ QT.Control {
             // they would automatically resolve to the layer's stackview
             Kirigami.PageStack.pageStack: root
 
-            QQC2.Control {
+            Item {
                 id: sidebarControl
                 anchors {
                     left: parent.left
                     top: parent.top
                     bottom: parent.bottom
                 }
-                visible: contentItem !== null
-                leftPadding: root.leftSidebar ? root.leftSidebar.leftPadding : 0
-                topPadding: root.leftSidebar ? root.leftSidebar.topPadding : 0
-                rightPadding: root.leftSidebar ? root.leftSidebar.rightPadding : 0
-                bottomPadding: root.leftSidebar ? root.leftSidebar.bottomPadding : 0
+                width: visible ? leftSidebar.width : 0
+                visible: leftSidebar.visible && children.length > 0
             }
 
             Kirigami.ColumnView {
