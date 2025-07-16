@@ -309,7 +309,7 @@ Item {
         anchors.bottom: parent.bottom
         anchors.horizontalCenter: parent.horizontalCenter
 
-        parent: T.Overlay.overlay || root
+        parent: root.T.Overlay.overlay || root
         z: 99999
     }
 
