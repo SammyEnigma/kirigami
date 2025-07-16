@@ -1003,6 +1003,7 @@ QT.Control {
                     top: parent.top
                     bottom: parent.bottom
                 }
+                z: 1
                 width: visible ? leftSidebar.width : 0
                 // Using leftSidebar.position instead of visible because leftSidebar.visible depends from its main item visibility which is our child so would be a loop
                 visible: leftSidebar && leftSidebar.position > 0 && children.length > 0
@@ -1015,7 +1016,6 @@ QT.Control {
                     top: parent.top
                     right: parent.right
                     bottom: parent.bottom
-                    leftMargin: sidebarControl.visible ? 1 : 0
                 }
 
                 topPadding: globalToolBarUI.item && globalToolBarUI.item.breadcrumbVisible
