@@ -1004,7 +1004,7 @@ QT.Control {
                     bottom: parent.bottom
                 }
                 width: visible ? leftSidebar.width : 0
-                visible: leftSidebar.visible && children.length > 0
+                visible: leftSidebar && leftSidebar.visible && children.length > 0
             }
 
             Kirigami.ColumnView {
