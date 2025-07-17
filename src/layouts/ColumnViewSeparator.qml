@@ -29,7 +29,7 @@ Item {
         leadingColumn: LayoutMirroring.enabled ? column : previousColumn
         trailingColumn: LayoutMirroring.enabled ? nextColumn : column
         // If this handle touched the left ColumnView edge, hide it
-        visible: leadingColumn && trailingColumn && column.Kirigami.ColumnView.view.leadingVisibleItem !== column
+        visible: leadingColumn && trailingColumn && column.Kirigami.ColumnView.view?.leadingVisibleItem !== column
     }
 
     SeparatorHandle {
@@ -42,7 +42,7 @@ Item {
         }
         leadingColumn: LayoutMirroring.enabled ? previousColumn : column
         trailingColumn: LayoutMirroring.enabled ? column : nextColumn
-        visible: leadingColumn && trailingColumn && column.Kirigami.ColumnView.view.leadingVisibleItem !== previousColumn
+        visible: leadingColumn && trailingColumn && column.Kirigami.ColumnView.view?.leadingVisibleItem !== previousColumn
     }
 
     component SeparatorHandle: Kirigami.Separator {

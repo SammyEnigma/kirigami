@@ -660,7 +660,7 @@ QT.Control {
     // Enforce the parent when we are in sidebar mode
     Connections {
         enabled: leftSidebar && leftSidebar.contentItem && !leftSidebar.modal
-        target: leftSidebar.contentItem.parent
+        target: leftSidebar?.contentItem.parent ?? null
         function onParentChanged () {
             leftSidebar.contentItem.parent.parent = sidebarControl
         }
