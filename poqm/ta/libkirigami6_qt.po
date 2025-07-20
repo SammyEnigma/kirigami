@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2025-03-16 14:48+0530\n"
+"PO-Revision-Date: 2025-07-19 15:06+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
 "Language: ta\n"
@@ -11,7 +11,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Qt-Contexts: true\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.12.3\n"
+"X-Generator: Lokalize 25.04.3\n"
 
 #: controls/AboutItem.qml:162
 #, qt-format
@@ -148,20 +148,14 @@ msgid "Show Password"
 msgstr "கடவுச்சொல்லை காட்டு"
 
 #: controls/private/globaltoolbar/NavigationButtons.qml:87
-#, fuzzy
-#| msgctxt "BackButton|"
-#| msgid "Navigate Back"
 msgctxt "NavigationButtons|"
 msgid "Navigate Back"
-msgstr "பின்னே செல்"
+msgstr "முந்தையதற்கு செல்"
 
 #: controls/private/globaltoolbar/NavigationButtons.qml:94
-#, fuzzy
-#| msgctxt "ForwardButton|"
-#| msgid "Navigate Forward"
 msgctxt "NavigationButtons|"
 msgid "Navigate Forward"
-msgstr "முன்னே செல்"
+msgstr "பின்தையதற்கு செல்"
 
 #: controls/private/globaltoolbar/PageRowGlobalToolBarUI.qml:88
 msgctxt "PageRowGlobalToolBarUI|"
