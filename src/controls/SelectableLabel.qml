@@ -261,13 +261,6 @@ QQC2.Control {
 
         HoverHandler {
             id: hoverHandler
-            // By default HoverHandler accepts the left button while it shouldn't accept anything,
-            // causing https://bugreports.qt.io/browse/QTBUG-106489.
-            // Qt.NoButton unfortunately is not a valid value for acceptedButtons.
-            // Disabling masks the problem, but
-            // there is no proper workaround other than an upstream fix
-            // See qqc2-desktop-style Label.qml
-            enabled: false
             cursorShape: root.cursorShape ? root.cursorShape : (textEdit.hoveredLink ? Qt.PointingHandCursor : Qt.IBeamCursor)
         }
 
