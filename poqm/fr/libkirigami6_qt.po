@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2025-03-13 07:21+0100\n"
+"PO-Revision-Date: 2025-07-11 09:01+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
 "Language: fr\n"
@@ -14,7 +14,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Accelerator-Marker: &\n"
 "X-Environment: kde\n"
-"X-Generator: Lokalize 24.12.3\n"
+"X-Generator: Lokalize 25.04.3\n"
 "X-Qt-Contexts: true\n"
 "X-Text-Markup: qtrich\n"
 
@@ -153,27 +153,21 @@ msgid "Show Password"
 msgstr "Afficher un mot de passe"
 
 #: controls/private/globaltoolbar/NavigationButtons.qml:87
-#, fuzzy
-#| msgctxt "BackButton|"
-#| msgid "Navigate Back"
 msgctxt "NavigationButtons|"
 msgid "Navigate Back"
-msgstr "Navigation arrière"
+msgstr "Naviguer en arrière"
 
 #: controls/private/globaltoolbar/NavigationButtons.qml:94
-#, fuzzy
-#| msgctxt "ForwardButton|"
-#| msgid "Navigate Forward"
 msgctxt "NavigationButtons|"
 msgid "Navigate Forward"
-msgstr "Navigation avant"
+msgstr "Naviguer en avant"
 
-#: controls/private/globaltoolbar/PageRowGlobalToolBarUI.qml:88
+#: controls/private/globaltoolbar/PageRowGlobalToolBarUI.qml:87
 msgctxt "PageRowGlobalToolBarUI|"
 msgid "Close menu"
 msgstr "Fermer le menu"
 
-#: controls/private/globaltoolbar/PageRowGlobalToolBarUI.qml:88
+#: controls/private/globaltoolbar/PageRowGlobalToolBarUI.qml:87
 msgctxt "PageRowGlobalToolBarUI|"
 msgid "Open menu"
 msgstr "Ouvrir le menu"
@@ -202,46 +196,6 @@ msgstr "Copier"
 msgctxt "SelectableLabel|"
 msgid "Select All"
 msgstr "Tout sélectionner"
-
-#: controls/templates/InlineMessage.qml:350
-msgctxt "InlineMessage|"
-msgid "Success"
-msgstr "Réussite"
-
-#: controls/templates/InlineMessage.qml:352
-msgctxt "InlineMessage|"
-msgid "Warning"
-msgstr "Avertissement"
-
-#: controls/templates/InlineMessage.qml:354
-msgctxt "InlineMessage|"
-msgid "Error"
-msgstr "Erreur"
-
-#: controls/templates/InlineMessage.qml:356
-msgctxt "InlineMessage|"
-msgid "Note"
-msgstr "Remarque"
-
-#: controls/templates/InlineMessage.qml:444
-msgctxt "InlineMessage|"
-msgid "Close"
-msgstr "Fermer"
-
-#: controls/templates/OverlayDrawer.qml:142
-msgctxt "OverlayDrawer|"
-msgid "Close drawer"
-msgstr "Fermer un tiroir"
-
-#: controls/templates/OverlayDrawer.qml:148
-msgctxt "OverlayDrawer|"
-msgid "Open drawer"
-msgstr "Ouvrir un tiroir"
-
-#: controls/templates/OverlaySheet.qml:297
-msgctxt "OverlaySheet|@action:button close dialog"
-msgid "Close"
-msgstr "Fermer"
 
 #: controls/UrlButton.qml:50
 #, qt-format
@@ -281,6 +235,46 @@ msgstr "Le système de fenêtrage %1"
 msgctxt "Kirigami::Platform::Settings|"
 msgid "Qt %2 (built against %3)"
 msgstr "Qt %2 (Compilé avec %3)"
+
+#: templates/InlineMessage.qml:350
+msgctxt "InlineMessage|"
+msgid "Success"
+msgstr "Réussite"
+
+#: templates/InlineMessage.qml:352
+msgctxt "InlineMessage|"
+msgid "Warning"
+msgstr "Avertissement"
+
+#: templates/InlineMessage.qml:354
+msgctxt "InlineMessage|"
+msgid "Error"
+msgstr "Erreur"
+
+#: templates/InlineMessage.qml:356
+msgctxt "InlineMessage|"
+msgid "Note"
+msgstr "Remarque"
+
+#: templates/InlineMessage.qml:444
+msgctxt "InlineMessage|"
+msgid "Close"
+msgstr "Fermer"
+
+#: templates/OverlayDrawer.qml:143
+msgctxt "OverlayDrawer|"
+msgid "Close drawer"
+msgstr "Fermer un tiroir"
+
+#: templates/OverlayDrawer.qml:149
+msgctxt "OverlayDrawer|"
+msgid "Open drawer"
+msgstr "Ouvrir un tiroir"
+
+#: templates/OverlaySheet.qml:297
+msgctxt "OverlaySheet|@action:button close dialog"
+msgid "Close"
+msgstr "Fermer"
 
 #~ msgctxt "Dialog|@action:button close dialog"
 #~ msgid "Close"

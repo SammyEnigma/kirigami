@@ -171,12 +171,12 @@ msgctxt "NavigationButtons|"
 msgid "Navigate Forward"
 msgstr "Navegar para a Frente"
 
-#: controls/private/globaltoolbar/PageRowGlobalToolBarUI.qml:88
+#: controls/private/globaltoolbar/PageRowGlobalToolBarUI.qml:87
 msgctxt "PageRowGlobalToolBarUI|"
 msgid "Close menu"
 msgstr "Fechar o menu"
 
-#: controls/private/globaltoolbar/PageRowGlobalToolBarUI.qml:88
+#: controls/private/globaltoolbar/PageRowGlobalToolBarUI.qml:87
 msgctxt "PageRowGlobalToolBarUI|"
 msgid "Open menu"
 msgstr "Abrir o menu"
@@ -208,52 +208,6 @@ msgstr "'Copyright'"
 msgctxt "SelectableLabel|"
 msgid "Select All"
 msgstr ""
-
-#: controls/templates/InlineMessage.qml:350
-msgctxt "InlineMessage|"
-msgid "Success"
-msgstr ""
-
-#: controls/templates/InlineMessage.qml:352
-msgctxt "InlineMessage|"
-msgid "Warning"
-msgstr ""
-
-#: controls/templates/InlineMessage.qml:354
-msgctxt "InlineMessage|"
-msgid "Error"
-msgstr ""
-
-#: controls/templates/InlineMessage.qml:356
-msgctxt "InlineMessage|"
-msgid "Note"
-msgstr ""
-
-#: controls/templates/InlineMessage.qml:444
-#, fuzzy
-#| msgctxt "PageRowGlobalToolBarUI|"
-#| msgid "Close menu"
-msgctxt "InlineMessage|"
-msgid "Close"
-msgstr "Fechar o menu"
-
-#: controls/templates/OverlayDrawer.qml:142
-msgctxt "OverlayDrawer|"
-msgid "Close drawer"
-msgstr "Fechar a área"
-
-#: controls/templates/OverlayDrawer.qml:148
-msgctxt "OverlayDrawer|"
-msgid "Open drawer"
-msgstr "Abrir a área"
-
-#: controls/templates/OverlaySheet.qml:297
-#, fuzzy
-#| msgctxt "PageRowGlobalToolBarUI|"
-#| msgid "Close menu"
-msgctxt "OverlaySheet|@action:button close dialog"
-msgid "Close"
-msgstr "Fechar o menu"
 
 #: controls/UrlButton.qml:50
 #, qt-format
@@ -305,6 +259,52 @@ msgstr "O sistema de janelas %1"
 msgctxt "Kirigami::Platform::Settings|"
 msgid "Qt %2 (built against %3)"
 msgstr "Qt %2 (compilado com o %3)"
+
+#: templates/InlineMessage.qml:350
+msgctxt "InlineMessage|"
+msgid "Success"
+msgstr ""
+
+#: templates/InlineMessage.qml:352
+msgctxt "InlineMessage|"
+msgid "Warning"
+msgstr ""
+
+#: templates/InlineMessage.qml:354
+msgctxt "InlineMessage|"
+msgid "Error"
+msgstr ""
+
+#: templates/InlineMessage.qml:356
+msgctxt "InlineMessage|"
+msgid "Note"
+msgstr ""
+
+#: templates/InlineMessage.qml:444
+#, fuzzy
+#| msgctxt "PageRowGlobalToolBarUI|"
+#| msgid "Close menu"
+msgctxt "InlineMessage|"
+msgid "Close"
+msgstr "Fechar o menu"
+
+#: templates/OverlayDrawer.qml:143
+msgctxt "OverlayDrawer|"
+msgid "Close drawer"
+msgstr "Fechar a área"
+
+#: templates/OverlayDrawer.qml:149
+msgctxt "OverlayDrawer|"
+msgid "Open drawer"
+msgstr "Abrir a área"
+
+#: templates/OverlaySheet.qml:297
+#, fuzzy
+#| msgctxt "PageRowGlobalToolBarUI|"
+#| msgid "Close menu"
+msgctxt "OverlaySheet|@action:button close dialog"
+msgid "Close"
+msgstr "Fechar o menu"
 
 #, fuzzy
 #~| msgctxt "PageRowGlobalToolBarUI|"

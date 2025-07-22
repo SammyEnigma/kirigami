@@ -157,12 +157,12 @@ msgctxt "NavigationButtons|"
 msgid "Navigate Forward"
 msgstr "다음 탐색"
 
-#: controls/private/globaltoolbar/PageRowGlobalToolBarUI.qml:88
+#: controls/private/globaltoolbar/PageRowGlobalToolBarUI.qml:87
 msgctxt "PageRowGlobalToolBarUI|"
 msgid "Close menu"
 msgstr "메뉴 닫기"
 
-#: controls/private/globaltoolbar/PageRowGlobalToolBarUI.qml:88
+#: controls/private/globaltoolbar/PageRowGlobalToolBarUI.qml:87
 msgctxt "PageRowGlobalToolBarUI|"
 msgid "Open menu"
 msgstr "메뉴 열기"
@@ -191,46 +191,6 @@ msgstr "복사"
 msgctxt "SelectableLabel|"
 msgid "Select All"
 msgstr "모두 선택"
-
-#: controls/templates/InlineMessage.qml:350
-msgctxt "InlineMessage|"
-msgid "Success"
-msgstr "성공"
-
-#: controls/templates/InlineMessage.qml:352
-msgctxt "InlineMessage|"
-msgid "Warning"
-msgstr "경고"
-
-#: controls/templates/InlineMessage.qml:354
-msgctxt "InlineMessage|"
-msgid "Error"
-msgstr "오류"
-
-#: controls/templates/InlineMessage.qml:356
-msgctxt "InlineMessage|"
-msgid "Note"
-msgstr "메모"
-
-#: controls/templates/InlineMessage.qml:444
-msgctxt "InlineMessage|"
-msgid "Close"
-msgstr "닫기"
-
-#: controls/templates/OverlayDrawer.qml:142
-msgctxt "OverlayDrawer|"
-msgid "Close drawer"
-msgstr "서랍 닫기"
-
-#: controls/templates/OverlayDrawer.qml:148
-msgctxt "OverlayDrawer|"
-msgid "Open drawer"
-msgstr "서랍 열기"
-
-#: controls/templates/OverlaySheet.qml:297
-msgctxt "OverlaySheet|@action:button close dialog"
-msgid "Close"
-msgstr "닫기"
 
 #: controls/UrlButton.qml:50
 #, qt-format
@@ -270,6 +230,46 @@ msgstr "%1 창 시스템"
 msgctxt "Kirigami::Platform::Settings|"
 msgid "Qt %2 (built against %3)"
 msgstr "Qt %2(%3(으)로 빌드됨)"
+
+#: templates/InlineMessage.qml:350
+msgctxt "InlineMessage|"
+msgid "Success"
+msgstr "성공"
+
+#: templates/InlineMessage.qml:352
+msgctxt "InlineMessage|"
+msgid "Warning"
+msgstr "경고"
+
+#: templates/InlineMessage.qml:354
+msgctxt "InlineMessage|"
+msgid "Error"
+msgstr "오류"
+
+#: templates/InlineMessage.qml:356
+msgctxt "InlineMessage|"
+msgid "Note"
+msgstr "메모"
+
+#: templates/InlineMessage.qml:444
+msgctxt "InlineMessage|"
+msgid "Close"
+msgstr "닫기"
+
+#: templates/OverlayDrawer.qml:143
+msgctxt "OverlayDrawer|"
+msgid "Close drawer"
+msgstr "서랍 닫기"
+
+#: templates/OverlayDrawer.qml:149
+msgctxt "OverlayDrawer|"
+msgid "Open drawer"
+msgstr "서랍 열기"
+
+#: templates/OverlaySheet.qml:297
+msgctxt "OverlaySheet|@action:button close dialog"
+msgid "Close"
+msgstr "닫기"
 
 #~ msgctxt "Dialog|@action:button close dialog"
 #~ msgid "Close"

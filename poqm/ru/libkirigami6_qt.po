@@ -167,12 +167,12 @@ msgctxt "NavigationButtons|"
 msgid "Navigate Forward"
 msgstr "Перейти вперёд"
 
-#: controls/private/globaltoolbar/PageRowGlobalToolBarUI.qml:88
+#: controls/private/globaltoolbar/PageRowGlobalToolBarUI.qml:87
 msgctxt "PageRowGlobalToolBarUI|"
 msgid "Close menu"
 msgstr "Закрыть меню"
 
-#: controls/private/globaltoolbar/PageRowGlobalToolBarUI.qml:88
+#: controls/private/globaltoolbar/PageRowGlobalToolBarUI.qml:87
 msgctxt "PageRowGlobalToolBarUI|"
 msgid "Open menu"
 msgstr "Открыть меню"
@@ -201,46 +201,6 @@ msgstr "Копировать"
 msgctxt "SelectableLabel|"
 msgid "Select All"
 msgstr "Выбрать все"
-
-#: controls/templates/InlineMessage.qml:350
-msgctxt "InlineMessage|"
-msgid "Success"
-msgstr "Успешно"
-
-#: controls/templates/InlineMessage.qml:352
-msgctxt "InlineMessage|"
-msgid "Warning"
-msgstr "Предупреждение"
-
-#: controls/templates/InlineMessage.qml:354
-msgctxt "InlineMessage|"
-msgid "Error"
-msgstr "Ошибка"
-
-#: controls/templates/InlineMessage.qml:356
-msgctxt "InlineMessage|"
-msgid "Note"
-msgstr "Примечание"
-
-#: controls/templates/InlineMessage.qml:444
-msgctxt "InlineMessage|"
-msgid "Close"
-msgstr "Закрыть"
-
-#: controls/templates/OverlayDrawer.qml:142
-msgctxt "OverlayDrawer|"
-msgid "Close drawer"
-msgstr "Закрыть панель"
-
-#: controls/templates/OverlayDrawer.qml:148
-msgctxt "OverlayDrawer|"
-msgid "Open drawer"
-msgstr "Открыть панель"
-
-#: controls/templates/OverlaySheet.qml:297
-msgctxt "OverlaySheet|@action:button close dialog"
-msgid "Close"
-msgstr "Закрыть"
 
 #: controls/UrlButton.qml:50
 #, qt-format
@@ -280,6 +240,46 @@ msgstr "Платформа графического сервера %1"
 msgctxt "Kirigami::Platform::Settings|"
 msgid "Qt %2 (built against %3)"
 msgstr "Qt %2 (собрана с версией %3)"
+
+#: templates/InlineMessage.qml:350
+msgctxt "InlineMessage|"
+msgid "Success"
+msgstr "Успешно"
+
+#: templates/InlineMessage.qml:352
+msgctxt "InlineMessage|"
+msgid "Warning"
+msgstr "Предупреждение"
+
+#: templates/InlineMessage.qml:354
+msgctxt "InlineMessage|"
+msgid "Error"
+msgstr "Ошибка"
+
+#: templates/InlineMessage.qml:356
+msgctxt "InlineMessage|"
+msgid "Note"
+msgstr "Примечание"
+
+#: templates/InlineMessage.qml:444
+msgctxt "InlineMessage|"
+msgid "Close"
+msgstr "Закрыть"
+
+#: templates/OverlayDrawer.qml:143
+msgctxt "OverlayDrawer|"
+msgid "Close drawer"
+msgstr "Закрыть панель"
+
+#: templates/OverlayDrawer.qml:149
+msgctxt "OverlayDrawer|"
+msgid "Open drawer"
+msgstr "Открыть панель"
+
+#: templates/OverlaySheet.qml:297
+msgctxt "OverlaySheet|@action:button close dialog"
+msgid "Close"
+msgstr "Закрыть"
 
 #~ msgctxt "Dialog|@action:button close dialog"
 #~ msgid "Close"

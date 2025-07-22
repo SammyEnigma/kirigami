@@ -163,12 +163,12 @@ msgctxt "NavigationButtons|"
 msgid "Navigate Forward"
 msgstr "Naviger frem"
 
-#: controls/private/globaltoolbar/PageRowGlobalToolBarUI.qml:88
+#: controls/private/globaltoolbar/PageRowGlobalToolBarUI.qml:87
 msgctxt "PageRowGlobalToolBarUI|"
 msgid "Close menu"
 msgstr "Lukk meny"
 
-#: controls/private/globaltoolbar/PageRowGlobalToolBarUI.qml:88
+#: controls/private/globaltoolbar/PageRowGlobalToolBarUI.qml:87
 msgctxt "PageRowGlobalToolBarUI|"
 msgid "Open menu"
 msgstr "Åpne meny"
@@ -197,46 +197,6 @@ msgstr "Kopier"
 msgctxt "SelectableLabel|"
 msgid "Select All"
 msgstr "Merk alle"
-
-#: controls/templates/InlineMessage.qml:350
-msgctxt "InlineMessage|"
-msgid "Success"
-msgstr "Vellykket"
-
-#: controls/templates/InlineMessage.qml:352
-msgctxt "InlineMessage|"
-msgid "Warning"
-msgstr "Advarsel"
-
-#: controls/templates/InlineMessage.qml:354
-msgctxt "InlineMessage|"
-msgid "Error"
-msgstr "Feil"
-
-#: controls/templates/InlineMessage.qml:356
-msgctxt "InlineMessage|"
-msgid "Note"
-msgstr "Merk"
-
-#: controls/templates/InlineMessage.qml:444
-msgctxt "InlineMessage|"
-msgid "Close"
-msgstr "Lukk"
-
-#: controls/templates/OverlayDrawer.qml:142
-msgctxt "OverlayDrawer|"
-msgid "Close drawer"
-msgstr "Lukk skuff"
-
-#: controls/templates/OverlayDrawer.qml:148
-msgctxt "OverlayDrawer|"
-msgid "Open drawer"
-msgstr "Åpne skuff"
-
-#: controls/templates/OverlaySheet.qml:297
-msgctxt "OverlaySheet|@action:button close dialog"
-msgid "Close"
-msgstr "Lukk"
 
 #: controls/UrlButton.qml:50
 #, qt-format
@@ -276,3 +236,43 @@ msgstr "Vindussystemet %1"
 msgctxt "Kirigami::Platform::Settings|"
 msgid "Qt %2 (built against %3)"
 msgstr "Qt %2 (bygd mot %3)"
+
+#: templates/InlineMessage.qml:350
+msgctxt "InlineMessage|"
+msgid "Success"
+msgstr "Vellykket"
+
+#: templates/InlineMessage.qml:352
+msgctxt "InlineMessage|"
+msgid "Warning"
+msgstr "Advarsel"
+
+#: templates/InlineMessage.qml:354
+msgctxt "InlineMessage|"
+msgid "Error"
+msgstr "Feil"
+
+#: templates/InlineMessage.qml:356
+msgctxt "InlineMessage|"
+msgid "Note"
+msgstr "Merk"
+
+#: templates/InlineMessage.qml:444
+msgctxt "InlineMessage|"
+msgid "Close"
+msgstr "Lukk"
+
+#: templates/OverlayDrawer.qml:143
+msgctxt "OverlayDrawer|"
+msgid "Close drawer"
+msgstr "Lukk skuff"
+
+#: templates/OverlayDrawer.qml:149
+msgctxt "OverlayDrawer|"
+msgid "Open drawer"
+msgstr "Åpne skuff"
+
+#: templates/OverlaySheet.qml:297
+msgctxt "OverlaySheet|@action:button close dialog"
+msgid "Close"
+msgstr "Lukk"

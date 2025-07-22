@@ -164,12 +164,12 @@ msgctxt "NavigationButtons|"
 msgid "Navigate Forward"
 msgstr "Előre"
 
-#: controls/private/globaltoolbar/PageRowGlobalToolBarUI.qml:88
+#: controls/private/globaltoolbar/PageRowGlobalToolBarUI.qml:87
 msgctxt "PageRowGlobalToolBarUI|"
 msgid "Close menu"
 msgstr "Menü bezárása"
 
-#: controls/private/globaltoolbar/PageRowGlobalToolBarUI.qml:88
+#: controls/private/globaltoolbar/PageRowGlobalToolBarUI.qml:87
 msgctxt "PageRowGlobalToolBarUI|"
 msgid "Open menu"
 msgstr "Menü megnyitása"
@@ -198,46 +198,6 @@ msgstr "Másolás"
 msgctxt "SelectableLabel|"
 msgid "Select All"
 msgstr "Összes kijelölése"
-
-#: controls/templates/InlineMessage.qml:350
-msgctxt "InlineMessage|"
-msgid "Success"
-msgstr "Sikeres"
-
-#: controls/templates/InlineMessage.qml:352
-msgctxt "InlineMessage|"
-msgid "Warning"
-msgstr "Figyelmeztetés"
-
-#: controls/templates/InlineMessage.qml:354
-msgctxt "InlineMessage|"
-msgid "Error"
-msgstr "Hiba"
-
-#: controls/templates/InlineMessage.qml:356
-msgctxt "InlineMessage|"
-msgid "Note"
-msgstr "Megjegyzés"
-
-#: controls/templates/InlineMessage.qml:444
-msgctxt "InlineMessage|"
-msgid "Close"
-msgstr "Bezárás"
-
-#: controls/templates/OverlayDrawer.qml:142
-msgctxt "OverlayDrawer|"
-msgid "Close drawer"
-msgstr "Csúszómenü bezárása"
-
-#: controls/templates/OverlayDrawer.qml:148
-msgctxt "OverlayDrawer|"
-msgid "Open drawer"
-msgstr "Csúszómenü megnyitása"
-
-#: controls/templates/OverlaySheet.qml:297
-msgctxt "OverlaySheet|@action:button close dialog"
-msgid "Close"
-msgstr "Bezárás"
 
 #: controls/UrlButton.qml:50
 #, qt-format
@@ -277,6 +237,46 @@ msgstr "A(z) %1 ablakkezelő rendszer"
 msgctxt "Kirigami::Platform::Settings|"
 msgid "Qt %2 (built against %3)"
 msgstr "Qt %2 (fordítva ezzel: %3)"
+
+#: templates/InlineMessage.qml:350
+msgctxt "InlineMessage|"
+msgid "Success"
+msgstr "Sikeres"
+
+#: templates/InlineMessage.qml:352
+msgctxt "InlineMessage|"
+msgid "Warning"
+msgstr "Figyelmeztetés"
+
+#: templates/InlineMessage.qml:354
+msgctxt "InlineMessage|"
+msgid "Error"
+msgstr "Hiba"
+
+#: templates/InlineMessage.qml:356
+msgctxt "InlineMessage|"
+msgid "Note"
+msgstr "Megjegyzés"
+
+#: templates/InlineMessage.qml:444
+msgctxt "InlineMessage|"
+msgid "Close"
+msgstr "Bezárás"
+
+#: templates/OverlayDrawer.qml:143
+msgctxt "OverlayDrawer|"
+msgid "Close drawer"
+msgstr "Csúszómenü bezárása"
+
+#: templates/OverlayDrawer.qml:149
+msgctxt "OverlayDrawer|"
+msgid "Open drawer"
+msgstr "Csúszómenü megnyitása"
+
+#: templates/OverlaySheet.qml:297
+msgctxt "OverlaySheet|@action:button close dialog"
+msgid "Close"
+msgstr "Bezárás"
 
 #~ msgctxt "Dialog|@action:button close dialog"
 #~ msgid "Close"

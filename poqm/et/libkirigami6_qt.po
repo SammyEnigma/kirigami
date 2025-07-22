@@ -197,7 +197,7 @@ msgctxt "NavigationButtons|"
 msgid "Navigate Forward"
 msgstr "Liigu edasi"
 
-#: controls/private/globaltoolbar/PageRowGlobalToolBarUI.qml:88
+#: controls/private/globaltoolbar/PageRowGlobalToolBarUI.qml:87
 #, fuzzy
 #| msgctxt "GlobalDrawer|"
 #| msgid "Close Sidebar"
@@ -205,7 +205,7 @@ msgctxt "PageRowGlobalToolBarUI|"
 msgid "Close menu"
 msgstr "Sulge külgriba"
 
-#: controls/private/globaltoolbar/PageRowGlobalToolBarUI.qml:88
+#: controls/private/globaltoolbar/PageRowGlobalToolBarUI.qml:87
 msgctxt "PageRowGlobalToolBarUI|"
 msgid "Open menu"
 msgstr ""
@@ -240,55 +240,6 @@ msgstr "Autoriõigus"
 msgctxt "SelectableLabel|"
 msgid "Select All"
 msgstr ""
-
-#: controls/templates/InlineMessage.qml:350
-msgctxt "InlineMessage|"
-msgid "Success"
-msgstr ""
-
-#: controls/templates/InlineMessage.qml:352
-msgctxt "InlineMessage|"
-msgid "Warning"
-msgstr ""
-
-#: controls/templates/InlineMessage.qml:354
-msgctxt "InlineMessage|"
-msgid "Error"
-msgstr ""
-
-#: controls/templates/InlineMessage.qml:356
-msgctxt "InlineMessage|"
-msgid "Note"
-msgstr ""
-
-#: controls/templates/InlineMessage.qml:444
-#, fuzzy
-#| msgctxt "GlobalDrawer|"
-#| msgid "Close Sidebar"
-msgctxt "InlineMessage|"
-msgid "Close"
-msgstr "Sulge külgriba"
-
-#: controls/templates/OverlayDrawer.qml:142
-#, fuzzy
-#| msgctxt "GlobalDrawer|"
-#| msgid "Close Sidebar"
-msgctxt "OverlayDrawer|"
-msgid "Close drawer"
-msgstr "Sulge külgriba"
-
-#: controls/templates/OverlayDrawer.qml:148
-msgctxt "OverlayDrawer|"
-msgid "Open drawer"
-msgstr ""
-
-#: controls/templates/OverlaySheet.qml:297
-#, fuzzy
-#| msgctxt "GlobalDrawer|"
-#| msgid "Close Sidebar"
-msgctxt "OverlaySheet|@action:button close dialog"
-msgid "Close"
-msgstr "Sulge külgriba"
 
 #: controls/UrlButton.qml:50
 #, qt-format
@@ -337,6 +288,55 @@ msgstr "%1 aknahaldur"
 msgctxt "Kirigami::Platform::Settings|"
 msgid "Qt %2 (built against %3)"
 msgstr "Qt %2 (ehitatud %3 peale)"
+
+#: templates/InlineMessage.qml:350
+msgctxt "InlineMessage|"
+msgid "Success"
+msgstr ""
+
+#: templates/InlineMessage.qml:352
+msgctxt "InlineMessage|"
+msgid "Warning"
+msgstr ""
+
+#: templates/InlineMessage.qml:354
+msgctxt "InlineMessage|"
+msgid "Error"
+msgstr ""
+
+#: templates/InlineMessage.qml:356
+msgctxt "InlineMessage|"
+msgid "Note"
+msgstr ""
+
+#: templates/InlineMessage.qml:444
+#, fuzzy
+#| msgctxt "GlobalDrawer|"
+#| msgid "Close Sidebar"
+msgctxt "InlineMessage|"
+msgid "Close"
+msgstr "Sulge külgriba"
+
+#: templates/OverlayDrawer.qml:143
+#, fuzzy
+#| msgctxt "GlobalDrawer|"
+#| msgid "Close Sidebar"
+msgctxt "OverlayDrawer|"
+msgid "Close drawer"
+msgstr "Sulge külgriba"
+
+#: templates/OverlayDrawer.qml:149
+msgctxt "OverlayDrawer|"
+msgid "Open drawer"
+msgstr ""
+
+#: templates/OverlaySheet.qml:297
+#, fuzzy
+#| msgctxt "GlobalDrawer|"
+#| msgid "Close Sidebar"
+msgctxt "OverlaySheet|@action:button close dialog"
+msgid "Close"
+msgstr "Sulge külgriba"
 
 #, fuzzy
 #~| msgctxt "GlobalDrawer|"
