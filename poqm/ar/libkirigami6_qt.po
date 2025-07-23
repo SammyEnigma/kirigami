@@ -184,12 +184,12 @@ msgctxt "SearchField|"
 msgid "Clear search"
 msgstr "مسح سجل البحث"
 
-#: controls/SelectableLabel.qml:300
+#: controls/SelectableLabel.qml:297
 msgctxt "SelectableLabel|"
 msgid "Copy"
 msgstr "انسخ"
 
-#: controls/SelectableLabel.qml:313
+#: controls/SelectableLabel.qml:310
 msgctxt "SelectableLabel|"
 msgid "Select All"
 msgstr "حدّد الكلّ"

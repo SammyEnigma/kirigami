@@ -188,12 +188,12 @@ msgctxt "SearchField|"
 msgid "Clear search"
 msgstr "अन्वेषणं स्पष्टं कुरुत"
 
-#: controls/SelectableLabel.qml:300
+#: controls/SelectableLabel.qml:297
 msgctxt "SelectableLabel|"
 msgid "Copy"
 msgstr "प्रतिलिपि"
 
-#: controls/SelectableLabel.qml:313
+#: controls/SelectableLabel.qml:310
 msgctxt "SelectableLabel|"
 msgid "Select All"
 msgstr "All इति चिनोतु"

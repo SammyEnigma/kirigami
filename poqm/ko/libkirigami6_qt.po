@@ -182,12 +182,12 @@ msgctxt "SearchField|"
 msgid "Clear search"
 msgstr "검색 지우기"
 
-#: controls/SelectableLabel.qml:300
+#: controls/SelectableLabel.qml:297
 msgctxt "SelectableLabel|"
 msgid "Copy"
 msgstr "복사"
 
-#: controls/SelectableLabel.qml:313
+#: controls/SelectableLabel.qml:310
 msgctxt "SelectableLabel|"
 msgid "Select All"
 msgstr "모두 선택"

@@ -196,7 +196,7 @@ msgctxt "SearchField|"
 msgid "Clear search"
 msgstr "Limpar a pesquisa"
 
-#: controls/SelectableLabel.qml:300
+#: controls/SelectableLabel.qml:297
 #, fuzzy
 #| msgctxt "AboutItem|"
 #| msgid "Copyright"
@@ -204,7 +204,7 @@ msgctxt "SelectableLabel|"
 msgid "Copy"
 msgstr "'Copyright'"
 
-#: controls/SelectableLabel.qml:313
+#: controls/SelectableLabel.qml:310
 msgctxt "SelectableLabel|"
 msgid "Select All"
 msgstr ""
