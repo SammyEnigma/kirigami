@@ -153,7 +153,7 @@ Item {
         }
         // Ideally also not visible when 'No Titlebar and Frame', but window flags are not bindable
         visible: Window.window?.visibility !== Window.FullScreen ?? true
-        opacity: root.__appWindow.controlsVisible ? 0 : 1
+        opacity: root.__appWindow?.controlsVisible ? 0 : 1
         Behavior on opacity {
             NumberAnimation {
                 duration: Kirigami.Units.longDuration

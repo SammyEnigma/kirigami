@@ -70,6 +70,9 @@ Kirigami.AbstractApplicationHeader {
         Item {
             id: leftHandleSpacer
             visible: {
+                if (typeof applicationWindow === "undefined") {
+                    return false;
+                }
                 const drawer = applicationWindow().globalDrawer as KT.OverlayDrawer;
                 if (!drawer || (!drawer.isMenu && (!drawer.enabled || !drawer.handleVisible))) {
                     return false;
