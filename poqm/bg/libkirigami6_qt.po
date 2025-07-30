@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2025-03-22 16:53+0100\n"
+"PO-Revision-Date: 2025-07-28 19:04+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
 "Language: bg\n"
@@ -11,7 +11,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Qt-Contexts: true\n"
-"X-Generator: Lokalize 25.03.70\n"
+"X-Generator: Lokalize 25.07.70\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #: controls/AboutItem.qml:162
@@ -149,17 +149,11 @@ msgid "Show Password"
 msgstr "Показване на паролата"
 
 #: controls/private/globaltoolbar/NavigationButtons.qml:87
-#, fuzzy
-#| msgctxt "BackButton|"
-#| msgid "Navigate Back"
 msgctxt "NavigationButtons|"
 msgid "Navigate Back"
 msgstr "Навигиране обратно"
 
 #: controls/private/globaltoolbar/NavigationButtons.qml:94
-#, fuzzy
-#| msgctxt "ForwardButton|"
-#| msgid "Navigate Forward"
 msgctxt "NavigationButtons|"
 msgid "Navigate Forward"
 msgstr "Навигиране напред"
