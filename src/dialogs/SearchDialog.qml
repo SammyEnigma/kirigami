@@ -28,7 +28,7 @@ import org.kde.kirigami as Kirigami
      id: root
 
      onTextChanged: {
-         sortModel.filterText = text;
+         sortModel.filterString = text;
      }
      onAccepted: listView.currentItem.clicked()
 
