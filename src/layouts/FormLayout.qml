@@ -218,6 +218,7 @@ Item {
         //This invisible row is used to sync alignment between multiple layouts
 
         Item {
+            id: leadingPlaceholder
             Layout.preferredWidth: {
                 let hint = lay.buddiesImplicitWidth;
                 for (const item of lay.actualTwinFormLayouts) {
@@ -230,6 +231,7 @@ Item {
             Layout.preferredHeight: 2
         }
         Item {
+            id: trailingPlaceholder
             Layout.preferredWidth: {
                 let hint = Math.min(root.width, lay.knownItemsImplicitWidth);
                 for (const item of lay.actualTwinFormLayouts) {
@@ -298,8 +300,15 @@ Item {
     function relayout() {
         const __items = root.children;
         // exclude the layout and temp
+        let row = 0;
         for (let i = 2; i < __items.length; ++i) {
             const item = __items[i];
+
+            if (!(item instanceof Repeater)) {
+                item.Layout.row = row;
+                item.Layout.column = 1;
+                row += root.wideMode && !item.Kirigami.FormData.isSection ? 1 : 2;
+            }
 
             // skip items that are already there
             if (lay.knownItems.indexOf(item) !== -1 || item instanceof Repeater) {
@@ -307,25 +316,28 @@ Item {
             }
             lay.knownItems.push(item);
 
-            const itemContainer = itemComponent.createObject(temp, { item });
-
-            // if it's a labeled section header, add extra spacing before it
-            if (item.Kirigami.FormData.label.length > 0 && item.Kirigami.FormData.isSection) {
-                placeHolderComponent.createObject(lay, { item });
-            }
-
+            const itemContainer = itemComponent.createObject(lay, { item });
             const buddy = buddyComponent.createObject(lay, { item, index: i - 2 });
 
-            itemContainer.parent = lay;
             lay.buddies.push(buddy);
         }
+
+        leadingPlaceholder.Layout.row = row
+        leadingPlaceholder.Layout.column = 0
+        trailingPlaceholder.Layout.row = Qt.binding(() => row + (root.wideMode ? 0 : 1))
+        trailingPlaceholder.Layout.column = Qt.binding(() => root.wideMode ? 1 : 0)
+
         lay.knownItemsChanged();
         lay.buddiesChanged();
         hintCompression.triggered();
     }
 
-    onChildrenChanged: relayout();
-    Component.onCompleted: relayout();
+    onChildrenChanged: relayout()
+    Component.onCompleted: relayout()
+    onWideModeChanged: {
+        console.log('wide mode changed to', wideMode)
+        relayout()
+    }
 
     Component {
         id: itemComponent
@@ -333,6 +345,9 @@ Item {
             id: container
 
             property Item item
+
+            Layout.row: item?.Layout?.row + (root.wideMode && !item.Kirigami.FormData.isSection ? 0 : 1)
+            Layout.column: root.wideMode && !item?.Kirigami.FormData.isSection ? 1 : 0
 
             enabled: item?.enabled ?? false
             visible: item?.visible ?? false
@@ -373,30 +388,15 @@ Item {
         }
     }
     Component {
-        id: placeHolderComponent
-        Item {
-            property Item item
-
-            enabled: item?.enabled ?? false
-            visible: item?.visible ?? false
-
-            width: Kirigami.Units.smallSpacing
-            height: Kirigami.Units.smallSpacing
-            Layout.topMargin: item?.height > 0 ? Kirigami.Units.smallSpacing : 0
-            onItemChanged: {
-                if (!item) {
-                    destroy();
-                }
-            }
-        }
-    }
-    Component {
         id: buddyComponent
         Kirigami.Heading {
             id: labelItem
 
             property Item item
             property int index
+
+            Layout.row: item?.Layout?.row
+            Layout.column: 0
 
             enabled: {
                 const buddy = item?.Kirigami.FormData.buddyFor;
@@ -456,6 +456,9 @@ Item {
                 }
                 if (item.Kirigami.FormData.buddyFor && root.wideMode && item.Kirigami.FormData.buddyFor.parent !== root) {
                     return item.Kirigami.FormData.buddyFor.y;
+                }
+                if (item?.Kirigami.FormData.isSection && text.length > 0) {
+                    return Kirigami.Units.largeSpacing * 2;
                 }
                 if (index === 0 || root.wideMode) {
                     return 0;
