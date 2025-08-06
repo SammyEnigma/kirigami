@@ -1683,6 +1683,19 @@ bool ColumnView::childMouseEventFilter(QQuickItem *item, QEvent *event)
     }
 
     switch (event->type()) {
+    case QEvent::MouseButtonPress: {
+        // On press, we set the current index of the view to the root item,
+        // this needs to be done on both mouse and touch input
+        QQuickItem *candidateItem = item;
+        while (candidateItem->parentItem() && candidateItem->parentItem() != m_contentItem) {
+            candidateItem = candidateItem->parentItem();
+        }
+        if (int idx = m_contentItem->m_items.indexOf(candidateItem); idx >= 0 && candidateItem->parentItem() == m_contentItem) {
+            setCurrentIndex(idx);
+        }
+        event->setAccepted(false);
+        break;
+    }
     case QEvent::TouchBegin: {
         QTouchEvent *te = static_cast<QTouchEvent *>(event);
 
