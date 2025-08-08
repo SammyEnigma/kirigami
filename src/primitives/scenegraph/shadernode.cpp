@@ -40,6 +40,9 @@ ShaderNode::~ShaderNode() noexcept
             texture.provider->disconnect(texture.providerConnection);
         }
     }
+
+    delete[] m_attributeSet->attributes;
+    delete m_attributeSet;
 }
 
 void ShaderNode::preprocess()
