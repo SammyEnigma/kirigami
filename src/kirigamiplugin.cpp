@@ -56,6 +56,12 @@ KirigamiPlugin::KirigamiPlugin(QObject *parent)
     auto filter = new LanguageChangeEventFilter;
     filter->moveToThread(QCoreApplication::instance()->thread());
     QCoreApplication::instance()->installEventFilter(filter);
+    QMetaObject::invokeMethod(
+        QCoreApplication::instance(),
+        [filter] {
+            filter->setParent(QCoreApplication::instance());
+        },
+        Qt::QueuedConnection);
     connect(filter, &LanguageChangeEventFilter::languageChangeEvent, this, &KirigamiPlugin::languageChangeEvent);
 }
 
