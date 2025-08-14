@@ -75,7 +75,6 @@ ecm_generate_export_header(KirigamiPlatform
 
 target_include_directories(KirigamiPlatform
     PUBLIC
-    "$<BUILD_INTERFACE:${CMAKE_CURRENT_BINARY_DIR}>"
     "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF}>"
     "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF}/Kirigami/Platform>"
 )
