@@ -95,9 +95,9 @@ KirigamiDialogs.Dialog {
       \li PromptDialog.None: No specific dialog type.
       \endlist
 
-      By default, the dialogType is Kirigami.PromptDialog.None
+      By default, the dialogType is PromptDialog.None
      */
-    property int dialogType: Kirigami.PromptDialog.None
+    property int dialogType: PromptDialog.None
 
     /*!
       The text to use in the dialog's contents.
@@ -135,13 +135,13 @@ KirigamiDialogs.Dialog {
       This property holds the icon name used by the PromptDialog.
      */
     property string iconName: switch (dialogType) {
-    case Kirigami.PromptDialog.Success:
+    case PromptDialog.Success:
         return "data-success";
-    case Kirigami.PromptDialog.Warning:
+    case PromptDialog.Warning:
         return "data-warning";
-    case Kirigami.PromptDialog.Error:
+    case PromptDialog.Error:
         return "data-error";
-    case Kirigami.PromptDialog.Information:
+    case PromptDialog.Information:
         return "data-information";
     default:
         return "";
