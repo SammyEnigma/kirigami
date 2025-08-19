@@ -427,7 +427,7 @@ QT.Control {
     }
 
     /*!
-      \qmlmethod Page PageRow::repace(var page, var properties)
+      \qmlmethod Page PageRow::replace(var page, var properties)
 
       \brief Replaces a page on the current index.
 
