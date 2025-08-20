@@ -9,3 +9,4 @@ Options:
  require-passing-tests-on: ['Linux', 'FreeBSD', 'Windows']
  cmake-options: -DBUILD_EXAMPLES=ON
  cppcheck-ignore-files: ['templates/']
+ run-qmllint: true
