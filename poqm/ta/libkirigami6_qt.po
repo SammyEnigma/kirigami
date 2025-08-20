@@ -147,12 +147,12 @@ msgctxt "PasswordField|"
 msgid "Show Password"
 msgstr "கடவுச்சொல்லை காட்டு"
 
-#: controls/private/globaltoolbar/NavigationButtons.qml:87
+#: controls/private/globaltoolbar/NavigationButtons.qml:98
 msgctxt "NavigationButtons|"
 msgid "Navigate Back"
 msgstr "முந்தையதற்கு செல்"
 
-#: controls/private/globaltoolbar/NavigationButtons.qml:94
+#: controls/private/globaltoolbar/NavigationButtons.qml:105
 msgctxt "NavigationButtons|"
 msgid "Navigate Forward"
 msgstr "பின்தையதற்கு செல்"

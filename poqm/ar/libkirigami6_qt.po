@@ -149,12 +149,12 @@ msgctxt "PasswordField|"
 msgid "Show Password"
 msgstr "أظهر كلمة السر"
 
-#: controls/private/globaltoolbar/NavigationButtons.qml:87
+#: controls/private/globaltoolbar/NavigationButtons.qml:98
 msgctxt "NavigationButtons|"
 msgid "Navigate Back"
 msgstr "تنقّل للخلف"
 
-#: controls/private/globaltoolbar/NavigationButtons.qml:94
+#: controls/private/globaltoolbar/NavigationButtons.qml:105
 msgctxt "NavigationButtons|"
 msgid "Navigate Forward"
 msgstr "تنقّل للأمام"

@@ -151,13 +151,13 @@ msgctxt "PasswordField|"
 msgid "Show Password"
 msgstr "Vis passord"
 
-#: controls/private/globaltoolbar/NavigationButtons.qml:87
+#: controls/private/globaltoolbar/NavigationButtons.qml:98
 #, fuzzy
 msgctxt "NavigationButtons|"
 msgid "Navigate Back"
 msgstr "Naviger tilbake"
 
-#: controls/private/globaltoolbar/NavigationButtons.qml:94
+#: controls/private/globaltoolbar/NavigationButtons.qml:105
 #, fuzzy
 msgctxt "NavigationButtons|"
 msgid "Navigate Forward"
