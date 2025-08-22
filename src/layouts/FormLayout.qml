@@ -334,10 +334,7 @@ Item {
 
     onChildrenChanged: relayout()
     Component.onCompleted: relayout()
-    onWideModeChanged: {
-        console.log('wide mode changed to', wideMode)
-        relayout()
-    }
+    onWideModeChanged: relayout()
 
     Component {
         id: itemComponent
