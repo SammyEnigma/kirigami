@@ -61,7 +61,7 @@ Loader {
 
         // Index will be 0 at the first page in the row, -1 in a page belonging to a layer
         if (!page || page.Kirigami.ColumnView.index <= firstIndex) {
-            return overflows;
+            return overflows || pageStack.columnView.contentX > 0;
         }
 
         // Condition: the page previous of this one is at least half scrolled away
@@ -96,9 +96,15 @@ Loader {
         NavButton {
             icon.name: (LayoutMirroring.enabled ? "go-previous-symbolic-rtl" : "go-previous-symbolic")
             text: qsTr("Navigate Back")
-            enabled: page.QQC.StackView.view || (pageStack.depth > 1 && pageStack.currentIndex > 0);
+            enabled: page.QQC.StackView.view || (pageStack.depth > 1 && pageStack.columnView.contentX > 0);
             visible: page.QQC.StackView.view || pageStack.globalToolBar.showNavigationButtons & Kirigami.ApplicationHeaderStyle.ShowBackButton
-            onClicked: pageStack.goBack();
+            onClicked: {
+                // When we are in a layer, pressing back doesn't change  the index on the main ColumnView
+                if (!page.QQC.StackView.view) {
+                    pageStack.currentIndex = page.Kirigami.ColumnView.index;
+                }
+                pageStack.goBack();
+            }
         }
         NavButton {
             icon.name: (LayoutMirroring.enabled ? "go-next-symbolic-rtl" : "go-next-symbolic")
@@ -106,7 +112,10 @@ Loader {
             enabled: pageStack.currentIndex < pageStack.depth - 1
             // Visible when the application enabled it *and* we are not in a layer
             visible: !page.QQC.StackView.view && pageStack.globalToolBar.showNavigationButtons & Kirigami.ApplicationHeaderStyle.ShowForwardButton
-            onClicked: pageStack.goForward();
+            onClicked: {
+                pageStack.currentIndex = page.Kirigami.ColumnView.index;
+                pageStack.goForward();
+            }
         }
     }
 }
