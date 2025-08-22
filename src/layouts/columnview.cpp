@@ -1119,9 +1119,9 @@ void ColumnView::setCurrentIndex(int index)
             mappedCurrent.moveLeft(mappedCurrent.left() + m_contentItem->x() + m_contentItem->m_slideAnim->endValue().toInt());
         }
 
-        // m_contentItem->m_slideAnim->stop();
+        ColumnViewAttached *attached = qobject_cast<ColumnViewAttached *>(qmlAttachedPropertiesObject<ColumnView>(m_currentItem, true));
 
-        QRectF contentsRect(m_contentItem->m_leftPinnedSpace, //
+        QRectF contentsRect(attached->isPinned() ? 0 : m_contentItem->m_leftPinnedSpace,
                             0,
                             width() - m_contentItem->m_rightPinnedSpace - m_contentItem->m_leftPinnedSpace,
                             height());
