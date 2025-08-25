@@ -837,6 +837,10 @@ void ContentItem::forgetItem(QQuickItem *item)
     }
 
     if (QQuickItem *header = attached->globalHeader()) {
+        // disconnecting before hiding avoids one extra layoutItems,
+        // which would try to recreate separatorItem.
+        // Which might crash if we are doing this during item destruction
+        disconnect(header, nullptr, this, nullptr);
         header->setVisible(false);
         header->setParentItem(item);
         separatorItem = m_separators.take(header);
@@ -845,6 +849,7 @@ void ContentItem::forgetItem(QQuickItem *item)
         }
     }
     if (QQuickItem *footer = attached->globalFooter()) {
+        connect(footer, nullptr, this, nullptr);
         footer->setVisible(false);
         footer->setParentItem(item);
         separatorItem = m_separators.take(footer);
