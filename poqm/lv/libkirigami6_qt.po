@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2025-06-30 16:50+0300\n"
+"PO-Revision-Date: 2025-08-21 10:26+0300\n"
 "Last-Translator: Toms Trasuns <toms.trasuns@posteo.net>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
 "Language: lv\n"
@@ -12,7 +12,7 @@ msgstr ""
 "X-Qt-Contexts: true\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : "
 "2);\n"
-"X-Generator: Lokalize 25.04.2\n"
+"X-Generator: Lokalize 25.08.0\n"
 
 #: controls/AboutItem.qml:162
 #, qt-format
@@ -149,17 +149,11 @@ msgid "Show Password"
 msgstr "Rādīt paroli"
 
 #: controls/private/globaltoolbar/NavigationButtons.qml:98
-#, fuzzy
-#| msgctxt "BackButton|"
-#| msgid "Navigate Back"
 msgctxt "NavigationButtons|"
 msgid "Navigate Back"
 msgstr "Iet atpakaļ"
 
 #: controls/private/globaltoolbar/NavigationButtons.qml:105
-#, fuzzy
-#| msgctxt "ForwardButton|"
-#| msgid "Navigate Forward"
 msgctxt "NavigationButtons|"
 msgid "Navigate Forward"
 msgstr "Iet uz priekšu"
