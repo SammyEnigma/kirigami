@@ -9,7 +9,7 @@ pragma ComponentBehavior: Bound
 import QtQuick
 import QtQml
 import QtQuick.Layouts
-import QtQuick.Controls as QQC2
+import QtQuick.Controls as QQC
 import QtQuick.Templates as T
 import org.kde.kirigami as Kirigami
 import org.kde.kirigami.private.polyfill
@@ -18,12 +18,11 @@ import org.kde.kirigami.private.polyfill
   \qmltype NavigationTabBar
   \inqmlmodule org.kde.kirigami
 
-  \brief Page navigation tab-bar, used as an alternative to sidebars for 3-5 elements.
-
-  Can be combined with secondary toolbars above (if in the footer) to provide page actions.
+  \brief Page navigation tab-bar, used as an alternative to sidebars for 3-5 elements. A NavigationTabBar can be both used as a footer or a header for a page. It can be combined with secondary toolbars above (if in the footer) to provide page actions.
 
   Example usage:
   \qml
+
   import QtQuick
   import org.kde.kirigami as Kirigami
 
@@ -110,19 +109,82 @@ import org.kde.kirigami.private.polyfill
           ]
       }
   }
+\endqml
+
+  A NavigationTabBar can also be combined with a QtQuick SwipeView, through which swiping between Pages becomes possible.
+
+  Example usage with a SwipeView:
+  \qml
+import QtQuick
+import QtQuick.Controls as QQC
+import QtQuick.Layouts
+import org.kde.kirigami as Kirigami
+
+Kirigami.Page {
+    title: "Clock"
+    QQC.SwipeView {
+        id: swipeView
+        anchors.fill: parent
+        clip: true
+        onCurrentIndexChanged: footer.currentIndex = currentIndex
+        Kirigami.Page {
+            id: worldPage
+            title: "World"
+            QQC.Label {
+                anchors.centerIn: parent
+                text: "Current Page: World"
+            }
+        }
+        Kirigami.Page {
+            [...]
+        }
+        ...
+        Kirigami.Page {
+            id: alarmsPage
+            title: "Alarms"
+            QQC.Label {
+                anchors.centerIn: parent
+                text: "Current Page: Alarms"
+            }
+        }
+    }
+
+    footer: Kirigami.NavigationTabBar {
+        actions: [
+            Kirigami.Action {
+                icon.name: "globe"
+                text: "World"
+                checked: true
+                onTriggered: swipeView.currentIndex = footer.currentIndex
+            },
+            Kirigami.Action {
+                [...]
+            },
+            ...
+            Kirigami.Action {
+                icon.name: "notifications"
+                text: "Alarms"
+                onTriggered: swipeView.currentIndex = footer.currentIndex
+            }
+        ]
+    }
+}
+
   \endqml
 
   \sa NavigationTabButton
   \since 5.87
  */
 
-QQC2.ToolBar {
+QQC.ToolBar {
     id: root
 
 //BEGIN properties
     /*!
       \qmlproperty list<Action> actions
       \brief This property holds the list of actions to be displayed in the toolbar.
+
+      If the \c checked attribute in the action is set to \c true, the tab will be highlighted/selected.
      */
     property list<T.Action> actions
 
@@ -131,7 +193,7 @@ QQC2.ToolBar {
       \brief This property holds a subset of visible actions of the list of actions.
 
       An action is considered visible if it is either a Kirigami.Action with
-      \c visible property set to true, or it is a plain QQC2.Action.
+      \c visible property set to true, or it is a plain QQC.Action.
      */
     readonly property list<T.Action> visibleActions: actions
         // Note: instanceof check implies `!== null`
@@ -211,8 +273,8 @@ QQC2.ToolBar {
 
     // ensure that by default, we do not have unintended padding and spacing from the style
     spacing: 0
-    topPadding: root.position === QQC2.ToolBar.Header ? parent.SafeArea.margins.top : 0
-    bottomPadding: root.position === QQC2.ToolBar.Footer ? parent.SafeArea.margins.bottom : 0
+    topPadding: root.position === QQC.ToolBar.Header ? parent.SafeArea.margins.top : 0
+    bottomPadding: root.position === QQC.ToolBar.Footer ? parent.SafeArea.margins.bottom : 0
     // Using Math.round() on horizontalPadding can cause the contentItem to jitter left and right when resizing the window.
     leftPadding: Math.floor(Math.max(0, width - root.maximumContentWidth) / 2) + parent.SafeArea.margins.left
     rightPadding: Math.floor(Math.max(0, width - root.maximumContentWidth) / 2) + parent.SafeArea.margins.right
@@ -221,14 +283,14 @@ QQC2.ToolBar {
     implicitWidth: Math.max(implicitBackgroundWidth + leftInset + rightInset, contentWidth)
     implicitHeight: Math.max(implicitBackgroundHeight + topInset + bottomInset, contentHeight + topPadding + bottomPadding)
     position: {
-        if (QQC2.ApplicationWindow.window?.footer === root) {
-            return QQC2.ToolBar.Footer
+        if (QQC.ApplicationWindow.window?.footer === root) {
+            return QQC.ToolBar.Footer
         } else if (parent?.footer === root) {
-            return QQC2.ToolBar.Footer
+            return QQC.ToolBar.Footer
         } else if (parent?.parent?.footer === parent) {
-            return QQC2.ToolBar.Footer
+            return QQC.ToolBar.Footer
         } else {
-            return QQC2.ToolBar.Header
+            return QQC.ToolBar.Header
         }
     }
 
