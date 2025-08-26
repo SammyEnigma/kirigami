@@ -152,7 +152,7 @@ msgctxt "NavigationButtons|"
 msgid "Navigate Back"
 msgstr ""
 
-#: controls/private/globaltoolbar/NavigationButtons.qml:105
+#: controls/private/globaltoolbar/NavigationButtons.qml:111
 msgctxt "NavigationButtons|"
 msgid "Navigate Forward"
 msgstr ""
