@@ -149,20 +149,14 @@ msgid "Show Password"
 msgstr "Zobrazit heslo"
 
 #: controls/private/globaltoolbar/NavigationButtons.qml:98
-#, fuzzy
-#| msgctxt "BackButton|"
-#| msgid "Navigate Back"
 msgctxt "NavigationButtons|"
 msgid "Navigate Back"
-msgstr "Přejít zpět"
+msgstr ""
 
 #: controls/private/globaltoolbar/NavigationButtons.qml:111
-#, fuzzy
-#| msgctxt "ForwardButton|"
-#| msgid "Navigate Forward"
 msgctxt "NavigationButtons|"
 msgid "Navigate Forward"
-msgstr "Přejít vpřed"
+msgstr ""
 
 #: controls/private/globaltoolbar/PageRowGlobalToolBarUI.qml:87
 msgctxt "PageRowGlobalToolBarUI|"
