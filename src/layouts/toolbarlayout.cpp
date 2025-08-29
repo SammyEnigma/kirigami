@@ -342,7 +342,7 @@ void ToolBarLayout::componentComplete()
 {
     QQuickItem::componentComplete();
     d->completed = true;
-    relayout();
+    d->performLayout();
 }
 
 void ToolBarLayout::geometryChange(const QRectF &newGeometry, const QRectF &oldGeometry)
