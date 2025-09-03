@@ -165,10 +165,10 @@ Item {
             source: "handle-sort"
             opacity: mouseArea.pressed || (!Kirigami.Settings.tabletMode && listItem.hovered) ? 1 : 0.6
 
-            property int startY
-            property int mouseDownY
+            property real startY
+            property real mouseDownY
             property Item originalParent
-            property int listItemLastY
+            property real listItemLastY
             property bool draggingUp
 
             function arrangeItem() {
