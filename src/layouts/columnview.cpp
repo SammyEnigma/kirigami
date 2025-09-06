@@ -48,7 +48,7 @@ QmlComponentsPool *QmlComponentsPoolSingleton::instance(QQmlEngine *engine)
     componentPool = new QmlComponentsPool(engine);
 
     const auto removePool = [engine]() {
-        // NB: do not derefence engine. it may be dangling already!
+        // NB: do not dereference engine. it may be dangling already!
         if (privateQmlComponentsPoolSelf) {
             privateQmlComponentsPoolSelf->m_instances.remove(engine);
         }

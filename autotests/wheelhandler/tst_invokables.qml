@@ -18,7 +18,7 @@ TestCase {
     property alias wheelHandler: wheelHandler
     property alias flickable: flickable
 
-    name: "WheelHandler invokable functions"
+    name: "WheelHandler invocable functions"
     visible: true
     when: windowShown
     width: flickable.implicitWidth

@@ -42,7 +42,7 @@ QtObject {
        \qmlproperty color color
 
        This property holds a color for the icon.
-       Only monochrome svg icons can be dinamically recolored.
+       Only monochrome svg icons can be dynamically recolored.
      */
     property color color: Qt.rgba(0, 0, 0, 0)
 

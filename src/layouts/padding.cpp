@@ -129,12 +129,12 @@ void Padding::setContentItem(QQuickItem *item)
     }
 
     // Not hiding old contentItem unlike Control, because we can't reliably
-    // restore it or force `visibile:` binding re-evaluation.
+    // restore it or force `visible:` binding re-evaluation.
     if (d->m_contentItem) {
         d->disconnect();
-        // Ideally, it should only unset the parent iff old item's parent is
+        // Ideally, it should only unset the parent if old item's parent is
         // `this`. But QtQuick.Controls/Control doesn't do that, and we don't
-        // wanna even more inconsistencies with upstream.
+        // want even more inconsistencies with upstream.
         d->m_contentItem->setParentItem(nullptr);
     }
 

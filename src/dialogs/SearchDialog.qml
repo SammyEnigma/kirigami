@@ -14,7 +14,7 @@ import org.kde.kirigami as Kirigami
   \qmltype SearchDialog
   \inqmlmodule org.kde.kirigami.dialogs
 
-  \brief A dialog to let's you do a global search accross your applications
+  \brief A dialog to let's you do a global search across your applications
   documents, chat rooms and more.
 
   Example usage for a chat app where we want to quickly search for a room.
@@ -54,7 +54,7 @@ import org.kde.kirigami as Kirigami
   \image searchdialog.png
 
   \note This component is unsuitable on mobile. Instead on mobile prefer to
-  use a seperate page for the search.
+  use a separate page for the search.
 
     \note By default, the title and standardButtons property are ignored.
   \since 6.3

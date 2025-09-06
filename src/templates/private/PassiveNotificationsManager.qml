@@ -102,7 +102,7 @@ Item {
         model: notificationsModel
         verticalLayoutDirection: ListView.BottomToTop
         keyNavigationEnabled: false
-        reuseItems: false  // do not resue items, otherwise delegates do not hide themselves properly
+        reuseItems: false  // do not reuse items, otherwise delegates do not hide themselves properly
         focus: false
         interactive: false
 

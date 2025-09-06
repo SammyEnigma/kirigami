@@ -52,7 +52,7 @@ Item {
       \qmlproperty color ShadowedImage::color
       \brief This property holds the color that will be underneath the image.
 
-      This will be visible if the image has transparancy.
+      This will be visible if the image has transparency.
 
       \sa ShadowedRectangle::radius
      */
@@ -61,7 +61,7 @@ Item {
     /*!
       \qmlproperty real ShadowedImage::radius
 
-      \brief This propery holds the corner radius of the image.
+      \brief This property holds the corner radius of the image.
       \sa ShadowedRectangle::radius
      */
     property alias radius: shadowRectangle.radius
@@ -80,7 +80,7 @@ Item {
     /*!
       \qmlproperty real ShadowedImage::border.width
       \qmlproperty real ShadowedImage::border.color
-      \brief This propery holds the border's properties of the image.
+      \brief This property holds the border's properties of the image.
       \sa ShadowedRectangle::border
      */
     property alias border: shadowRectangle.border
@@ -90,14 +90,14 @@ Item {
       \qmlproperty real ShadowedImage::corners.topRightRadius
       \qmlproperty real ShadowedImage::corners.bottomLeftRadius
       \qmlproperty real ShadowedImage::corners.bottomRightRadius
-      \brief This propery holds the corner radius properties of the image.
+      \brief This property holds the corner radius properties of the image.
       \sa ShadowedRectangle::corners
      */
     property alias corners: shadowRectangle.corners
 
     /*!
       \qmlproperty var ShadowedImage::source
-      \brief This propery holds the source of the image.
+      \brief This property holds the source of the image.
       \sa Image::source
      */
     property alias source: image.source

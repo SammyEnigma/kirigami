@@ -362,7 +362,7 @@ T.Dialog {
             if (contentFlickable) {
                 /*
                  Why this is necessary? A Flickable mainItem syncs its size with the contents only on startup,
-                 and if the contents can change their size dinamically afterwards (wrapping text does that),
+                 and if the contents can change their size dynamically afterwards (wrapping text does that),
                  the contentsize will be wrong see BUG 477257.
 
                  We also don't do this declaratively but only we are sure a contentItem is declared/created as just

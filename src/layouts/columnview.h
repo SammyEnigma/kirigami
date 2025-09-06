@@ -70,7 +70,7 @@ class ColumnViewAttached : public QObject
      * \qmlattachedproperty real ColumnView::preferredWidth
      *
      * When we are in DynamicColumns mode, the columns will be resized to preferredWidth.
-     * When the column are resized with the mouse, this propoerty will be updated by the drag
+     * When the column is resized with the mouse, this property will be updated by the drag
      * And will always be between minimumWidth and maximumWidth
      *
      * \since 6.16

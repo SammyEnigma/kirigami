@@ -875,7 +875,7 @@ QT.Control {
                 }
             }
 
-            // check properties obejct/array object validity
+            // check properties object/array object validity
             const isProp = typeof properties === 'object';
             const propsIsArr = Array.isArray(properties) && properties.length > 0
             let isValidPropArr = propsIsArr;

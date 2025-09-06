@@ -315,7 +315,7 @@ TestCase {
         const actionB = createTemporaryObject(actionComponent, this, { text: "Action B" });
         verify(actionB)
 
-        // shoud not crash
+        // should not crash
         toolbar.actions.push(actionB);
         waitForPolish(toolbar);
     }
@@ -335,7 +335,7 @@ TestCase {
         const actionB = createTemporaryObject(actionComponent, this, { text: "Action B" });
         verify(actionB)
 
-        // shoud not crash
+        // should not crash
         toolbar.actions.push(actionB);
         waitForPolish(toolbar);
     }

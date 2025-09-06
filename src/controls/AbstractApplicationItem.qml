@@ -123,7 +123,7 @@ Item {
     /*!
       \brief This property holds the drawer for global actions.
 
-      Thos drawer can be opened by sliding from the left screen edge
+      This drawer can be opened by sliding from the left screen edge
       or by dragging the ActionButton to the right.
 
       \note It is recommended to use the GlobalDrawer here.

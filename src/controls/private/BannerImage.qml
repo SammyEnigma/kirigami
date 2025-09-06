@@ -90,7 +90,7 @@ Kirigami.ShadowedImage {
 
     readonly property bool empty: title.length === 0 &&             // string
                                   source.toString().length === 0 && // QUrl
-                                  !titleIcon                        // QVariant hanled by Kirigami.Icon
+                                  !titleIcon                        // QVariant handled by Kirigami.Icon
 //END properties
 
     signal toggled(bool checked)

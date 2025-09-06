@@ -42,7 +42,7 @@ class HeaderFooterLayout : public QQuickItem
      * \brief This property holds the visual content Item.
      *
      * It will be resized both in width and height with the layout resizing.
-     * Its height will be resized to still have room for the heder and footer
+     * Its height will be resized to still have room for the header and footer
      */
     Q_PROPERTY(QQuickItem *contentItem READ contentItem WRITE setContentItem NOTIFY contentItemChanged FINAL)
 

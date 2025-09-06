@@ -39,7 +39,7 @@ Item {
       \brief Whether to show the busy indicator at the top of the flickable
 
       This should be set to true whenever a refresh is in progress. It should typically
-      be set to true whe triggered() is emitted, and set to false when the refresh is
+      be set to true when triggered() is emitted, and set to false when the refresh is
       complete. This is not done automatically because the refresh may be triggered
       from outside the indicator.
      */
