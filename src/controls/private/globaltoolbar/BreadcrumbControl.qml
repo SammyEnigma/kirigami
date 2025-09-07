@@ -24,6 +24,7 @@ RowLayout {
     NavigationButtons {
         id: navButtons
         pageStack: root.pageRow
+        page: root.pageRow.currentItem
     }
 
     Kirigami.Separator {
