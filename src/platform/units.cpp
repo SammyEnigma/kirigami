@@ -11,7 +11,6 @@
 #include <QFontMetrics>
 #include <QGuiApplication>
 #include <QQmlComponent>
-#include <QQmlEngine>
 #include <QQuickStyle>
 #include <QStyleHints>
 

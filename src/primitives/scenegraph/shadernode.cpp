@@ -6,9 +6,6 @@
 
 #include "shadernode.h"
 
-#include <QSGTextureProvider>
-#include <QVariant>
-
 #include "shadermaterial.h"
 #include "texturecache.h"
 

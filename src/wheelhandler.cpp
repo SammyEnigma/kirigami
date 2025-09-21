@@ -8,7 +8,6 @@
 #include "settings.h"
 
 #include <QQmlEngine>
-#include <QQuickItem>
 #include <QQuickWindow>
 #include <QWheelEvent>
 

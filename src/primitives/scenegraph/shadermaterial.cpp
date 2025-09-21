@@ -9,8 +9,6 @@
 #include <QSGTexture>
 #include <QVariant>
 
-#include "uniformdatastream.h"
-
 using namespace Qt::StringLiterals;
 
 ShaderMaterial::ShaderMaterial(const QString &name)

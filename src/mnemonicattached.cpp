@@ -9,7 +9,6 @@
 #include <QGuiApplication>
 #include <QQuickItem>
 #include <QQuickRenderControl>
-#include <QQuickWindow>
 #include <QRegularExpression>
 #include <QWindow>
 
