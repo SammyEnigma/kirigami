@@ -74,6 +74,24 @@ void ShaderMaterial::setTexture(int binding, QSGTexture *texture)
     m_textures[binding] = texture;
 }
 
+QSGTexture::Filtering ShaderMaterial::textureFiltering(int binding) const
+{
+    auto texture = m_textures.value(binding);
+    if (texture) {
+        return texture->filtering();
+    }
+
+    return QSGTexture::Linear;
+}
+
+void ShaderMaterial::setTextureFiltering(int binding, QSGTexture::Filtering filtering)
+{
+    auto texture = m_textures.value(binding);
+    if (texture) {
+        texture->setFiltering(filtering);
+    }
+}
+
 QString ShaderMaterial::nameForType(QSGMaterialType *type)
 {
     for (auto &[key, value] : s_materialTypes) {
@@ -144,7 +162,6 @@ void ShaderMaterialShader::updateSampledImage(QSGMaterialShader::RenderState &st
     auto material = static_cast<ShaderMaterial *>(newMaterial);
     auto source = material->texture(binding);
     if (source) {
-        source->setFiltering(QSGTexture::Filtering::Linear);
         source->commitTextureOperations(state.rhi(), state.resourceUpdateBatch());
         *texture = source;
     } else {

@@ -9,6 +9,7 @@
 #include <QColor>
 #include <QSGMaterial>
 #include <QSGMaterialShader>
+#include <QSGTexture>
 
 #include "uniformdatastream.h"
 
@@ -35,6 +36,9 @@ public:
 
     QSGTexture *texture(int binding);
     void setTexture(int binding, QSGTexture *texture);
+
+    QSGTexture::Filtering textureFiltering(int binding) const;
+    void setTextureFiltering(int binding, QSGTexture::Filtering filtering);
 
     static QString nameForType(QSGMaterialType *type);
     static QSGMaterialType *typeForName(const QString &name);

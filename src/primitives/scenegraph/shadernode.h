@@ -27,6 +27,7 @@ public:
     struct TextureInfo {
         TextureChannel channel = 0;
         QQuickWindow::CreateTextureOptions options;
+        QSGTexture::Filtering filtering = QSGTexture::Linear;
         std::shared_ptr<QSGTexture> texture = nullptr;
         QPointer<QSGTextureProvider> provider = nullptr;
         QMetaObject::Connection providerConnection;
@@ -110,6 +111,11 @@ public:
      * \a provider.
      */
     void setTexture(TextureChannel channel, QSGTextureProvider *provider, QQuickWindow::CreateTextureOptions options = {});
+
+    /*!
+     * Set the texture filtering mode for texture \a channel to \a filtering.
+     */
+    void setTextureFiltering(TextureChannel channel, QSGTexture::Filtering filtering);
 
     /*!
      * Update internal state based on newly-set parameters.

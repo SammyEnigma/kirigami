@@ -179,6 +179,8 @@ void ShaderNode::setTexture(TextureChannel channel, const QImage &image, QQuickW
 
     setUVs(channel, texture->normalizedTextureSubRect());
 
+    texture->setFiltering(QSGTexture::Filtering::Linear);
+
     m_shaderMaterial->setTexture(channel + 1, texture.get());
     markDirty(QSGNode::DirtyMaterial);
 }
@@ -211,6 +213,19 @@ void ShaderNode::setTexture(TextureChannel channel, QSGTextureProvider *provider
         *itr = info;
     } else {
         m_textures.append(info);
+    }
+}
+
+void ShaderNode::setTextureFiltering(TextureChannel channel, QSGTexture::Filtering filtering)
+{
+    auto itr = std::find_if(m_textures.begin(), m_textures.end(), [channel](auto info) {
+        return info.channel == channel;
+    });
+    if (itr != m_textures.end()) {
+        itr->filtering = filtering;
+        if (itr->texture) {
+            itr->texture->setFiltering(filtering);
+        }
     }
 }
 
@@ -272,4 +287,5 @@ void ShaderNode::preprocessTexture(const TextureInfo &info)
     if (QSGDynamicTexture *dynamic_texture = qobject_cast<QSGDynamicTexture *>(provider->texture())) {
         dynamic_texture->updateTexture();
     }
+    m_shaderMaterial->setTextureFiltering(info.channel + 1, info.filtering);
 }
