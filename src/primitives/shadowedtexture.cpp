@@ -103,6 +103,12 @@ QSGNode *ShadowedTexture::updatePaintNode(QSGNode *node, QQuickItem::UpdatePaint
 
     if (m_source) {
         shaderNode->setTexture(0, m_source->textureProvider());
+
+        if (smooth()) {
+            shaderNode->setTextureFiltering(0, QSGTexture::Filtering::Linear);
+        } else {
+            shaderNode->setTextureFiltering(0, QSGTexture::Filtering::Nearest);
+        }
     }
 
     shaderNode->update();
