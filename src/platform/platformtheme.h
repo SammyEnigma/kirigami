@@ -370,7 +370,7 @@ class KIRIGAMIPLATFORM_EXPORT PlatformTheme : public QObject
     Q_PROPERTY(QColor hoverColor READ hoverColor WRITE setCustomHoverColor RESET setCustomHoverColor NOTIFY colorsChanged FINAL)
 
     /*!
-     * \qmlattachedproperty color Theme::useAlternateBackgroundColor
+     * \qmlattachedproperty bool Theme::useAlternateBackgroundColor
      *
      * Hint for item views to actually make use of the alternate background color feature.
      */
