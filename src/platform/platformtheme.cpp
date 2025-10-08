@@ -405,11 +405,7 @@ PlatformTheme::PlatformTheme(QObject *parent)
 {
     setConstructing(true);
     if (QQuickItem *item = qobject_cast<QQuickItem *>(parent)) {
-        connect(item, &QQuickItem::windowChanged, this, [this](QQuickWindow *window) {
-            if (window) {
-                update();
-            }
-        });
+        connect(item, &QQuickItem::windowChanged, this, &PlatformTheme::update);
         connect(item, &QQuickItem::parentChanged, this, &PlatformTheme::update);
         // Needs to be connected to enabledChanged twice to correctly fully update when a
         // Theme that does inherit becomes temporarily non-inherit and back due to
@@ -993,12 +989,19 @@ bool PlatformTheme::event(QEvent *event)
 
 void PlatformTheme::update()
 {
+    auto parentItem = qobject_cast<QQuickItem *>(parent());
+    if (parentItem && !parentItem->window()) {
+        // Do nothing if we don't have a window, to prevent spurious update events
+        // on teardown or destruction
+        return;
+    }
+
     auto oldData = d->data;
 
     bool actualInherit = d->inherit;
-    if (QQuickItem *item = qobject_cast<QQuickItem *>(parent())) {
+    if (parentItem) {
         // For inactive windows it should work already, as also the non inherit themes get it
-        if (colorGroup() != Disabled && !item->isEnabled()) {
+        if (colorGroup() != Disabled && !parentItem->isEnabled()) {
             actualInherit = false;
         }
     }
