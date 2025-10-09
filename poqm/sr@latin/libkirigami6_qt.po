@@ -91,7 +91,7 @@ msgctxt "AboutPage|"
 msgid "About %1"
 msgstr ""
 
-#: controls/AbstractApplicationWindow.qml:176
+#: controls/AbstractApplicationWindow.qml:177
 msgctxt "AbstractApplicationWindow|"
 msgid "Quit"
 msgstr ""
