@@ -90,7 +90,7 @@ QQC2.Control {
     /*!
       \brief This property holds the position of the toolbar.
 
-      If this ActionToolBar is the contentItem of a QQC2 Toolbar, the position
+      If this ActionToolBar is the contentItem of a QQC2 ToolBar, the position
       is automatically bound to the ToolBar's position.
 
       Permitted values are:
