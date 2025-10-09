@@ -8,6 +8,7 @@ import QtQuick
 import QtQuick.Controls as QQC2
 import QtQuick.Layouts
 import org.kde.kirigami as Kirigami
+import org.kde.kirigami.private.polyfill
 
 /*!
   \brief PassiveNotificationManager is meant to display small, passive and inline notifications in the app.
@@ -96,6 +97,11 @@ Item {
 
         anchors.fill: parent
         anchors.bottomMargin: Kirigami.Units.largeSpacing
+
+        leftMargin: SafeArea.margins.left
+        rightMargin: SafeArea.margins.right
+        topMargin: SafeArea.margins.top
+        bottomMargin: SafeArea.margins.bottom
 
         implicitWidth: root.maximumNotificationWidth
         spacing: Kirigami.Units.smallSpacing
