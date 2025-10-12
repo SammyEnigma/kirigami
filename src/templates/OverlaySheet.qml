@@ -263,7 +263,7 @@ T.Popup {
                     id: headerParent
 
                     readonly property real leadingPadding: Kirigami.Units.largeSpacing
-                    readonly property real trailingPadding: (root.showCloseButton ? closeIcon.width : 0) + Kirigami.Units.smallSpacing
+                    readonly property real trailingPadding: (root.showCloseButton ? closeIcon.width + closeIcon.anchors.rightMargin : 0) + Kirigami.Units.smallSpacing
 
                     anchors.fill: parent
                     verticalPadding: Kirigami.Units.largeSpacing
