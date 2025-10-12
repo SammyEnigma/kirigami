@@ -237,10 +237,6 @@ T.Popup {
             anchors.fill: parent
             spacing: 0
 
-            // Even though we're not actually using any shadows here,
-            // we're using a ShadowedRectangle instead of a regular
-            // rectangle because it allows fine-grained control over which
-            // corners to round, which we need here
             Item {
                 id: headerItem
                 Layout.fillWidth: true
