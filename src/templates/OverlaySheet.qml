@@ -279,12 +279,13 @@ T.Popup {
                     // corner if the header is very tall, but we want to
                     // vertically center it in a short header
                     readonly property bool tallHeader: parent.height > (Kirigami.Units.iconSizes.smallMedium + Kirigami.Units.largeSpacing * 2)
-                    Layout.alignment: tallHeader ? Qt.AlignRight | Qt.AlignTop : Qt.AlignRight | Qt.AlignVCenter
-                    Layout.topMargin: tallHeader ? Kirigami.Units.largeSpacing : 0
+                    readonly property real tallHeaderMargins: Kirigami.Units.largeSpacing
+                    readonly property real shortHeaderMargins: Math.round((headerItem.implicitHeight - implicitHeight) / 2)
+
                     anchors {
-                        verticalCenter: !tallHeader ? undefined : parent.verticalCenter
+                        top: parent.top
                         right: parent.right
-                        margins: Kirigami.Units.largeSpacing
+                        margins: tallHeader ? tallHeaderMargins : shortHeaderMargins
                     }
                     z: 3
 
