@@ -1066,15 +1066,33 @@ void PlatformTheme::updateChildren(QObject *object)
         return;
     }
 
-    const auto children = object->children();
-    for (auto child : children) {
-        auto t = static_cast<PlatformTheme *>(qmlAttachedPropertiesObject<PlatformTheme>(child, false));
-        if (t) {
-            t->update();
-        } else {
-            updateChildren(child);
+    auto updateChildrenImpl = [this](const auto &children, QSet<QObject *> &updated) {
+        for (auto child : children) {
+            if (updated.contains(child)) {
+                continue;
+            }
+
+            auto t = static_cast<PlatformTheme *>(qmlAttachedPropertiesObject<PlatformTheme>(child, false));
+            if (t) {
+                t->update();
+            } else {
+                updateChildren(child);
+            }
+            updated.insert(child);
         }
+    };
+
+    auto item = qobject_cast<QQuickItem *>(object);
+    QSet<QObject *> updated;
+    // The item hierarchy may be different from the QObject hierarchy. We want
+    // to make sure that we update both child Items as well as any child objects.
+    // To prevent updating things that were already updated, keep track of them
+    // in a set that is used to skip an update for a child if it was already
+    // updated.
+    if (item) {
+        updateChildrenImpl(item->childItems(), updated);
     }
+    updateChildrenImpl(object->children(), updated);
 }
 
 // We sometimes set theme properties on non-visual objects. However, if an item
