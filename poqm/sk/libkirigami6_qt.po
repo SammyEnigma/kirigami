@@ -344,7 +344,7 @@ msgctxt "OverlayDrawer|"
 msgid "Open drawer"
 msgstr ""
 
-#: templates/OverlaySheet.qml:297
+#: templates/OverlaySheet.qml:293
 #, fuzzy
 #| msgctxt "OverlayDrawer|"
 #| msgid "Close"

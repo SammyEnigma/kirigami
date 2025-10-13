@@ -270,7 +270,7 @@ msgctxt "OverlayDrawer|"
 msgid "Open drawer"
 msgstr "Seitenleiste öffnen"
 
-#: templates/OverlaySheet.qml:297
+#: templates/OverlaySheet.qml:293
 msgctxt "OverlaySheet|@action:button close dialog"
 msgid "Close"
 msgstr "Schließen"
