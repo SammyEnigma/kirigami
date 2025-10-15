@@ -225,7 +225,7 @@ QQC2.Page {
     Kirigami.ColumnView.globalHeader: Loader {
         id: globalToolBar
         z: 9999
-        height: item ? item.implicitHeight : 0
+        Primitives.AlignedSize.height: item ? item.implicitHeight : 0
 
         width: root.width
         // NOTE: This is an Item instead of a Kirigami.PageRow as a workaround for QTBUG-120189

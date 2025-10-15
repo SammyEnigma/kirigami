@@ -137,7 +137,7 @@ Kirigami.OverlayDrawer {
 
             topMargin: root.handle.y > 0 ? menu.height - menu.contentHeight : 0
             header: QQC2.ToolBar {
-                height: pageStack.globalToolBar.preferredHeight
+                Kirigami.AlignedSize.height: pageStack.globalToolBar.preferredHeight
                 width: parent.width
 
                 Kirigami.Heading {

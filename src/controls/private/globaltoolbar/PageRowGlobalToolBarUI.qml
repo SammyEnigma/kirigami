@@ -49,7 +49,7 @@ Kirigami.AbstractApplicationHeader {
         return globalToolBar.canContainHandles || style === Kirigami.ApplicationHeaderStyle.ToolBar;
     }
 
-    height: visible ? implicitHeight : 0
+    Kirigami.AlignedSize.height: visible ? implicitHeight : 0
     minimumHeight: globalToolBar.minimumHeight + header.topPadding + header.bottomPadding
     preferredHeight: globalToolBar.preferredHeight + header.topPadding + header.bottomPadding
     maximumHeight: globalToolBar.maximumHeight + header.topPadding + header.bottomPadding

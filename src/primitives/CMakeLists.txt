@@ -8,6 +8,8 @@ ecm_add_qml_module(KirigamiPrimitives URI "org.kde.kirigami.primitives"
 )
 
 target_sources(KirigamiPrimitives PRIVATE
+    alignedsizeattached.cpp
+    alignedsizeattached.h
     icon.cpp
     icon.h
     shadowedrectangle.cpp

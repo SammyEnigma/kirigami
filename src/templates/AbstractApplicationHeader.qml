@@ -32,18 +32,18 @@ Item {
 
     /*!
      */
-    property int minimumHeight: 0
+    property real minimumHeight: 0
 
     // Use an inline arrow function, referring to an external normal function makes QV4 crash, see https://bugreports.qt.io/browse/QTBUG-119395
     /*!
      */
-    property int preferredHeight: mainItem.children.reduce((accumulator, item) => {
+    property real preferredHeight: mainItem.children.reduce((accumulator, item) => {
         return Math.max(accumulator, item.implicitHeight);
     }, 0) + topPadding + bottomPadding
 
     /*!
      */
-    property int maximumHeight: Kirigami.Units.gridUnit * 3 + topPadding + bottomPadding
+    property real maximumHeight: Kirigami.Units.gridUnit * 3 + topPadding + bottomPadding
 
     /*!
      */
@@ -101,7 +101,7 @@ Item {
     // FIXME: remove
     property QtObject __appWindow: typeof applicationWindow !== "undefined" ? applicationWindow() : null
     implicitHeight: preferredHeight
-    height: Layout.preferredHeight
+    Kirigami.AlignedSize.height: Layout.preferredHeight
 
     /*!
       \brief This property holds the background item.

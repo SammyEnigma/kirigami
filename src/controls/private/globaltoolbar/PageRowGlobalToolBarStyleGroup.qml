@@ -42,12 +42,12 @@ QtObject {
     property int toolbarActionAlignment: Qt.AlignRight
     property int toolbarActionHeightMode: Kirigami.ToolBarLayout.ConstrainIfLarger
 
-    property int minimumHeight: 0
+    property real minimumHeight: 0
     // FIXME: Figure out the exact standard size of a Toolbar
-    property int preferredHeight: (actualStyle === Kirigami.ApplicationHeaderStyle.ToolBar
+    property real preferredHeight: (actualStyle === Kirigami.ApplicationHeaderStyle.ToolBar
                     ? Kirigami.Units.iconSizes.medium
                     : Kirigami.Units.gridUnit * 1.8) + Kirigami.Units.smallSpacing * 2
-    property int maximumHeight: preferredHeight
+    property real maximumHeight: preferredHeight
 
     // Sets the minimum leading padding for the title in a page header
     property int titleLeftPadding: Kirigami.Units.gridUnit
