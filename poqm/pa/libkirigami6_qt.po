@@ -296,7 +296,7 @@ msgctxt "OverlayDrawer|"
 msgid "Open drawer"
 msgstr "ਦਰਾਜ ਖੋਲ੍ਹੋ"
 
-#: templates/OverlaySheet.qml:293
+#: templates/OverlaySheet.qml:294
 #, fuzzy
 #| msgctxt "PageRowGlobalToolBarUI|"
 #| msgid "Close menu"

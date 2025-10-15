@@ -268,7 +268,7 @@ msgctxt "OverlayDrawer|"
 msgid "Open drawer"
 msgstr "打开抽屉栏"
 
-#: templates/OverlaySheet.qml:293
+#: templates/OverlaySheet.qml:294
 msgctxt "OverlaySheet|@action:button close dialog"
 msgid "Close"
 msgstr "关闭"

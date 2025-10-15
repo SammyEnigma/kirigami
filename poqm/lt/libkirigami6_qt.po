@@ -282,7 +282,7 @@ msgctxt "OverlayDrawer|"
 msgid "Open drawer"
 msgstr "Atidaryti stalčių"
 
-#: templates/OverlaySheet.qml:293
+#: templates/OverlaySheet.qml:294
 #, fuzzy
 #| msgctxt "Dialog|@action:button close dialog"
 #| msgid "Close"
