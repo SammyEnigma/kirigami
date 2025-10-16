@@ -5,7 +5,7 @@ set(KF_DEP_VERSION "6.19.0") # handled by release scripts
 
 project(kirigami2 VERSION ${KF_VERSION})
 
-set(REQUIRED_QT_VERSION 6.7.0)
+set(REQUIRED_QT_VERSION 6.8.0)
 
 ################# Disallow in-source build #################
 
