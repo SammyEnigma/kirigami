@@ -19,6 +19,8 @@
 #include <QQmlEngine>
 #include <QStyleHints>
 #include <algorithm>
+#include <qnamespace.h>
+#include <qpropertyanimation.h>
 
 #include "platform/units.h"
 
@@ -459,6 +461,9 @@ ContentItem::ContentItem(ColumnView *parent)
     m_slideAnim->setDuration(0);
     m_slideAnim->setEasingCurve(QEasingCurve(QEasingCurve::OutExpo));
     connect(m_slideAnim, &QPropertyAnimation::finished, this, [this]() {
+        while (!m_disappearingItems.isEmpty()) {
+            m_view->removeItem(m_disappearingItems.first());
+        }
         if (!m_view->currentItem()) {
             m_view->setCurrentIndex(m_items.indexOf(m_viewAnchorItem));
         } else {
@@ -822,7 +827,7 @@ void ContentItem::updateVisibleItems()
 
 void ContentItem::forgetItem(QQuickItem *item)
 {
-    if (!m_items.contains(item)) {
+    if (!m_items.contains(item) && !m_disappearingItems.contains(item)) {
         return;
     }
 
@@ -863,16 +868,20 @@ void ContentItem::forgetItem(QQuickItem *item)
 
     const int index = m_items.indexOf(item);
     m_items.removeAll(item);
+    m_disappearingItems.removeAll(item);
     // We are connected not only to destroyed but also to lambdas
     disconnect(item, nullptr, this, nullptr);
     updateVisibleItems();
     m_shouldAnimate = true;
     m_view->polish();
 
-    if (index <= m_view->currentIndex()) {
-        m_view->setCurrentIndex(m_items.isEmpty() ? 0 : qBound(0, index - 1, m_items.count() - 1));
+    if (index >= 0) {
+        if (index <= m_view->currentIndex()) {
+            m_view->setCurrentIndex(m_items.isEmpty() ? 0 : qBound(0, index - 1, m_items.count() - 1));
+        }
+
+        Q_EMIT m_view->countChanged();
     }
-    Q_EMIT m_view->countChanged();
 }
 
 QQuickItem *ContentItem::ensureSeparator(QQuickItem *previousColumn, QQuickItem *column, QQuickItem *nextColumn)
@@ -1037,10 +1046,16 @@ ColumnView::ColumnView(QQuickItem *parent)
     setAcceptTouchEvents(true);
     setFiltersChildMouseEvents(true);
 
-    connect(m_contentItem->m_slideAnim, &QPropertyAnimation::finished, this, [this]() {
-        m_moving = false;
-        Q_EMIT movingChanged();
-    });
+    connect(m_contentItem->m_slideAnim,
+            &QPropertyAnimation::stateChanged,
+            this,
+            [this](QAbstractAnimation::State newState, QAbstractAnimation::State oldState) {
+                if ((newState == QAbstractAnimation::Running) == (oldState == QAbstractAnimation::Running)) {
+                    return;
+                }
+                m_moving = newState == QAbstractAnimation::Running;
+                Q_EMIT movingChanged();
+            });
     connect(m_contentItem, &ContentItem::widthChanged, this, &ColumnView::contentWidthChanged);
     connect(m_contentItem, &ContentItem::xChanged, this, &ColumnView::contentXChanged);
 
@@ -1472,14 +1487,14 @@ void ColumnView::moveItem(int from, int to)
 
 QQuickItem *ColumnView::removeItem(QQuickItem *item)
 {
-    if (m_contentItem->m_items.isEmpty() || !m_contentItem->m_items.contains(item)) {
+    if (!m_contentItem->m_items.contains(item) && !m_contentItem->m_disappearingItems.contains(item)) {
         return nullptr;
     }
 
     const int index = m_contentItem->m_items.indexOf(item);
 
     // In order to keep the same current item we need to increase the current index if displaced
-    if (m_currentIndex >= index) {
+    if (index >= 0 && m_currentIndex >= index) {
         setCurrentIndex(m_currentIndex - 1);
     }
 
@@ -1494,8 +1509,11 @@ QQuickItem *ColumnView::removeItem(QQuickItem *item)
         item->setParentItem(attached ? attached->originalParent() : nullptr);
     }
 
-    Q_EMIT contentChildrenChanged();
-    Q_EMIT itemRemoved(item);
+    // Don't notify if we removed from m_disappearingItems
+    if (index >= 0) {
+        Q_EMIT contentChildrenChanged();
+        Q_EMIT itemRemoved(item);
+    }
 
     return item;
 }
@@ -1621,9 +1639,33 @@ QQuickItem *ColumnView::pop(const QVariant &item)
 QQuickItem *ColumnView::pop(QQuickItem *item)
 {
     QQuickItem *removed = nullptr;
+    if (count() == 0) {
+        return nullptr;
+    }
 
-    while (!m_contentItem->m_items.isEmpty() && m_contentItem->m_items.last() != item) {
-        removed = removeItem(m_contentItem->m_items.last());
+    QList<QQuickItem *> items;
+    // Take all the items that are in the list after the item parameter
+    for (auto it = m_contentItem->m_items.crbegin(); it != m_contentItem->m_items.crend(); ++it) {
+        if ((*it) == item) {
+            break;
+        }
+        items << *it;
+    }
+    // Remove immediately all but one
+    while (items.count() > 1) {
+        removed = removeItem(items.last());
+        items.pop_back();
+    }
+
+    // The last one will do a pop animation
+    if (!removed) {
+        removed = m_contentItem->m_items.last();
+    }
+
+    Q_ASSERT(items.count() <= 1);
+    if (items.count() == 1) {
+        // call pop() which will do the transition if needed
+        pop();
     }
     return removed;
 }
@@ -1640,10 +1682,24 @@ QQuickItem *ColumnView::pop(const int index)
 
 QQuickItem *ColumnView::pop()
 {
-    if (count() > 0) {
+    if (count() == 0) {
+        return nullptr;
+    }
+
+    if (m_contentItem->m_columnResizeMode != ColumnView::SingleColumn || currentIndex() < count() - 1) {
         return removeItem(count() - 1);
     }
-    return nullptr;
+
+    QQuickItem *item = get(count() - 1);
+    m_contentItem->m_disappearingItems.append(item);
+    m_contentItem->m_items.removeAll(item);
+    // Count - 1 now is the previous item as we already removed this from m_items
+    // The item in m_disappearingItems will be definitely removed/deleted as soon the animation stops
+    setCurrentIndex(count() - 1);
+    Q_EMIT countChanged();
+    Q_EMIT contentChildrenChanged();
+    Q_EMIT itemRemoved(item);
+    return item;
 }
 
 void ColumnView::clear()
