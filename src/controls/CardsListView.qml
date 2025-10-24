@@ -35,6 +35,7 @@ ListView {
     topMargin: headerPositioning !== ListView.InlineHeader ? spacing : 0
     rightMargin: Kirigami.Units.largeSpacing * 2
     leftMargin: Kirigami.Units.largeSpacing * 2
+    contentWidth: width - rightMargin - leftMargin
     reuseItems: true
 
     headerPositioning: ListView.OverlayHeader
