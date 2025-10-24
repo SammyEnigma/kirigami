@@ -45,6 +45,8 @@ function(kirigami_package_breeze_icons)
         handle-sort
         mail-sent
         open-menu-symbolic
+        open-link-symbolic
+        open-link-symbolic-rtl
         overflow-menu-left
         overflow-menu-right
         overflow-menu
