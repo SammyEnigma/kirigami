@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2025-06-01 15:08+0200\n"
+"PO-Revision-Date: 2025-10-26 13:39+0100\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
 "Language: nn\n"
@@ -11,7 +11,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 25.07.70\n"
+"X-Generator: Lokalize 25.08.2\n"
 "X-Environment: kde\n"
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: qtrich\n"
@@ -152,13 +152,11 @@ msgid "Show Password"
 msgstr "Vis passord"
 
 #: controls/private/globaltoolbar/NavigationButtons.qml:98
-#, fuzzy
 msgctxt "NavigationButtons|"
 msgid "Navigate Back"
 msgstr "Naviger tilbake"
 
 #: controls/private/globaltoolbar/NavigationButtons.qml:111
-#, fuzzy
 msgctxt "NavigationButtons|"
 msgid "Navigate Forward"
 msgstr "Naviger fram"
