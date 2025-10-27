@@ -346,6 +346,8 @@ QT.Control {
                 }
             });
         }
+        // Escape is considered a shortcut, so we need to override it. Or else we don't get any events!
+        item.Keys.shortcutOverride.connect(event => event.accepted = (event.key === Qt.Key_Escape));
         item.Keys.escapePressed.connect(event => item.closeDialog());
         return item;
     }
