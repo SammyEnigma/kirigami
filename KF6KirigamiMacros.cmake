@@ -98,11 +98,13 @@ function(kirigami_package_breeze_icons)
         message(FATAL_ERROR "BREEZEICONS_DIR variable does not point to existing dir: \"${BREEZEICONS_DIR}\"")
     endif()
 
-    set(_BREEZEICONS_DIR "${BREEZEICONS_DIR}")
+    # We need to expand the 'real' path of the root because if it has relative path
+    # elements or symlinks in it that breaks the symlink test in _find_breeze_icon.
+    file(REAL_PATH "${BREEZEICONS_DIR}" _BREEZEICONS_DIR EXPAND_TILDE)
 
     #FIXME: this is a terrible hack
     if(NOT _BREEZEICONS_DIR)
-        set(_BREEZEICONS_DIR "${CMAKE_BINARY_DIR}/breeze-icons/src/breeze-icons")
+        file(REAL_PATH "${CMAKE_BINARY_DIR}/breeze-icons/src/breeze-icons" _BREEZEICONS_DIR EXPAND_TILDE)
 
         # replacement for ExternalProject_Add not yet working
         # first time config?
