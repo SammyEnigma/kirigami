@@ -5,6 +5,7 @@
  */
 
 import QtQuick
+import QtQuick.Layouts
 import QtQuick.Controls as QQC2
 import QtQuick.Templates as T
 import org.kde.kirigami as Kirigami
@@ -130,80 +131,59 @@ QQC2.TextField {
         text: focusShortcut.nativeText
     }
 
-    component InlineActionIcon: Kirigami.Icon {
+    component InlineActionIcon: QQC2.ToolButton {
         id: iconDelegate
 
         required property T.Action modelData
 
-        implicitWidth: Kirigami.Units.iconSizes.sizeForLabels
-        implicitHeight: Kirigami.Units.iconSizes.sizeForLabels
+        icon.width: Kirigami.Units.iconSizes.sizeForLabels
+        icon.height: Kirigami.Units.iconSizes.sizeForLabels
 
-        anchors.verticalCenter: parent?.verticalCenter
+        Layout.fillHeight: true
+        Layout.preferredWidth: implicitHeight
 
-        source: modelData.icon.name.length > 0 ? modelData.icon.name : modelData.icon.source
+        icon.name: modelData.icon.name.length > 0 ? modelData.icon.name : modelData.icon.source
         visible: !(modelData instanceof Kirigami.Action) || modelData.visible
-        active: actionArea.containsPress || actionArea.activeFocus
         enabled: modelData.enabled
 
-        MouseArea {
-            id: actionArea
+        onClicked: mouse => iconDelegate.modelData.trigger()
 
-            anchors.fill: parent
-            activeFocusOnTab: true
-            cursorShape: Qt.PointingHandCursor
-            hoverEnabled: true
-
-            Accessible.name: iconDelegate.modelData.text
-            Accessible.role: Accessible.Button
-
-            Keys.onPressed: event => {
-                switch (event.key) {
-                    case Qt.Key_Space:
-                    case Qt.Key_Enter:
-                    case Qt.Key_Return:
-                    case Qt.Key_Select:
-                        clicked(null);
-                        event.accepted = true;
-                        break;
-                }
-            }
-            onClicked: mouse => iconDelegate.modelData.trigger()
-        }
-
-        QQC2.ToolTip {
-            visible: (actionArea.containsMouse || actionArea.activeFocus) && (iconDelegate.modelData.text.length > 0)
-            text: iconDelegate.modelData.text
-        }
+        QQC2.ToolTip.visible: (hovered || activeFocus) && (iconDelegate.modelData.text.length > 0)
+        QQC2.ToolTip.text: iconDelegate.modelData.text
     }
 
-    Row {
+    RowLayout {
         id: leftActionsRow
-        padding: Kirigami.Units.smallSpacing
+
+        anchors {
+            margins: 1
+            top: parent.top
+            left: parent.left
+            bottom: parent.bottom
+        }
+
         spacing: Kirigami.Units.smallSpacing
         layoutDirection: Qt.LeftToRight
-        anchors.left: parent.left
-        anchors.leftMargin: Kirigami.Units.smallSpacing
-        anchors.top: parent.top
-        anchors.topMargin: parent.topPadding
-        anchors.bottom: parent.bottom
-        anchors.bottomMargin: parent.bottomPadding
+
         Repeater {
             model: root.leftActions
             InlineActionIcon { }
         }
     }
 
-    Row {
+    RowLayout {
         id: rightActionsRow
-        padding: Kirigami.Units.smallSpacing
+
+        anchors {
+            margins: 1
+            top: parent.top
+            right: parent.right
+            bottom: parent.bottom
+        }
+
         spacing: Kirigami.Units.smallSpacing
         layoutDirection: Qt.RightToLeft
-        anchors.right: parent.right
-        anchors.rightMargin: Kirigami.Units.smallSpacing
-        anchors.top: parent.top
-        anchors.topMargin: parent.topPadding
-        anchors.bottom: parent.bottom
-        anchors.bottomMargin: parent.bottomPadding
+
         Repeater {
             model: root.rightActions
             InlineActionIcon { }
