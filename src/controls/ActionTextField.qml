@@ -104,6 +104,7 @@ QQC2.TextField {
     rightPadding: Kirigami.Units.smallSpacing + (LayoutMirroring.enabled ? leftActionsRow : rightActionsRow).width
 
     Behavior on leftPadding {
+        enabled: Kirigami.Units.longDuration > 0
         NumberAnimation {
             duration: Kirigami.Units.longDuration
             easing.type: Easing.InOutQuad
@@ -111,6 +112,7 @@ QQC2.TextField {
     }
 
     Behavior on rightPadding {
+        enabled: Kirigami.Units.longDuration > 0
         NumberAnimation {
             duration: Kirigami.Units.longDuration
             easing.type: Easing.InOutQuad
@@ -124,33 +126,32 @@ QQC2.TextField {
             root.forceActiveFocus(Qt.ShortcutFocusReason)
             root.selectAll()
         }
+
+        // here to make it private
+        component InlineActionIcon: QQC2.ToolButton {
+            required property T.Action modelData
+
+            icon.width: Kirigami.Units.iconSizes.sizeForLabels
+            icon.height: Kirigami.Units.iconSizes.sizeForLabels
+
+            Layout.fillHeight: true
+            Layout.preferredWidth: implicitHeight
+
+            icon.name: modelData.icon.name.length > 0 ? modelData.icon.name : modelData.icon.source
+            visible: !(modelData instanceof Kirigami.Action) || modelData.visible
+            enabled: modelData.enabled
+
+            onClicked: mouse => modelData.trigger()
+
+            QQC2.ToolTip.visible: (hovered || activeFocus) && (modelData.text.length > 0)
+            QQC2.ToolTip.text: modelData.text
+        }
     }
 
-    QQC2.ToolTip {
-        visible: focusShortcut.nativeText.length > 0 && root.text.length === 0 && root.hovered
-        text: focusShortcut.nativeText
-    }
+    QQC2.ToolTip.visible: focusShortcut.nativeText.length > 0 && root.text.length === 0 && !rightActionsRow.hovered && !leftActionsRow.hovered && hovered
+    QQC2.ToolTip.text: focusShortcut.nativeText
+    QQC2.ToolTip.delay: Kirigami.Settings.tabletMode ? Qt.styleHints.mousePressAndHoldInterval : Kirigami.Units.toolTipDelay
 
-    component InlineActionIcon: QQC2.ToolButton {
-        id: iconDelegate
-
-        required property T.Action modelData
-
-        icon.width: Kirigami.Units.iconSizes.sizeForLabels
-        icon.height: Kirigami.Units.iconSizes.sizeForLabels
-
-        Layout.fillHeight: true
-        Layout.preferredWidth: implicitHeight
-
-        icon.name: modelData.icon.name.length > 0 ? modelData.icon.name : modelData.icon.source
-        visible: !(modelData instanceof Kirigami.Action) || modelData.visible
-        enabled: modelData.enabled
-
-        onClicked: mouse => iconDelegate.modelData.trigger()
-
-        QQC2.ToolTip.visible: (hovered || activeFocus) && (iconDelegate.modelData.text.length > 0)
-        QQC2.ToolTip.text: iconDelegate.modelData.text
-    }
 
     RowLayout {
         id: leftActionsRow
@@ -161,6 +162,8 @@ QQC2.TextField {
             left: parent.left
             bottom: parent.bottom
         }
+
+        visible: root.leftActions.length > 0
 
         spacing: Kirigami.Units.smallSpacing
         layoutDirection: Qt.LeftToRight
@@ -180,6 +183,8 @@ QQC2.TextField {
             right: parent.right
             bottom: parent.bottom
         }
+
+        visible: root.rightActions.length > 0
 
         spacing: Kirigami.Units.smallSpacing
         layoutDirection: Qt.RightToLeft
