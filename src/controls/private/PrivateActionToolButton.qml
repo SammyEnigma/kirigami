@@ -22,6 +22,8 @@ QQC2.ToolButton {
 
     property bool showMenuArrow: !Kirigami.DisplayHint.displayHintSet(action, Kirigami.DisplayHint.HideChildIndicator)
 
+    property int position: QQC2.ToolBar.Header
+
     property list<T.Action> menuActions: {
         if (action instanceof Kirigami.Action) {
             return action.children;
@@ -30,6 +32,7 @@ QQC2.ToolButton {
     }
 
     property Component menuComponent: ActionsMenu {
+        y: control.position === QQC2.ToolBar.Footer ? -height : 0
         submenuComponent: ActionsMenu { }
     }
 

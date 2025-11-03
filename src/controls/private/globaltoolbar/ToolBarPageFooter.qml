@@ -36,6 +36,7 @@ QQC2.ToolBar {
 
     contentItem: Kirigami.ActionToolBar {
         display: QQC2.Button.TextUnderIcon
+        position: QQC2.ToolBar.Footer
         alignment: Qt.AlignCenter
         actions: root.parent.page.actions
     }

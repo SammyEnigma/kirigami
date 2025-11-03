@@ -169,12 +169,14 @@ QQC2.Control {
         fullDelegate: P.PrivateActionToolButton {
             flat: root.flat
             display: root.display
+            position: root.position
             action: Kirigami.ToolBarLayout.action
         }
 
         iconDelegate: P.PrivateActionToolButton {
             flat: root.flat
             display: QQC2.Button.IconOnly
+            position: root.position
             action: Kirigami.ToolBarLayout.action
 
             showMenuArrow: false
@@ -197,6 +199,7 @@ QQC2.Control {
         moreButton: P.PrivateActionToolButton {
             flat: root.flat
             Accessible.role: Accessible.ButtonMenu
+            position: root.position
 
             action: Kirigami.Action {
                 tooltip: qsTr("More Actions")
@@ -209,6 +212,7 @@ QQC2.Control {
             menuActions: root.actions
 
             menuComponent: P.ActionsMenu {
+                y: root.position === QQC2.ToolBar.Footer ? -height : 0
                 submenuComponent: P.ActionsMenu {
                     Binding {
                         target: parentItem
