@@ -7,13 +7,10 @@
 import QtQuick
 import QtQuick.Controls as QQC2
 import org.kde.kirigami as Kirigami
-import org.kde.kirigami.private.polyfill
 
 QQC2.ToolBar {
     id: root
     position: QQC2.ToolBar.Footer
-
-    bottomPadding: SafeArea.margins.bottom
 
     NumberAnimation {
         id: appearAnim
