@@ -66,7 +66,7 @@ MouseArea {
         if (!globalToolBar) {
             return null;
         }
-        return (drawer.edge === Qt.LeftEdge && !drawer.mirrored) || (drawer.edge === Qt.RightEdge && drawer.mirrored)
+        return (drawer.edge === Qt.LeftEdge && !LayoutMirroring.enabled) || (drawer.edge === Qt.RightEdge && LayoutMirroring.enabled)
             ? globalToolBar.leftHandleAnchor
             : globalToolBar.rightHandleAnchor;
     }
