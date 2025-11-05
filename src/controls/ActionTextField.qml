@@ -133,6 +133,7 @@ QQC2.TextField {
 
             icon.width: Kirigami.Units.iconSizes.sizeForLabels
             icon.height: Kirigami.Units.iconSizes.sizeForLabels
+            Accessible.name: modelData.text
 
             Layout.fillHeight: true
             Layout.preferredWidth: implicitHeight
