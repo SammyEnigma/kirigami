@@ -133,19 +133,21 @@ QQC2.TextField {
 
             icon.width: Kirigami.Units.iconSizes.sizeForLabels
             icon.height: Kirigami.Units.iconSizes.sizeForLabels
-            Accessible.name: modelData.text
 
             Layout.fillHeight: true
             Layout.preferredWidth: implicitHeight
 
             icon.name: modelData.icon.name.length > 0 ? modelData.icon.name : modelData.icon.source
+            text: modelData.text
+            display: QQC2.ToolButton.IconOnly
+
             visible: !(modelData instanceof Kirigami.Action) || modelData.visible
             enabled: modelData.enabled
 
             onClicked: mouse => modelData.trigger()
 
-            QQC2.ToolTip.visible: (hovered || activeFocus) && (modelData.text.length > 0)
-            QQC2.ToolTip.text: modelData.text
+            QQC2.ToolTip.visible: (hovered || activeFocus) && (text.length > 0)
+            QQC2.ToolTip.text: text
         }
     }
 
