@@ -88,8 +88,12 @@ protected:
 Q_SIGNALS:
     void pageStackChanged();
 
-    /**
+    /*!
+     * \qmlattachedsignal PageStack::closeDialog
+     *
      * Close the currently opened dialog, which was opened with PageRow::pushDialogLayer.
+     *
+     * \since 6.20
      */
     void closeDialog();
 
