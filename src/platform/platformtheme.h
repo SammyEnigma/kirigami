@@ -677,6 +677,7 @@ public:
      * \value Palette
      * \value Font
      * \value Data
+     * \value FrameContrast
      * \value All
      */
     enum class PropertyChange : uint8_t {
