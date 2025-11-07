@@ -15,21 +15,24 @@ class QQuickItem;
 
 /*!
  * \qmltype AlignedSize
- * \inqmlmodule org.kde.kirigami
+ * \inqmlmodule org.kde.kirigami.primitives
  *
  * \brief An attached property that aligns a size on the physical pixel grid.
  *
  * Transforms a size to the nearest one perfectly aligned to the pixel grid
  * in case fractional scaling in used.
- * \code
+ * \qml
  * import org.kde.kirigami as Kirigami
+ *
  * Rectangle {
  *    width: AlignedSize.alignedWidth
  *    height: AlignedSize.alignedHeight
  *    AlignedSize.width: Units.gridUnit
  *    AlignedSize.height: 1
  * }
- * \endcode
+ * \endqml
+ *
+ * \since 6.20
  */
 class AlignedSizeAttached : public QObject
 {
@@ -38,14 +41,16 @@ class AlignedSizeAttached : public QObject
     QML_NAMED_ELEMENT(AlignedSize)
     QML_UNCREATABLE("")
 
-    /*! \qmlattachedproperty double org.kde.kirigami::AlignedSize::width
+    /*!
+     * \qmlattachedproperty real AlignedSize::width
      *
      * The width of the item in logical pixels
      *
      */
     Q_PROPERTY(qreal width READ width WRITE setWidth NOTIFY widthChanged RESET resetWidth FINAL)
 
-    /*! \qmlattachedproperty double org.kde.kirigami::AlignedSize::height
+    /*!
+     * \qmlattachedproperty real AlignedSize::height
      *
      * The height of the item in logical pixels
      *
