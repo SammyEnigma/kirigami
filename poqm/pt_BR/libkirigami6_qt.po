@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libkirigami2plugin_qt\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"PO-Revision-Date: 2025-08-03 01:49-0300\n"
+"PO-Revision-Date: 2025-11-08 21:10-0300\n"
 "Last-Translator: Guilherme Marçal Silva <guimarcalsilva@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
@@ -20,7 +20,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Qt-Contexts: true\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 25.04.3\n"
+"X-Generator: Lokalize 25.08.2\n"
 
 #: controls/AboutItem.qml:162
 #, qt-format
@@ -139,7 +139,7 @@ msgstr "Abrir barra lateral"
 #: controls/LoadingPlaceholder.qml:57
 msgctxt "LoadingPlaceholder|"
 msgid "Loading…"
-msgstr "Carregando..."
+msgstr "Carregando…"
 
 #: controls/PasswordField.qml:43
 msgctxt "PasswordField|"
@@ -179,7 +179,7 @@ msgstr "Abrir menu"
 #: controls/SearchField.qml:86
 msgctxt "SearchField|"
 msgid "Search…"
-msgstr "Pesquisar..."
+msgstr "Pesquisar…"
 
 #: controls/SearchField.qml:88
 msgctxt "SearchField|"
