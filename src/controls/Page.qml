@@ -196,7 +196,7 @@ QQC2.Page {
         globalToolBar.row = null;
 
         if (root.Kirigami.ColumnView.view) {
-            globalToolBar.row = root.Kirigami.ColumnView.view.__pageRow;
+            globalToolBar.row = root.Kirigami.ColumnView.view.__pageRow ?? null;
         }
         if (root.T.StackView.view) {
             globalToolBar.stack = root.T.StackView.view;
