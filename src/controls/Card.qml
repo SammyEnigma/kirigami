@@ -15,7 +15,7 @@ import "private" as P
   \qmltype Card
   \inqmlmodule org.kde.kirigami
 
-  \brief Card with a standard layout
+  \brief Card with a standard layout.
 
   Card implements a particular standardized layout inside an AbstractCard, with
   pre-defined header and  footer items.
@@ -46,9 +46,6 @@ Kirigami.AbstractCard {
 
       The actions will be represented by a list of ToolButtons with an overflow
       menu when not all of them will fit in the available space.
-
-      default: \c null; set it to define some actions.
-
      */
     property list<T.Action> actions
 
