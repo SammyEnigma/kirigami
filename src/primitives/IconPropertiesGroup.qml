@@ -56,7 +56,7 @@ QtObject {
     property real width
 
     /*!
-       \qmlproperty real width
+       \qmlproperty real height
 
        This property holds the preferred height for the icon.
        This is a size hint for the icon. It depends from the control implementation
@@ -66,6 +66,8 @@ QtObject {
 
     /*!
       \qmlmethod IconPropertiesGroup IconPropertiesGroup::fromControlsIcon(var icon)
+
+      \a icon The icon to bind to.
 
       This method is used to bind an icon from a QtQuickControls to an IconPropertiesGroup
       to have them to be kept in sync, use it as follows:
