@@ -13,7 +13,7 @@ import org.kde.kirigami as Kirigami
   \qmltype AbstractCard
   \inqmlmodule org.kde.kirigami
 
-  \brief The base item for all kinds of cards
+  \brief The base item for all kinds of cards.
 
   A card is a visual object that groups its contents into a logical unit,
   connecting them all together visually. Cards can be interactive and clickable,
@@ -39,7 +39,7 @@ T.ItemDelegate {
       This item will be positioned on top if headerOrientation is Qt.Vertical
       or on the left if it is Qt.Horizontal.
 
-      default: \c null; set something to make it the header.
+      \default null
      */
     property alias header: headerFooterLayout.header
 
@@ -50,7 +50,7 @@ T.ItemDelegate {
       \li Qt.Horizontal: the header will be positioned on the leading side
       \endlist
 
-      default: \c Qt.Vertical
+      \default Qt.Vertical
      */
     property int headerOrientation: Qt.Vertical
 
@@ -61,7 +61,7 @@ T.ItemDelegate {
       This item will be positioned at the bottom if headerOrientation is Qt.Vertical
       or on the right if it is Qt.Horizontal.
 
-      default: \c null; set something to make it the footer.
+      \default null
      */
     property alias footer: headerFooterLayout.footer
 
@@ -72,7 +72,7 @@ T.ItemDelegate {
       Use this if you want the card to perform an action in its \c onClicked signal
       handler.
 
-      default: \c false
+      \default false
      */
     property bool showClickFeedback: false
 
