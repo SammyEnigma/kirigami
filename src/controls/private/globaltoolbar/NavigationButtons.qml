@@ -96,7 +96,11 @@ Loader {
         NavButton {
             icon.name: (LayoutMirroring.enabled ? "go-previous-symbolic-rtl" : "go-previous-symbolic")
             text: qsTr("Navigate Back")
-            enabled: page.QQC.StackView.view || (pageStack.depth > 1 && pageStack.columnView.contentX > 0);
+            enabled: {
+                let isScrolled = !LayoutMirroring.enabled ? pageStack.columnView.contentX > 0
+                    : (pageStack.columnView.contentX === 0 && pageStack.columnView.contentWidth > pageStack.columnView.width)
+                return page.QQC.StackView.view || (pageStack.depth > 1 && isScrolled);
+            }
             visible: page.QQC.StackView.view || pageStack.globalToolBar.showNavigationButtons & Kirigami.ApplicationHeaderStyle.ShowBackButton
             onClicked: {
                 // When we are in a layer, pressing back doesn't change  the index on the main ColumnView
