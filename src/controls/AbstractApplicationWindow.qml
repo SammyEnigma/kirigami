@@ -17,10 +17,10 @@ import "templates/private" as TP
 
   \brief A window that provides some basic features needed for all apps.
 
-  Use this class only if you need a custom content for your application,
-  different from the Page Row behavior recommended by the HIG and provided
-  by ApplicationWindow.
-  It is recommended to use ApplicationWindow instead
+  Use this class only if you are implementing a custom content item and don’t need
+  any of the standard semantics and features of ApplicationWindow.
+  
+  Otherwise, use ApplicationWindow.
 
   It's usually used as a root QML component for the application.
   It provides support for a central page stack, side drawers, and
