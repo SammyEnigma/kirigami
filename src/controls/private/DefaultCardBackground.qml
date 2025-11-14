@@ -26,7 +26,7 @@ Kirigami.ShadowedRectangle {
     property bool clickFeedback: false
 
     /*!
-      \brief This property sets whether there should be a background change on a click event.
+      \brief This property sets whether there should be a background change on a hover event.
 
       default: false
      */
