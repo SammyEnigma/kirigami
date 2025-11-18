@@ -30,21 +30,8 @@ Kirigami.AbstractApplicationHeader {
         toolBar.contentItem.visibleChildren[0].forceActiveFocus(Qt.TabFocusReason)
     }
 
-    rightPadding: {
-        if (!pageRow || !page) {
-            return 0
-        }
-        if (page.Kirigami.ColumnView.view?.columnResizeMode === Kirigami.ColumnView.SingleColumn) {
-            return pageRow.globalToolBar.rightReservedSpace
-        }
-        if (LayoutMirroring.enabled) {
-            return Math.max(0, (pageRow.Kirigami.ScenePosition.x + pageRow.globalToolBar.rightReservedSpace) - page.Kirigami.ScenePosition.x);
-        } else {
-            return Math.max(0, (page.Kirigami.ScenePosition.x + page.width) - (pageRow.Kirigami.ScenePosition.x + pageRow.width - pageRow.globalToolBar.rightReservedSpace));
-        }
-        return 0;
-    }
-
+    leftPadding: Kirigami.Units.mediumSpacing
+    rightPadding: Kirigami.Units.mediumSpacing
 
     MouseArea {
         anchors.fill: parent
@@ -57,7 +44,6 @@ Kirigami.AbstractApplicationHeader {
     RowLayout {
         id: layout
         anchors.fill: parent
-        anchors.rightMargin: Kirigami.Units.smallSpacing
         spacing: Kirigami.Units.smallSpacing
 
         Kirigami.Separator {
@@ -65,46 +51,36 @@ Kirigami.AbstractApplicationHeader {
             Layout.fillHeight: true
             Layout.topMargin: Kirigami.Units.largeSpacing
             Layout.bottomMargin: Kirigami.Units.largeSpacing
+            Layout.leftMargin: - root.leftPadding
             Kirigami.Theme.colorSet: Kirigami.Theme.Header
             Kirigami.Theme.inherit: false
             visible: pageRow?.separatorVisible && !navButtons.visible && page?.Kirigami.ColumnView.view?.leadingVisibleItem !== page
         }
 
-        Item {
-            id: leftHandleSpacer
+        HandleButton {
+            drawer: QQC.ApplicationWindow.window?.globalDrawer ?? null
             visible: {
-                if (typeof applicationWindow === "undefined") {
-                    return false;
-                }
-                const drawer = applicationWindow().globalDrawer as KT.OverlayDrawer;
-                if (!drawer || (!drawer.isMenu && (!drawer.enabled || !drawer.handleVisible))) {
-                    return false;
-                }
-                if (page.Kirigami.ColumnView.index <= 0) {
+                if (!root.pageRow) {
                     return true;
                 }
+                let firstVisible = false;
                 const previousPage = root.pageRow.get(page.Kirigami.ColumnView.index - 1);
-                if (LayoutMirroring.enabled) {
-                    if (root.pageRow.width - (page.x + page.width - root.pageRow.columnView.contentX) < previousPage.width / 2) {
-                        return true;
-                    }
+                if (previousPage) {
+                    firstVisible = previousPage.x - root.pageRow.columnView.contentX < -previousPage.width / 2;
                 } else {
-                    if (previousPage.x - root.pageRow.columnView.contentX < -previousPage.width / 2) {
-                        return true;
-                    }
+                    firstVisible = true;
                 }
-                return false;
+                return drawer !== null
+                    && ((drawer.handleVisible && drawer.enabled) || drawer.isMenu)
+                    && (root.pageRow.columnView.columnResizeMode === Kirigami.ColumnView.SingleColumn
+                    || firstVisible);
             }
-
-            Layout.preferredWidth: pageRow.globalToolBar.leftReservedSpace
-            Layout.fillHeight: true
         }
 
         NavigationButtons {
             id: navButtons
             page: root.page
             pageStack: root.pageRow
-            Layout.leftMargin: !leftHandleSpacer.visible ? Kirigami.Units.smallSpacing : 0
         }
 
         Loader {
@@ -115,14 +91,6 @@ Kirigami.AbstractApplicationHeader {
             Layout.minimumWidth: item?.Layout.minimumWidth ?? -1
             Layout.preferredWidth: item?.Layout.preferredWidth ?? -1
             Layout.maximumWidth: item?.Layout.maximumWidth ?? -1
-            Layout.leftMargin: {
-                if (!pageRow || navButtons.visible || leftHandleSpacer.visible) {
-                    return 0;
-                } else if (separator.visible) {
-                    return pageRow.globalToolBar.titleLeftPadding - layout.spacing;
-                }
-                return pageRow.globalToolBar.titleLeftPadding;
-            }
 
             // Don't load async to prevent jumpy behaviour on slower devices as it loads in.
             // If the title delegate really needs to load async, it should be its responsibility to do it itself.
@@ -141,6 +109,14 @@ Kirigami.AbstractApplicationHeader {
             heightMode: pageRow?.globalToolBar.toolbarActionHeightMode ?? Kirigami.ToolBarLayout.ConstrainIfLarger
 
             actions: page && page.globalToolBarStyle === Kirigami.ApplicationHeaderStyle.ToolBar ? page?.actions : []
+        }
+
+        HandleButton {
+            drawer: QQC.ApplicationWindow.window?.contextDrawer ?? null
+            visible: drawer !== null
+                    && drawer.handleVisible && drawer.enabled
+                    && (pageStack.columnView.columnResizeMode === Kirigami.ColumnView.SingleColumn
+                    || page.Kirigami.ColumnView.view.trailingVisibleItem === page)
         }
     }
 }

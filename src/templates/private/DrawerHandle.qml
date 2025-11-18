@@ -9,7 +9,7 @@ import QtQuick.Controls as QQC2
 import QtQuick.Templates as T
 import org.kde.kirigami as Kirigami
 
-MouseArea {
+Item {
     id: root
 
     /*
@@ -31,13 +31,15 @@ MouseArea {
     parent: overlay?.parent ?? null
     z: overlay ? overlay.z  + (drawer?.modal && drawer?.drawerOpen ? 1 : - 1) : 0
 
-    preventStealing: true
-    hoverEnabled: handleAnchor?.visible ?? false
-
     QQC2.ToolButton {
-        anchors.fill: parent
-        visible: !Kirigami.Settings.tabletMode && !Kirigami.Settings.hasTransientTouchInput
+        id: button
+        anchors.centerIn: parent
+        flat: false
 
+        icon.name: root.drawer.drawerOpen ? drawer.handleOpenIcon.name : drawer.handleClosedIcon.name
+        icon.source: root.drawer.drawerOpen ? drawer.handleOpenIcon.source ?? "" : drawer.handleClosedIcon.source ?? ""
+        icon.width: drawer.handleOpenIcon.width
+        icon.height: drawer.handleOpenIcon.height
         Accessible.name: root.drawer.drawerOpen ? root.drawer.handleOpenToolTip : root.drawer.handleClosedToolTip
 
         onClicked: {
@@ -51,11 +53,45 @@ MouseArea {
                 root.drawer.drawerOpen = false;
             }
         }
-    }
 
-    QQC2.ToolTip.visible: displayToolTip && containsMouse
-    QQC2.ToolTip.text: drawer.drawerOpen ? handleOpenToolTip : handleClosedToolTip
-    QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
+        QQC2.ToolTip.visible: displayToolTip && hovered
+        QQC2.ToolTip.text: drawer.drawerOpen ? handleOpenToolTip : handleClosedToolTip
+        QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
+
+        DragHandler {
+            target: null
+            acceptedDevices: PointerDevice.TouchScreen | PointerDevice.Stylus
+            xAxis {
+                enabled: drawer.edge === Qt.LeftEdge || drawer.edge === Qt.RightEdge
+                minimum: 0
+                maximum: drawer.contentItem.width
+                onActiveValueChanged: (delta) => {
+                    let positionDelta = delta / drawer.contentItem.width;
+                    if (drawer.edge === Qt.RightEdge) {
+                        positionDelta *= -1;
+                    }
+                    drawer.position += positionDelta;
+                }
+            }
+            yAxis.enabled: false
+            onGrabChanged: (transition, point) => {
+                switch (transition) {
+                case PointerDevice.GrabExclusive:
+                case PointerDevice.GrabPassive:
+                    drawer.peeking = true;
+                    break;
+                case PointerDevice.UngrabExclusive:
+                case PointerDevice.UngrabPassive:
+                case PointerDevice.CancelGrabExclusive:
+                case PointerDevice.CancelGrabPassive:
+                    drawer.peeking = false;
+                    break;
+                default:
+                    break;
+                }
+            }
+        }
+    }
 
     property Item handleAnchor: {
         if (typeof applicationWindow === "undefined") {
@@ -71,46 +107,7 @@ MouseArea {
             : globalToolBar.rightHandleAnchor;
     }
 
-    property int startX
-    property int mappedStartX
-
     enabled: drawer.handleVisible
-
-    onPressed: mouse => {
-        drawer.peeking = true;
-        startX = mouse.x;
-        mappedStartX = mapToItem(parent, startX, 0).x;
-    }
-
-    onPositionChanged: mouse => {
-        if (!pressed) {
-            return;
-        }
-        const pos = mapToItem(parent, mouse.x - startX, mouse.y);
-        switch (drawer.edge) {
-        case Qt.LeftEdge:
-            drawer.position = pos.x / drawer.contentItem.width;
-            break;
-        case Qt.RightEdge:
-            drawer.position = (drawer.parent.width - pos.x - width) / drawer.contentItem.width;
-            break;
-        default:
-        }
-    }
-
-    onReleased: mouse => {
-        drawer.peeking = false;
-        if (Math.abs(mapToItem(parent, mouse.x, 0).x - mappedStartX) < Qt.styleHints.startDragDistance) {
-            if (!drawer.drawerOpen) {
-                drawer.close();
-            }
-            drawer.drawerOpen = !drawer.drawerOpen;
-        }
-    }
-
-    onCanceled: {
-        drawer.peeking = false
-    }
 
     x: {
         switch (drawer.edge) {
@@ -182,20 +179,14 @@ MouseArea {
         }
     }
 
-    visible: drawer.enabled && (drawer.edge === Qt.LeftEdge || drawer.edge === Qt.RightEdge) && opacity > 0
+    visible: drawer.enabled && drawer.modal && (drawer.edge === Qt.LeftEdge || drawer.edge === Qt.RightEdge) && opacity > 0
     width: handleAnchor?.visible ? handleAnchor.width : Kirigami.Units.iconSizes.smallMedium + Kirigami.Units.smallSpacing * 2
     height: handleAnchor?.visible ? handleAnchor.height : width
-    opacity: drawer.handleVisible ? 1 : 0
-
-    Behavior on opacity {
-        NumberAnimation {
-            duration: Kirigami.Units.longDuration
-            easing.type: Easing.InOutQuad
-        }
-    }
+    // NOTE: check on pageStack.depth is to keep and hack elisa is doing working
+    opacity: handleAnchor && applicationWindow()?.pageStack.depth > 0 ? drawer.position : 1
 
     transform: Translate {
-        x: root.drawer.handleVisible ? 0 : (root.drawer.edge === Qt.LeftEdge ? -root.width : root.width)
+        x: root.drawer.handleVisible ? 0 : (root.drawer.edge === Qt.LeftEdge ? -Math.max(root.width, button.width) : Math.max(root.width, button.width))
         Behavior on x {
             NumberAnimation {
                 duration: Kirigami.Units.longDuration
