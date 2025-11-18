@@ -183,7 +183,9 @@ Item {
     width: handleAnchor?.visible ? handleAnchor.width : Kirigami.Units.iconSizes.smallMedium + Kirigami.Units.smallSpacing * 2
     height: handleAnchor?.visible ? handleAnchor.height : width
     // NOTE: check on pageStack.depth is to keep and hack elisa is doing working
-    opacity: handleAnchor && applicationWindow()?.pageStack.depth > 0 ? drawer.position : 1
+    opacity: handleAnchor && applicationWindow()?.pageStack.depth > 0
+            ? drawer.position * root.drawer.handleVisible
+            : 1
 
     transform: Translate {
         x: root.drawer.handleVisible ? 0 : (root.drawer.edge === Qt.LeftEdge ? -Math.max(root.width, button.width) : Math.max(root.width, button.width))
