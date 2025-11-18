@@ -152,7 +152,7 @@ Q_SIGNALS:
     void cachePagesChanged();
 
 private:
-    QQuickItem *createFromComponent(QQmlComponent *component, const QVariantMap &properties);
+    QQuickItem *allocatePage(QQmlComponent *component, const QVariantMap &properties);
 
     QUrl m_lastLoadedUrl;
     QPointer<QQuickItem> m_lastLoadedItem;

@@ -21,6 +21,19 @@ PagePool::PagePool(QObject *parent)
 
 PagePool::~PagePool()
 {
+    for (QQmlComponent *component : std::as_const(m_componentForUrl)) {
+        component->deleteLater();
+    }
+    m_componentForUrl.clear();
+
+    for (QQuickItem *item : std::as_const(m_itemForUrl)) {
+        if (!item->parentItem()) {
+            item->deleteLater();
+        } else {
+            QQmlEngine::setObjectOwnership(item, QQmlEngine::JavaScriptOwnership);
+        }
+    }
+    m_itemForUrl.clear();
 }
 
 QUrl PagePool::lastLoadedUrl() const
@@ -67,6 +80,47 @@ QQuickItem *PagePool::loadPage(const QString &url, QJSValue callback)
     return loadPageWithProperties(url, QVariantMap(), callback);
 }
 
+QQuickItem *PagePool::allocatePage(QQmlComponent *component, const QVariantMap &properties)
+{
+    const auto ctx = qmlContext(this);
+    Q_ASSERT(ctx);
+
+    QObject *obj = component->createWithInitialProperties(properties, ctx);
+
+    if (!obj || component->isError()) {
+        qCWarning(KirigamiLog) << component->errors();
+        if (obj) {
+            obj->deleteLater();
+        }
+        return nullptr;
+    }
+
+    QQuickItem *item = qobject_cast<QQuickItem *>(obj);
+    if (!item) {
+        qCWarning(KirigamiLog) << "Storing Non-QQuickItem in PagePool not supported";
+        obj->deleteLater();
+        return nullptr;
+    }
+
+    if (m_cachePages) {
+        QQmlEngine::setObjectOwnership(item, QQmlEngine::CppOwnership);
+        m_itemForUrl[component->url()] = item;
+        m_urlForItem[item] = component->url();
+        Q_EMIT itemsChanged();
+        Q_EMIT urlsChanged();
+
+    } else {
+        QQmlEngine::setObjectOwnership(item, QQmlEngine::JavaScriptOwnership);
+    }
+
+    m_lastLoadedUrl = component->url();
+    m_lastLoadedItem = item;
+    Q_EMIT lastLoadedUrlChanged();
+    Q_EMIT lastLoadedItemChanged();
+
+    return item;
+}
+
 QQuickItem *PagePool::loadPageWithProperties(const QString &url, const QVariantMap &properties, QJSValue callback)
 {
     const auto engine = qmlEngine(this);
@@ -94,8 +148,8 @@ QQuickItem *PagePool::loadPageWithProperties(const QString &url, const QVariantM
         }
     }
 
-    QQmlComponent *component = m_componentForUrl.value(actualUrl);
-
+    // Note component->url() and actualUrl will be the same.
+    QQmlComponent *&component = m_componentForUrl[actualUrl];
     if (!component) {
         component = new QQmlComponent(engine, actualUrl, QQmlComponent::PreferSynchronous);
     }
@@ -103,7 +157,7 @@ QQuickItem *PagePool::loadPageWithProperties(const QString &url, const QVariantM
     if (component->status() == QQmlComponent::Loading) {
         if (!callback.isCallable()) {
             component->deleteLater();
-            m_componentForUrl.remove(actualUrl);
+            m_componentForUrl.remove(component->url());
             return nullptr;
         }
 
@@ -114,16 +168,11 @@ QQuickItem *PagePool::loadPageWithProperties(const QString &url, const QVariantM
                 component->deleteLater();
                 return;
             }
-            QQuickItem *item = createFromComponent(component, properties);
+
+            QQuickItem *item = allocatePage(component, properties);
             if (item) {
                 QJSValueList args = {engine->newQObject(item)};
                 callback.call(args);
-            }
-
-            if (m_cachePages) {
-                component->deleteLater();
-            } else {
-                m_componentForUrl[component->url()] = component;
             }
         });
 
@@ -134,28 +183,10 @@ QQuickItem *PagePool::loadPageWithProperties(const QString &url, const QVariantM
         return nullptr;
     }
 
-    QQuickItem *item = createFromComponent(component, properties);
+    QQuickItem *item = allocatePage(component, properties);
     if (!item) {
         return nullptr;
     }
-
-    if (m_cachePages) {
-        component->deleteLater();
-        QQmlEngine::setObjectOwnership(item, QQmlEngine::CppOwnership);
-        m_itemForUrl[component->url()] = item;
-        m_urlForItem[item] = component->url();
-        Q_EMIT itemsChanged();
-        Q_EMIT urlsChanged();
-
-    } else {
-        m_componentForUrl[component->url()] = component;
-        QQmlEngine::setObjectOwnership(item, QQmlEngine::JavaScriptOwnership);
-    }
-
-    m_lastLoadedUrl = actualUrl;
-    m_lastLoadedItem = item;
-    Q_EMIT lastLoadedUrlChanged();
-    Q_EMIT lastLoadedItemChanged();
 
     if (callback.isCallable()) {
         QJSValueList args = {engine->newQObject(item)};
@@ -163,31 +194,6 @@ QQuickItem *PagePool::loadPageWithProperties(const QString &url, const QVariantM
         // We could return the item, but for api coherence return null
         return nullptr;
     }
-    return item;
-}
-
-QQuickItem *PagePool::createFromComponent(QQmlComponent *component, const QVariantMap &properties)
-{
-    const auto ctx = qmlContext(this);
-    Q_ASSERT(ctx);
-
-    QObject *obj = component->createWithInitialProperties(properties, ctx);
-
-    if (!obj || component->isError()) {
-        qCWarning(KirigamiLog) << component->errors();
-        if (obj) {
-            obj->deleteLater();
-        }
-        return nullptr;
-    }
-
-    QQuickItem *item = qobject_cast<QQuickItem *>(obj);
-    if (!item) {
-        qCWarning(KirigamiLog) << "Storing Non-QQuickItem in PagePool not supported";
-        obj->deleteLater();
-        return nullptr;
-    }
-
     return item;
 }
 
