@@ -3,7 +3,6 @@
 # SPDX-FileCopyrightText: 2025 Carl Schwan <carl@carlschwan.eu>
 # SPDX-License-Identifier: BSD-2-Clause
 
-include(CMakeParseArguments)
 include(ExternalProject)
 
 function(kirigami_package_breeze_icons)
