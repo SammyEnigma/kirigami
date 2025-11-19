@@ -32,18 +32,44 @@ Item {
 
     /*!
      */
-    property real minimumHeight: 0
+    property real minimumHeight: {
+        const window = QQC2.ApplicationWindow.window as Kirigami.ApplicationWindow
+        if (window) {
+            return window.pageStack.globalToolBar.minimumHeight;
+        } else if (mainItem.applicationItem) {
+            return mainItem.applicationItem.pageStack.globalToolBar.minimumHeight;
+        }
+
+        return 0
+    }
 
     // Use an inline arrow function, referring to an external normal function makes QV4 crash, see https://bugreports.qt.io/browse/QTBUG-119395
     /*!
      */
-    property real preferredHeight: mainItem.children.reduce((accumulator, item) => {
-        return Math.max(accumulator, item.implicitHeight);
-    }, 0) + topPadding + bottomPadding
+    property real preferredHeight: {
+        const window = QQC2.ApplicationWindow.window as Kirigami.ApplicationWindow
+        if (window) {
+            return window.pageStack.globalToolBar.preferredHeight;
+        } else if (mainItem.applicationItem) {
+            return mainItem.applicationItem.pageStack.globalToolBar.preferredHeight;
+        }
+
+        mainItem.children.reduce((accumulator, item) => {
+            return Math.max(accumulator, item.implicitHeight);
+        }, 0) + topPadding + bottomPadding
+    }
 
     /*!
      */
-    property real maximumHeight: Kirigami.Units.gridUnit * 3 + topPadding + bottomPadding
+    property real maximumHeight: {
+        const window = QQC2.ApplicationWindow.window as Kirigami.ApplicationWindow
+        if (window) {
+            return window.pageStack.globalToolBar.maximumHeight;
+        } else if (mainItem.applicationItem) {
+            return mainItem.applicationItem.pageStack.globalToolBar.maximumHeight;
+        }
+        return Kirigami.Units.gridUnit * 3 + topPadding + bottomPadding;
+    }
 
     /*!
      */
@@ -73,7 +99,7 @@ Item {
 
     /*!
      */
-    property int topPadding: pageRow ? pageRow.SafeArea.margins.top : 0
+    property int topPadding: Kirigami.Units.smallSpacing + (pageRow ? pageRow.SafeArea.margins.top : 0)
 
     /*!
      */
@@ -81,7 +107,7 @@ Item {
 
     /*!
      */
-    property int bottomPadding: 0
+    property int bottomPadding: Kirigami.Units.smallSpacing
 
     /*!
      */
@@ -101,7 +127,7 @@ Item {
     // FIXME: remove
     property QtObject __appWindow: typeof applicationWindow !== "undefined" ? applicationWindow() : null
     implicitHeight: preferredHeight
-    Kirigami.AlignedSize.height: Layout.preferredHeight
+    Kirigami.AlignedSize.height: preferredHeight
 
     /*!
       \brief This property holds the background item.
@@ -115,7 +141,18 @@ Item {
         background.anchors.fill = headerItem;
     }
 
-    Component.onCompleted: AppHeaderSizeGroup.items.push(this)
+    Component.onCompleted: {
+        AppHeaderSizeGroup.items.push(this);
+
+        let candidate = parent;
+        while (candidate) {
+            mainItem.applicationItem = candidate as Kirigami.ApplicationItem;
+            if (mainItem.applicationItem) {
+                break;
+            }
+            candidate = candidate.parent;
+        }
+    }
 
     onMinimumHeightChanged: implicitHeight = preferredHeight;
     onPreferredHeightChanged: implicitHeight = preferredHeight;
@@ -224,6 +261,8 @@ Item {
         Item {
             id: mainItem
             clip: childrenRect.width > width
+            // Can't be a Kirigami.ApplicationItem due to recursive type registration
+            property Item applicationItem
 
             onChildrenChanged: {
                 for (const child of children) {

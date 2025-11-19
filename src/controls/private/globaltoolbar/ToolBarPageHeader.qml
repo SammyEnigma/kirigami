@@ -15,9 +15,10 @@ import org.kde.kirigami.templates as KT
 Kirigami.AbstractApplicationHeader {
     id: root
 
+    // pageRow.globalToolBar.*Height already include the paddings
     minimumHeight: pageRow ? pageRow.globalToolBar.minimumHeight : Kirigami.Units.iconSizes.medium + Kirigami.Units.smallSpacing * 2
-    maximumHeight: (pageRow ? pageRow.globalToolBar.maximumHeight : minimumHeight) + root.topPadding + root.bottomPadding
-    preferredHeight: (pageRow ? pageRow.globalToolBar.preferredHeight : minimumHeight) + root.topPadding + root.bottomPadding
+    maximumHeight: pageRow ? pageRow.globalToolBar.maximumHeight : minimumHeight
+    preferredHeight: pageRow ? pageRow.globalToolBar.preferredHeight : minimumHeight
 
     separatorVisible: pageRow ? pageRow.globalToolBar.separatorVisible : true
 
@@ -51,13 +52,15 @@ Kirigami.AbstractApplicationHeader {
             Layout.fillHeight: true
             Layout.topMargin: Kirigami.Units.largeSpacing
             Layout.bottomMargin: Kirigami.Units.largeSpacing
-            Layout.leftMargin: - root.leftPadding
+            // This must appear at the control edges, disregarding the padding
+            Layout.leftMargin: -root.leftPadding
             Kirigami.Theme.colorSet: Kirigami.Theme.Header
             Kirigami.Theme.inherit: false
             visible: pageRow?.separatorVisible && !navButtons.visible && page?.Kirigami.ColumnView.view?.leadingVisibleItem !== page
         }
 
         HandleButton {
+            id: leadingHandle
             drawer: QQC.ApplicationWindow.window?.globalDrawer ?? null
             visible: {
                 if (!root.pageRow) {
@@ -91,6 +94,16 @@ Kirigami.AbstractApplicationHeader {
             Layout.minimumWidth: item?.Layout.minimumWidth ?? -1
             Layout.preferredWidth: item?.Layout.preferredWidth ?? -1
             Layout.maximumWidth: item?.Layout.maximumWidth ?? -1
+            Layout.leftMargin: {
+                if (!pageRow || navButtons.visible) {
+                    return  -root.leftPadding;
+                } else if (leadingHandle.visible) {
+                    return  -root.leftPadding + Kirigami.Units.smallSpacing;
+                } else if (separator.visible) {
+                    return pageRow.globalToolBar.titleLeftPadding - layout.spacing - root.leftPadding;
+                }
+                return pageRow.globalToolBar.titleLeftPadding - root.leftPadding;
+            }
 
             // Don't load async to prevent jumpy behaviour on slower devices as it loads in.
             // If the title delegate really needs to load async, it should be its responsibility to do it itself.
