@@ -114,17 +114,17 @@ msgctxt "ContextualHelpButton|"
 msgid "Show Contextual Help"
 msgstr "Bağlamsal Yardımı Göster"
 
-#: controls/GlobalDrawer.qml:358
+#: controls/GlobalDrawer.qml:361
 msgctxt "GlobalDrawer|"
 msgid "Back"
 msgstr "Geri"
 
-#: controls/GlobalDrawer.qml:686
+#: controls/GlobalDrawer.qml:689
 msgctxt "GlobalDrawer|"
 msgid "Close Sidebar"
 msgstr "Kenar çubuğunu kapat"
 
-#: controls/GlobalDrawer.qml:691
+#: controls/GlobalDrawer.qml:694
 msgctxt "GlobalDrawer|"
 msgid "Open Sidebar"
 msgstr "Kenar çubuğunu aç"
@@ -149,25 +149,31 @@ msgctxt "PasswordField|"
 msgid "Show Password"
 msgstr "Parolayı Göster"
 
+#: controls/private/globaltoolbar/HandleButton.qml:25
+#, fuzzy
+#| msgctxt "PageRowGlobalToolBarUI|"
+#| msgid "Close menu"
+msgctxt "HandleButton|"
+msgid "Close menu"
+msgstr "Menüyü kapat"
+
+#: controls/private/globaltoolbar/HandleButton.qml:25
+#, fuzzy
+#| msgctxt "PageRowGlobalToolBarUI|"
+#| msgid "Open menu"
+msgctxt "HandleButton|"
+msgid "Open menu"
+msgstr "Menüyü aç"
+
 #: controls/private/globaltoolbar/NavigationButtons.qml:98
 msgctxt "NavigationButtons|"
 msgid "Navigate Back"
 msgstr "Geri Git"
 
-#: controls/private/globaltoolbar/NavigationButtons.qml:111
+#: controls/private/globaltoolbar/NavigationButtons.qml:115
 msgctxt "NavigationButtons|"
 msgid "Navigate Forward"
 msgstr "İleri Git"
-
-#: controls/private/globaltoolbar/PageRowGlobalToolBarUI.qml:87
-msgctxt "PageRowGlobalToolBarUI|"
-msgid "Close menu"
-msgstr "Menüyü kapat"
-
-#: controls/private/globaltoolbar/PageRowGlobalToolBarUI.qml:87
-msgctxt "PageRowGlobalToolBarUI|"
-msgid "Open menu"
-msgstr "Menüyü aç"
 
 #: controls/SearchField.qml:86
 msgctxt "SearchField|"
@@ -258,12 +264,12 @@ msgctxt "InlineMessage|"
 msgid "Close"
 msgstr "Kapat"
 
-#: templates/OverlayDrawer.qml:143
+#: templates/OverlayDrawer.qml:147
 msgctxt "OverlayDrawer|"
 msgid "Close drawer"
 msgstr "Çekmeceyi kapat"
 
-#: templates/OverlayDrawer.qml:149
+#: templates/OverlayDrawer.qml:153
 msgctxt "OverlayDrawer|"
 msgid "Open drawer"
 msgstr "Çekmeceyi aç"

@@ -114,17 +114,17 @@ msgctxt "ContextualHelpButton|"
 msgid "Show Contextual Help"
 msgstr "显示相关帮助"
 
-#: controls/GlobalDrawer.qml:358
+#: controls/GlobalDrawer.qml:361
 msgctxt "GlobalDrawer|"
 msgid "Back"
 msgstr "返回"
 
-#: controls/GlobalDrawer.qml:686
+#: controls/GlobalDrawer.qml:689
 msgctxt "GlobalDrawer|"
 msgid "Close Sidebar"
 msgstr "隐藏侧边栏"
 
-#: controls/GlobalDrawer.qml:691
+#: controls/GlobalDrawer.qml:694
 msgctxt "GlobalDrawer|"
 msgid "Open Sidebar"
 msgstr "显示侧边栏"
@@ -149,25 +149,31 @@ msgctxt "PasswordField|"
 msgid "Show Password"
 msgstr "显示密码"
 
+#: controls/private/globaltoolbar/HandleButton.qml:25
+#, fuzzy
+#| msgctxt "PageRowGlobalToolBarUI|"
+#| msgid "Close menu"
+msgctxt "HandleButton|"
+msgid "Close menu"
+msgstr "关闭菜单"
+
+#: controls/private/globaltoolbar/HandleButton.qml:25
+#, fuzzy
+#| msgctxt "PageRowGlobalToolBarUI|"
+#| msgid "Open menu"
+msgctxt "HandleButton|"
+msgid "Open menu"
+msgstr "打开菜单"
+
 #: controls/private/globaltoolbar/NavigationButtons.qml:98
 msgctxt "NavigationButtons|"
 msgid "Navigate Back"
 msgstr "后退"
 
-#: controls/private/globaltoolbar/NavigationButtons.qml:111
+#: controls/private/globaltoolbar/NavigationButtons.qml:115
 msgctxt "NavigationButtons|"
 msgid "Navigate Forward"
 msgstr "前进"
-
-#: controls/private/globaltoolbar/PageRowGlobalToolBarUI.qml:87
-msgctxt "PageRowGlobalToolBarUI|"
-msgid "Close menu"
-msgstr "关闭菜单"
-
-#: controls/private/globaltoolbar/PageRowGlobalToolBarUI.qml:87
-msgctxt "PageRowGlobalToolBarUI|"
-msgid "Open menu"
-msgstr "打开菜单"
 
 #: controls/SearchField.qml:86
 msgctxt "SearchField|"
@@ -258,12 +264,12 @@ msgctxt "InlineMessage|"
 msgid "Close"
 msgstr "关闭"
 
-#: templates/OverlayDrawer.qml:143
+#: templates/OverlayDrawer.qml:147
 msgctxt "OverlayDrawer|"
 msgid "Close drawer"
 msgstr "关闭抽屉栏"
 
-#: templates/OverlayDrawer.qml:149
+#: templates/OverlayDrawer.qml:153
 msgctxt "OverlayDrawer|"
 msgid "Open drawer"
 msgstr "打开抽屉栏"

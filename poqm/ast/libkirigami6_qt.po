@@ -112,17 +112,17 @@ msgctxt "ContextualHelpButton|"
 msgid "Show Contextual Help"
 msgstr ""
 
-#: controls/GlobalDrawer.qml:358
+#: controls/GlobalDrawer.qml:361
 msgctxt "GlobalDrawer|"
 msgid "Back"
 msgstr "Atrás"
 
-#: controls/GlobalDrawer.qml:686
+#: controls/GlobalDrawer.qml:689
 msgctxt "GlobalDrawer|"
 msgid "Close Sidebar"
 msgstr "Zarrar la barra llateral"
 
-#: controls/GlobalDrawer.qml:691
+#: controls/GlobalDrawer.qml:694
 msgctxt "GlobalDrawer|"
 msgid "Open Sidebar"
 msgstr "Abrir la barra llateral"
@@ -147,24 +147,27 @@ msgctxt "PasswordField|"
 msgid "Show Password"
 msgstr ""
 
+#: controls/private/globaltoolbar/HandleButton.qml:25
+#, fuzzy
+#| msgctxt "OverlayDrawer|"
+#| msgid "Close drawer"
+msgctxt "HandleButton|"
+msgid "Close menu"
+msgstr "Zarrar el caxón"
+
+#: controls/private/globaltoolbar/HandleButton.qml:25
+msgctxt "HandleButton|"
+msgid "Open menu"
+msgstr ""
+
 #: controls/private/globaltoolbar/NavigationButtons.qml:98
 msgctxt "NavigationButtons|"
 msgid "Navigate Back"
 msgstr ""
 
-#: controls/private/globaltoolbar/NavigationButtons.qml:111
+#: controls/private/globaltoolbar/NavigationButtons.qml:115
 msgctxt "NavigationButtons|"
 msgid "Navigate Forward"
-msgstr ""
-
-#: controls/private/globaltoolbar/PageRowGlobalToolBarUI.qml:87
-msgctxt "PageRowGlobalToolBarUI|"
-msgid "Close menu"
-msgstr ""
-
-#: controls/private/globaltoolbar/PageRowGlobalToolBarUI.qml:87
-msgctxt "PageRowGlobalToolBarUI|"
-msgid "Open menu"
 msgstr ""
 
 #: controls/SearchField.qml:86
@@ -259,12 +262,12 @@ msgctxt "InlineMessage|"
 msgid "Close"
 msgstr ""
 
-#: templates/OverlayDrawer.qml:143
+#: templates/OverlayDrawer.qml:147
 msgctxt "OverlayDrawer|"
 msgid "Close drawer"
 msgstr "Zarrar el caxón"
 
-#: templates/OverlayDrawer.qml:149
+#: templates/OverlayDrawer.qml:153
 msgctxt "OverlayDrawer|"
 msgid "Open drawer"
 msgstr "Abrir el caxón"

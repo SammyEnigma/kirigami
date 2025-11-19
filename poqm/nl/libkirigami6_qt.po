@@ -112,17 +112,17 @@ msgctxt "ContextualHelpButton|"
 msgid "Show Contextual Help"
 msgstr "Contextuele hulp tonen"
 
-#: controls/GlobalDrawer.qml:358
+#: controls/GlobalDrawer.qml:361
 msgctxt "GlobalDrawer|"
 msgid "Back"
 msgstr "Terug"
 
-#: controls/GlobalDrawer.qml:686
+#: controls/GlobalDrawer.qml:689
 msgctxt "GlobalDrawer|"
 msgid "Close Sidebar"
 msgstr "Zijbalk sluiten"
 
-#: controls/GlobalDrawer.qml:691
+#: controls/GlobalDrawer.qml:694
 msgctxt "GlobalDrawer|"
 msgid "Open Sidebar"
 msgstr "Zijbalk openen"
@@ -147,25 +147,31 @@ msgctxt "PasswordField|"
 msgid "Show Password"
 msgstr "Wachtwoord tonen"
 
+#: controls/private/globaltoolbar/HandleButton.qml:25
+#, fuzzy
+#| msgctxt "PageRowGlobalToolBarUI|"
+#| msgid "Close menu"
+msgctxt "HandleButton|"
+msgid "Close menu"
+msgstr "Menu sluiten"
+
+#: controls/private/globaltoolbar/HandleButton.qml:25
+#, fuzzy
+#| msgctxt "PageRowGlobalToolBarUI|"
+#| msgid "Open menu"
+msgctxt "HandleButton|"
+msgid "Open menu"
+msgstr "Menu openen"
+
 #: controls/private/globaltoolbar/NavigationButtons.qml:98
 msgctxt "NavigationButtons|"
 msgid "Navigate Back"
 msgstr "Naar achteren navigeren"
 
-#: controls/private/globaltoolbar/NavigationButtons.qml:111
+#: controls/private/globaltoolbar/NavigationButtons.qml:115
 msgctxt "NavigationButtons|"
 msgid "Navigate Forward"
 msgstr "Naar voren navigeren"
-
-#: controls/private/globaltoolbar/PageRowGlobalToolBarUI.qml:87
-msgctxt "PageRowGlobalToolBarUI|"
-msgid "Close menu"
-msgstr "Menu sluiten"
-
-#: controls/private/globaltoolbar/PageRowGlobalToolBarUI.qml:87
-msgctxt "PageRowGlobalToolBarUI|"
-msgid "Open menu"
-msgstr "Menu openen"
 
 #: controls/SearchField.qml:86
 msgctxt "SearchField|"
@@ -256,12 +262,12 @@ msgctxt "InlineMessage|"
 msgid "Close"
 msgstr "Sluiten"
 
-#: templates/OverlayDrawer.qml:143
+#: templates/OverlayDrawer.qml:147
 msgctxt "OverlayDrawer|"
 msgid "Close drawer"
 msgstr "Schuiflade sluiten"
 
-#: templates/OverlayDrawer.qml:149
+#: templates/OverlayDrawer.qml:153
 msgctxt "OverlayDrawer|"
 msgid "Open drawer"
 msgstr "Schuiflade openen"

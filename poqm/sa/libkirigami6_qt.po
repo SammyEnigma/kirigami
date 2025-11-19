@@ -112,17 +112,17 @@ msgctxt "ContextualHelpButton|"
 msgid "Show Contextual Help"
 msgstr "सन्दर्भसहायतां दर्शयतु"
 
-#: controls/GlobalDrawer.qml:358
+#: controls/GlobalDrawer.qml:361
 msgctxt "GlobalDrawer|"
 msgid "Back"
 msgstr "पृष्ठभागः"
 
-#: controls/GlobalDrawer.qml:686
+#: controls/GlobalDrawer.qml:689
 msgctxt "GlobalDrawer|"
 msgid "Close Sidebar"
 msgstr "पार्श्वपट्टिकां बन्दं कुर्वन्तु"
 
-#: controls/GlobalDrawer.qml:691
+#: controls/GlobalDrawer.qml:694
 msgctxt "GlobalDrawer|"
 msgid "Open Sidebar"
 msgstr "पार्श्वपट्टिका उद्घाटयन्तु"
@@ -147,6 +147,22 @@ msgctxt "PasswordField|"
 msgid "Show Password"
 msgstr "गुप्तशब्दं दर्शयतु"
 
+#: controls/private/globaltoolbar/HandleButton.qml:25
+#, fuzzy
+#| msgctxt "PageRowGlobalToolBarUI|"
+#| msgid "Close menu"
+msgctxt "HandleButton|"
+msgid "Close menu"
+msgstr "मेनू बन्दं कुर्वन्तु"
+
+#: controls/private/globaltoolbar/HandleButton.qml:25
+#, fuzzy
+#| msgctxt "PageRowGlobalToolBarUI|"
+#| msgid "Open menu"
+msgctxt "HandleButton|"
+msgid "Open menu"
+msgstr "मेनू उद्घाटयन्तु"
+
 #: controls/private/globaltoolbar/NavigationButtons.qml:98
 #, fuzzy
 #| msgctxt "BackButton|"
@@ -155,23 +171,13 @@ msgctxt "NavigationButtons|"
 msgid "Navigate Back"
 msgstr "Back इति नेविगेट् कुर्वन्तु"
 
-#: controls/private/globaltoolbar/NavigationButtons.qml:111
+#: controls/private/globaltoolbar/NavigationButtons.qml:115
 #, fuzzy
 #| msgctxt "ForwardButton|"
 #| msgid "Navigate Forward"
 msgctxt "NavigationButtons|"
 msgid "Navigate Forward"
 msgstr "अग्रे गच्छन्तु"
-
-#: controls/private/globaltoolbar/PageRowGlobalToolBarUI.qml:87
-msgctxt "PageRowGlobalToolBarUI|"
-msgid "Close menu"
-msgstr "मेनू बन्दं कुर्वन्तु"
-
-#: controls/private/globaltoolbar/PageRowGlobalToolBarUI.qml:87
-msgctxt "PageRowGlobalToolBarUI|"
-msgid "Open menu"
-msgstr "मेनू उद्घाटयन्तु"
 
 #: controls/SearchField.qml:86
 msgctxt "SearchField|"
@@ -265,12 +271,12 @@ msgctxt "InlineMessage|"
 msgid "Close"
 msgstr "पिधानं करोतु"
 
-#: templates/OverlayDrawer.qml:143
+#: templates/OverlayDrawer.qml:147
 msgctxt "OverlayDrawer|"
 msgid "Close drawer"
 msgstr "दराजं बन्दं कुर्वन्तु"
 
-#: templates/OverlayDrawer.qml:149
+#: templates/OverlayDrawer.qml:153
 msgctxt "OverlayDrawer|"
 msgid "Open drawer"
 msgstr "दराजं उद्घाटयन्तु"

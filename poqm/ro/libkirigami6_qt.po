@@ -116,17 +116,17 @@ msgctxt "ContextualHelpButton|"
 msgid "Show Contextual Help"
 msgstr ""
 
-#: controls/GlobalDrawer.qml:358
+#: controls/GlobalDrawer.qml:361
 msgctxt "GlobalDrawer|"
 msgid "Back"
 msgstr "Înapoi"
 
-#: controls/GlobalDrawer.qml:686
+#: controls/GlobalDrawer.qml:689
 msgctxt "GlobalDrawer|"
 msgid "Close Sidebar"
 msgstr "Închide bara laterală"
 
-#: controls/GlobalDrawer.qml:691
+#: controls/GlobalDrawer.qml:694
 msgctxt "GlobalDrawer|"
 msgid "Open Sidebar"
 msgstr "Deschide bara laterală"
@@ -157,6 +157,22 @@ msgctxt "PasswordField|"
 msgid "Show Password"
 msgstr "Parolă"
 
+#: controls/private/globaltoolbar/HandleButton.qml:25
+#, fuzzy
+#| msgctxt "OverlayDrawer|"
+#| msgid "Close"
+msgctxt "HandleButton|"
+msgid "Close menu"
+msgstr "Închide"
+
+#: controls/private/globaltoolbar/HandleButton.qml:25
+#, fuzzy
+#| msgctxt "OverlayDrawer|"
+#| msgid "Open"
+msgctxt "HandleButton|"
+msgid "Open menu"
+msgstr "Deschide"
+
 #: controls/private/globaltoolbar/NavigationButtons.qml:98
 #, fuzzy
 #| msgctxt "BackButton|"
@@ -165,29 +181,13 @@ msgctxt "NavigationButtons|"
 msgid "Navigate Back"
 msgstr "Navighează înapoi"
 
-#: controls/private/globaltoolbar/NavigationButtons.qml:111
+#: controls/private/globaltoolbar/NavigationButtons.qml:115
 #, fuzzy
 #| msgctxt "ForwardButton|"
 #| msgid "Navigate Forward"
 msgctxt "NavigationButtons|"
 msgid "Navigate Forward"
 msgstr "Navighează înainte"
-
-#: controls/private/globaltoolbar/PageRowGlobalToolBarUI.qml:87
-#, fuzzy
-#| msgctxt "OverlayDrawer|"
-#| msgid "Close"
-msgctxt "PageRowGlobalToolBarUI|"
-msgid "Close menu"
-msgstr "Închide"
-
-#: controls/private/globaltoolbar/PageRowGlobalToolBarUI.qml:87
-#, fuzzy
-#| msgctxt "OverlayDrawer|"
-#| msgid "Open"
-msgctxt "PageRowGlobalToolBarUI|"
-msgid "Open menu"
-msgstr "Deschide"
 
 #: controls/SearchField.qml:86
 msgctxt "SearchField|"
@@ -296,12 +296,12 @@ msgctxt "InlineMessage|"
 msgid "Close"
 msgstr "Închide"
 
-#: templates/OverlayDrawer.qml:143
+#: templates/OverlayDrawer.qml:147
 msgctxt "OverlayDrawer|"
 msgid "Close drawer"
 msgstr "Închide sertarul"
 
-#: templates/OverlayDrawer.qml:149
+#: templates/OverlayDrawer.qml:153
 msgctxt "OverlayDrawer|"
 msgid "Open drawer"
 msgstr "Deschide sertarul"
