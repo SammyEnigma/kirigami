@@ -209,7 +209,8 @@ Item {
 
             Kirigami.Heading {
                 Layout.fillWidth: true
-                level: 2
+                level: 3
+                type: Kirigami.Heading.Type.Secondary
                 wrapMode: Text.WordWrap
                 text: aboutItem.aboutData.shortDescription
             }
