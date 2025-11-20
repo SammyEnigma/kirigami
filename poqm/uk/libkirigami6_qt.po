@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: libkirigami2plugin_qt\n"
-"PO-Revision-Date: 2025-07-10 16:35+0300\n"
+"PO-Revision-Date: 2025-11-19 08:14+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -155,17 +155,11 @@ msgid "Show Password"
 msgstr "Показати пароль"
 
 #: controls/private/globaltoolbar/HandleButton.qml:25
-#, fuzzy
-#| msgctxt "PageRowGlobalToolBarUI|"
-#| msgid "Close menu"
 msgctxt "HandleButton|"
 msgid "Close menu"
 msgstr "Закрити меню"
 
 #: controls/private/globaltoolbar/HandleButton.qml:25
-#, fuzzy
-#| msgctxt "PageRowGlobalToolBarUI|"
-#| msgid "Open menu"
 msgctxt "HandleButton|"
 msgid "Open menu"
 msgstr "Відкрити меню"
