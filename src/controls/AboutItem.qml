@@ -164,21 +164,23 @@ Item {
             }
 
             QQC2.ToolButton {
-                visible: typeof(modelData.emailAddress) !== "undefined" && modelData.emailAddress.length > 0
-                icon.name: "mail-sent"
-                QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
-                QQC2.ToolTip.visible: hovered
-                QQC2.ToolTip.text: qsTr("Send an email to %1").arg(modelData.emailAddress)
-                onClicked: Qt.openUrlExternally("mailto:%1".arg(modelData.emailAddress))
-            }
-
-            QQC2.ToolButton {
-                visible: typeof(modelData.webAddress) !== "undefined" && modelData.webAddress.length > 0
+                enabled: typeof(modelData.webAddress) !== "undefined" && modelData.webAddress.length > 0
+                opacity: enabled ? 1 : 0
                 icon.name: "globe"
                 QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
                 QQC2.ToolTip.visible: hovered
                 QQC2.ToolTip.text: (typeof(modelData.webAddress) === "undefined" && modelData.webAddress.length > 0) ? "" : modelData.webAddress
                 onClicked: Qt.openUrlExternally(modelData.webAddress)
+            }
+
+            QQC2.ToolButton {
+                enabled: typeof(modelData.emailAddress) !== "undefined" && modelData.emailAddress.length > 0
+                opacity: enabled ? 1 : 0
+                icon.name: "mail-sent"
+                QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
+                QQC2.ToolTip.visible: hovered
+                QQC2.ToolTip.text: qsTr("Send an email to %1").arg(modelData.emailAddress)
+                onClicked: Qt.openUrlExternally("mailto:%1".arg(modelData.emailAddress))
             }
         }
     }
