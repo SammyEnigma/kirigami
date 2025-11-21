@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2025-07-28 19:04+0200\n"
+"PO-Revision-Date: 2025-11-20 11:10+0100\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
 "Language: bg\n"
@@ -149,17 +149,11 @@ msgid "Show Password"
 msgstr "Показване на паролата"
 
 #: controls/private/globaltoolbar/HandleButton.qml:25
-#, fuzzy
-#| msgctxt "PageRowGlobalToolBarUI|"
-#| msgid "Close menu"
 msgctxt "HandleButton|"
 msgid "Close menu"
 msgstr "Затваряне на меню"
 
 #: controls/private/globaltoolbar/HandleButton.qml:25
-#, fuzzy
-#| msgctxt "PageRowGlobalToolBarUI|"
-#| msgid "Open menu"
 msgctxt "HandleButton|"
 msgid "Open menu"
 msgstr "Отваряне на меню"
