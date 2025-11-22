@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libkirigami6_qt\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"PO-Revision-Date: 2025-07-10 03:49+0100\n"
+"PO-Revision-Date: 2025-11-21 02:05+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Qt-Contexts: true\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 25.04.3\n"
+"X-Generator: Lokalize 25.08.3\n"
 
 #: controls/AboutItem.qml:162
 #, qt-format
@@ -153,17 +153,11 @@ msgid "Show Password"
 msgstr "Mostrar contraseña"
 
 #: controls/private/globaltoolbar/HandleButton.qml:25
-#, fuzzy
-#| msgctxt "PageRowGlobalToolBarUI|"
-#| msgid "Close menu"
 msgctxt "HandleButton|"
 msgid "Close menu"
 msgstr "Cerrar menú"
 
 #: controls/private/globaltoolbar/HandleButton.qml:25
-#, fuzzy
-#| msgctxt "PageRowGlobalToolBarUI|"
-#| msgid "Open menu"
 msgctxt "HandleButton|"
 msgid "Open menu"
 msgstr "Abrir menú"
