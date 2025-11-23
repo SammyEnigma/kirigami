@@ -25,22 +25,22 @@ msgctxt "AboutItem|"
 msgid "Send an email to %1"
 msgstr ""
 
-#: controls/AboutItem.qml:221
+#: controls/AboutItem.qml:222
 msgctxt "AboutItem|"
 msgid "Get Involved"
 msgstr ""
 
-#: controls/AboutItem.qml:227
+#: controls/AboutItem.qml:228
 msgctxt "AboutItem|"
 msgid "Donate"
 msgstr ""
 
-#: controls/AboutItem.qml:244
+#: controls/AboutItem.qml:245
 msgctxt "AboutItem|"
 msgid "Report a Bug"
 msgstr ""
 
-#: controls/AboutItem.qml:257
+#: controls/AboutItem.qml:258
 #, fuzzy
 #| msgctxt "AboutPage|"
 #| msgid "Copyright"
@@ -48,7 +48,7 @@ msgctxt "AboutItem|"
 msgid "Copyright"
 msgstr "Ҳуқуқи муаллиф"
 
-#: controls/AboutItem.qml:302
+#: controls/AboutItem.qml:303
 #, fuzzy
 #| msgctxt "AboutPage|"
 #| msgid "License:"
@@ -56,7 +56,7 @@ msgctxt "AboutItem|"
 msgid "License:"
 msgstr "Иҷозатнома:"
 
-#: controls/AboutItem.qml:324
+#: controls/AboutItem.qml:325
 #, fuzzy, qt-format
 #| msgctxt "AboutPage|"
 #| msgid "License: %1"
@@ -64,7 +64,7 @@ msgctxt "AboutItem|"
 msgid "License: %1"
 msgstr "Иҷозатнома: %1"
 
-#: controls/AboutItem.qml:335
+#: controls/AboutItem.qml:336
 #, fuzzy
 #| msgctxt "AboutPage|"
 #| msgid "Libraries in use"
@@ -72,7 +72,7 @@ msgctxt "AboutItem|"
 msgid "Libraries in use"
 msgstr "Китобхонаҳое, ки истифода мешаванд"
 
-#: controls/AboutItem.qml:365
+#: controls/AboutItem.qml:366
 #, fuzzy
 #| msgctxt "AboutPage|"
 #| msgid "Authors"
@@ -80,12 +80,12 @@ msgctxt "AboutItem|"
 msgid "Authors"
 msgstr "Муаллифон"
 
-#: controls/AboutItem.qml:375
+#: controls/AboutItem.qml:376
 msgctxt "AboutItem|"
 msgid "Show author photos"
 msgstr ""
 
-#: controls/AboutItem.qml:386
+#: controls/AboutItem.qml:387
 #, fuzzy
 #| msgctxt "AboutPage|"
 #| msgid "Credits"
@@ -93,7 +93,7 @@ msgctxt "AboutItem|"
 msgid "Credits"
 msgstr "Сипосгузорӣ"
 
-#: controls/AboutItem.qml:398
+#: controls/AboutItem.qml:399
 #, fuzzy
 #| msgctxt "AboutPage|"
 #| msgid "Translators"

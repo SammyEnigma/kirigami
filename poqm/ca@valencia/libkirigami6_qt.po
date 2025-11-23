@@ -34,58 +34,58 @@ msgctxt "AboutItem|"
 msgid "Send an email to %1"
 msgstr "Envia un correu a %1"
 
-#: controls/AboutItem.qml:221
+#: controls/AboutItem.qml:222
 msgctxt "AboutItem|"
 msgid "Get Involved"
 msgstr "Col·laboreu-hi"
 
-#: controls/AboutItem.qml:227
+#: controls/AboutItem.qml:228
 msgctxt "AboutItem|"
 msgid "Donate"
 msgstr "Donatius"
 
-#: controls/AboutItem.qml:244
+#: controls/AboutItem.qml:245
 msgctxt "AboutItem|"
 msgid "Report a Bug"
 msgstr "Informeu d'un error"
 
-#: controls/AboutItem.qml:257
+#: controls/AboutItem.qml:258
 msgctxt "AboutItem|"
 msgid "Copyright"
 msgstr "Drets d'autoria"
 
-#: controls/AboutItem.qml:302
+#: controls/AboutItem.qml:303
 msgctxt "AboutItem|"
 msgid "License:"
 msgstr "Llicència:"
 
-#: controls/AboutItem.qml:324
+#: controls/AboutItem.qml:325
 #, qt-format
 msgctxt "AboutItem|"
 msgid "License: %1"
 msgstr "Llicència: %1"
 
-#: controls/AboutItem.qml:335
+#: controls/AboutItem.qml:336
 msgctxt "AboutItem|"
 msgid "Libraries in use"
 msgstr "Biblioteques en ús"
 
-#: controls/AboutItem.qml:365
+#: controls/AboutItem.qml:366
 msgctxt "AboutItem|"
 msgid "Authors"
 msgstr "Autoria"
 
-#: controls/AboutItem.qml:375
+#: controls/AboutItem.qml:376
 msgctxt "AboutItem|"
 msgid "Show author photos"
 msgstr "Mostra les fotos dels autors"
 
-#: controls/AboutItem.qml:386
+#: controls/AboutItem.qml:387
 msgctxt "AboutItem|"
 msgid "Credits"
 msgstr "Atribucions"
 
-#: controls/AboutItem.qml:398
+#: controls/AboutItem.qml:399
 msgctxt "AboutItem|"
 msgid "Translators"
 msgstr "Equip de traducció"

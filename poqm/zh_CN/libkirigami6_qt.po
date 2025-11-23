@@ -27,58 +27,58 @@ msgctxt "AboutItem|"
 msgid "Send an email to %1"
 msgstr "发送电子邮件到 %1"
 
-#: controls/AboutItem.qml:221
+#: controls/AboutItem.qml:222
 msgctxt "AboutItem|"
 msgid "Get Involved"
 msgstr "参与贡献"
 
-#: controls/AboutItem.qml:227
+#: controls/AboutItem.qml:228
 msgctxt "AboutItem|"
 msgid "Donate"
 msgstr "捐款"
 
-#: controls/AboutItem.qml:244
+#: controls/AboutItem.qml:245
 msgctxt "AboutItem|"
 msgid "Report a Bug"
 msgstr "报告程序缺陷"
 
-#: controls/AboutItem.qml:257
+#: controls/AboutItem.qml:258
 msgctxt "AboutItem|"
 msgid "Copyright"
 msgstr "版权信息"
 
-#: controls/AboutItem.qml:302
+#: controls/AboutItem.qml:303
 msgctxt "AboutItem|"
 msgid "License:"
 msgstr "许可证："
 
-#: controls/AboutItem.qml:324
+#: controls/AboutItem.qml:325
 #, qt-format
 msgctxt "AboutItem|"
 msgid "License: %1"
 msgstr "许可证：%1"
 
-#: controls/AboutItem.qml:335
+#: controls/AboutItem.qml:336
 msgctxt "AboutItem|"
 msgid "Libraries in use"
 msgstr "使用的程序库"
 
-#: controls/AboutItem.qml:365
+#: controls/AboutItem.qml:366
 msgctxt "AboutItem|"
 msgid "Authors"
 msgstr "作者"
 
-#: controls/AboutItem.qml:375
+#: controls/AboutItem.qml:376
 msgctxt "AboutItem|"
 msgid "Show author photos"
 msgstr "显示作者照片"
 
-#: controls/AboutItem.qml:386
+#: controls/AboutItem.qml:387
 msgctxt "AboutItem|"
 msgid "Credits"
 msgstr "致谢"
 
-#: controls/AboutItem.qml:398
+#: controls/AboutItem.qml:399
 msgctxt "AboutItem|"
 msgid "Translators"
 msgstr "翻译人员"
@@ -150,20 +150,14 @@ msgid "Show Password"
 msgstr "显示密码"
 
 #: controls/private/globaltoolbar/HandleButton.qml:25
-#, fuzzy
-#| msgctxt "PageRowGlobalToolBarUI|"
-#| msgid "Close menu"
 msgctxt "HandleButton|"
 msgid "Close menu"
-msgstr "关闭菜单"
+msgstr ""
 
 #: controls/private/globaltoolbar/HandleButton.qml:25
-#, fuzzy
-#| msgctxt "PageRowGlobalToolBarUI|"
-#| msgid "Open menu"
 msgctxt "HandleButton|"
 msgid "Open menu"
-msgstr "打开菜单"
+msgstr ""
 
 #: controls/private/globaltoolbar/NavigationButtons.qml:98
 msgctxt "NavigationButtons|"

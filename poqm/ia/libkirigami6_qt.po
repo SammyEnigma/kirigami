@@ -25,58 +25,58 @@ msgctxt "AboutItem|"
 msgid "Send an email to %1"
 msgstr "Invia un message de e-posta a  %1"
 
-#: controls/AboutItem.qml:221
+#: controls/AboutItem.qml:222
 msgctxt "AboutItem|"
 msgid "Get Involved"
 msgstr "Sea involvite"
 
-#: controls/AboutItem.qml:227
+#: controls/AboutItem.qml:228
 msgctxt "AboutItem|"
 msgid "Donate"
 msgstr "Dona"
 
-#: controls/AboutItem.qml:244
+#: controls/AboutItem.qml:245
 msgctxt "AboutItem|"
 msgid "Report a Bug"
 msgstr "Reporta un bug"
 
-#: controls/AboutItem.qml:257
+#: controls/AboutItem.qml:258
 msgctxt "AboutItem|"
 msgid "Copyright"
 msgstr "Copyright"
 
-#: controls/AboutItem.qml:302
+#: controls/AboutItem.qml:303
 msgctxt "AboutItem|"
 msgid "License:"
 msgstr "Licentia:"
 
-#: controls/AboutItem.qml:324
+#: controls/AboutItem.qml:325
 #, qt-format
 msgctxt "AboutItem|"
 msgid "License: %1"
 msgstr "Licentia: %1"
 
-#: controls/AboutItem.qml:335
+#: controls/AboutItem.qml:336
 msgctxt "AboutItem|"
 msgid "Libraries in use"
 msgstr "Bibliothecas in uso"
 
-#: controls/AboutItem.qml:365
+#: controls/AboutItem.qml:366
 msgctxt "AboutItem|"
 msgid "Authors"
 msgstr "Autores"
 
-#: controls/AboutItem.qml:375
+#: controls/AboutItem.qml:376
 msgctxt "AboutItem|"
 msgid "Show author photos"
 msgstr "Monstra photos de autor"
 
-#: controls/AboutItem.qml:386
+#: controls/AboutItem.qml:387
 msgctxt "AboutItem|"
 msgid "Credits"
 msgstr "Gratias"
 
-#: controls/AboutItem.qml:398
+#: controls/AboutItem.qml:399
 msgctxt "AboutItem|"
 msgid "Translators"
 msgstr "Traductores"
