@@ -106,7 +106,7 @@ QQC2.ToolButton {
         text: {
             const a = control.action;
             if (a) {
-                if (a.tooltip) {
+                if (a.tooltip && a.tooltip !== a.text) {
                     return a.tooltip;
                 } else if (control.display === QQC2.Button.IconOnly) {
                     return a.text;
