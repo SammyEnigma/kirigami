@@ -15,8 +15,8 @@ P.PrivateActionToolButton {
     id: root
     property KT.OverlayDrawer drawer
 
-    icon.name: drawer?.handleClosedIcon.name ?? ""
-    icon.source: drawer?.handleClosedIcon.source ?? ""
+    icon.name: drawer?.position === 1 ? (drawer?.handleOpenIcon.name ?? "") : (drawer?.handleClosedIcon.name ?? "")
+    icon.source: drawer?.position === 1 ? (drawer?.handleOpenIcon.source ?? "") : (drawer?.handleClosedIcon.source ?? "")
 
     action: Kirigami.Action {
         children: drawer && drawer instanceof Kirigami.GlobalDrawer && drawer.isMenu ? drawer.actions : []

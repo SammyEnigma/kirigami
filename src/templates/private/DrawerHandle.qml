@@ -36,8 +36,8 @@ Item {
         anchors.centerIn: parent
         flat: false
 
-        icon.name: root.drawer.drawerOpen ? drawer.handleOpenIcon.name : drawer.handleClosedIcon.name
-        icon.source: root.drawer.drawerOpen ? drawer.handleOpenIcon.source ?? "" : drawer.handleClosedIcon.source ?? ""
+        icon.name: root.drawer.position > 0 ? drawer.handleOpenIcon.name : drawer.handleClosedIcon.name
+        icon.source: root.drawer.position > 0 ? drawer.handleOpenIcon.source ?? "" : drawer.handleClosedIcon.source ?? ""
         icon.width: drawer.handleOpenIcon.width
         icon.height: drawer.handleOpenIcon.height
         Accessible.name: root.drawer.drawerOpen ? root.drawer.handleOpenToolTip : root.drawer.handleClosedToolTip
