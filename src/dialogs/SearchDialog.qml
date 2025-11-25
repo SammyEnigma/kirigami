@@ -221,6 +221,7 @@ QQC2.Dialog {
             }
 
             focusSequence: ""
+            focusSequences: []
             autoAccept: false
 
             onAccepted: root.accepted()
