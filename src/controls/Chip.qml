@@ -12,8 +12,12 @@ import "private" as P
 KT.Chip {
     id: chip
 
-    implicitWidth: layout.implicitWidth
-    implicitHeight: toolButton.implicitHeight
+    implicitWidth: Math.max(implicitBackgroundWidth + leftInset + rightInset,
+                            implicitContentWidth + leftPadding + rightPadding,
+                            implicitIndicatorWidth)
+    implicitHeight: Math.max(implicitBackgroundHeight + topInset + bottomInset,
+                             implicitContentHeight + topPadding + bottomPadding,
+                             implicitIndicatorHeight)
 
     checkable: !closable
     hoverEnabled: chip.interactive
@@ -25,41 +29,51 @@ KT.Chip {
 
     property alias labelItem: label
 
+    icon.width: Kirigami.Units.iconSizes.small
+    icon.height: Kirigami.Units.iconSizes.small
+    spacing: Kirigami.Units.smallSpacing
+    leftPadding: Kirigami.Units.smallSpacing
+        + ((!iconItem.visible && !mirrored) || (!indicator.visible && mirrored)
+            ? Kirigami.Units.smallSpacing : 0)
+        + (indicator.visible && mirrored ? implicitIndicatorWidth : 0)
+    rightPadding: Kirigami.Units.smallSpacing
+        + ((!iconItem.visible && mirrored) || (!indicator.visible && !mirrored)
+            ? Kirigami.Units.smallSpacing : 0)
+        + (indicator.visible && !mirrored ? implicitIndicatorWidth : 0)
+
+    indicator: QQC2.ToolButton {
+        x: parent.mirrored ? 0 : parent.width - width
+        y: Math.round((parent.height - height) / 2)
+        visible: chip.closable
+        text: qsTr("Remove Tag")
+        icon.name: "edit-delete-remove"
+        icon.width: Kirigami.Units.iconSizes.sizeForLabels
+        icon.height: Kirigami.Units.iconSizes.sizeForLabels
+        display: QQC2.AbstractButton.IconOnly
+        onClicked: chip.removed()
+    }
+
     contentItem: RowLayout {
-        id: layout
-        spacing: 0
+        spacing: chip.spacing
 
         Kirigami.Icon {
-            id: icon
-            visible: icon.valid
-            Layout.preferredWidth: Kirigami.Units.iconSizes.small
-            Layout.preferredHeight: Kirigami.Units.iconSizes.small
-            Layout.leftMargin: Kirigami.Units.smallSpacing
+            id: iconItem
+            visible: valid && chip.display !== QQC2.AbstractButton.TextOnly
+            implicitWidth: chip.icon.width
+            implicitHeight: chip.icon.height
             color: chip.icon.color
             isMask: chip.iconMask
             source: chip.icon.name || chip.icon.source
         }
         QQC2.Label {
             id: label
+            visible: text.length > 0 && chip.display !== QQC2.AbstractButton.IconOnly
             Layout.fillWidth: true
-            Layout.minimumWidth: Kirigami.Units.gridUnit * 1.5
-            Layout.leftMargin: icon.visible ? Kirigami.Units.smallSpacing : Kirigami.Units.largeSpacing
-            Layout.rightMargin: chip.closable ? Kirigami.Units.smallSpacing : Kirigami.Units.largeSpacing
             verticalAlignment: Text.AlignVCenter
             horizontalAlignment: Text.AlignHCenter
             text: chip.text
             color: Kirigami.Theme.textColor
             elide: Text.ElideRight
-        }
-        QQC2.ToolButton {
-            id: toolButton
-            visible: chip.closable
-            text: qsTr("Remove Tag")
-            icon.name: "edit-delete-remove"
-            icon.width: Kirigami.Units.iconSizes.sizeForLabels
-            icon.height: Kirigami.Units.iconSizes.sizeForLabels
-            display: QQC2.AbstractButton.IconOnly
-            onClicked: chip.removed()
         }
     }
 
