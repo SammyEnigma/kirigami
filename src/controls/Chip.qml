@@ -19,13 +19,9 @@ KT.Chip {
                              implicitContentHeight + topPadding + bottomPadding,
                              implicitIndicatorHeight)
 
-    checkable: !closable
+    checkable: chip.interactive && !closable
     hoverEnabled: chip.interactive
-
-    MouseArea {
-        anchors.fill: parent
-        enabled: !chip.interactive
-    }
+    down: chip.interactive && pressed
 
     property alias labelItem: label
 
