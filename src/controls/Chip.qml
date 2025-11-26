@@ -41,7 +41,7 @@ KT.Chip {
         x: parent.mirrored ? 0 : parent.width - width
         y: Math.round((parent.height - height) / 2)
         visible: chip.closable
-        text: qsTr("Remove Tag")
+        text: qsTr("Remove")
         icon.name: "edit-delete-remove"
         icon.width: Kirigami.Units.iconSizes.sizeForLabels
         icon.height: Kirigami.Units.iconSizes.sizeForLabels
