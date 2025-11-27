@@ -20,64 +20,64 @@ msgctxt "AboutItem|"
 msgid "%1 (%2)"
 msgstr "%1 (%2)"
 
-#: controls/AboutItem.qml:171
+#: controls/AboutItem.qml:182
 #, qt-format
 msgctxt "AboutItem|"
 msgid "Send an email to %1"
 msgstr "Изпращане на имейл до %1"
 
-#: controls/AboutItem.qml:222
+#: controls/AboutItem.qml:224
 msgctxt "AboutItem|"
 msgid "Get Involved"
 msgstr "Включете се"
 
-#: controls/AboutItem.qml:228
+#: controls/AboutItem.qml:230
 msgctxt "AboutItem|"
 msgid "Donate"
 msgstr "Дарение"
 
-#: controls/AboutItem.qml:245
+#: controls/AboutItem.qml:247
 msgctxt "AboutItem|"
 msgid "Report a Bug"
 msgstr "Подаване на сигнал за грешка"
 
-#: controls/AboutItem.qml:258
+#: controls/AboutItem.qml:260
 msgctxt "AboutItem|"
 msgid "Copyright"
 msgstr "Авторско право"
 
-#: controls/AboutItem.qml:303
+#: controls/AboutItem.qml:305
 msgctxt "AboutItem|"
 msgid "License:"
 msgstr "Лиценз:"
 
-#: controls/AboutItem.qml:325
+#: controls/AboutItem.qml:327
 #, qt-format
 msgctxt "AboutItem|"
 msgid "License: %1"
 msgstr "Лиценз: %1"
 
-#: controls/AboutItem.qml:336
+#: controls/AboutItem.qml:338
 msgctxt "AboutItem|"
 msgid "Libraries in use"
 msgstr "Използвани библиотеки"
 
-#: controls/AboutItem.qml:366
+#: controls/AboutItem.qml:368
 msgctxt "AboutItem|"
 msgid "Authors"
 msgstr "Автори"
 
-#: controls/AboutItem.qml:376
+#: controls/AboutItem.qml:378
 msgctxt "AboutItem|"
 msgid "Show author photos"
 msgstr "Показване на снимки на автора"
 
-#: controls/AboutItem.qml:387
+#: controls/AboutItem.qml:389
 msgctxt "AboutItem|"
 msgid "Credits"
 msgstr "Кредити"
 
-#: controls/AboutItem.qml:399
+#: controls/AboutItem.qml:401
 msgctxt "AboutItem|"
 msgid "Translators"
 msgstr "Преводачи"

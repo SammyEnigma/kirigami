@@ -21,64 +21,64 @@ msgctxt "AboutItem|"
 msgid "%1 (%2)"
 msgstr "%1 (%2)"
 
-#: controls/AboutItem.qml:171
+#: controls/AboutItem.qml:182
 #, qt-format
 msgctxt "AboutItem|"
 msgid "Send an email to %1"
 msgstr "%1 にメールを送る"
 
-#: controls/AboutItem.qml:222
+#: controls/AboutItem.qml:224
 msgctxt "AboutItem|"
 msgid "Get Involved"
 msgstr "参加する"
 
-#: controls/AboutItem.qml:228
+#: controls/AboutItem.qml:230
 msgctxt "AboutItem|"
 msgid "Donate"
 msgstr "寄付する"
 
-#: controls/AboutItem.qml:245
+#: controls/AboutItem.qml:247
 msgctxt "AboutItem|"
 msgid "Report a Bug"
 msgstr "バグを報告"
 
-#: controls/AboutItem.qml:258
+#: controls/AboutItem.qml:260
 msgctxt "AboutItem|"
 msgid "Copyright"
 msgstr "著作権について"
 
-#: controls/AboutItem.qml:303
+#: controls/AboutItem.qml:305
 msgctxt "AboutItem|"
 msgid "License:"
 msgstr "ライセンス:"
 
-#: controls/AboutItem.qml:325
+#: controls/AboutItem.qml:327
 #, qt-format
 msgctxt "AboutItem|"
 msgid "License: %1"
 msgstr "ライセンス: %1"
 
-#: controls/AboutItem.qml:336
+#: controls/AboutItem.qml:338
 msgctxt "AboutItem|"
 msgid "Libraries in use"
 msgstr "使用されているライブラリ"
 
-#: controls/AboutItem.qml:366
+#: controls/AboutItem.qml:368
 msgctxt "AboutItem|"
 msgid "Authors"
 msgstr "作者"
 
-#: controls/AboutItem.qml:376
+#: controls/AboutItem.qml:378
 msgctxt "AboutItem|"
 msgid "Show author photos"
 msgstr "作者の写真を表示"
 
-#: controls/AboutItem.qml:387
+#: controls/AboutItem.qml:389
 msgctxt "AboutItem|"
 msgid "Credits"
 msgstr "クレジット"
 
-#: controls/AboutItem.qml:399
+#: controls/AboutItem.qml:401
 msgctxt "AboutItem|"
 msgid "Translators"
 msgstr "翻訳者"

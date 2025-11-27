@@ -19,64 +19,64 @@ msgctxt "AboutItem|"
 msgid "%1 (%2)"
 msgstr "%1(%2)"
 
-#: controls/AboutItem.qml:171
+#: controls/AboutItem.qml:182
 #, qt-format
 msgctxt "AboutItem|"
 msgid "Send an email to %1"
 msgstr "%1(으)로 이메일 보내기"
 
-#: controls/AboutItem.qml:222
+#: controls/AboutItem.qml:224
 msgctxt "AboutItem|"
 msgid "Get Involved"
 msgstr "참여하기"
 
-#: controls/AboutItem.qml:228
+#: controls/AboutItem.qml:230
 msgctxt "AboutItem|"
 msgid "Donate"
 msgstr "기부하기"
 
-#: controls/AboutItem.qml:245
+#: controls/AboutItem.qml:247
 msgctxt "AboutItem|"
 msgid "Report a Bug"
 msgstr "버그 보고"
 
-#: controls/AboutItem.qml:258
+#: controls/AboutItem.qml:260
 msgctxt "AboutItem|"
 msgid "Copyright"
 msgstr "저작권"
 
-#: controls/AboutItem.qml:303
+#: controls/AboutItem.qml:305
 msgctxt "AboutItem|"
 msgid "License:"
 msgstr "라이선스:"
 
-#: controls/AboutItem.qml:325
+#: controls/AboutItem.qml:327
 #, qt-format
 msgctxt "AboutItem|"
 msgid "License: %1"
 msgstr "라이선스: %1"
 
-#: controls/AboutItem.qml:336
+#: controls/AboutItem.qml:338
 msgctxt "AboutItem|"
 msgid "Libraries in use"
 msgstr "사용하는 라이브러리"
 
-#: controls/AboutItem.qml:366
+#: controls/AboutItem.qml:368
 msgctxt "AboutItem|"
 msgid "Authors"
 msgstr "작성자"
 
-#: controls/AboutItem.qml:376
+#: controls/AboutItem.qml:378
 msgctxt "AboutItem|"
 msgid "Show author photos"
 msgstr "작성자 사진 표시"
 
-#: controls/AboutItem.qml:387
+#: controls/AboutItem.qml:389
 msgctxt "AboutItem|"
 msgid "Credits"
 msgstr "제작진"
 
-#: controls/AboutItem.qml:399
+#: controls/AboutItem.qml:401
 msgctxt "AboutItem|"
 msgid "Translators"
 msgstr "번역자"

@@ -20,7 +20,7 @@ msgctxt "AboutItem|"
 msgid "%1 (%2)"
 msgstr ""
 
-#: controls/AboutItem.qml:171
+#: controls/AboutItem.qml:182
 #, fuzzy, qt-format
 #| msgctxt "AboutPage|"
 #| msgid "Send an email to %1"
@@ -28,22 +28,22 @@ msgctxt "AboutItem|"
 msgid "Send an email to %1"
 msgstr "Saada e-kiri aadressile %1"
 
-#: controls/AboutItem.qml:222
+#: controls/AboutItem.qml:224
 msgctxt "AboutItem|"
 msgid "Get Involved"
 msgstr ""
 
-#: controls/AboutItem.qml:228
+#: controls/AboutItem.qml:230
 msgctxt "AboutItem|"
 msgid "Donate"
 msgstr ""
 
-#: controls/AboutItem.qml:245
+#: controls/AboutItem.qml:247
 msgctxt "AboutItem|"
 msgid "Report a Bug"
 msgstr ""
 
-#: controls/AboutItem.qml:258
+#: controls/AboutItem.qml:260
 #, fuzzy
 #| msgctxt "AboutPage|"
 #| msgid "Copyright"
@@ -51,7 +51,7 @@ msgctxt "AboutItem|"
 msgid "Copyright"
 msgstr "Autoriõigus"
 
-#: controls/AboutItem.qml:303
+#: controls/AboutItem.qml:305
 #, fuzzy
 #| msgctxt "AboutPage|"
 #| msgid "License:"
@@ -59,7 +59,7 @@ msgctxt "AboutItem|"
 msgid "License:"
 msgstr "Litsents:"
 
-#: controls/AboutItem.qml:325
+#: controls/AboutItem.qml:327
 #, fuzzy, qt-format
 #| msgctxt "AboutPage|"
 #| msgid "License: %1"
@@ -67,7 +67,7 @@ msgctxt "AboutItem|"
 msgid "License: %1"
 msgstr "Litsents: %1"
 
-#: controls/AboutItem.qml:336
+#: controls/AboutItem.qml:338
 #, fuzzy
 #| msgctxt "AboutPage|"
 #| msgid "Libraries in use"
@@ -75,7 +75,7 @@ msgctxt "AboutItem|"
 msgid "Libraries in use"
 msgstr "Kasutatavad teegid"
 
-#: controls/AboutItem.qml:366
+#: controls/AboutItem.qml:368
 #, fuzzy
 #| msgctxt "AboutPage|"
 #| msgid "Authors"
@@ -83,12 +83,12 @@ msgctxt "AboutItem|"
 msgid "Authors"
 msgstr "Autorid"
 
-#: controls/AboutItem.qml:376
+#: controls/AboutItem.qml:378
 msgctxt "AboutItem|"
 msgid "Show author photos"
 msgstr ""
 
-#: controls/AboutItem.qml:387
+#: controls/AboutItem.qml:389
 #, fuzzy
 #| msgctxt "AboutPage|"
 #| msgid "Credits"
@@ -96,7 +96,7 @@ msgctxt "AboutItem|"
 msgid "Credits"
 msgstr "Tunnustus"
 
-#: controls/AboutItem.qml:399
+#: controls/AboutItem.qml:401
 #, fuzzy
 #| msgctxt "AboutPage|"
 #| msgid "Translators"
