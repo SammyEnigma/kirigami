@@ -6,7 +6,7 @@ QtQuick plugins to build user interfaces following the [KDE Human Interface Guid
 
 Kirigami is a set of [QtQuick](https://doc.qt.io/qt-6/qtquick-index.html) components for building adaptable user interfaces based on [QtQuick Controls 2](https://doc.qt.io/qt-6/qtquickcontrols-index.html). Kirigami makes it easy to create applications that look and feel great on [Plasma Mobile](https://plasma-mobile.org/), Desktop Linux, Android, MacOS, and Windows.
 
-The API can be found in the [KDE API Reference website](https://api.kde.org/frameworks/kirigami/html/index.html) and a Kirigami tutorial is available in the [KDE Developer Platform](https://develop.kde.org/docs/getting-started/kirigami/).
+The API can be found in the [KDE API Reference website](https://api.kde.org/kirigami-index.html) and a Kirigami tutorial is available in the [KDE Developer Platform](https://develop.kde.org/docs/getting-started/kirigami/).
 
 We also provide [Kirigami Gallery](https://invent.kde.org/sdk/kirigami-gallery) to showcase most Kirigami components.
 
