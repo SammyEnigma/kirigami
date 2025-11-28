@@ -52,6 +52,7 @@ function(kirigami_package_breeze_icons)
         password-show-off
         password-show-on
         process-working-symbolic
+        search
         tools-report-bug
         user
         view-left-new
