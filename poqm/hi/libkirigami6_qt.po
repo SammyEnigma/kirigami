@@ -125,9 +125,9 @@ msgctxt "ActionToolBar|"
 msgid "More Actions"
 msgstr "अधिक क्रियाएँ"
 
-#: controls/Chip.qml:57
+#: controls/Chip.qml:44
 msgctxt "Chip|"
-msgid "Remove Tag"
+msgid "Remove"
 msgstr ""
 
 #: controls/ContextDrawer.qml:62

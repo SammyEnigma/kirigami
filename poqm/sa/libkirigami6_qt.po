@@ -97,9 +97,12 @@ msgctxt "ActionToolBar|"
 msgid "More Actions"
 msgstr "अधिकानि क्रियाः"
 
-#: controls/Chip.qml:57
+#: controls/Chip.qml:44
+#, fuzzy
+#| msgctxt "Chip|"
+#| msgid "Remove Tag"
 msgctxt "Chip|"
-msgid "Remove Tag"
+msgid "Remove"
 msgstr "टैग हटाएँ"
 
 #: controls/ContextDrawer.qml:62

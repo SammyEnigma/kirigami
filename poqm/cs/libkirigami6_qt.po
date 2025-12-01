@@ -98,9 +98,12 @@ msgctxt "ActionToolBar|"
 msgid "More Actions"
 msgstr "Další činnosti"
 
-#: controls/Chip.qml:57
+#: controls/Chip.qml:44
+#, fuzzy
+#| msgctxt "Chip|"
+#| msgid "Remove Tag"
 msgctxt "Chip|"
-msgid "Remove Tag"
+msgid "Remove"
 msgstr "Odstranit značku"
 
 #: controls/ContextDrawer.qml:62

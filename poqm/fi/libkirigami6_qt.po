@@ -98,9 +98,12 @@ msgctxt "ActionToolBar|"
 msgid "More Actions"
 msgstr "Lisää toimintoja"
 
-#: controls/Chip.qml:57
+#: controls/Chip.qml:44
+#, fuzzy
+#| msgctxt "Chip|"
+#| msgid "Remove Tag"
 msgctxt "Chip|"
-msgid "Remove Tag"
+msgid "Remove"
 msgstr "Poista luokitus"
 
 #: controls/ContextDrawer.qml:62

@@ -99,9 +99,12 @@ msgctxt "ActionToolBar|"
 msgid "More Actions"
 msgstr "その他のアクション"
 
-#: controls/Chip.qml:57
+#: controls/Chip.qml:44
+#, fuzzy
+#| msgctxt "Chip|"
+#| msgid "Remove Tag"
 msgctxt "Chip|"
-msgid "Remove Tag"
+msgid "Remove"
 msgstr "タグを削除"
 
 #: controls/ContextDrawer.qml:62
