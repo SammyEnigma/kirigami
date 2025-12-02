@@ -190,17 +190,7 @@ QQC2.SwipeDelegate {
     LayoutMirroring.childrenInherit: true
 
     hoverEnabled: true
-    implicitWidth: contentItem ? implicitContentWidth : Kirigami.Units.gridUnit * 12
-    width: parent ? parent.width : implicitWidth
-    implicitHeight: Math.max(Kirigami.Units.gridUnit * 2, implicitContentHeight) + topPadding + bottomPadding
-
-    padding: !listItem.alwaysVisibleActions && Kirigami.Settings.tabletMode ? Kirigami.Units.largeSpacing : Kirigami.Units.smallSpacing
-
-    leftPadding: padding * 2 + (mirrored ? overlayLoader.paddingOffset : 0)
-    rightPadding: padding * 2 + (mirrored ? 0 : overlayLoader.paddingOffset)
-
-    topPadding: padding
-    bottomPadding: padding
+    implicitHeight: Math.max(actionsLayout.implicitHeight, contentItem.implicitHeight) + topPadding + bottomPadding
 
     Keys.onTabPressed: (event) => {
         if (actionsLayout.hasVisibleActions) {
@@ -291,8 +281,6 @@ QQC2.SwipeDelegate {
                 `adaptations needed for touch screens and right-to-left languages, among other things.`
 
             if (listItem.leftPadding != expectedLeftPadding() || listItem.rightPadding != expectedRightPadding()) {
-                listItem.leftPadding = Qt.binding(expectedLeftPadding)
-                listItem.rightPadding = Qt.binding(expectedRightPadding)
                 console.warn(warningText)
                 return defaultValue
             }
@@ -304,15 +292,14 @@ QQC2.SwipeDelegate {
             name: "reanchored"
             AnchorChanges {
                 target: overlayLoader
-                anchors.right: validate(listItem.mirrored ? undefined : (contentItem ? contentItem.right : undefined), contentItem ? contentItem.right : undefined)
-                anchors.left: validate(!listItem.mirrored ? undefined : (contentItem ? contentItem.left : undefined), undefined)
+                anchors.right: listItem.contentItem.right
                 anchors.top: parent.top
                 anchors.bottom: parent.bottom
             }
             PropertyChanges {
                 target: overlayLoader
-                anchors.rightMargin: validate(-paddingOffset, 0)
-                anchors.leftMargin: validate(-paddingOffset, 0)
+                anchors.topMargin: listItem.topPadding
+                anchors.bottomMargin: listItem.bottomPadding
             }
         }
         Component.onCompleted: overlayLoader.state = "reanchored"
@@ -341,9 +328,6 @@ QQC2.SwipeDelegate {
 
         MouseArea {
             id: dragButton
-            anchors {
-                right: parent.right
-            }
             implicitWidth: Kirigami.Units.iconSizes.smallMedium
 
             preventStealing: true
@@ -381,7 +365,7 @@ QQC2.SwipeDelegate {
                     listItem.swipe.position = Math.max(0, Math.min(openPosition, (pos.x / listItem.width)));
                     openIntention = listItem.swipe.position > lastPosition;
                 } else {
-                    listItem.swipe.position = Math.min(0, Math.max(-openPosition, (pos.x / (listItem.width -listItem.rightPadding) - 1)));
+                    listItem.swipe.position = Math.min(0, Math.max(-openPosition, (pos.x / (listItem.width - listItem.rightPadding) - 1)));
                     openIntention = listItem.swipe.position < lastPosition;
                 }
                 lastPosition = listItem.swipe.position;
@@ -510,7 +494,6 @@ QQC2.SwipeDelegate {
             right: parent.right
             top: parent.top
             bottom: parent.bottom
-            rightMargin: Kirigami.Units.smallSpacing
         }
         visible: parent !== listItem
         parent: !listItem.alwaysVisibleActions && Kirigami.Settings.tabletMode
