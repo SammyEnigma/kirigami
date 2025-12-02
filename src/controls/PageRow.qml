@@ -1014,7 +1014,7 @@ QT.Control {
                     bottom: parent.bottom
                 }
                 z: 1
-                width: visible ? leftSidebar.width : 0
+                width: visible ? leftSidebar.width * leftSidebar.position : 0
                 // Using leftSidebar.position instead of visible because leftSidebar.visible depends from its main item visibility which is our child so would be a loop
                 visible: leftSidebar && children.length > 0
             }
