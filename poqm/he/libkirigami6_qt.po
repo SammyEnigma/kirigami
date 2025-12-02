@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2025-11-19 08:56+0200\n"
+"PO-Revision-Date: 2025-12-01 09:30+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -99,12 +99,9 @@ msgid "More Actions"
 msgstr "פעולות נוספות"
 
 #: controls/Chip.qml:44
-#, fuzzy
-#| msgctxt "Chip|"
-#| msgid "Remove Tag"
 msgctxt "Chip|"
 msgid "Remove"
-msgstr "הסרת תגית"
+msgstr "הסרה"
 
 #: controls/ContextDrawer.qml:62
 msgctxt "ContextDrawer|"

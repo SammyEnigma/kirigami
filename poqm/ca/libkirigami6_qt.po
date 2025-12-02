@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kirigami\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"PO-Revision-Date: 2025-11-19 10:37+0100\n"
+"PO-Revision-Date: 2025-12-01 11:31+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -107,12 +107,9 @@ msgid "More Actions"
 msgstr "Més accions"
 
 #: controls/Chip.qml:44
-#, fuzzy
-#| msgctxt "Chip|"
-#| msgid "Remove Tag"
 msgctxt "Chip|"
 msgid "Remove"
-msgstr "Elimina l'etiqueta"
+msgstr "Elimina"
 
 #: controls/ContextDrawer.qml:62
 msgctxt "ContextDrawer|"

@@ -98,12 +98,9 @@ msgid "More Actions"
 msgstr "მეტი ქმედება"
 
 #: controls/Chip.qml:44
-#, fuzzy
-#| msgctxt "Chip|"
-#| msgid "Remove Tag"
 msgctxt "Chip|"
 msgid "Remove"
-msgstr "ჭდის წაშლა"
+msgstr "წაშლა"
 
 #: controls/ContextDrawer.qml:62
 msgctxt "ContextDrawer|"

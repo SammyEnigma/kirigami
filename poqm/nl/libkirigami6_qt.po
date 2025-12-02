@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2025-11-19 23:53+0100\n"
+"PO-Revision-Date: 2025-12-01 18:17+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -98,12 +98,9 @@ msgid "More Actions"
 msgstr "Meer acties"
 
 #: controls/Chip.qml:44
-#, fuzzy
-#| msgctxt "Chip|"
-#| msgid "Remove Tag"
 msgctxt "Chip|"
 msgid "Remove"
-msgstr "Tag verwijderen"
+msgstr "Verwijderen"
 
 #: controls/ContextDrawer.qml:62
 msgctxt "ContextDrawer|"

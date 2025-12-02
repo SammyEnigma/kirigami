@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2025-11-19 20:27+0300\n"
+"PO-Revision-Date: 2025-12-01 10:56+0300\n"
 "Last-Translator: Emir SARI <emir_sari@îcloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -100,12 +100,9 @@ msgid "More Actions"
 msgstr "Daha fazla eylem"
 
 #: controls/Chip.qml:44
-#, fuzzy
-#| msgctxt "Chip|"
-#| msgid "Remove Tag"
 msgctxt "Chip|"
 msgid "Remove"
-msgstr "Etiketi Kaldır"
+msgstr "Kaldır"
 
 #: controls/ContextDrawer.qml:62
 msgctxt "ContextDrawer|"
