@@ -64,7 +64,7 @@ Kirigami.AbstractApplicationHeader {
             drawer: QQC.ApplicationWindow.window?.globalDrawer ?? null
             visible: {
                 if (!root.pageRow) {
-                    return true;
+                    return false;
                 }
                 let firstVisible = false;
                 const previousPage = root.pageRow.get(page.Kirigami.ColumnView.index - 1);
@@ -73,8 +73,9 @@ Kirigami.AbstractApplicationHeader {
                 } else {
                     firstVisible = true;
                 }
+
                 return drawer !== null
-                    && ((drawer.handleVisible && drawer.enabled) || drawer.isMenu)
+                    && ((drawer.handleVisible && drawer.enabled) || (drawer?.isMenu ?? false))
                     && (root.pageRow.columnView.columnResizeMode === Kirigami.ColumnView.SingleColumn
                     || firstVisible);
             }
