@@ -1350,6 +1350,13 @@ void ColumnView::insertItem(int pos, QQuickItem *item)
         return;
     }
 
+    // If there was a pop animation in progress of this item
+    // and the item is back in, remove it from m_disappearingItems
+    if (m_contentItem->m_disappearingItems.contains(item)) {
+        m_contentItem->m_disappearingItems.removeAll(item);
+    }
+
+    item->setVisible(true);
     m_contentItem->m_items.insert(qBound(0, pos, m_contentItem->m_items.length()), item);
 
     connect(item, &QObject::destroyed, m_contentItem, [this, item]() {
