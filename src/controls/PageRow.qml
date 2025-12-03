@@ -124,7 +124,8 @@ QT.Control {
       \brief This property sets whether it is possible to go back/forward
       by swiping with a gesture on the content view.
 
-      default: \c true
+      default: \c true, except on Android where it conflicts with native
+      back/forward swipe gestures.
 
      */
     property alias interactive: columnView.interactive
