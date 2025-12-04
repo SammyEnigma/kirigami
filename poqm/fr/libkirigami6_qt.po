@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2025-11-22 18:04+0100\n"
+"PO-Revision-Date: 2025-12-02 08:37+0100\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
 "Language: fr\n"
@@ -14,7 +14,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Accelerator-Marker: &\n"
 "X-Environment: kde\n"
-"X-Generator: Lokalize 25.11.80\n"
+"X-Generator: Lokalize 25.11.90\n"
 "X-Qt-Contexts: true\n"
 "X-Text-Markup: qtrich\n"
 
@@ -103,12 +103,9 @@ msgid "More Actions"
 msgstr "Plus d'actions"
 
 #: controls/Chip.qml:44
-#, fuzzy
-#| msgctxt "Chip|"
-#| msgid "Remove Tag"
 msgctxt "Chip|"
 msgid "Remove"
-msgstr "Supprimer une étiquette"
+msgstr "Supprimer"
 
 #: controls/ContextDrawer.qml:62
 msgctxt "ContextDrawer|"

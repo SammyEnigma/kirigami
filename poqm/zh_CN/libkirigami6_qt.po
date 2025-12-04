@@ -102,7 +102,7 @@ msgstr "更多操作"
 #: controls/Chip.qml:44
 msgctxt "Chip|"
 msgid "Remove"
-msgstr ""
+msgstr "移除"
 
 #: controls/ContextDrawer.qml:62
 msgctxt "ContextDrawer|"
@@ -152,12 +152,12 @@ msgstr "显示密码"
 #: controls/private/globaltoolbar/HandleButton.qml:25
 msgctxt "HandleButton|"
 msgid "Close menu"
-msgstr ""
+msgstr "关闭菜单"
 
 #: controls/private/globaltoolbar/HandleButton.qml:25
 msgctxt "HandleButton|"
 msgid "Open menu"
-msgstr ""
+msgstr "打开菜单"
 
 #: controls/private/globaltoolbar/NavigationButtons.qml:98
 msgctxt "NavigationButtons|"
