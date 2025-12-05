@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2025-11-20 11:10+0100\n"
+"PO-Revision-Date: 2025-12-04 18:26+0100\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
 "Language: bg\n"
@@ -99,12 +99,9 @@ msgid "More Actions"
 msgstr "Допълнителни действия"
 
 #: controls/Chip.qml:44
-#, fuzzy
-#| msgctxt "Chip|"
-#| msgid "Remove Tag"
 msgctxt "Chip|"
 msgid "Remove"
-msgstr "Премахване на етикет"
+msgstr "Премахване"
 
 #: controls/ContextDrawer.qml:62
 msgctxt "ContextDrawer|"
