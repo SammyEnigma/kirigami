@@ -128,7 +128,7 @@ public:
     Q_INVOKABLE QColor linearInterpolation(const QColor &one, const QColor &two, double balance);
 
     /*!
-     * \qmlmethod color ColorUtils::adjustColor
+     * \qmlmethod color ColorUtils::adjustColor(color color, var adjustments)
      *
      * Increases or decreases the properties of color by fixed amounts.
      *
@@ -155,7 +155,7 @@ public:
     Q_INVOKABLE QColor adjustColor(const QColor &color, const QJSValue &adjustments);
 
     /*!
-     * \qmlmethod color ColorUtils::scaleColor
+     * \qmlmethod color ColorUtils::scaleColor(color color, var adjustments)
      *
      * Smoothly scales colors.
      *
@@ -184,7 +184,7 @@ public:
     Q_INVOKABLE QColor scaleColor(const QColor &color, const QJSValue &adjustments);
 
     /*!
-     * \qmlmethod color ColorUtils::tintWithAlpha
+     * \qmlmethod color ColorUtils::tintWithAlpha(color targetColor, color tintColor, real alpha)
      *
      * Tint a color using a separate alpha value.
      *
@@ -204,7 +204,7 @@ public:
     Q_INVOKABLE QColor tintWithAlpha(const QColor &targetColor, const QColor &tintColor, double alpha);
 
     /*!
-     * \qmlmethod real ColorUtils::chroma
+     * \qmlmethod real ColorUtils::chroma(color color)
      *
      * Returns the CIELAB chroma of the given color.
      *

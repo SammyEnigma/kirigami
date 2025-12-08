@@ -14,7 +14,7 @@ import org.kde.kirigami as Kirigami
   \qmltype ActionTextField
   \inqmlmodule org.kde.kirigami
 
-  \brief An advanced control to create custom textfields with inline buttons
+  \brief An advanced control to create custom textfields with inline buttons.
 
   ActionTextField can display inline action buttons on the leading or trailing
   sides, and is used as the base class for other kinds of specialized text

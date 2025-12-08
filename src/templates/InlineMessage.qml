@@ -15,7 +15,7 @@ import org.kde.kirigami.primitives as Primitives
   \qmltype InlineMessage
   \inqmlmodule org.kde.kirigami
 
-  \brief An inline message item with support for associated actions
+  \brief An inline message item with support for associated actions.
 
   InlineMessage can be used to provide non-modal information or interactivity
   without requiring the use of a dialog. To learn when to use it, see

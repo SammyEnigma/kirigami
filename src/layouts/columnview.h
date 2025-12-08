@@ -640,7 +640,7 @@ public Q_SLOTS:
      * to remove an item by its index. Otherwise the argument should be the item
      * itself to be removed itself, and this method will dispatch to removeItem(QQuickItem *item).
      *
-     * \a index the index of the item which should be removed, or the item itself
+     * \a item the item which should be removed
      *
      * Returns the removed item
      */
