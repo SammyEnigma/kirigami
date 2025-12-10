@@ -1,9 +1,9 @@
-# SPDX-FileCopyrightText: 2016, 2017, 2018, 2019, 2020, 2023, 2024 Vít Pelčák <vit@pelcak.org>
+# SPDX-FileCopyrightText: 2016, 2017, 2018, 2019, 2020, 2023, 2024, 2025 Vít Pelčák <vit@pelcak.org>
 # SPDX-FileCopyrightText: 2021, 2022, 2023, 2024 Vit Pelcak <vit@pelcak.org>
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2024-10-18 11:29+0200\n"
+"PO-Revision-Date: 2025-12-02 11:49+0100\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
@@ -11,7 +11,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Lokalize 24.08.2\n"
+"X-Generator: Lokalize 25.08.3\n"
 "X-Qt-Contexts: true\n"
 
 #: controls/AboutItem.qml:162
@@ -99,12 +99,9 @@ msgid "More Actions"
 msgstr "Další činnosti"
 
 #: controls/Chip.qml:44
-#, fuzzy
-#| msgctxt "Chip|"
-#| msgid "Remove Tag"
 msgctxt "Chip|"
 msgid "Remove"
-msgstr "Odstranit značku"
+msgstr "Odstranit"
 
 #: controls/ContextDrawer.qml:62
 msgctxt "ContextDrawer|"
@@ -152,17 +149,11 @@ msgid "Show Password"
 msgstr "Zobrazit heslo"
 
 #: controls/private/globaltoolbar/HandleButton.qml:25
-#, fuzzy
-#| msgctxt "PageRowGlobalToolBarUI|"
-#| msgid "Close menu"
 msgctxt "HandleButton|"
 msgid "Close menu"
 msgstr "Uzavřít nabídku"
 
 #: controls/private/globaltoolbar/HandleButton.qml:25
-#, fuzzy
-#| msgctxt "PageRowGlobalToolBarUI|"
-#| msgid "Open menu"
 msgctxt "HandleButton|"
 msgid "Open menu"
 msgstr "Otevřít nabídku"
@@ -170,12 +161,12 @@ msgstr "Otevřít nabídku"
 #: controls/private/globaltoolbar/NavigationButtons.qml:98
 msgctxt "NavigationButtons|"
 msgid "Navigate Back"
-msgstr ""
+msgstr "Přejít zpět"
 
 #: controls/private/globaltoolbar/NavigationButtons.qml:115
 msgctxt "NavigationButtons|"
 msgid "Navigate Forward"
-msgstr ""
+msgstr "Přejít vpřed"
 
 #: controls/SearchField.qml:86
 msgctxt "SearchField|"
@@ -221,7 +212,7 @@ msgstr "Kopírovat odkaz do schránky"
 #: dialogs/DialogHeaderTopContent.qml:103
 msgctxt "DialogHeaderTopContent|@action:button close dialog"
 msgid "Close"
-msgstr ""
+msgstr "Zavřít"
 
 #: platform/settings.cpp:219
 #, qt-format
@@ -244,27 +235,27 @@ msgstr "Qt %2 (sestaveno oproti %3)"
 #: templates/InlineMessage.qml:350
 msgctxt "InlineMessage|"
 msgid "Success"
-msgstr ""
+msgstr "Úspěch"
 
 #: templates/InlineMessage.qml:352
 msgctxt "InlineMessage|"
 msgid "Warning"
-msgstr ""
+msgstr "Varování"
 
 #: templates/InlineMessage.qml:354
 msgctxt "InlineMessage|"
 msgid "Error"
-msgstr ""
+msgstr "Chyba"
 
 #: templates/InlineMessage.qml:356
 msgctxt "InlineMessage|"
 msgid "Note"
-msgstr ""
+msgstr "Poznámka"
 
 #: templates/InlineMessage.qml:444
 msgctxt "InlineMessage|"
 msgid "Close"
-msgstr ""
+msgstr "Zavřít"
 
 #: templates/OverlayDrawer.qml:147
 msgctxt "OverlayDrawer|"
