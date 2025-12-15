@@ -233,7 +233,7 @@ T.TabButton {
             elide: Text.ElideMiddle
             color: control.checked ? control.__highlightForegroundColor : control.__foregroundColor
 
-            font.pointSize: !icon.visible && control.display === T.AbstractButton.TextBelowIcon
+            font.pointSize: !icon.visible && control.display === T.AbstractButton.TextUnderIcon
                     ? Kirigami.Theme.defaultFont.pointSize * 1.20 // 1.20 is equivalent to level 2 heading
                     : Kirigami.Theme.defaultFont.pointSize
 
