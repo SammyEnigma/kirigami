@@ -6,12 +6,10 @@
 pragma ComponentBehavior: Bound
 
 import QtQuick
-import QtQuick.Layouts
 import QtQuick.Templates as QT
 import QtQuick.Controls as QQC2
 import org.kde.kirigami as Kirigami
 import "private/globaltoolbar" as GlobalToolBar
-import org.kde.kirigami.templates as KT
 
 /*!
   \qmltype PageRow

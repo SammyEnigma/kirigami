@@ -6,9 +6,7 @@
  */
 
 import QtQuick
-import QtQuick.Controls
 import QtQuick.Window
-import org.kde.kirigami as Kirigami
 import QtTest
 import "../tests"
 

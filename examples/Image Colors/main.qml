@@ -8,10 +8,7 @@ pragma ComponentBehavior: Bound
 
 import QtQuick
 import QtQuick.Controls as QQC2
-import QtQuick.Layouts
 import org.kde.kirigami as Kirigami
-
-import "components" as Components
 
 QQC2.ApplicationWindow {
     id: root
