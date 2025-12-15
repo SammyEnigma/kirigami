@@ -264,7 +264,7 @@ T.Drawer {
         color: Qt.rgba(0, 0, 0, 0.35)
     }
 
-    dragMargin: enabled && (edge === Qt.LeftEdge || edge === Qt.RightEdge) ? Math.min(Kirigami.Units.gridUnit, Qt.styleHints.startDragDistance) : 0
+    dragMargin: enabled && (edge === Qt.LeftEdge || edge === Qt.RightEdge) ? Math.min(Kirigami.Units.gridUnit, Application.styleHints.startDragDistance) : 0
 
     contentWidth: contentItem.implicitWidth || (contentChildren.length === 1 ? contentChildren[0].implicitWidth : 0)
     contentHeight: contentItem.implicitHeight || (contentChildren.length === 1 ? contentChildren[0].implicitHeight : 0)

@@ -342,7 +342,7 @@ QQC2.SwipeDelegate {
                 startX = mapToItem(listItem, 0, 0).x;
             }
             onClicked: mouse => {
-                if (Math.abs(mapToItem(listItem, 0, 0).x - startX) > Qt.styleHints.startDragDistance) {
+                if (Math.abs(mapToItem(listItem, 0, 0).x - startX) > Application.styleHints.startDragDistance) {
                     return;
                 }
                 if (listItem.mirrored) {

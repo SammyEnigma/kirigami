@@ -178,8 +178,8 @@ TestCase {
         // reset to default
         wheelHandler.verticalStepSize = undefined
         wheelHandler.horizontalStepSize = undefined
-        verify(wheelHandler.verticalStepSize == 20 * Qt.styleHints.wheelScrollLines, "default verticalStepSize")
-        verify(wheelHandler.horizontalStepSize == 20 * Qt.styleHints.wheelScrollLines, "default horizontalStepSize")
+        verify(wheelHandler.verticalStepSize == 20 * Application.styleHints.wheelScrollLines, "default verticalStepSize")
+        verify(wheelHandler.horizontalStepSize == 20 * Application.styleHints.wheelScrollLines, "default horizontalStepSize")
 
         loader.sourceComponent = scrollViewComponent
         wheelHandler.verticalStepSize = 101
@@ -188,8 +188,8 @@ TestCase {
         keyboardScrolling()
         wheelHandler.verticalStepSize = undefined
         wheelHandler.horizontalStepSize = undefined
-        verify(wheelHandler.verticalStepSize == 20 * Qt.styleHints.wheelScrollLines, "default verticalStepSize")
-        verify(wheelHandler.horizontalStepSize == 20 * Qt.styleHints.wheelScrollLines, "default horizontalStepSize")
+        verify(wheelHandler.verticalStepSize == 20 * Application.styleHints.wheelScrollLines, "default verticalStepSize")
+        verify(wheelHandler.horizontalStepSize == 20 * Application.styleHints.wheelScrollLines, "default horizontalStepSize")
     }
 
     Loader {

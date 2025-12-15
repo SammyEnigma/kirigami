@@ -11,8 +11,8 @@ import org.kde.kirigami as Kirigami
 
 QQC2.ApplicationWindow {
     id: root
-    width: 200 * Qt.styleHints.wheelScrollLines + scrollView.leftPadding + scrollView.rightPadding
-    height: 200 * Qt.styleHints.wheelScrollLines + scrollView.topPadding + scrollView.bottomPadding
+    width: 200 * Application.styleHints.wheelScrollLines + scrollView.leftPadding + scrollView.rightPadding
+    height: 200 * Application.styleHints.wheelScrollLines + scrollView.topPadding + scrollView.bottomPadding
     visible: true
     ScrollView {
         id: scrollView
@@ -23,8 +23,8 @@ QQC2.ApplicationWindow {
             Repeater {
                 model: 500
                 delegate: Rectangle {
-                    implicitWidth: 20 * Qt.styleHints.wheelScrollLines
-                    implicitHeight: 20 * Qt.styleHints.wheelScrollLines
+                    implicitWidth: 20 * Application.styleHints.wheelScrollLines
+                    implicitHeight: 20 * Application.styleHints.wheelScrollLines
                     gradient: Gradient {
                         orientation: index % 2 ? Gradient.Vertical : Gradient.Horizontal
                         GradientStop { position: 0; color: Qt.rgba(Math.random(),Math.random(),Math.random(),1) }
@@ -34,8 +34,8 @@ QQC2.ApplicationWindow {
             }
             QQC2.Button {
                 id: enableSliderButton
-                width: 20 * Qt.styleHints.wheelScrollLines
-                height: 20 * Qt.styleHints.wheelScrollLines
+                width: 20 * Application.styleHints.wheelScrollLines
+                height: 20 * Application.styleHints.wheelScrollLines
                 contentItem: QQC2.Label {
                     horizontalAlignment: Text.AlignHCenter
                     verticalAlignment: Text.AlignVCenter
@@ -48,15 +48,15 @@ QQC2.ApplicationWindow {
             QQC2.Slider {
                 id: slider
                 enabled: enableSliderButton.checked
-                width: 20 * Qt.styleHints.wheelScrollLines
-                height: 20 * Qt.styleHints.wheelScrollLines
+                width: 20 * Application.styleHints.wheelScrollLines
+                height: 20 * Application.styleHints.wheelScrollLines
                 wheelEnabled: true
             }
             Repeater {
                 model: 500
                 delegate: Rectangle {
-                    implicitWidth: 20 * Qt.styleHints.wheelScrollLines
-                    implicitHeight: 20 * Qt.styleHints.wheelScrollLines
+                    implicitWidth: 20 * Application.styleHints.wheelScrollLines
+                    implicitHeight: 20 * Application.styleHints.wheelScrollLines
                     gradient: Gradient {
                         orientation: index % 2 ? Gradient.Vertical : Gradient.Horizontal
                         GradientStop { position: 0; color: Qt.rgba(Math.random(),Math.random(),Math.random(),1) }

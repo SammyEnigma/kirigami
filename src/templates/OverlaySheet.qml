@@ -215,7 +215,7 @@ T.Popup {
             if (dragStarted && currentY !== lastY) {
                 translation.y += currentY - lastY;
             }
-            if (Math.abs(currentY - scenePressY) > Qt.styleHints.startDragDistance) {
+            if (Math.abs(currentY - scenePressY) > Application.styleHints.startDragDistance) {
                 dragStarted = true;
             }
             lastY = currentY;
@@ -374,7 +374,7 @@ T.Popup {
                 // onClicked is emitted even if the mouse was dragged a lot, so we have to check the Manhattan length by hand
                 // https://en.wikipedia.org/wiki/Taxicab_geometry
                 let pos = mapToItem(null, mouse.x, mouse.y)
-                if (Math.abs(pos.x - pressPos.x) + Math.abs(pos.y - pressPos.y) < Qt.styleHints.startDragDistance) {
+                if (Math.abs(pos.x - pressPos.x) + Math.abs(pos.y - pressPos.y) < Application.styleHints.startDragDistance) {
                     root.close();
                 }
             }

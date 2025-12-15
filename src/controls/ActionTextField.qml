@@ -154,7 +154,7 @@ QQC2.TextField {
 
     QQC2.ToolTip.visible: focusShortcut.nativeText.length > 0 && root.text.length === 0 && !rightActionsRow.hovered && !leftActionsRow.hovered && hovered
     QQC2.ToolTip.text: focusShortcut.nativeText
-    QQC2.ToolTip.delay: Kirigami.Settings.tabletMode ? Qt.styleHints.mousePressAndHoldInterval : Kirigami.Units.toolTipDelay
+    QQC2.ToolTip.delay: Kirigami.Settings.tabletMode ? Application.styleHints.mousePressAndHoldInterval : Kirigami.Units.toolTipDelay
 
 
     RowLayout {
