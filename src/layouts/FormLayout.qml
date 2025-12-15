@@ -328,11 +328,14 @@ Item {
 
         lay.knownItemsChanged();
         lay.buddiesChanged();
-        hintCompression.triggered();
+        hintCompression.restart();
     }
 
     onChildrenChanged: relayout()
-    Component.onCompleted: relayout()
+    Component.onCompleted: {
+        relayout()
+        hintCompression.triggered()
+    }
     onWideModeChanged: relayout()
 
     Component {
