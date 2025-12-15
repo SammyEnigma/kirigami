@@ -39,14 +39,14 @@ QQC2.Menu {
             property bool isSubMenu: false
 
             Component.onCompleted: {
-                const isKirigamiAction = action instanceof Kirigami.Action;
-                if (!isKirigamiAction || action.children.length === 0) {
-                    if (isKirigamiAction && action.separator) {
+                const asKirigamiAction = action as Kirigami.Action;
+                if (!asKirigamiAction || asKirigamiAction.children.length === 0) {
+                    if (asKirigamiAction?.separator) {
                         item = root.separatorDelegate.createObject(null, { action });
-                    } else if (action.displayComponent) {
+                    } else if (asKirigamiAction?.displayComponent) {
                         item = root.loaderDelegate.createObject(null, {
                             action,
-                            sourceComponent: action.displayComponent,
+                            sourceComponent: asKirigamiAction.displayComponent,
                         });
                     } else {
                         item = root.itemDelegate.createObject(null, { action });
@@ -54,10 +54,10 @@ QQC2.Menu {
                     root.addItem(item)
                 } else if (root.submenuComponent) {
                     item = root.submenuComponent.createObject(null, {
-                        parentAction: action,
-                        icon: action.icon,
-                        title: action.text,
-                        actions: action.children,
+                        parentAction: asKirigamiAction,
+                        icon: asKirigamiAction.icon,
+                        title: asKirigamiAction.text,
+                        actions: asKirigamiAction.children,
                         submenuComponent: root.submenuComponent,
                     });
 

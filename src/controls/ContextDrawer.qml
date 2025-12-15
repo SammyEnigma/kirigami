@@ -169,8 +169,8 @@ Kirigami.OverlayDrawer {
                 }
 
                 Repeater {
-                    model: delegate.modelData instanceof Kirigami.Action && delegate.modelData.expandible
-                        ? delegate.modelData.children : null
+                    model: (delegate.modelData as Kirigami.Action)?.expandible
+                        ? (delegate.modelData as Kirigami.Action).children : null
 
                     delegate: KP.ContextDrawerActionItem {
                         width: parent.width

@@ -183,12 +183,13 @@ QQC2.Control {
             showMenuArrow: false
 
             menuActions: {
-                if (action.displayComponent) {
+                const kAction = action as Kirigami.Action
+                if (kAction?.displayComponent) {
                     return [action]
                 }
 
-                if (action instanceof Kirigami.Action) {
-                    return action.children;
+                if (kAction) {
+                    return kAction.children;
                 }
 
                 return []
@@ -208,7 +209,7 @@ QQC2.Control {
                 displayHint: Kirigami.DisplayHint.IconOnly | Kirigami.DisplayHint.HideChildIndicator
             }
 
-            Accessible.name: action.tooltip
+            Accessible.name: (action as Kirigami.Action).tooltip
 
             menuActions: root.actions
 
@@ -221,35 +222,35 @@ QQC2.Control {
                         target: actionsMenu.parentItem
                         property: "visible"
                         value: layout.hiddenActions.includes(actionsMenu.parentAction)
-                               && (!(actionsMenu.parentAction instanceof Kirigami.Action) || actionsMenu.parentAction.visible)
+                               && ((actionsMenu.parentAction as Kirigami.Action)?.visible ?? true)
                         restoreMode: Binding.RestoreBinding
                     }
 
                     Binding {
                         target: actionsMenu.parentItem
                         property: "autoExclusive"
-                        value: action instanceof Kirigami.Action && action.autoExclusive
+                        value: (action as Kirigami.Action)?.autoExclusive ?? false
                         restoreMode: Binding.RestoreBinding
                     }
                 }
 
                 itemDelegate: P.ActionMenuItem {
                     visible: layout.hiddenActions.includes(action)
-                             && (!(action instanceof Kirigami.Action) || action.visible)
-                    autoExclusive: action instanceof Kirigami.Action && action.autoExclusive
+                             && ((action as Kirigami.Action)?.visible ?? true)
+                    autoExclusive: (action as Kirigami.Action).autoExclusive ?? false
                 }
 
                 loaderDelegate: Loader {
                     property T.Action action
                     height: visible ? implicitHeight : 0
                     visible: layout.hiddenActions.includes(action)
-                             && (!(action instanceof Kirigami.Action) || action.visible)
+                             && ((action as Kirigami.Action)?.visible ?? true)
                 }
 
                 separatorDelegate: QQC2.MenuSeparator {
                     property T.Action action
                     visible: layout.hiddenActions.includes(action)
-                             && (!(action instanceof Kirigami.Action) || action.visible)
+                             && ((action as Kirigami.Action)?.visible ?? true)
                 }
             }
         }

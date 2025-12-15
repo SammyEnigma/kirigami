@@ -10,11 +10,11 @@ import QtQuick.Controls as QQC2
 import org.kde.kirigami as Kirigami
 
 QQC2.MenuItem {
-    visible: !(action instanceof Kirigami.Action) || action.visible
-    autoExclusive: action instanceof Kirigami.Action && action.autoExclusive
+    visible: (action as Kirigami.Action)?.visible ?? true
+    autoExclusive: (action as Kirigami.Action)?.autoExclusive ?? false
     height: visible ? implicitHeight : 0
 
-    QQC2.ToolTip.text: (action instanceof Kirigami.Action) ? action.tooltip : ""
+    QQC2.ToolTip.text: (action as Kirigami.Action)?.tooltip ?? ""
     QQC2.ToolTip.visible: hovered && QQC2.ToolTip.text.length > 0
     QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
 

@@ -492,7 +492,7 @@ QQC2.SwipeDelegate {
         }
 
         function isActionVisible(action: T.Action): bool {
-            return (action instanceof Kirigami.Action) ? action.visible : true;
+            return (action as Kirigami.Action)?.visible ?? true;
         }
 
         Repeater {

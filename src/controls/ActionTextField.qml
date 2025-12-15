@@ -141,7 +141,7 @@ QQC2.TextField {
             text: modelData.text
             display: QQC2.ToolButton.IconOnly
 
-            visible: !(modelData instanceof Kirigami.Action) || modelData.visible
+            visible: (modelData as Kirigami.Action)?.visible ?? true
             enabled: modelData.enabled
             focusPolicy: Qt.TabFocus
 

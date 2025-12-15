@@ -410,8 +410,7 @@ Kirigami.OverlayDrawer {
 
         property Item backItem
 
-        // `as` case operator is still buggy
-        readonly property Kirigami.Action kAction: tAction instanceof Kirigami.Action ? tAction : null
+        readonly property Kirigami.Action kAction: tAction as Kirigami.Action
 
         readonly property bool isExpanded: {
             return !root.collapsed

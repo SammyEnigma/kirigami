@@ -26,10 +26,7 @@ QQC2.ToolButton {
     property int position: QQC2.ToolBar.Header
 
     property list<T.Action> menuActions: {
-        if (action instanceof Kirigami.Action) {
-            return action.children;
-        }
-        return []
+        return (action as Kirigami.Action)?.children ?? []
     }
 
     property Component menuComponent: ActionsMenu {
@@ -68,8 +65,8 @@ QQC2.ToolButton {
         }
     }
 
-    visible: action instanceof Kirigami.Action ? action.visible : true
-    autoExclusive: action instanceof Kirigami.Action ? action.autoExclusive : false
+    visible: (action as Kirigami.Action)?.visible ?? true
+    autoExclusive: (action as Kirigami.Action)?.autoExclusive ?? false
 
     // Workaround for QTBUG-85941
     Binding {
@@ -106,9 +103,10 @@ QQC2.ToolButton {
         visible: control.hovered && text.length > 0 && !(control.menu && control.menu.visible) && !control.pressed && !Kirigami.Settings.hasTransientTouchInput
         text: {
             const a = control.action;
+            const ka = a as Kirigami.Action
             if (a) {
-                if (a.tooltip && a.tooltip !== a.text) {
-                    return a.tooltip;
+                if (ka?.tooltip && ka?.tooltip !== ka.text) {
+                    return ka.tooltip;
                 } else if (control.display === QQC2.Button.IconOnly) {
                     return a.text;
                 }

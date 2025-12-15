@@ -113,7 +113,7 @@ KirigamiDialogs.Dialog {
                 Layout.preferredHeight: Kirigami.Units.gridUnit * 2
 
                 action: modelData
-                visible: !(modelData instanceof Kirigami.Action) || modelData.visible
+                visible: (modelData as Kirigami.Action)?.visible ?? true
 
                 icon.width: Kirigami.Units.gridUnit
                 icon.height: Kirigami.Units.gridUnit
@@ -122,7 +122,7 @@ KirigamiDialogs.Dialog {
                 leftPadding: undefined
                 rightPadding: undefined
 
-                QQC2.ToolTip.text: modelData instanceof Kirigami.Action ? modelData.tooltip : ""
+                QQC2.ToolTip.text: (modelData as Kirigami.Action)?.tooltip ?? ""
                 QQC2.ToolTip.visible: QQC2.ToolTip.text.length > 0 && (Kirigami.Settings.tabletMode ? pressed : hovered)
                 QQC2.ToolTip.delay: Kirigami.Settings.tabletMode ? Application.styleHints.mousePressAndHoldInterval : Kirigami.Units.toolTipDelay
 

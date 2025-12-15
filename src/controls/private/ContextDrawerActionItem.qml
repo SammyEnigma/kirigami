@@ -16,7 +16,7 @@ QQC2.ItemDelegate {
 
     required property T.Action tAction
 
-    readonly property Kirigami.Action kAction: tAction instanceof Kirigami.Action ? tAction : null
+    readonly property Kirigami.Action kAction: tAction as Kirigami.Action
 
     readonly property bool isSeparator: kAction?.separator ?? false
     readonly property bool isExpandable: kAction?.expandible ?? false
@@ -26,7 +26,7 @@ QQC2.ItemDelegate {
     icon.name: tAction.icon.name
     icon.source: tAction.icon.source
 
-    text: tAction.text ? tAction.text : tAction.tooltip
+    text: tAction.text ? tAction.text : kAction?.tooltip ?? ""
     hoverEnabled: (!isExpandable || root.collapsed) && !Kirigami.Settings.tabletMode && !isSeparator
     font.pointSize: Kirigami.Theme.defaultFont.pointSize * (isExpandable ? 1.30 : 1)
 
