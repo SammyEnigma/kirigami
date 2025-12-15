@@ -657,23 +657,23 @@ QT.Control {
 
     Connections {
         id: modalConnection
-        target: leftSidebar
+        target: root.leftSidebar
         function onModalChanged(): void {
-            if (leftSidebar.modal) {
-                leftSidebar.parent = root.QQC2.Overlay.overlay
-                leftSidebar.background.parent.parent = null
+            if (root.leftSidebar.modal) {
+                root.leftSidebar.parent = root.QQC2.Overlay.overlay
+                root.leftSidebar.background.parent.parent = null
             } else {
-                leftSidebar.parent = sidebarControl
-                leftSidebar.background.parent.parent = sidebarControl
+                root.leftSidebar.parent = sidebarControl
+                root.leftSidebar.background.parent.parent = sidebarControl
             }
         }
     }
     // Enforce the parent when we are in sidebar mode
     Connections {
-        enabled: leftSidebar && leftSidebar.contentItem && !leftSidebar.modal
-        target: leftSidebar?.contentItem.parent ?? null
+        enabled: root.leftSidebar && root.leftSidebar.contentItem && !root.leftSidebar.modal
+        target: root.leftSidebar?.contentItem.parent ?? null
         function onParentChanged () {
-            leftSidebar.contentItem.parent.parent = sidebarControl
+            root.leftSidebar.contentItem.parent.parent = sidebarControl
         }
     }
 
@@ -682,11 +682,11 @@ QT.Control {
 
     Shortcut {
         sequences: [ StandardKey.Back ]
-        onActivated: goBack()
+        onActivated: root.goBack()
     }
     Shortcut {
         sequences: [ StandardKey.Forward ]
-        onActivated: goForward()
+        onActivated: root.goForward()
     }
 
     Keys.forwardTo: [currentItem]
@@ -840,7 +840,7 @@ QT.Control {
         }
         z: 100
         property QT.Control pageRow: root
-        active: globalToolBar.actualStyle !== Kirigami.ApplicationHeaderStyle.None || (leadingVisibleItem && leadingVisibleItem.globalToolBarStyle === Kirigami.ApplicationHeaderStyle.ToolBar)
+        active: globalToolBar.actualStyle !== Kirigami.ApplicationHeaderStyle.None || (root.leadingVisibleItem && root.leadingVisibleItem.globalToolBarStyle === Kirigami.ApplicationHeaderStyle.ToolBar)
         visible: active
         height: active ? implicitHeight : 0
         // If load is asynchronous, it will fail to compute the initial implicitHeight
@@ -936,7 +936,7 @@ QT.Control {
             // initialize the page
             const pageItem = pagesLogic.initAndInsertPage(position, page, properties);
 
-            pagePushed(pageItem);
+            root.pagePushed(pageItem);
 
             return pageItem;
         }
@@ -1015,9 +1015,9 @@ QT.Control {
                     bottom: parent.bottom
                 }
                 z: 1
-                width: visible ? leftSidebar.width * leftSidebar.position : 0
+                width: visible ? root.leftSidebar.width * root.leftSidebar.position : 0
                 // Using leftSidebar.position instead of visible because leftSidebar.visible depends from its main item visibility which is our child so would be a loop
-                visible: leftSidebar && children.length > 0
+                visible: root.leftSidebar && children.length > 0
             }
 
             Kirigami.ColumnView {

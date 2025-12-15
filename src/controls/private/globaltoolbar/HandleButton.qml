@@ -19,9 +19,9 @@ P.PrivateActionToolButton {
     icon.source: drawer?.position === 1 ? (drawer?.handleOpenIcon.source ?? "") : (drawer?.handleClosedIcon.source ?? "")
 
     action: Kirigami.Action {
-        children: drawer && drawer instanceof Kirigami.GlobalDrawer && drawer.isMenu ? drawer.actions : []
+        children: root.drawer && root.drawer instanceof Kirigami.GlobalDrawer && root.drawer.isMenu ? root.drawer.actions : []
         tooltip: {
-            if (drawer && drawer.isMenu) {
+            if (root.drawer && root.drawer.isMenu) {
                 return checked ? qsTr("Close menu") : qsTr("Open menu");
             }
 
@@ -45,9 +45,9 @@ P.PrivateActionToolButton {
         // Only target the GlobalDrawer when it *is* a GlobalDrawer, since
         // it can be something else, and that something else probably
         // doesn't have an isMenuChanged() signal.
-        target: drawer as Kirigami.GlobalDrawer
+        target: root.drawer as Kirigami.GlobalDrawer
         function onIsMenuChanged() {
-            if (!drawer.isMenu && root.menu) {
+            if (!root.drawer.isMenu && root.menu) {
                 root.menu.dismiss()
             }
         }
@@ -58,15 +58,15 @@ P.PrivateActionToolButton {
         target: null
         acceptedDevices: PointerDevice.TouchScreen
         xAxis {
-            enabled: drawer && (drawer.edge === Qt.LeftEdge || drawer.edge === Qt.RightEdge)
+            enabled: root.drawer && (root.drawer.edge === Qt.LeftEdge || root.drawer.edge === Qt.RightEdge)
             minimum: 0
-            maximum: drawer?.contentItem.width ?? 0
+            maximum: root.drawer?.contentItem.width ?? 0
             onActiveValueChanged: (delta) => {
-                let positionDelta = delta / drawer.contentItem.width;
-                if (drawer.edge === Qt.RightEdge) {
+                let positionDelta = delta / root.drawer.contentItem.width;
+                if (root.drawer.edge === Qt.RightEdge) {
                     positionDelta *= -1;
                 }
-                drawer.position += positionDelta;
+                root.drawer.position += positionDelta;
             }
         }
         yAxis.enabled: false
@@ -74,13 +74,13 @@ P.PrivateActionToolButton {
             switch (transition) {
             case PointerDevice.GrabExclusive:
             case PointerDevice.GrabPassive:
-                drawer.peeking = true;
+                root.drawer.peeking = true;
                 break;
             case PointerDevice.UngrabExclusive:
             case PointerDevice.UngrabPassive:
             case PointerDevice.CancelGrabExclusive:
             case PointerDevice.CancelGrabPassive:
-                drawer.peeking = false;
+                root.drawer.peeking = false;
                 break;
             default:
                 break;

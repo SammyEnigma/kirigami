@@ -46,14 +46,14 @@ QQC2.ItemDelegate {
     ActionsMenu {
         id: actionsMenu
         y: Kirigami.Settings.isMobile ? -height : listItem.height
-        actions: kAction?.children ?? []
+        actions: listItem.kAction?.children ?? []
         submenuComponent: ActionsMenu {}
     }
 
     Loader {
         Layout.fillWidth: true
         Layout.fillHeight: true
-        sourceComponent: kAction?.displayComponent ?? null
+        sourceComponent: listItem.kAction?.displayComponent ?? null
         onStatusChanged: {
             for (const child of parent.children) {
                 if (child === this) {

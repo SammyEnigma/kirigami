@@ -57,12 +57,12 @@ Kirigami.AbstractApplicationWindow {
                 icon.name: "configure"
                 checkable: true
                 //Need to do this, otherwise it breaks the bindings
-                property bool current: pageStack.currentItem?.objectName === "settingsPage" ?? false
+                property bool current: root.pageStack.currentItem?.objectName === "settingsPage" ?? false
                 onCurrentChanged: {
                     checked = current;
                 }
                 onTriggered: {
-                    pageStack.push(settingsComponent);
+                    root.pageStack.push(settingsComponent);
                 }
             }
         ]

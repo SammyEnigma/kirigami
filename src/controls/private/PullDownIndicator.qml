@@ -72,7 +72,7 @@ Item {
             bottomMargin: root.flickable.topMargin
         }
 
-        width: flickable?.width
+        width: root.flickable?.width
         height: Kirigami.Units.gridUnit * 4
         QQC2.BusyIndicator {
             id: busyIndicator

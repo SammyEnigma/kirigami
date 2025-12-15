@@ -135,7 +135,7 @@ Item {
                 source: {
                     if (delegate.hasAvatar && aboutItem.loadAvatars) {
                         // Appending to the params of the url does not work, thus the search is set
-                        const url = new URL(modelData.avatarUrl);
+                        const url = new URL(delegate.modelData.avatarUrl);
                         const params = new URLSearchParams(url.search);
                         params.append("s", width);
                         url.search = params.toString();
@@ -158,29 +158,29 @@ Item {
 
             QQC2.Label {
                 Layout.fillWidth: true
-                readonly property bool withTask: typeof(modelData.task) !== "undefined" && modelData.task.length > 0
-                text: withTask ? qsTr("%1 (%2)").arg(modelData.name).arg(modelData.task) : modelData.name
+                readonly property bool withTask: typeof(delegate.modelData.task) !== "undefined" && delegate.modelData.task.length > 0
+                text: withTask ? qsTr("%1 (%2)").arg(delegate.modelData.name).arg(delegate.modelData.task) : delegate.modelData.name
                 wrapMode: Text.WordWrap
             }
 
             QQC2.ToolButton {
-                enabled: typeof(modelData.webAddress) !== "undefined" && modelData.webAddress.length > 0
+                enabled: typeof(delegate.modelData.webAddress) !== "undefined" && delegate.modelData.webAddress.length > 0
                 opacity: enabled ? 1 : 0
                 icon.name: "globe"
                 QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
                 QQC2.ToolTip.visible: hovered
-                QQC2.ToolTip.text: (typeof(modelData.webAddress) === "undefined" && modelData.webAddress.length > 0) ? "" : modelData.webAddress
-                onClicked: Qt.openUrlExternally(modelData.webAddress)
+                QQC2.ToolTip.text: (typeof(delegate.modelData.webAddress) === "undefined" && delegate.modelData.webAddress.length > 0) ? "" : delegate.modelData.webAddress
+                onClicked: Qt.openUrlExternally(delegate.modelData.webAddress)
             }
 
             QQC2.ToolButton {
-                enabled: typeof(modelData.emailAddress) !== "undefined" && modelData.emailAddress.length > 0
+                enabled: typeof(delegate.modelData.emailAddress) !== "undefined" && delegate.modelData.emailAddress.length > 0
                 opacity: enabled ? 1 : 0
                 icon.name: "mail-sent"
                 QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
                 QQC2.ToolTip.visible: hovered
-                QQC2.ToolTip.text: qsTr("Send an email to %1").arg(modelData.emailAddress)
-                onClicked: Qt.openUrlExternally("mailto:%1".arg(modelData.emailAddress))
+                QQC2.ToolTip.text: qsTr("Send an email to %1").arg(delegate.modelData.emailAddress)
+                onClicked: Qt.openUrlExternally("mailto:%1".arg(delegate.modelData.emailAddress))
             }
         }
     }
@@ -330,7 +330,7 @@ Item {
 
         Repeater {
             model: aboutItem.aboutData.licenses
-            delegate: _usePageStack ? licenseLinkButton : licenseTextItem
+            delegate: aboutItem._usePageStack ? licenseLinkButton : licenseTextItem
         }
 
         Kirigami.Heading {

@@ -26,10 +26,10 @@ Item {
             top: parent.top
             bottom: parent.bottom
         }
-        leadingColumn: LayoutMirroring.enabled ? column : previousColumn
-        trailingColumn: LayoutMirroring.enabled ? nextColumn : column
+        leadingColumn: LayoutMirroring.enabled ? separator.column : separator.previousColumn
+        trailingColumn: LayoutMirroring.enabled ? separator.nextColumn : separator.column
         // If this handle touched the left ColumnView edge, hide it
-        visible: leadingColumn && trailingColumn && column.Kirigami.ColumnView.view?.leadingVisibleItem !== column
+        visible: leadingColumn && trailingColumn && separator.column.Kirigami.ColumnView.view?.leadingVisibleItem !== separator.column
     }
 
     SeparatorHandle {
@@ -40,12 +40,14 @@ Item {
             bottom: parent.bottom
             rightMargin: -1
         }
-        leadingColumn: LayoutMirroring.enabled ? previousColumn : column
-        trailingColumn: LayoutMirroring.enabled ? column : nextColumn
-        visible: leadingColumn && trailingColumn && column.Kirigami.ColumnView.view?.leadingVisibleItem !== previousColumn
+        leadingColumn: LayoutMirroring.enabled ? separator.previousColumn : separator.column
+        trailingColumn: LayoutMirroring.enabled ? separator.column : separator.nextColumn
+        visible: leadingColumn && trailingColumn && separator.column.Kirigami.ColumnView.view?.leadingVisibleItem !== separator.previousColumn
     }
 
     component SeparatorHandle: Kirigami.Separator {
+        id: handle
+
         property Item leadingColumn
         property Item trailingColumn
 
@@ -62,54 +64,54 @@ Item {
             }
 
             visible: {
-                if (!column.Kirigami.ColumnView.view?.columnResizeMode === Kirigami.ColumnView.DynamicColumns ?? false) {
+                if (!separator.column.Kirigami.ColumnView.view?.columnResizeMode === Kirigami.ColumnView.DynamicColumns ?? false) {
                     return false;
                 }
-                if (leadingColumn?.Kirigami.ColumnView.interactiveResizeEnabled ?? false) {
+                if (handle.leadingColumn?.Kirigami.ColumnView.interactiveResizeEnabled ?? false) {
                     return true;
                 }
-                if (trailingColumn?.Kirigami.ColumnView.interactiveResizeEnabled ?? false) {
+                if (handle.trailingColumn?.Kirigami.ColumnView.interactiveResizeEnabled ?? false) {
                     return true;
                 }
                 return false;
             }
             cursorShape: Qt.SplitHCursor
             onPressed: mouse => {
-                if (leadingColumn) {
-                    leadingColumn.Kirigami.ColumnView.interactiveResizing = true;
+                if (handle.leadingColumn) {
+                    handle.leadingColumn.Kirigami.ColumnView.interactiveResizing = true;
                 }
-                if (trailingColumn) {
-                    trailingColumn.Kirigami.ColumnView.interactiveResizing = true;
+                if (handle.trailingColumn) {
+                    handle.trailingColumn.Kirigami.ColumnView.interactiveResizing = true;
                 }
             }
             onReleased: {
-                if (leadingColumn) {
-                    leadingColumn.Kirigami.ColumnView.interactiveResizing = false;
+                if (handle.leadingColumn) {
+                    handle.leadingColumn.Kirigami.ColumnView.interactiveResizing = false;
                 }
-                if (trailingColumn) {
-                    trailingColumn.Kirigami.ColumnView.interactiveResizing = false;
+                if (handle.trailingColumn) {
+                    handle.trailingColumn.Kirigami.ColumnView.interactiveResizing = false;
                 }
             }
             onCanceled: {
-                if (leadingColumn) {
-                    leadingColumn.Kirigami.ColumnView.interactiveResizing = false;
+                if (handle.leadingColumn) {
+                    handle.leadingColumn.Kirigami.ColumnView.interactiveResizing = false;
                 }
-                if (trailingColumn) {
-                    trailingColumn.Kirigami.ColumnView.interactiveResizing = false;
+                if (handle.trailingColumn) {
+                    handle.trailingColumn.Kirigami.ColumnView.interactiveResizing = false;
                 }
             }
             onPositionChanged: mouse => {
                 const newX = mapToItem(null, mouse.x, 0).x;
-                const leadingX = leadingColumn?.mapToItem(null, 0, 0).x ?? 0;
-                const trailingX = trailingColumn?.mapToItem(null, 0, 0).x ?? 0;
-                const view = column.Kirigami.ColumnView.view;
+                const leadingX = handle.leadingColumn?.mapToItem(null, 0, 0).x ?? 0;
+                const trailingX = handle.trailingColumn?.mapToItem(null, 0, 0).x ?? 0;
+                const view = separator.column.Kirigami.ColumnView.view;
 
-                let leadingWidth = leadingColumn.width;
-                let trailingWidth = trailingColumn.width;
+                let leadingWidth = handle.leadingColumn.width;
+                let trailingWidth = handle.trailingColumn.width;
 
                 // Minimum and maximum widths for the leading column
-                let leadingMinimumWidth = leadingColumn.Kirigami.ColumnView.minimumWidth;
-                if (leadingColumn.Kirigami.ColumnView.fillWidth) {
+                let leadingMinimumWidth = handle.leadingColumn.Kirigami.ColumnView.minimumWidth;
+                if (handle.leadingColumn.Kirigami.ColumnView.fillWidth) {
                     leadingMinimumWidth = view.columnWidth;
                 }
                 if (leadingMinimumWidth < 0) {
@@ -117,35 +119,35 @@ Item {
                 }
 
                 // Minimum and maximum widths for the trailing column
-                let trailingMinimumWidth = trailingColumn.Kirigami.ColumnView.minimumWidth;
-                if (trailingColumn.Kirigami.ColumnView.fillWidth) {
+                let trailingMinimumWidth = handle.trailingColumn.Kirigami.ColumnView.minimumWidth;
+                if (handle.trailingColumn.Kirigami.ColumnView.fillWidth) {
                     trailingMinimumWidth = view.columnWidth;
                 }
                 if (trailingMinimumWidth < 0) {
                     trailingMinimumWidth = Kirigami.Units.gridUnit * 8;
                 }
 
-                let leadingMaximumWidth = leadingColumn.Kirigami.ColumnView.maximumWidth;
+                let leadingMaximumWidth = handle.leadingColumn.Kirigami.ColumnView.maximumWidth;
                 if (leadingMaximumWidth < 0) {
                     leadingMaximumWidth = leadingWidth + trailingWidth - trailingMinimumWidth;
                 }
 
 
-                let trailingMaximumWidth = trailingColumn.Kirigami.ColumnView.maximumWidth;
+                let trailingMaximumWidth = handle.trailingColumn.Kirigami.ColumnView.maximumWidth;
                 if (trailingMaximumWidth < 0) {
                     trailingMaximumWidth = leadingWidth + trailingWidth - leadingMinimumWidth;
                 }
 
 
-                if (!leadingColumn.Kirigami.ColumnView.fillWidth) {
-                    leadingColumn.Kirigami.ColumnView.preferredWidth = Math.max(leadingMinimumWidth,
+                if (!handle.leadingColumn.Kirigami.ColumnView.fillWidth) {
+                    handle.leadingColumn.Kirigami.ColumnView.preferredWidth = Math.max(leadingMinimumWidth,
                                                         Math.min(leadingMaximumWidth,
                                                                  newX - leadingX));
                 }
-                if (!trailingColumn.Kirigami.ColumnView.fillWidth) {
-                    trailingColumn.Kirigami.ColumnView.preferredWidth = Math.max(trailingMinimumWidth,
+                if (!handle.trailingColumn.Kirigami.ColumnView.fillWidth) {
+                    handle.trailingColumn.Kirigami.ColumnView.preferredWidth = Math.max(trailingMinimumWidth,
                                                         Math.min(trailingMaximumWidth,
-                                                                 trailingX + trailingColumn.width - newX));
+                                                                 trailingX + handle.trailingColumn.width - newX));
                 }
             }
         }

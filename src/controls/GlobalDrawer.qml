@@ -338,6 +338,8 @@ Kirigami.OverlayDrawer {
         id: menuComponent
 
         Column {
+            id: menuColumn
+
             property alias model: actionsRepeater.model
             property T.Action current
             property int level: 0
@@ -348,7 +350,7 @@ Kirigami.OverlayDrawer {
             QQC2.ItemDelegate {
                 id: backItem
 
-                visible: level > 0
+                visible: menuColumn.level > 0
                 width: parent.width
                 icon.name: mirrored ? "go-previous-symbolic-rtl" : "go-previous-symbolic"
 
@@ -584,7 +586,7 @@ Kirigami.OverlayDrawer {
                         Layout.minimumWidth: parent.width - root.leftPadding - root.rightPadding
 
                         visible: children.length > 0 && childrenRect.height > 0 && opacity > 0
-                        opacity: !root.collapsed || showTopContentWhenCollapsed
+                        opacity: !root.collapsed || root.showTopContentWhenCollapsed
 
                         Behavior on opacity {
                             // not an animator as is binded
@@ -652,7 +654,7 @@ Kirigami.OverlayDrawer {
                         // as items are added only after this column creation
                         Layout.minimumWidth: parent.width - root.leftPadding - root.rightPadding
                         visible: children.length > 0 && (opacity > 0 || mainContentAnimator.running)
-                        opacity: !root.collapsed || showContentWhenCollapsed
+                        opacity: !root.collapsed || root.showContentWhenCollapsed
                         Behavior on opacity {
                             OpacityAnimator {
                                 id: mainContentAnimator

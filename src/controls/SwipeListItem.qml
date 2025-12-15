@@ -309,7 +309,7 @@ QQC2.SwipeDelegate {
         LayoutMirroring.enabled: false
 
         parent: listItem
-        z: contentItem ? contentItem.z + 1 : 0
+        z: listItem.contentItem ? listItem.contentItem.z + 1 : 0
         width: item ? item.implicitWidth : actionsLayout.implicitWidth
         active: !listItem.alwaysVisibleActions && Kirigami.Settings.tabletMode
         visible: listItem.actionsVisible && opacity > 0
@@ -583,22 +583,22 @@ QQC2.SwipeDelegate {
                 }
 
                 Keys.onUpPressed: (event) => {
-                    if (listview && actionsLayout.indexInListView >= 0) {
-                        listView.currentIndex = actionsLayout.indexInListView
+                    if (listItem.listView && actionsLayout.indexInListView >= 0) {
+                        listItem.listView.currentIndex = actionsLayout.indexInListView
                     }
                     event.accepted = false // pass to ListView
                 }
 
                 Keys.onDownPressed: (event) => {
-                    if (listView && actionsLayout.indexInListView >= 0) {
-                        listView.currentIndex = actionsLayout.indexInListView
+                    if (listItem.listView && actionsLayout.indexInListView >= 0) {
+                        listItem.listView.currentIndex = actionsLayout.indexInListView
                     }
                     event.accepted = false // pass to ListView
                 }
 
                 onActiveFocusChanged: {
-                    if (focus && listView) {
-                        listView.positionViewAtIndex(actionsLayout.indexInListView, ListView.Contain)
+                    if (focus && listItem.listView) {
+                        listItem.listView.positionViewAtIndex(actionsLayout.indexInListView, ListView.Contain)
                     } else if (!focus) {
                         tabbedFromDelegate = false
                     }

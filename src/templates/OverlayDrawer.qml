@@ -273,7 +273,7 @@ T.Drawer {
     implicitHeight: contentHeight + topPadding + bottomPadding
 
     enter: Transition {
-        enabled: !__internal.isSidebarTransitioning
+        enabled: !root.__internal.isSidebarTransitioning
         SequentialAnimation {
             id: enterAnimation
             /* NOTE: why this? the running status of the enter transition is not relaible and
@@ -301,7 +301,7 @@ T.Drawer {
     }
 
     exit: Transition {
-        enabled: !__internal.isSidebarTransitioning
+        enabled: !root.__internal.isSidebarTransitioning
         SequentialAnimation {
             id: exitAnimation
             property bool animating
@@ -425,7 +425,7 @@ T.Drawer {
             NumberAnimation {
                 id: internalAnim
                 target: root
-                to: drawerOpen ? 1 : 0
+                to: root.drawerOpen ? 1 : 0
                 property: "position"
                 duration: (root.position)*Kirigami.Units.longDuration
             }

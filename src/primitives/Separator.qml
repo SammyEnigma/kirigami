@@ -64,7 +64,7 @@ Item {
         color: Platform.ColorUtils.linearInterpolation(
                 Platform.Theme.backgroundColor,
                 Platform.Theme.textColor,
-                weight === Separator.Weight.Light ? Platform.Theme.lightFrameContrast : Platform.Theme.frameContrast
+                root.weight === Separator.Weight.Light ? Platform.Theme.lightFrameContrast : Platform.Theme.frameContrast
         )
     }
 }

@@ -15,19 +15,19 @@ Kirigami.ApplicationWindow {
         actions: [
             Kirigami.Action {
                 text: "push"
-                onTriggered: pageStack.push(secondPageComponent)
+                onTriggered: root.pageStack.push(secondPageComponent)
             },
             Kirigami.Action {
                 text: "pop"
-                onTriggered: pageStack.pop()
+                onTriggered: root.pageStack.pop()
             },
             Kirigami.Action {
                 text: "clear"
-                onTriggered: pageStack.clear()
+                onTriggered: root.pageStack.clear()
             },
             Kirigami.Action {
                 text: "replace"
-                onTriggered: pageStack.replace(secondPageComponent)
+                onTriggered: root.pageStack.replace(secondPageComponent)
             }
         ]
     }

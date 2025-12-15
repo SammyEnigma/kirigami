@@ -247,12 +247,12 @@ QQC2.ApplicationWindow {
     Binding {
         target: root.header
         property: "x"
-        value: -contentItem.x
+        value: -root.contentItem.x
     }
     Binding {
         target: root.footer
         property: "x"
-        value: -contentItem.x
+        value: -root.contentItem.x
     }
 
     // Don't use root.overlay property here. For one, we know that in a window

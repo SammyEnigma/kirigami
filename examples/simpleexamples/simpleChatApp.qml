@@ -18,7 +18,7 @@ Kirigami.ApplicationWindow {
     property int footerHeight: Math.round(Kirigami.Units.gridUnit * 2.5)
 
     globalDrawer: Kirigami.GlobalDrawer {
-        contentItem.implicitWidth: columnWidth
+        contentItem.implicitWidth: root.columnWidth
         modal: true
         drawerOpen: false
         isMenu: true
@@ -226,7 +226,7 @@ Kirigami.ApplicationWindow {
                 color: Kirigami.Theme.backgroundColor
             }
             footer: QQC2.Control {
-                height: footerHeight
+                height: root.footerHeight
                 padding: Kirigami.Units.smallSpacing
                 background: Rectangle {
                     color: Kirigami.Theme.backgroundColor

@@ -190,8 +190,8 @@ Item {
         parent: root
         anchors {
             fill: parent
-            topMargin: controlsVisible ? (root.header ? root.header.height : 0) + (root.menuBar ? root.menuBar.height : 0) : 0
-            bottomMargin: controlsVisible && root.footer ? root.footer.height : 0
+            topMargin: root.controlsVisible ? (root.header ? root.header.height : 0) + (root.menuBar ? root.menuBar.height : 0) : 0
+            bottomMargin: root.controlsVisible && root.footer ? root.footer.height : 0
             leftMargin: root.globalDrawer && root.globalDrawer.modal === false ? root.globalDrawer.contentItem.width * root.globalDrawer.position : 0
             rightMargin: root.contextDrawer && root.contextDrawer.modal === false ? root.contextDrawer.contentItem.width * root.contextDrawer.position : 0
         }

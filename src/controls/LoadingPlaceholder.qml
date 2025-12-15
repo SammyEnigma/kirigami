@@ -61,7 +61,7 @@ Kirigami.PlaceholderMessage {
         Layout.alignment: Qt.AlignHCenter
         Layout.fillWidth: true
         Layout.maximumWidth: Kirigami.Units.gridUnit * 20
-        indeterminate: !determinate
+        indeterminate: !loadingPlaceholder.determinate
         from: 0
         to: 100
     }

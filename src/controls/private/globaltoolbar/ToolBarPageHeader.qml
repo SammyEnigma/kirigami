@@ -38,7 +38,7 @@ Kirigami.AbstractApplicationHeader {
     MouseArea {
         anchors.fill: parent
         onPressed: mouse => {
-            page.forceActiveFocus()
+            root.page.forceActiveFocus()
             mouse.accepted = false
         }
     }
@@ -57,7 +57,7 @@ Kirigami.AbstractApplicationHeader {
             Layout.leftMargin: -root.leftPadding
             Kirigami.Theme.colorSet: Kirigami.Theme.Header
             Kirigami.Theme.inherit: false
-            visible: pageRow?.separatorVisible && !navButtons.visible && page?.Kirigami.ColumnView.view?.leadingVisibleItem !== page
+            visible: root.pageRow?.separatorVisible && !navButtons.visible && root.page?.Kirigami.ColumnView.view?.leadingVisibleItem !== root.page
         }
 
         HandleButton {
@@ -68,7 +68,7 @@ Kirigami.AbstractApplicationHeader {
                     return false;
                 }
                 let firstVisible = false;
-                const previousPage = root.pageRow.get(page.Kirigami.ColumnView.index - 1);
+                const previousPage = root.pageRow.get(root.page.Kirigami.ColumnView.index - 1);
                 if (previousPage) {
                     firstVisible = previousPage.x - root.pageRow.columnView.contentX < -previousPage.width / 2;
                 } else {
@@ -100,18 +100,18 @@ Kirigami.AbstractApplicationHeader {
                 if (!(item instanceof KP.DefaultPageTitleDelegate)) {
                     return 0;
                 }
-                if (!pageRow || navButtons.visible || leadingHandle.visible) {
+                if (!root.pageRow || navButtons.visible || leadingHandle.visible) {
                     return  0;
                 } else if (separator.visible) {
-                    return pageRow.globalToolBar.titleLeftPadding - layout.spacing - root.leftPadding;
+                    return root.pageRow.globalToolBar.titleLeftPadding - layout.spacing - root.leftPadding;
                 }
-                return pageRow.globalToolBar.titleLeftPadding - root.leftPadding;
+                return root.pageRow.globalToolBar.titleLeftPadding - root.leftPadding;
             }
 
             // Don't load async to prevent jumpy behaviour on slower devices as it loads in.
             // If the title delegate really needs to load async, it should be its responsibility to do it itself.
             asynchronous: false
-            sourceComponent: page?.titleDelegate ?? null
+            sourceComponent: root.page?.titleDelegate ?? null
         }
 
         Kirigami.ActionToolBar {
@@ -121,10 +121,10 @@ Kirigami.AbstractApplicationHeader {
             Layout.fillWidth: true
             Layout.fillHeight: true
 
-            alignment: pageRow?.globalToolBar.toolbarActionAlignment ?? Qt.AlignRight
-            heightMode: pageRow?.globalToolBar.toolbarActionHeightMode ?? Kirigami.ToolBarLayout.ConstrainIfLarger
+            alignment: root.pageRow?.globalToolBar.toolbarActionAlignment ?? Qt.AlignRight
+            heightMode: root.pageRow?.globalToolBar.toolbarActionHeightMode ?? Kirigami.ToolBarLayout.ConstrainIfLarger
 
-            actions: page && page.globalToolBarStyle === Kirigami.ApplicationHeaderStyle.ToolBar ? page?.actions : []
+            actions: root.page && root.page.globalToolBarStyle === Kirigami.ApplicationHeaderStyle.ToolBar ? root.page?.actions : []
         }
 
         HandleButton {
@@ -132,7 +132,7 @@ Kirigami.AbstractApplicationHeader {
             visible: drawer !== null
                     && drawer.handleVisible && drawer.enabled
                     && (pageStack.columnView.columnResizeMode === Kirigami.ColumnView.SingleColumn
-                    || page.Kirigami.ColumnView.view.trailingVisibleItem === page)
+                    || root.page.Kirigami.ColumnView.view.trailingVisibleItem === root.page)
         }
     }
 }

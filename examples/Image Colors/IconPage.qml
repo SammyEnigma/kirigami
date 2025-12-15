@@ -89,7 +89,7 @@ Kirigami.ScrollablePage {
             title: "Icon Name"
 
             Kirigami.SelectableLabel {
-                text: currentIcon()
+                text: root.currentIcon()
                 horizontalAlignment: TextEdit.AlignHCenter
                 Layout.fillWidth: true
             }

@@ -37,7 +37,7 @@ Kirigami.ApplicationItem {
     contextDrawer: Kirigami.ContextDrawer {
         id: contextDrawer
 
-        actions: (pageStack.currentItem as Kirigami.Page)?.actions ?? []
+        actions: (root.pageStack.currentItem as Kirigami.Page)?.actions ?? []
     }
 
     pageStack.initialPage: mainPageComponent

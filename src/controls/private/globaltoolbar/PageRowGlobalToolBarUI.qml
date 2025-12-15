@@ -80,7 +80,7 @@ Kirigami.AbstractApplicationHeader {
 
         asynchronous: true
 
-        active: layerIsMainRow
+        active: header.layerIsMainRow
             && globalToolBar.actualStyle === Kirigami.ApplicationHeaderStyle.Breadcrumb
             && header.currentItem
             && header.currentItem.globalToolBarStyle !== Kirigami.ApplicationHeaderStyle.None

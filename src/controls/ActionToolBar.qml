@@ -212,18 +212,20 @@ QQC2.Control {
             menuActions: root.actions
 
             menuComponent: P.ActionsMenu {
+                id: actionsMenu
+
                 y: root.position === QQC2.ToolBar.Footer ? -height : 0
                 submenuComponent: P.ActionsMenu {
                     Binding {
-                        target: parentItem
+                        target: actionsMenu.parentItem
                         property: "visible"
-                        value: layout.hiddenActions.includes(parentAction)
-                               && (!(parentAction instanceof Kirigami.Action) || parentAction.visible)
+                        value: layout.hiddenActions.includes(actionsMenu.parentAction)
+                               && (!(actionsMenu.parentAction instanceof Kirigami.Action) || actionsMenu.parentAction.visible)
                         restoreMode: Binding.RestoreBinding
                     }
 
                     Binding {
-                        target: parentItem
+                        target: actionsMenu.parentItem
                         property: "autoExclusive"
                         value: action instanceof Kirigami.Action && action.autoExclusive
                         restoreMode: Binding.RestoreBinding

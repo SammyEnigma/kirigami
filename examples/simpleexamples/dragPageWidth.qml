@@ -19,12 +19,12 @@ Kirigami.ApplicationWindow {
     MouseArea {
         id: dragHandle
 
-        visible: pageStack.wideMode
+        visible: root.pageStack.wideMode
 
         anchors.top: parent.top
         anchors.bottom: parent.bottom
 
-        x: columnWidth - (width / 2)
+        x: root.columnWidth - (width / 2)
         width: 2
 
         property int dragRange: (Kirigami.Units.gridUnit * 5)
@@ -38,11 +38,11 @@ Kirigami.ApplicationWindow {
 
         onPositionChanged: mouse => {
             if (mouse.x > _lastX) {
-                columnWidth = Math.min((defaultColumnWidth + dragRange),
-                    columnWidth + (mouse.x - _lastX));
+                root.columnWidth = Math.min((root.defaultColumnWidth + dragRange),
+                    root.columnWidth + (mouse.x - _lastX));
             } else if (mouse.x < _lastX) {
-                columnWidth = Math.max((defaultColumnWidth - dragRange),
-                    columnWidth - (_lastX - mouse.x));
+                root.columnWidth = Math.max((root.defaultColumnWidth - dragRange),
+                    root.columnWidth - (_lastX - mouse.x));
             }
         }
 

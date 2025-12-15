@@ -97,28 +97,28 @@ Loader {
             icon.name: (LayoutMirroring.enabled ? "go-previous-symbolic-rtl" : "go-previous-symbolic")
             text: qsTr("Navigate Back")
             enabled: {
-                let isScrolled = !LayoutMirroring.enabled ? pageStack.columnView.contentX > 0
-                    : (pageStack.columnView.contentX === 0 && pageStack.columnView.contentWidth > pageStack.columnView.width)
-                return page.QQC.StackView.view || (pageStack.depth > 1 && isScrolled);
+                let isScrolled = !LayoutMirroring.enabled ? root.pageStack.columnView.contentX > 0
+                    : (root.pageStack.columnView.contentX === 0 && root.pageStack.columnView.contentWidth > root.pageStack.columnView.width)
+                return root.page.QQC.StackView.view || (root.pageStack.depth > 1 && isScrolled);
             }
-            visible: page.QQC.StackView.view || pageStack.globalToolBar.showNavigationButtons & Kirigami.ApplicationHeaderStyle.ShowBackButton
+            visible: root.page.QQC.StackView.view || root.pageStack.globalToolBar.showNavigationButtons & Kirigami.ApplicationHeaderStyle.ShowBackButton
             onClicked: {
                 // When we are in a layer, pressing back doesn't change  the index on the main ColumnView
-                if (!page.QQC.StackView.view) {
-                    pageStack.currentIndex = page.Kirigami.ColumnView.index;
+                if (!root.page.QQC.StackView.view) {
+                    root.pageStack.currentIndex = root.page.Kirigami.ColumnView.index;
                 }
-                pageStack.goBack();
+                root.pageStack.goBack();
             }
         }
         NavButton {
             icon.name: (LayoutMirroring.enabled ? "go-next-symbolic-rtl" : "go-next-symbolic")
             text: qsTr("Navigate Forward")
-            enabled: pageStack.currentIndex < pageStack.depth - 1
+            enabled: root.pageStack.currentIndex < root.pageStack.depth - 1
             // Visible when the application enabled it *and* we are not in a layer
-            visible: !page.QQC.StackView.view && pageStack.globalToolBar.showNavigationButtons & Kirigami.ApplicationHeaderStyle.ShowForwardButton
+            visible: !root.page.QQC.StackView.view && root.pageStack.globalToolBar.showNavigationButtons & Kirigami.ApplicationHeaderStyle.ShowForwardButton
             onClicked: {
-                pageStack.currentIndex = page.Kirigami.ColumnView.index;
-                pageStack.goForward();
+                root.pageStack.currentIndex = root.page.Kirigami.ColumnView.index;
+                root.pageStack.goForward();
             }
         }
     }

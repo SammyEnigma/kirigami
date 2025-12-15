@@ -110,7 +110,7 @@ Item {
         target: root.Window
         enabled: root.scrollablePage
         function onActiveFocusItemChanged(): void {
-            if (root.Window.activeFocusItem && findAncestor(root.Window.activeFocusItem, (item) => item === root)) {
+            if (root.Window.activeFocusItem && root.findAncestor(root.Window.activeFocusItem, (item) => item === root)) {
                 root.ensureVisible(root.Window.activeFocusItem)
             }
         }

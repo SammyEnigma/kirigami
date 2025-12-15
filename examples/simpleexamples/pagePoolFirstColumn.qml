@@ -45,7 +45,7 @@ Kirigami.ApplicationWindow {
                 }
             ]
             ListView {
-                model: pageActions
+                model: root.pageActions
                 keyNavigationEnabled: true
                 activeFocusOnTab: true
                 reuseItems: true

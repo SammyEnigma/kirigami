@@ -36,10 +36,10 @@ Item {
         anchors.centerIn: parent
         flat: false
 
-        icon.name: root.drawer.position > 0 ? drawer.handleOpenIcon.name : drawer.handleClosedIcon.name
-        icon.source: root.drawer.position > 0 ? drawer.handleOpenIcon.source ?? "" : drawer.handleClosedIcon.source ?? ""
-        icon.width: drawer.handleOpenIcon.width
-        icon.height: drawer.handleOpenIcon.height
+        icon.name: root.drawer.position > 0 ? root.drawer.handleOpenIcon.name : root.drawer.handleClosedIcon.name
+        icon.source: root.drawer.position > 0 ? root.drawer.handleOpenIcon.source ?? "" : root.drawer.handleClosedIcon.source ?? ""
+        icon.width: root.drawer.handleOpenIcon.width
+        icon.height: root.drawer.handleOpenIcon.height
         Accessible.name: root.drawer.drawerOpen ? root.drawer.handleOpenToolTip : root.drawer.handleClosedToolTip
 
         onClicked: {
@@ -54,23 +54,23 @@ Item {
             }
         }
 
-        QQC2.ToolTip.visible: displayToolTip && hovered
-        QQC2.ToolTip.text: drawer.drawerOpen ? handleOpenToolTip : handleClosedToolTip
+        QQC2.ToolTip.visible: root.displayToolTip && hovered
+        QQC2.ToolTip.text: root.drawer.drawerOpen ? handleOpenToolTip : handleClosedToolTip
         QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
 
         DragHandler {
             target: null
             acceptedDevices: PointerDevice.TouchScreen | PointerDevice.Stylus
             xAxis {
-                enabled: drawer.edge === Qt.LeftEdge || drawer.edge === Qt.RightEdge
+                enabled: root.drawer.edge === Qt.LeftEdge || root.drawer.edge === Qt.RightEdge
                 minimum: 0
-                maximum: drawer.contentItem.width
+                maximum: root.drawer.contentItem.width
                 onActiveValueChanged: (delta) => {
-                    let positionDelta = delta / drawer.contentItem.width;
-                    if (drawer.edge === Qt.RightEdge) {
+                    let positionDelta = delta / root.drawer.contentItem.width;
+                    if (root.drawer.edge === Qt.RightEdge) {
                         positionDelta *= -1;
                     }
-                    drawer.position += positionDelta;
+                    root.drawer.position += positionDelta;
                 }
             }
             yAxis.enabled: false
@@ -78,13 +78,13 @@ Item {
                 switch (transition) {
                 case PointerDevice.GrabExclusive:
                 case PointerDevice.GrabPassive:
-                    drawer.peeking = true;
+                    root.drawer.peeking = true;
                     break;
                 case PointerDevice.UngrabExclusive:
                 case PointerDevice.UngrabPassive:
                 case PointerDevice.CancelGrabExclusive:
                 case PointerDevice.CancelGrabPassive:
-                    drawer.peeking = false;
+                    root.drawer.peeking = false;
                     break;
                 default:
                     break;

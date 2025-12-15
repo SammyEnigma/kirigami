@@ -169,9 +169,9 @@ T.Popup {
     }
 
     Connections {
-        target: parent
+        target: root.parent
         function onVisibleChanged() {
-            if (!parent.visible) {
+            if (!root.parent.visible) {
                 root.close();
             }
         }

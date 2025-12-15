@@ -30,7 +30,7 @@ Kirigami.ScrollablePage {
                     icon.name: "view-refresh-symbolic"
                     displayHint: Kirigami.DisplayHint.KeepVisible
                     onTriggered: source => {
-                        imagePalette.update();
+                        root.imagePalette.update();
                     }
                 }
             ]
@@ -83,7 +83,7 @@ Kirigami.ScrollablePage {
             title: "Image Palette"
 
             Components.PaletteTable {
-                swatches: imagePalette.palette
+                swatches: root.imagePalette.palette
             }
         }
     }

@@ -136,7 +136,7 @@ Item {
         anchors.fill: parent
 
         drag {
-            target: listItem
+            target: root.listItem
             axis: Drag.YAxis
             minimumY: 0
         }
@@ -162,7 +162,7 @@ Item {
             anchors.fill: parent
 
             source: "handle-sort"
-            opacity: mouseArea.pressed || (!Kirigami.Settings.tabletMode && listItem.hovered) ? 1 : 0.6
+            opacity: mouseArea.pressed || (!Kirigami.Settings.tabletMode && root.listItem.hovered) ? 1 : 0.6
 
             property real startY
             property real mouseDownY
@@ -171,11 +171,11 @@ Item {
             property bool draggingUp
 
             function arrangeItem() {
-                const newIndex = listView.indexAt(1, listView.contentItem.mapFromItem(listItem, 0, listItem.height / 2).y);
+                const newIndex = root.listView.indexAt(1, root.listView.contentItem.mapFromItem(root.listItem, 0, root.listItem.height / 2).y);
 
-                if (newIndex > -1 && ((incrementalMoves && internal.draggingUp && newIndex < index) ||
-                                      (incrementalMoves && !internal.draggingUp && newIndex > index) ||
-                                      (!incrementalMoves && newIndex < listView.count))) {
+                if (newIndex > -1 && ((root.incrementalMoves && internal.draggingUp && newIndex < index) ||
+                                      (root.incrementalMoves && !internal.draggingUp && newIndex > index) ||
+                                      (!root.incrementalMoves && newIndex < root.listView.count))) {
                     if (_previousMove.oldIndex === index && _previousMove.newIndex === newIndex) {
                         return;
                     }
@@ -189,40 +189,40 @@ Item {
         }
 
         onPressed: mouse => {
-            internal.originalParent = listItem.parent;
-            listItem.parent = listView;
-            listItem.y = internal.originalParent.mapToItem(listItem.parent, listItem.x, listItem.y).y;
+            internal.originalParent = root.listItem.parent;
+            root.listItem.parent = root.listView;
+            root.listItem.y = internal.originalParent.mapToItem(root.listItem.parent, root.listItem.x, root.listItem.y).y;
             internal.originalParent.z = 99;
-            internal.startY = listItem.y;
-            internal.listItemLastY = listItem.y;
+            internal.startY = root.listItem.y;
+            internal.listItemLastY = root.listItem.y;
             internal.mouseDownY = mouse.y;
             // while dragging listItem's height could change
             // we want a const maximumY during the dragging time
-            mouseArea.drag.maximumY = listView.height - listItem.height;
+            mouseArea.drag.maximumY = root.listView.height - root.listItem.height;
         }
 
         onPositionChanged: mouse => {
-            if (!pressed || listItem.y === internal.listItemLastY) {
+            if (!pressed || root.listItem.y === internal.listItemLastY) {
                 return;
             }
 
-            internal.draggingUp = listItem.y < internal.listItemLastY
-            internal.listItemLastY = listItem.y;
+            internal.draggingUp = root.listItem.y < internal.listItemLastY
+            internal.listItemLastY = root.listItem.y;
 
             internal.arrangeItem();
 
              // autoscroll when the dragging item reaches the listView's top/bottom boundary
-            scrollTimer.running = (listView.contentHeight > listView.height)
-                && ((listItem.y === 0 && !listView.atYBeginning)
-                    || (listItem.y === mouseArea.drag.maximumY && !listView.atYEnd));
+            scrollTimer.running = (root.listView.contentHeight > root.listView.height)
+                && ((root.listItem.y === 0 && !root.listView.atYBeginning)
+                    || (root.listItem.y === mouseArea.drag.maximumY && !root.listView.atYEnd));
         }
 
         onReleased: mouse => dropped()
         onCanceled: dropped()
 
         function dropped() {
-            listItem.y = internal.originalParent.mapFromItem(listItem, 0, 0).y;
-            listItem.parent = internal.originalParent;
+            root.listItem.y = internal.originalParent.mapFromItem(root.listItem, 0, 0).y;
+            root.listItem.parent = internal.originalParent;
             dropAnimation.running = true;
             scrollTimer.running = false;
             root.dropped(_previousMove.oldIndex, _previousMove.newIndex);
@@ -232,14 +232,14 @@ Item {
         SequentialAnimation {
             id: dropAnimation
             YAnimator {
-                target: listItem
-                from: listItem.y
+                target: root.listItem
+                from: root.listItem.y
                 to: 0
                 duration: Kirigami.Units.longDuration
                 easing.type: Easing.InOutQuad
             }
             PropertyAction {
-                target: listItem.parent
+                target: root.listItem.parent
                 property: "z"
                 value: 0
             }
@@ -253,15 +253,15 @@ Item {
 
             onTriggered: {
                 if (internal.draggingUp) {
-                    listView.contentY -= Kirigami.Units.gridUnit;
-                    if (listView.atYBeginning) {
-                        listView.positionViewAtBeginning();
+                    root.listView.contentY -= Kirigami.Units.gridUnit;
+                    if (root.listView.atYBeginning) {
+                        root.listView.positionViewAtBeginning();
                         stop();
                     }
                 } else {
-                    listView.contentY += Kirigami.Units.gridUnit;
-                    if (listView.atYEnd) {
-                        listView.positionViewAtEnd();
+                    root.listView.contentY += Kirigami.Units.gridUnit;
+                    if (root.listView.atYEnd) {
+                        root.listView.positionViewAtEnd();
                         stop();
                     }
                 }

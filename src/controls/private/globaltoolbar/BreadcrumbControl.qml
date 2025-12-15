@@ -48,7 +48,7 @@ RowLayout {
         Layout.fillHeight: true
 
         currentIndex: {
-            if (!pageRow) {
+            if (!root.pageRow) {
                 return -1;
             }
             // This ListView is eventually consistent with PageRow, so it has to
@@ -60,33 +60,33 @@ RowLayout {
             // number is not the most efficient model, because ListView
             // recreates all delegates when number changes.
 
-            if (pageRow.layers.depth > 1) {
+            if (root.pageRow.layers.depth > 1) {
                 // First layer (index 0) is the main columnView.
                 // Since it is ignored, depth has to be adjusted by 1.
                 // In case of layers, current index is always the last one,
                 // which is one less than their count, thus minus another 1.
-                return pageRow.layers.depth - 2;
+                return root.pageRow.layers.depth - 2;
             } else {
-                return pageRow.currentIndex;
+                return root.pageRow.currentIndex;
             }
         }
 
         // This function exists outside of delegate, so that when popping layers
         // the JavaScript execution context won't be destroyed along with delegate.
         function selectIndex(index: int) {
-            if (!pageRow) {
+            if (!root.pageRow) {
                 return;
             }
-            if (pageRow.layers.depth > 1) {
+            if (root.pageRow.layers.depth > 1) {
                 // First layer (index 0) is the main columnView.
                 // Since it is ignored, index has to be adjusted by 1.
                 // We want to pop anything after selected index,
                 // turning selected layer into current one, thus plus another 1.
-                while (pageRow.layers.depth > index + 2) {
-                    pageRow.layers.pop();
+                while (root.pageRow.layers.depth > index + 2) {
+                    root.pageRow.layers.pop();
                 }
             } else {
-                pageRow.currentIndex = index;
+                root.pageRow.currentIndex = index;
             }
         }
 
@@ -150,9 +150,9 @@ RowLayout {
                 if (root.pageRow.layers.depth > 1) {
                     // First layer (index 0) is the main columnView.
                     // Since it is ignored, index has to be adjusted by 1.
-                    return pageRow.layers.get(index + 1);
+                    return root.pageRow.layers.get(index + 1);
                 } else {
-                    return pageRow.get(index);
+                    return root.pageRow.get(index);
                 }
             }
 

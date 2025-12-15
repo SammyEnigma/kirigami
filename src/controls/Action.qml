@@ -19,6 +19,8 @@ import org.kde.kirigami.private as P
   \brief An item that represents an abstract Action.
  */
 QQC2.Action {
+  id: action
+
 //BEGIN properties
     /*!
       \brief This property holds whether the graphic representation of the action
@@ -158,7 +160,7 @@ QQC2.Action {
     enabled: !fromQAction || fromQAction.enabled
 
     readonly property Shortcut alternateShortcut : Shortcut {
-        sequences: P.ActionHelper.alternateShortcuts(fromQAction)
+        sequences: P.ActionHelper.alternateShortcuts(action.fromQAction)
         onActivated: action.trigger()
     }
 }
