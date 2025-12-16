@@ -251,7 +251,7 @@ Item {
             }
         }
 
-        Separator {
+        Kirigami.Separator {
             Layout.fillWidth: true
         }
 
