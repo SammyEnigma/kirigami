@@ -159,6 +159,6 @@ QQC2.Action {
 
     readonly property Shortcut alternateShortcut : Shortcut {
         sequences: P.ActionHelper.alternateShortcuts(fromQAction)
-        onActivated: root.trigger()
+        onActivated: action.trigger()
     }
 }
