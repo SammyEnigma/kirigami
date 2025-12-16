@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: libkirigamiplugin_qt\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-09-22 20:41+0800\n"
-"PO-Revision-Date: 2025-11-20 20:47+0900\n"
+"PO-Revision-Date: 2025-12-16 21:25+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
@@ -104,12 +104,9 @@ msgid "More Actions"
 msgstr "更多動作"
 
 #: controls/Chip.qml:44
-#, fuzzy
-#| msgctxt "Chip|"
-#| msgid "Remove Tag"
 msgctxt "Chip|"
 msgid "Remove"
-msgstr "移除標籤"
+msgstr "移除"
 
 #: controls/ContextDrawer.qml:62
 msgctxt "ContextDrawer|"
