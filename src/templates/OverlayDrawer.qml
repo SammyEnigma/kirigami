@@ -440,36 +440,34 @@ T.Drawer {
                 State {
                     when: root.collapsed
                     PropertyChanges {
-                        target: root
-                        implicitWidth: edge === Qt.TopEdge || edge === Qt.BottomEdge ? root.T.ApplicationWindow.window.width : Math.min(collapsedSize + leftPadding + rightPadding, Math.round(root.T.ApplicationWindow.window.width*0.8))
+                        root.implicitWidth: root.edge === Qt.TopEdge || root.edge === Qt.BottomEdge ? root.T.ApplicationWindow.window.width : Math.min(root.collapsedSize + root.leftPadding + root.rightPadding, Math.round(root.T.ApplicationWindow.window.width*0.8))
 
-                        implicitHeight: edge === Qt.LeftEdge || edge === Qt.RightEdge ? root.T.ApplicationWindow.window.height : Math.min(collapsedSize + topPadding + bottomPadding, Math.round(root.T.ApplicationWindow.window.height*0.8))
+                        root.implicitHeight: root.edge === Qt.LeftEdge || root.edge === Qt.RightEdge ? root.T.ApplicationWindow.window.height : Math.min(root.collapsedSize + root.topPadding + root.bottomPadding, Math.round(root.T.ApplicationWindow.window.height*0.8))
                     }
                 },
                 State {
                     when: !root.collapsed
                     PropertyChanges {
-                        target: root
-                        implicitWidth: {
-                            if (edge === Qt.TopEdge || edge === Qt.BottomEdge) {
+                        root.implicitWidth: {
+                            if (root.edge === Qt.TopEdge || root.edge === Qt.BottomEdge) {
                                 return root.T.ApplicationWindow.window?.width ?? Kirigami.Units.gridUnit * 30;
                             } else {
                                 const implicitWidth = root.preferredSize > 0 ? root.preferredSize : contentItem.implicitWidth;
-                                return Math.max(root.minimumSize, Math.min(implicitWidth + leftPadding + rightPadding, root.maximumSize))
+                                return Math.max(root.minimumSize, Math.min(implicitWidth + root.leftPadding + root.rightPadding, root.maximumSize))
                             }
                         }
 
-                        implicitHeight: {
-                            if (edge === Qt.LeftEdge || edge === Qt.RightEdge) {
+                        root.implicitHeight: {
+                            if (root.edge === Qt.LeftEdge || root.edge === Qt.RightEdge) {
                                 return root.T.ApplicationWindow.window?.height ?? Kirigami.Units.gridUnit * 5;
                             } else {
                                 const implicitHeight = root.preferredSize > 0 ? root.preferredSize : contentItem.implicitHeight;
-                                return Math.max(root.minimumSize, Math.min(implicitHeight + topPadding + bottomPadding, root.maximumSize))
+                                return Math.max(root.minimumSize, Math.min(implicitHeight + root.topPadding + root.bottomPadding, root.maximumSize))
                             }
                         }
 
-                        contentWidth: contentItem.implicitWidth || (contentChildren.length === 1 ? contentChildren[0].implicitWidth : 0)
-                        contentHeight: contentItem.implicitHeight || (contentChildren.length === 1 ? contentChildren[0].implicitHeight : 0)
+                        root.contentWidth: root.contentItem.implicitWidth || (root.contentChildren.length === 1 ? contentChildren[0].implicitWidth : 0)
+                        root.contentHeight: root.contentItem.implicitHeight || (root.contentChildren.length === 1 ? contentChildren[0].implicitHeight : 0)
                     }
                 }
             ]

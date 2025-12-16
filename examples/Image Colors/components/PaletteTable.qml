@@ -75,9 +75,8 @@ ColumnLayout {
                             name: "inside"
 
                             PropertyChanges {
-                                target: label
-                                anchors.leftMargin: - label.width - Kirigami.Units.largeSpacing
-                                layer.enabled: true
+                                label.anchors.leftMargin: - label.width - Kirigami.Units.largeSpacing
+                                label.layer.enabled: true
                                 // The contrast color sometimes isn't really usable
                                 // color: delegate.modelData.contrastColor
                             }
@@ -87,8 +86,7 @@ ColumnLayout {
                             name: "side-by-side"
 
                             PropertyChanges {
-                                target: label
-                                anchors.leftMargin: Kirigami.Units.smallSpacing
+                                label.anchors.leftMargin: Kirigami.Units.smallSpacing
                             }
                         }
                     ]

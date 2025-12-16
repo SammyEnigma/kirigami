@@ -119,18 +119,16 @@ Item {
             name: "active"
             when: root.active
             PropertyChanges {
-                target: indicatorContainer
-                anchors.bottomMargin: root.flickable.topMargin - indicatorContainer.height
+                indicatorContainer.anchors.bottomMargin: root.flickable.topMargin - indicatorContainer.height
             }
             PropertyChanges {
-                target: root.flickable
                 explicit: true
 
                 // this is not a loop because of explicit:true above
                 // It adds the height of the indicator to the topMargin of the flickable
                 // when we enter the active state; the change is automatically reversed
                 // when returning to the base state.
-                topMargin: indicatorContainer.height + root.flickable.topMargin
+                root.flickable.topMargin: indicatorContainer.height + root.flickable.topMargin
             }
         }
     ]

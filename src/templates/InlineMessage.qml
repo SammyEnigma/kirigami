@@ -389,8 +389,7 @@ T.Control {
                         anchors.bottom: undefined
                     }
                     PropertyChanges {
-                        target: label
-                        height: label.implicitHeight
+                        label.height: label.implicitHeight
                     }
                 }
             ]

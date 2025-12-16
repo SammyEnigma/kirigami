@@ -300,9 +300,8 @@ QQC2.SwipeDelegate {
                 anchors.bottom: parent.bottom
             }
             PropertyChanges {
-                target: overlayLoader
-                anchors.topMargin: listItem.topPadding
-                anchors.bottomMargin: listItem.bottomPadding
+                overlayLoader.anchors.topMargin: listItem.topPadding
+                overlayLoader.anchors.bottomMargin: listItem.bottomPadding
             }
         }
         Component.onCompleted: overlayLoader.state = "reanchored"
