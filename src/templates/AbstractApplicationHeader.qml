@@ -54,7 +54,7 @@ Item {
             return mainItem.applicationItem.pageStack.globalToolBar.preferredHeight;
         }
 
-        mainItem.children.reduce((accumulator, item) => {
+        return mainItem.children.reduce((accumulator, item) => {
             return Math.max(accumulator, item.implicitHeight);
         }, 0) + topPadding + bottomPadding
     }
