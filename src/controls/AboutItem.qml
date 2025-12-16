@@ -4,6 +4,7 @@
  *
  *  SPDX-License-Identifier: LGPL-2.0-or-later
  */
+pragma ComponentBehavior: Bound
 
 import QtQuick
 import QtQuick.Controls as QQC2
@@ -300,6 +301,10 @@ Item {
             id: licenseLinkButton
 
             RowLayout {
+                id: licenseLinkLayout
+
+                required property var modelData
+
                 Layout.leftMargin: Kirigami.Units.smallSpacing
 
                 QQC2.Label { text: qsTr("License:") }
@@ -307,10 +312,10 @@ Item {
                 LinkButton {
                     Layout.fillWidth: true
                     wrapMode: Text.WordWrap
-                    text: modelData.name
+                    text: licenseLinkLayout.modelData.name
                     onClicked: mouse => {
-                        licenseSheet.text = modelData.text
-                        licenseSheet.title = modelData.name
+                        licenseSheet.text = licenseLinkLayout.modelData.text
+                        licenseSheet.title = licenseLinkLayout.modelData.name
                         licenseSheet.open()
                     }
                 }
@@ -321,6 +326,7 @@ Item {
             id: licenseTextItem
 
             QQC2.Label {
+                required property var modelData
                 Layout.leftMargin: Kirigami.Units.smallSpacing
                 Layout.fillWidth: true
                 wrapMode: Text.WordWrap
@@ -344,6 +350,7 @@ Item {
         Repeater {
             model: Kirigami.Settings.information
             delegate: QQC2.Label {
+                required property string modelData
                 Layout.leftMargin: Kirigami.Units.gridUnit
                 Layout.fillWidth: true
                 wrapMode: Text.WordWrap
@@ -355,6 +362,7 @@ Item {
         Repeater {
             model: aboutItem.aboutData.components
             delegate: QQC2.Label {
+                required property var modelData
                 Layout.fillWidth: true
                 wrapMode: Text.WordWrap
                 Layout.leftMargin: Kirigami.Units.gridUnit

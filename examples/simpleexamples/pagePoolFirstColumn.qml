@@ -3,6 +3,7 @@
  *
  *  SPDX-License-Identifier: LGPL-2.0-or-later
  */
+pragma ComponentBehavior: Bound
 
 import QtQuick
 import QtQuick.Controls as QQC2
@@ -51,6 +52,7 @@ Kirigami.ApplicationWindow {
                 reuseItems: true
                 delegate: QQC2.ItemDelegate {
                     id: delegate
+                    required property Kirigami.PagePoolAction modelData
                     action: modelData
                     width: parent.width
                 }

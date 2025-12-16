@@ -3,6 +3,7 @@
  *
  *  SPDX-License-Identifier: LGPL-2.0-or-later
  */
+pragma ComponentBehavior: Bound
 
 import QtQuick
 import QtQuick.Controls as QQC2
@@ -30,6 +31,8 @@ QQC2.Menu {
 
         active: root.visible
         delegate: QtObject {
+            required property T.Action modelData
+
             readonly property T.Action action: modelData
 
             property QtObject item: null

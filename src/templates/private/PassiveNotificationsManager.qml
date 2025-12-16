@@ -3,6 +3,7 @@
  *
  *  SPDX-License-Identifier: LGPL-2.0-or-later
  */
+pragma ComponentBehavior: Bound
 
 import QtQuick
 import QtQuick.Controls as QQC2
@@ -11,7 +12,7 @@ import org.kde.kirigami as Kirigami
 import org.kde.kirigami.private.polyfill
 
 /*!
-  \brief PassiveNotificationManager is meant to display small, passive and inline notifications in the app.
+  \brief PassiveNotificatiomodelnManager is meant to display small, passive and inline notifications in the app.
 
   It is used to show messages of limited importance that make sense only when
   the user is using the application and wouldn't be suited as a global
@@ -178,6 +179,12 @@ Item {
         delegate: QQC2.Control {
             id: delegate
 
+            required property int index
+            required property int closeInterval
+            required property string text
+            required property string actionButtonText
+            required property QtObject callBackWrapper
+
             hoverEnabled: true
             // We force the delegate to be not visible when
             // created, as this could cause some flickering
@@ -218,18 +225,18 @@ Item {
 
                 TapHandler {
                     acceptedButtons: Qt.LeftButton
-                    onTapped: eventPoint => hideNotification(index)
+                    onTapped: eventPoint => root.hideNotification(delegate.index)
                 }
                 Timer {
                     id: timer
-                    interval: model.closeInterval
+                    interval: delegate.closeInterval
                     running: !delegate.hovered
-                    onTriggered: hideNotification(index)
+                    onTriggered: root.hideNotification(delegate.index)
                 }
 
                 QQC2.Label {
                     id: label
-                    text: model.text
+                    text: delegate.text
                     elide: Text.ElideRight
                     wrapMode: Text.Wrap
                     Layout.fillWidth: true
@@ -238,12 +245,12 @@ Item {
 
                 QQC2.Button {
                     id: actionButton
-                    text: model.actionButtonText
+                    text: delegate.actionButtonText
                     visible: text.length > 0
                     Layout.alignment: Qt.AlignVCenter
                     onClicked: {
-                        const callBack = model.callBackWrapper.callBack
-                        hideNotification(index)
+                        const callBack = delegate.callBackWrapper.callBack
+                        root.hideNotification(delegate.index)
                         if (callBack && (typeof callBack === "function")) {
                             callBack();
                         }

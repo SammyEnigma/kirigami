@@ -3,6 +3,7 @@
 
     SPDX-License-Identifier: LGPL-2.1-or-later
 */
+pragma ComponentBehavior: Bound
 
 import QtQuick
 import QtQuick.Layouts
@@ -40,6 +41,9 @@ TestCase {
                 model: 1
                 delegate: QQC.ItemDelegate {
                     id: delegate
+
+                    required property int index
+
                     width: ListView.view.width
                     text: String(index)
                     onClicked: {

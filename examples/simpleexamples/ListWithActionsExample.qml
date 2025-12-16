@@ -3,6 +3,7 @@
  *
  *  SPDX-License-Identifier: LGPL-2.0-or-later
  */
+pragma ComponentBehavior: Bound
 
 import QtQuick
 import QtQuick.Controls as QQC2
@@ -47,12 +48,16 @@ Kirigami.ApplicationWindow {
                 anchors.fill: parent
                 delegate: QQC2.ItemDelegate {
                     id: itemDelegate
+
+                    required property string name
+                    required property string title
+
                     Kirigami.Theme.useAlternateBackgroundColor: true
                     width: parent.width
 
                     contentItem: Kirigami.TitleSubtitleWithActions {
-                        title: model.name
-                        subtitle: model.title
+                        title: itemDelegate.name
+                        subtitle: itemDelegate.title
                         elide: Text.ElideRight
                         selected: itemDelegate.pressed || itemDelegate.highlighted
                         actions: [

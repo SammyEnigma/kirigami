@@ -3,6 +3,7 @@
  *
  *  SPDX-License-Identifier: LGPL-2.0-or-later
  */
+pragma ComponentBehavior: Bound
 
 import QtQuick
 import QtQuick.Layouts
@@ -111,6 +112,8 @@ Kirigami.ApplicationWindow {
                     reuseItems: true
                     model: 50
                     delegate: QQC2.ItemDelegate {
+                        required property int modelData
+
                         text: "Person " + modelData
                         width: parent.width
                     }
@@ -175,6 +178,8 @@ Kirigami.ApplicationWindow {
                 model: 30
                 reuseItems: true
                 delegate: QQC2.ItemDelegate {
+                    required property int modelData
+                    required property int index
                     text: "#Channel " + modelData
                     checkable: true
                     checked: channelsList.currentIndex === index
@@ -265,15 +270,19 @@ Kirigami.ApplicationWindow {
                 model: 30
                 reuseItems: true
                 delegate: Item {
+                    id: channelDelegate
+
+                    required property int modelData
+
                     height: Kirigami.Units.gridUnit * 4
                     ColumnLayout {
                         x: Kirigami.Units.gridUnit
                         anchors.verticalCenter: parent.verticalCenter
                         QQC2.Label {
-                            text: modelData % 2 ? "John Doe" : "John Applebaum"
+                            text: channelDelegate.modelData % 2 ? "John Doe" : "John Applebaum"
                         }
                         QQC2.Label {
-                            text: "Message " + modelData
+                            text: "Message " + channelDelegate.modelData
                         }
                     }
                 }
