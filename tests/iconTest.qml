@@ -3,6 +3,7 @@
  *
  *  SPDX-License-Identifier: LGPL-2.0-or-later
  */
+pragma ComponentBehavior: Bound
 
 import QtQuick
 import QtQuick.Layouts
@@ -17,13 +18,6 @@ Kirigami.ApplicationWindow {
     property bool iconEnabled: true
     property bool iconAnimated: false
     property real iconSize: Kirigami.Units.iconSizes.large
-
-    Component {
-        id: delegateComponent
-        Kirigami.Card {
-            contentItem: Label { text: ourlist.prefix + index }
-        }
-    }
 
     pageStack.initialPage: Kirigami.Page {
         actions: [

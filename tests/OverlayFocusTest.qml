@@ -46,6 +46,7 @@ Rectangle {
             model: 10
 
             delegate: QQC2.ItemDelegate {
+                required property int modelData
                 text: "Item " + modelData
                 width: parent.width
             }

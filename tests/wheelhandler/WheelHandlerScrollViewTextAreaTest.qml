@@ -3,11 +3,7 @@
  */
 
 import QtQuick
-import QtQml
-import QtQuick.Templates as T
 import QtQuick.Controls as QQC2
-
-import org.kde.kirigami as Kirigami
 
 QQC2.ApplicationWindow {
     id: root

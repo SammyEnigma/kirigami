@@ -3,6 +3,7 @@
  *
  *  SPDX-License-Identifier: LGPL-2.0-or-later
  */
+pragma ComponentBehavior: Bound
 
 import QtQuick
 import QtQuick.Controls
@@ -14,7 +15,9 @@ Kirigami.ApplicationWindow {
     Component {
         id: delegateComponent
         Kirigami.Card {
-            contentItem: Label { text: ourlist.prefix + index }
+            id: card
+            required property int index
+            contentItem: Label { text: ourlist.prefix + card.index }
         }
     }
 

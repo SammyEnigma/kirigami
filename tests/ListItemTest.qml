@@ -278,50 +278,54 @@ Kirigami.ApplicationWindow {
             }
 
             KD.SubtitleDelegate {
+                id: subtitleDelegate1
                 Layout.fillWidth: true
 
                 icon.name: "edit-bomb"
                 text: "Boom!"
 
                 contentItem: KD.IconTitleSubtitle {
-                    title: parent.text
-                    icon: icon.fromControlsIcon(parent.icon)
+                    title: subtitleDelegate1.text
+                    icon: icon.fromControlsIcon(subtitleDelegate1.icon)
                     reserveSpaceForSubtitle: true
                 }
             }
             KD.CheckSubtitleDelegate {
+                id: checkSubtitleDelegate
                 Layout.fillWidth: true
 
                 icon.name: "edit-bomb"
                 text: "Boom!"
 
                 contentItem: KD.IconTitleSubtitle {
-                    title: parent.text
-                    icon: icon.fromControlsIcon(parent.icon)
+                    title: checkSubtitleDelegate.text
+                    icon: icon.fromControlsIcon(checkSubtitleDelegate.icon)
                     reserveSpaceForSubtitle: true
                 }
             }
             KD.RadioSubtitleDelegate {
+                id: radioSubtitleDelegate
                 Layout.fillWidth: true
 
                 icon.name: "edit-bomb"
                 text: "Boom!"
 
                 contentItem: KD.IconTitleSubtitle {
-                    title: parent.text
-                    icon: icon.fromControlsIcon(parent.icon)
+                    title: radioSubtitleDelegate.text
+                    icon: icon.fromControlsIcon(radioSubtitleDelegate.icon)
                     reserveSpaceForSubtitle: true
                 }
             }
             KD.SwitchSubtitleDelegate {
+                id: switchSubtitleDelegate
                 Layout.fillWidth: true
 
                 icon.name: "edit-bomb"
                 text: "Boom!"
 
                 contentItem: KD.IconTitleSubtitle {
-                    title: parent.text
-                    icon: icon.fromControlsIcon(parent.icon)
+                    title: switchSubtitleDelegate.text
+                    icon: icon.fromControlsIcon(switchSubtitleDelegate.icon)
                     reserveSpaceForSubtitle: true
                 }
             }

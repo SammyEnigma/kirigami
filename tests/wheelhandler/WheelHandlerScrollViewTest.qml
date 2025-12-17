@@ -4,10 +4,7 @@
 
 import QtQuick
 import QtQml
-import QtQuick.Templates as T
 import QtQuick.Controls as QQC2
-
-import org.kde.kirigami as Kirigami
 
 QQC2.ApplicationWindow {
     id: root
@@ -23,10 +20,12 @@ QQC2.ApplicationWindow {
             Repeater {
                 model: 500
                 delegate: Rectangle {
+                    id: rectangle1
+                    required property int index
                     implicitWidth: 20 * Application.styleHints.wheelScrollLines
                     implicitHeight: 20 * Application.styleHints.wheelScrollLines
                     gradient: Gradient {
-                        orientation: index % 2 ? Gradient.Vertical : Gradient.Horizontal
+                        orientation: rectangle1.index % 2 ? Gradient.Vertical : Gradient.Horizontal
                         GradientStop { position: 0; color: Qt.rgba(Math.random(),Math.random(),Math.random(),1) }
                         GradientStop { position: 1; color: Qt.rgba(Math.random(),Math.random(),Math.random(),1) }
                     }
@@ -55,10 +54,12 @@ QQC2.ApplicationWindow {
             Repeater {
                 model: 500
                 delegate: Rectangle {
+                    id: rectangle2
+                    required property int index
                     implicitWidth: 20 * Application.styleHints.wheelScrollLines
                     implicitHeight: 20 * Application.styleHints.wheelScrollLines
                     gradient: Gradient {
-                        orientation: index % 2 ? Gradient.Vertical : Gradient.Horizontal
+                        orientation: rectangle2.index % 2 ? Gradient.Vertical : Gradient.Horizontal
                         GradientStop { position: 0; color: Qt.rgba(Math.random(),Math.random(),Math.random(),1) }
                         GradientStop { position: 1; color: Qt.rgba(Math.random(),Math.random(),Math.random(),1) }
                     }
