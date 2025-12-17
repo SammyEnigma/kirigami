@@ -25,41 +25,50 @@ TestCase {
         height: 360
     }
 
+    component SamplePage: Kirigami.Page {
+        property Item outerStack: Kirigami.PageStack.pageStack
+        property alias innerRect: rect
+        Rectangle {
+            id: rect
+            color: "green"
+            property Item stackFromChild: Kirigami.PageStack.pageStack
+        }
+    }
+
     Component {
         id: samplePage
-        Kirigami.Page {
-            property Item outerStack: Kirigami.PageStack.pageStack
-            property alias innerRect: rect
-            Rectangle {
-                id: rect
-                color: "green"
-                property Item stackFromChild: Kirigami.PageStack.pageStack
-            }
+
+        SamplePage { }
+    }
+
+    component PageWithInnerStack: Kirigami.Page {
+        property Item stack: Kirigami.PageStack.pageStack
+        property alias subStack: stackView
+        QQC.StackView {
+            id: stackView
         }
     }
 
     Component {
         id: pageWithInnerStack
-        Kirigami.Page {
-            property Item stack: Kirigami.PageStack.pageStack
-            property alias subStack: stackView
-            QQC.StackView {
-                id: stackView
-            }
+
+        PageWithInnerStack { }
+    }
+
+    component PageInLayer: Kirigami.Page {
+        property Item outerStack: Kirigami.PageStack.pageStack
+        property alias innerRect: rect
+        Rectangle {
+            id: rect
+            color: "blue"
+            property Item stackFromChild: Kirigami.PageStack.pageStack
         }
     }
 
     Component {
         id: pageInLayer
-        Kirigami.Page {
-            property Item outerStack: Kirigami.PageStack.pageStack
-            property alias innerRect: rect
-            Rectangle {
-                id: rect
-                color: "blue"
-                property Item stackFromChild: Kirigami.PageStack.pageStack
-            }
-        }
+
+        PageInLayer { }
     }
 
     SignalSpy {
@@ -117,7 +126,7 @@ TestCase {
         compare(pageRowFirstPage.outerStack, mainWindow.pageStack)
         compare(pageRowFirstPage.innerRect.stackFromChild, mainWindow.pageStack)
 
-        let layer1Page = mainWindow.pageStack.layers.currentItem
+        let layer1Page = mainWindow.pageStack.layers.currentItem as PageInLayer
         compare(layer1Page.outerStack, mainWindow.pageStack.layers)
         compare(layer1Page.innerRect.stackFromChild, mainWindow.pageStack.layers)
     }
@@ -127,7 +136,7 @@ TestCase {
         mainWindow.pageStack.push(samplePage)
         compare(mainWindow.pageStack.depth, 1)
 
-        let pageRowFirstPage = mainWindow.pageStack.items[0]
+        let pageRowFirstPage = mainWindow.pageStack.items[0] as SamplePage
 
         compare(pageRowFirstPage.outerStack, mainWindow.pageStack)
         compare(pageRowFirstPage.innerRect.stackFromChild, mainWindow.pageStack)
@@ -135,7 +144,7 @@ TestCase {
         mainWindow.pageStack.push(pageWithInnerStack)
         compare(mainWindow.pageStack.depth, 2)
 
-        let pageRowSecondPage = mainWindow.pageStack.items[1]
+        let pageRowSecondPage = mainWindow.pageStack.items[1] as PageWithInnerStack
 
         compare(pageRowSecondPage.stack, mainWindow.pageStack)
 
@@ -155,7 +164,7 @@ TestCase {
         mainWindow.pageStack.push(samplePage)
         compare(mainWindow.pageStack.depth, 1)
 
-        let pageRowFirstPage = mainWindow.pageStack.items[0]
+        let pageRowFirstPage = mainWindow.pageStack.items[0] as SamplePage
 
         compare(pageRowFirstPage.outerStack, mainWindow.pageStack)
         compare(pageRowFirstPage.innerRect.stackFromChild, mainWindow.pageStack)
@@ -163,7 +172,7 @@ TestCase {
         mainWindow.pageStack.push(pageWithInnerStack)
         compare(mainWindow.pageStack.depth, 2)
 
-        let pageRowSecondPage = mainWindow.pageStack.items[1]
+        let pageRowSecondPage = mainWindow.pageStack.items[1] as PageWithInnerStack
 
         compare(pageRowSecondPage.stack, mainWindow.pageStack)
 
@@ -184,11 +193,11 @@ TestCase {
         mainWindow.pageStack.push(samplePage)
         compare(mainWindow.pageStack.depth, 1)
 
-        let pageRowFirstPage = mainWindow.pageStack.items[0]
+        let pageRowFirstPage = mainWindow.pageStack.items[0] as SamplePage
         pageRowFirstPage.Kirigami.PageStack.push(samplePage);
         compare(mainWindow.pageStack.depth, 2)
 
-        let pageRowSecondPage = mainWindow.pageStack.items[1]
+        let pageRowSecondPage = mainWindow.pageStack.items[1] as SamplePage
         pageRowSecondPage.innerRect.Kirigami.PageStack.push(samplePage)
         compare(mainWindow.pageStack.depth, 3)
 
@@ -201,11 +210,11 @@ TestCase {
         mainWindow.pageStack.push(pageWithInnerStack)
         compare(mainWindow.pageStack.depth, 1)
 
-        let pageRowFirstPage = mainWindow.pageStack.items[0]
+        let pageRowFirstPage = mainWindow.pageStack.items[0] as PageWithInnerStack
         pageRowFirstPage.subStack.push(samplePage)
         compare(pageRowFirstPage.subStack.depth, 1)
 
-        let subStackFirstPage = pageRowFirstPage.subStack.currentItem
+        let subStackFirstPage = pageRowFirstPage.subStack.currentItem as SamplePage
 
         subStackFirstPage.Kirigami.PageStack.push(samplePage)
         compare(pageRowFirstPage.subStack.depth, 2)
@@ -221,11 +230,11 @@ TestCase {
         mainWindow.pageStack.push(samplePage)
         compare(mainWindow.pageStack.depth, 1)
 
-        let pageRowFirstPage = mainWindow.pageStack.items[0]
+        let pageRowFirstPage = mainWindow.pageStack.items[0] as SamplePage
         pageRowFirstPage.Kirigami.PageStack.push(samplePage);
         compare(mainWindow.pageStack.depth, 2)
 
-        let pageRowSecondPage = mainWindow.pageStack.items[1]
+        let pageRowSecondPage = mainWindow.pageStack.items[1] as SamplePage
         pageRowSecondPage.innerRect.Kirigami.PageStack.replace(pageWithInnerStack)
         compare(mainWindow.pageStack.depth, 2)
         pageRowSecondPage = mainWindow.pageStack.items[1]
@@ -237,11 +246,11 @@ TestCase {
         mainWindow.pageStack.push(pageWithInnerStack)
         compare(mainWindow.pageStack.depth, 1)
 
-        let pageRowFirstPage = mainWindow.pageStack.items[0]
+        let pageRowFirstPage = mainWindow.pageStack.items[0] as PageWithInnerStack
         pageRowFirstPage.subStack.push(samplePage)
         compare(pageRowFirstPage.subStack.depth, 1)
 
-        let subStackFirstPage = pageRowFirstPage.subStack.currentItem
+        let subStackFirstPage = pageRowFirstPage.subStack.currentItem as SamplePage
 
         subStackFirstPage.Kirigami.PageStack.push(samplePage)
         compare(pageRowFirstPage.subStack.depth, 2)
@@ -256,11 +265,11 @@ TestCase {
         mainWindow.pageStack.push(samplePage)
         compare(mainWindow.pageStack.depth, 1)
 
-        let pageRowFirstPage = mainWindow.pageStack.items[0]
+        let pageRowFirstPage = mainWindow.pageStack.items[0] as SamplePage
         pageRowFirstPage.Kirigami.PageStack.push(samplePage);
         compare(mainWindow.pageStack.depth, 2)
 
-        let pageRowSecondPage = mainWindow.pageStack.items[1]
+        let pageRowSecondPage = mainWindow.pageStack.items[1] as SamplePage
         pageRowSecondPage.innerRect.Kirigami.PageStack.push(samplePage)
         compare(mainWindow.pageStack.depth, 3)
 
@@ -273,11 +282,11 @@ TestCase {
         mainWindow.pageStack.push(pageWithInnerStack)
         compare(mainWindow.pageStack.depth, 1)
 
-        let pageRowFirstPage = mainWindow.pageStack.items[0]
+        let pageRowFirstPage = mainWindow.pageStack.items[0] as PageWithInnerStack
         pageRowFirstPage.subStack.push(samplePage)
         compare(pageRowFirstPage.subStack.depth, 1)
 
-        let subStackFirstPage = pageRowFirstPage.subStack.currentItem
+        let subStackFirstPage = pageRowFirstPage.subStack.currentItem as SamplePage
 
         subStackFirstPage.Kirigami.PageStack.push(samplePage)
         compare(pageRowFirstPage.subStack.depth, 2)

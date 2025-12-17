@@ -8,8 +8,8 @@ import QtTest
 
 TestCase {
     id: root
-    readonly property Kirigami.WheelHandler wheelHandler: loader.item.wheelHandler
-    readonly property Flickable flickable: (loader.item instanceof ScrollView) ? loader.item.contentItem : loader.item
+    readonly property Kirigami.WheelHandler wheelHandler: (loader.item instanceof ScrollView) ? (loader.item as ScrollViewComponent).wheelHandler : (loader.item as FlickableComponent).wheelHandler
+    readonly property Flickable flickable: (loader.item instanceof ScrollView) ? (loader.item as ScrollView).contentItem as Flickable : loader.item as Flickable
     readonly property Item inputItem: flickable
     readonly property real hstep: wheelHandler.horizontalStepSize
     readonly property real vstep: wheelHandler.verticalStepSize
@@ -17,7 +17,7 @@ TestCase {
     readonly property real pageHeight: flickable.height - flickable.topMargin - flickable.bottomMargin
     readonly property real contentWidth: flickable.contentWidth
     readonly property real contentHeight: flickable.contentHeight
-    readonly property real leftMargin: (loader.item instanceof ScrollView) ? loader.item.leftPadding : loader.item.leftMargin
+    readonly property real leftMargin: (loader.item instanceof ScrollView) ? (loader.item as ScrollView).leftPadding : (loader.item as Flickable).leftMargin
 
     name: "WheelHandler scrolling"
     visible: true
@@ -198,37 +198,43 @@ TestCase {
         sourceComponent: flickableComponent
     }
 
+    component FlickableComponent: ScrollableFlickable {
+        id: flickable
+        readonly property alias wheelHandler: wheelHandler
+        focus: true
+        Kirigami.WheelHandler {
+            id: wheelHandler
+            target: flickable
+            keyNavigationEnabled: true
+        }
+    }
+
     Component {
         id: flickableComponent
-        ScrollableFlickable {
+
+        FlickableComponent { }
+    }
+
+    component ScrollViewComponent: ScrollView {
+        readonly property alias wheelHandler: wheelHandler
+        focus: true
+        implicitWidth: flickable.implicitWidth + leftPadding + rightPadding
+        implicitHeight: flickable.implicitHeight + topPadding + bottomPadding
+        contentItem: ContentFlickable {
             id: flickable
-            readonly property alias wheelHandler: wheelHandler
-            focus: true
+        }
+        data: [
             Kirigami.WheelHandler {
                 id: wheelHandler
                 target: flickable
                 keyNavigationEnabled: true
             }
-        }
+        ]
     }
 
     Component {
         id: scrollViewComponent
-        ScrollView {
-            readonly property alias wheelHandler: wheelHandler
-            focus: true
-            implicitWidth: flickable.implicitWidth + leftPadding + rightPadding
-            implicitHeight: flickable.implicitHeight + topPadding + bottomPadding
-            contentItem: ContentFlickable {
-                id: flickable
-            }
-            data: [
-                Kirigami.WheelHandler {
-                    id: wheelHandler
-                    target: flickable
-                    keyNavigationEnabled: true
-                }
-            ]
-        }
+
+        ScrollViewComponent { }
     }
 }

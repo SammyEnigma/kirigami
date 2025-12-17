@@ -267,7 +267,7 @@ TestCase {
             readonly property alias buddyColumn: buddyColumn
 
             function addBuddyFromComponent(component: Component): Item {
-                const buddy = component.createObject(buddyColumn);
+                const buddy = component.createObject(buddyColumn) as Item;
                 buddyColumn.Kirigami.FormData.buddyFor = buddy;
                 return buddy;
             }

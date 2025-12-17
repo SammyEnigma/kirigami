@@ -56,7 +56,7 @@ TestCase {
         loadPageAction.trigger()
         compare(mainWindow.pageStack.depth, 1)
         verify(pool.lastLoadedUrl.toString().endsWith(expectedUrl))
-        compare(mainWindow.pageStack.currentItem.title, "INITIAL TITLE")
+        compare((mainWindow.pageStack.currentItem as Kirigami.Page).title, "INITIAL TITLE")
     }
 
     Kirigami.PagePoolAction {
@@ -75,8 +75,8 @@ TestCase {
         loadPageActionWithProps.trigger()
         compare(mainWindow.pageStack.depth, 1)
         verify(pool.lastLoadedUrl.toString().endsWith(expectedUrl))
-        compare(mainWindow.pageStack.currentItem.title, "NEW TITLE")
-        compare(pool.lastLoadedItem.title, "NEW TITLE")
+        compare((mainWindow.pageStack.currentItem as Kirigami.Page).title, "NEW TITLE")
+        compare((pool.lastLoadedItem as Kirigami.Page).title, "NEW TITLE")
     }
 
     Kirigami.PagePoolAction {

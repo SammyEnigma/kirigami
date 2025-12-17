@@ -88,13 +88,13 @@ TestCase {
         compare(item.baselineOffset, 0);
 
         item.padding = 1;
-        compare(paddingSpy.count, 1), paddingSpy.clear();
-        compare(topPaddingSpy.count, 1), topPaddingSpy.clear();
-        compare(leftPaddingSpy.count, 1), leftPaddingSpy.clear();
-        compare(rightPaddingSpy.count, 1), rightPaddingSpy.clear();
-        compare(bottomPaddingSpy.count, 1), bottomPaddingSpy.clear();
-        compare(verticalPaddingSpy.count, 1), verticalPaddingSpy.clear();
-        compare(horizontalPaddingSpy.count, 1), horizontalPaddingSpy.clear();
+        compare(paddingSpy.count, 1); paddingSpy.clear();
+        compare(topPaddingSpy.count, 1); topPaddingSpy.clear();
+        compare(leftPaddingSpy.count, 1); leftPaddingSpy.clear();
+        compare(rightPaddingSpy.count, 1); rightPaddingSpy.clear();
+        compare(bottomPaddingSpy.count, 1); bottomPaddingSpy.clear();
+        compare(verticalPaddingSpy.count, 1); verticalPaddingSpy.clear();
+        compare(horizontalPaddingSpy.count, 1); horizontalPaddingSpy.clear();
 
         compare(item.padding, 1);
         compare(item.topPadding, 1);
@@ -106,7 +106,7 @@ TestCase {
         compare(item.baselineOffset, 0);
 
         item.leftPadding = 2;
-        compare(leftPaddingSpy.count, 1), leftPaddingSpy.clear();
+        compare(leftPaddingSpy.count, 1); leftPaddingSpy.clear();
 
         compare(item.padding, 1);
         compare(item.topPadding, 1);
@@ -116,8 +116,8 @@ TestCase {
 
         item.horizontalPadding = 3;
         compare(leftPaddingSpy.count, 0);
-        compare(rightPaddingSpy.count, 1), rightPaddingSpy.clear();
-        compare(horizontalPaddingSpy.count, 1), horizontalPaddingSpy.clear();
+        compare(rightPaddingSpy.count, 1); rightPaddingSpy.clear();
+        compare(horizontalPaddingSpy.count, 1); horizontalPaddingSpy.clear();
 
         compare(item.padding, 1);
         compare(item.topPadding, 1);
@@ -129,9 +129,9 @@ TestCase {
 
         item.verticalPadding = 4;
         verify(waitForRendering(item))
-        compare(topPaddingSpy.count, 1), topPaddingSpy.clear();
-        compare(bottomPaddingSpy.count, 1), bottomPaddingSpy.clear();
-        compare(verticalPaddingSpy.count, 1), verticalPaddingSpy.clear();
+        compare(topPaddingSpy.count, 1); topPaddingSpy.clear();
+        compare(bottomPaddingSpy.count, 1); bottomPaddingSpy.clear();
+        compare(verticalPaddingSpy.count, 1); verticalPaddingSpy.clear();
 
         compare(item.padding, 1);
         compare(item.topPadding, 4);
@@ -143,7 +143,7 @@ TestCase {
 
         item.topPadding = 5;
         verify(waitForRendering(item))
-        compare(topPaddingSpy.count, 1), topPaddingSpy.clear();
+        compare(topPaddingSpy.count, 1); topPaddingSpy.clear();
 
         compare(item.padding, 1);
         compare(item.topPadding, 5);
@@ -155,7 +155,7 @@ TestCase {
 
         item.bottomPadding = 6;
         verify(waitForRendering(item))
-        compare(bottomPaddingSpy.count, 1), bottomPaddingSpy.clear();
+        compare(bottomPaddingSpy.count, 1); bottomPaddingSpy.clear();
 
         compare(item.padding, 1);
         compare(item.topPadding, 5);
@@ -166,7 +166,7 @@ TestCase {
         compare(item.verticalPadding, 4);
 
         item.bottomPadding = undefined;
-        compare(bottomPaddingSpy.count, 1), bottomPaddingSpy.clear();
+        compare(bottomPaddingSpy.count, 1); bottomPaddingSpy.clear();
 
         compare(item.padding, 1);
         compare(item.topPadding, 5);
@@ -178,8 +178,8 @@ TestCase {
 
         item.verticalPadding = undefined;
         compare(topPaddingSpy.count, 0);
-        compare(bottomPaddingSpy.count, 1), bottomPaddingSpy.clear();
-        compare(verticalPaddingSpy.count, 1), verticalPaddingSpy.clear();
+        compare(bottomPaddingSpy.count, 1); bottomPaddingSpy.clear();
+        compare(verticalPaddingSpy.count, 1); verticalPaddingSpy.clear();
 
         compare(item.padding, 1);
         compare(item.topPadding, 5);
@@ -191,7 +191,7 @@ TestCase {
 
         item.rightPadding = 7;
         verify(waitForRendering(item))
-        compare(rightPaddingSpy.count, 1), rightPaddingSpy.clear();
+        compare(rightPaddingSpy.count, 1); rightPaddingSpy.clear();
 
         compare(item.padding, 1);
         compare(item.topPadding, 5);
@@ -231,13 +231,13 @@ TestCase {
 
         item.contentItem.implicitWidth = 1000;
         verify(waitForRendering(item))
-        compare(widthSpy.count, 1), widthSpy.clear();
+        compare(widthSpy.count, 1); widthSpy.clear();
         compare(heightSpy.count, 0);
 
         item.contentItem.implicitHeight = 2000;
         verify(waitForRendering(item))
         compare(widthSpy.count, 0);
-        compare(heightSpy.count, 1), heightSpy.clear();
+        compare(heightSpy.count, 1); heightSpy.clear();
 
         compare(item.implicitWidth, 1032);
         compare(item.implicitHeight, 2041);

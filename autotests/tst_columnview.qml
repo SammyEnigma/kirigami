@@ -271,9 +271,9 @@ TestCase {
     function test_attached_index() {
         const { view, zero, one, two } = createViewWith3Items();
 
-        compare(zero.Kirigami.ColumnView.index, 0);
-        compare(one.Kirigami.ColumnView.index, 1);
-        compare(two.Kirigami.ColumnView.index, 2);
+        compare((zero as Item).Kirigami.ColumnView.index, 0);
+        compare((one as Item).Kirigami.ColumnView.index, 1);
+        compare((two as Item).Kirigami.ColumnView.index, 2);
     }
 
     component Filler : Rectangle {
