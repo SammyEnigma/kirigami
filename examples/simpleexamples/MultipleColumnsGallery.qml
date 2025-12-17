@@ -50,12 +50,12 @@ Kirigami.ScrollablePage {
         QQC2.Button {
             text: "Push Another Page"
             Layout.alignment: Qt.AlignHCenter
-            onClicked: applicationWindow()?.pageStack.push(Qt.resolvedUrl("MultipleColumnsGallery.qml"));
+            onClicked: Kirigami.PageStack.push(Qt.resolvedUrl("MultipleColumnsGallery.qml"));
         }
         QQC2.Button {
             text: "Pop A Page"
             Layout.alignment: Qt.AlignHCenter
-            onClicked: applicationWindow()?.pageStack.pop();
+            onClicked: Kirigami.PageStack.pop();
         }
         RowLayout {
             Layout.alignment: Qt.AlignHCenter

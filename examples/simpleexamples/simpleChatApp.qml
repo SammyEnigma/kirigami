@@ -127,12 +127,10 @@ Kirigami.ApplicationWindow {
             QQC2.ItemDelegate {
                 text: "Group call"
                 icon.name: "call-start"
-                width: parent.width
             }
             QQC2.ItemDelegate {
                 text: "Send Attachment"
                 icon.name: "mail-attachment"
-                width: parent.width
             }
         }
     }

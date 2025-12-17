@@ -57,12 +57,12 @@ Kirigami.AbstractApplicationWindow {
                 icon.name: "configure"
                 checkable: true
                 //Need to do this, otherwise it breaks the bindings
-                property bool current: root.pageStack.currentItem?.objectName === "settingsPage" ?? false
+                property bool current: (root.pageStack as QQC2.StackView).currentItem?.objectName === "settingsPage" ?? false
                 onCurrentChanged: {
                     checked = current;
                 }
                 onTriggered: {
-                    root.pageStack.push(settingsComponent);
+                    (root.pageStack as QQC2.StackView).push(settingsComponent);
                 }
             }
         ]
@@ -87,6 +87,7 @@ Kirigami.AbstractApplicationWindow {
     }
 
     pageStack: QQC2.StackView {
+        id: stackView
         anchors.fill: parent
         property int currentIndex: 0
         focus: true
@@ -110,11 +111,11 @@ Kirigami.AbstractApplicationWindow {
                     root.globalDrawer.close();
                 } else {
                     var backEvent = {accepted: false}
-                    if (root.pageStack.currentIndex >= 1) {
-                        root.pageStack.currentItem.backRequested(backEvent);
+                    if (stackView.currentIndex >= 1) {
+                        (stackView.currentItem as Kirigami.Page).backRequested(backEvent);
                         if (!backEvent.accepted) {
-                            if (root.pageStack.depth > 1) {
-                                root.pageStack.currentIndex = Math.max(0, root.pageStack.currentIndex - 1);
+                            if ((root.pageStack as QQC2.StackView).depth > 1) {
+                                (root.pageStack as QQC2.StackView).currentIndex = Math.max(0, stackView.currentIndex - 1);
                                 backEvent.accepted = true;
                             } else {
                                 Qt.quit();

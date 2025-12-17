@@ -27,26 +27,26 @@ Kirigami.ApplicationWindow {
     Component {
         id: firstPage
         Kirigami.ScrollablePage {
-            id: root
+            id: rootPage
             title: i18n("Sidebar")
             property list<Kirigami.PagePoolAction> pageActions: [
                 Kirigami.PagePoolAction {
                     text: i18n("Page1")
                     icon.name: "speedometer"
                     pagePool: mainPagePool
-                    basePage: root
+                    basePage: rootPage
                     page: "SimplePage.qml"
                 },
                 Kirigami.PagePoolAction {
                     text: i18n("Page2")
                     icon.name: "window-duplicate"
                     pagePool: mainPagePool
-                    basePage: root
+                    basePage: rootPage
                     page: "MultipleColumnsGallery.qml"
                 }
             ]
             ListView {
-                model: root.pageActions
+                model: rootPage.pageActions
                 keyNavigationEnabled: true
                 activeFocusOnTab: true
                 reuseItems: true

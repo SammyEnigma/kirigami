@@ -70,17 +70,13 @@ QQC2.Page {
                     icon.name: "shuffle-symbolic"
                     text: "Random Image"
                     displayHint: Kirigami.DisplayHint.KeepVisible
-                    onTriggered: source => {
-                        root.randomizeSource();
-                    }
+                    onTriggered: root.randomizeSource();
                 },
                 Kirigami.Action {
                     icon.name: "insert-image-symbolic"
                     text: "Open Image…"
                     displayHint: Kirigami.DisplayHint.KeepVisible
-                    onTriggered: source => {
-                        root.openChooserDialog();
-                    }
+                    onTriggered: root.openChooserDialog();
                 }
             ]
         }
@@ -90,7 +86,7 @@ QQC2.Page {
         id: fileDialog
 
         title: "Open Image"
-        nameFilters: "Media Files (*.jpg *.png *.svg)"
+        nameFilters: ["Media Files (*.jpg *.png *.svg)"]
         fileMode: QtDialogs.FileDialog.OpenFile
         options: QtDialogs.FileDialog.ReadOnly
 

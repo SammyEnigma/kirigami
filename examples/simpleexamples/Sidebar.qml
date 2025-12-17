@@ -29,7 +29,6 @@ Kirigami.ApplicationWindow {
                 Layout.alignment: Qt.AlignHCenter
                 text: "This is a sidebar"
                 Layout.fillWidth: true
-                width: parent.width - Kirigami.Units.smallSpacing * 2
                 wrapMode: Text.WordWrap
             }
             QQC2.Button {
@@ -59,7 +58,6 @@ Kirigami.ApplicationWindow {
                 Layout.alignment: Qt.AlignHCenter
                 text: "This is a sidebar"
                 Layout.fillWidth: true
-                width: parent.width - Kirigami.Units.smallSpacing * 2
                 wrapMode: Text.WordWrap
             }
             QQC2.Button {

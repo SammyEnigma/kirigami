@@ -13,7 +13,7 @@ Kirigami.ApplicationWindow {
     title: qsTr("Hello, World")
 
     globalDrawer: Kirigami.GlobalDrawer {
-        isMenu: !Kirigami.isMobile
+        isMenu: !Kirigami.Settings.isMobile
         actions: [
             Kirigami.Action {
                 text: qsTr("Settings")

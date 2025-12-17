@@ -66,17 +66,13 @@ Kirigami.ScrollablePage {
                     text: "Previous"
                     icon.name: "go-previous-symbolic"
                     displayHint: Kirigami.DisplayHint.KeepVisible
-                    onTriggered: source => {
-                        root.previousIcon();
-                    }
+                    onTriggered: root.previousIcon();
                 },
                 Kirigami.Action {
                     text: "Next"
                     icon.name: "go-next-symbolic"
                     displayHint: Kirigami.DisplayHint.KeepVisible
-                    onTriggered: source => {
-                        root.nextIcon();
-                    }
+                    onTriggered: root.nextIcon();
                 }
             ]
         }

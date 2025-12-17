@@ -156,7 +156,7 @@ Kirigami.ApplicationWindow {
                         icon.height: Kirigami.Units.iconSizes.large
                     }
                     delegate: QQC2.ItemDelegate {
-                        id: delegate
+                        id: listDelegate
 
                         required property string title
                         required property string description
@@ -172,11 +172,11 @@ Kirigami.ApplicationWindow {
                             spacing: Kirigami.Units.smallSpacing
                             KD.TitleSubtitle {
                                 Layout.fillWidth: true
-                                title: delegate.title
-                                subtitle: delegate.description
+                                title: listDelegate.title
+                                subtitle: listDelegate.description
                             }
                             QQC2.Button {
-                                text: delegate.buttonText
+                                text: listDelegate.buttonText
                                 onClicked: sheet.close()
                             }
                         }
