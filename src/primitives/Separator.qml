@@ -8,6 +8,7 @@
 import QtQuick
 
 import org.kde.kirigami.platform as Platform
+import org.kde.kirigami.primitives
 
 
 /*!
