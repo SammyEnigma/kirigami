@@ -176,7 +176,7 @@ QQC2.ApplicationWindow {
         text: qsTr("Quit")
         icon.name: "application-exit";
         shortcut: StandardKey.Quit
-        onTriggered: source => root.close();
+        onTriggered: root.close();
     }
 //END properties
 

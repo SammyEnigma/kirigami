@@ -145,7 +145,7 @@ QQC2.TextField {
             enabled: modelData.enabled
             focusPolicy: Qt.TabFocus
 
-            onClicked: mouse => modelData.trigger()
+            onClicked: modelData.trigger()
 
             QQC2.ToolTip.visible: (hovered || activeFocus) && (text.length > 0)
             QQC2.ToolTip.text: text
