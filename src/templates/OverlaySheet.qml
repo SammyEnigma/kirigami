@@ -144,8 +144,8 @@ T.Popup {
             h = scrollView.itemForSizeHints.Layout.preferredHeight;
         } else if (scrollView.itemForSizeHints.implicitHeight > 0) {
             h = scrollView.itemForSizeHints.implicitHeight + Kirigami.Units.largeSpacing * 2;
-        } else if (scrollView.itemForSizeHints instanceof Flickable && scrollView.itemForSizeHints.contentHeight > 0) {
-            h = scrollView.itemForSizeHints.contentHeight + Kirigami.Units.largeSpacing * 2;
+        } else if ((scrollView.itemForSizeHints as Flickable)?.contentHeight > 0) {
+            h = (scrollView.itemForSizeHints as Flickable).contentHeight + Kirigami.Units.largeSpacing * 2;
         } else {
             h = scrollView.itemForSizeHints.height;
         }
@@ -156,7 +156,7 @@ T.Popup {
 
 //BEGIN Signal handlers
     onVisibleChanged: {
-        const flickable = scrollView.contentItem;
+        const flickable = scrollView.contentItem as Flickable;
         flickable.contentY = flickable.originY - flickable.topMargin;
     }
 

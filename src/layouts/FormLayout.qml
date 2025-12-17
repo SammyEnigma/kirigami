@@ -88,7 +88,7 @@ Item {
         }
     }
 
-    property Kirigami.ScrollablePage scrollablePage: findAncestor(root, (item) => item instanceof Kirigami.ScrollablePage)
+    property Kirigami.ScrollablePage scrollablePage: findAncestor(root, (item) => item instanceof Kirigami.ScrollablePage) as Kirigami.ScrollablePage
 
     function findAncestor(item: Item, predicate: /*function Item => bool*/ var): Item {
         let target = item.parent
@@ -407,7 +407,7 @@ Item {
             }
             visible: (item?.visible && (root.wideMode || text.length > 0)) ?? false
             Kirigami.MnemonicData.enabled: {
-                const buddy = item?.Kirigami.FormData.buddyFor;
+                const buddy = item?.Kirigami.FormData.buddyFor as Item;
                 if (buddy && buddy.enabled && buddy.visible && buddy.activeFocusOnTab) {
                     // Only set mnemonic if the buddy doesn't already have one.
                     const buddyMnemonic = buddy.Kirigami.MnemonicData;

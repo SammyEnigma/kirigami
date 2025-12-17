@@ -3,6 +3,7 @@
 
 import QtQuick
 import org.kde.kirigami as Kirigami
+import org.kde.kirigami.templates as KT
 
 Rectangle {
 
@@ -50,20 +51,22 @@ Rectangle {
     Kirigami.Theme.inherit: false
 
     color: {
-        if (parent.down) {
+        const chip = parent as KT.Chip
+        if (chip.down) {
             return pressedColor
-        } else if (parent.checked) {
+        } else if (chip.checked) {
             return checkedColor
         } else {
             return defaultColor
         }
     }
     border.color: {
-        if (parent.down) {
+        const chip = parent as KT.Chip
+        if (chip.down) {
             return pressedBorderColor
-        } else if (parent.checked) {
+        } else if (chip.checked) {
             return checkedBorderColor
-        } else if (parent.hovered) {
+        } else if (chip.hovered) {
             return hoveredBorderColor
         } else {
             return defaultBorderColor

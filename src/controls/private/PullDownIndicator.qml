@@ -26,9 +26,9 @@ Item {
         let candidate = parent
         while (candidate) {
             if (candidate instanceof Flickable) {
-                return candidate
+                return candidate as Flickable
             } else if (candidate instanceof Kirigami.ScrollablePage) {
-                return candidate.flickable
+                return (candidate as Kirigami.ScrollablePage).flickable as Flickable
             }
             candidate = candidate.parent
         }
@@ -75,7 +75,7 @@ Item {
         id: indicatorContainer
         parent: root.flickable
         anchors {
-            bottom: parent?.contentItem?.top
+            bottom: (parent as Flickable)?.contentItem?.top
             bottomMargin: root.flickable.topMargin
         }
 

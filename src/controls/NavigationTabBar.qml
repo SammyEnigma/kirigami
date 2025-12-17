@@ -217,7 +217,7 @@ QQC.ToolBar {
       If the index set is out of bounds, or the triggered signal did not change any checked property of an action, the index
       will remain the same.
      */
-    property int currentIndex: tabGroup.checkedButton && tabGroup.buttons.length > 0 ? tabGroup.checkedButton.tabIndex : -1
+    property int currentIndex: tabGroup.checkedButton && tabGroup.buttons.length > 0 ? (tabGroup.checkedButton as NavigationTabButton).tabIndex : -1
 
     /*!
       \brief This property holds the number of tab buttons.
@@ -261,7 +261,7 @@ QQC.ToolBar {
             }
             return;
         }
-        if (!tabGroup.checkedButton || tabGroup.checkedButton.tabIndex !== currentIndex) {
+        if (!tabGroup.checkedButton || (tabGroup.checkedButton as NavigationTabButton).tabIndex !== currentIndex) {
             const buttonForCurrentIndex = tabGroup.buttons[currentIndex]
             if (buttonForCurrentIndex.action) {
                 // trigger also toggles and causes clicked() to be emitted
@@ -313,8 +313,8 @@ QQC.ToolBar {
             if (!checkedButton) {
                 return
             }
-            if (root.currentIndex !== checkedButton.tabIndex) {
-                root.currentIndex = checkedButton.tabIndex;
+            if (root.currentIndex !== (checkedButton as NavigationTabButton).tabIndex) {
+                root.currentIndex = (checkedButton as NavigationTabButton).tabIndex;
             }
         }
     }

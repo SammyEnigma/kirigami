@@ -8,6 +8,7 @@ import QtQuick
 import QtQuick.Controls as QQC2
 import QtQuick.Templates as T
 import org.kde.kirigami as Kirigami
+import org.kde.kirigami.templates as KT
 
 Item {
     id: root
@@ -29,7 +30,7 @@ Item {
     // Above the Overlay when modal but below when non-modal and when the drawer is closed
     // so that other overlays can be above it.
     parent: overlay?.parent ?? null
-    z: overlay ? overlay.z  + (drawer?.modal && drawer?.drawerOpen ? 1 : - 1) : 0
+    z: overlay ? overlay.z  + (drawer?.modal && (drawer as KT.OverlayDrawer)?.drawerOpen ? 1 : - 1) : 0
 
     QQC2.ToolButton {
         id: button
@@ -40,12 +41,13 @@ Item {
         icon.source: root.drawer.position > 0 ? root.drawer.handleOpenIcon.source ?? "" : root.drawer.handleClosedIcon.source ?? ""
         icon.width: root.drawer.handleOpenIcon.width
         icon.height: root.drawer.handleOpenIcon.height
-        Accessible.name: root.drawer.drawerOpen ? root.drawer.handleOpenToolTip : root.drawer.handleClosedToolTip
+        Accessible.name: QQC2.ToolTip.text
 
         onClicked: {
             root.displayToolTip = false;
             Qt.callLater(() => {
-                root.drawer.drawerOpen = !root.drawer.drawerOpen;
+                const oDrawer = root.drawer as KT.OverlayDrawer
+                oDrawer.drawerOpen = !oDrawer.drawerOpen;
             })
         }
         Keys.onEscapePressed: {
@@ -55,7 +57,10 @@ Item {
         }
 
         QQC2.ToolTip.visible: root.displayToolTip && hovered
-        QQC2.ToolTip.text: root.drawer.drawerOpen ? handleOpenToolTip : handleClosedToolTip
+        QQC2.ToolTip.text: {
+            const oDrawer = root.drawer as KT.OverlayDrawer
+            return oDrawer.drawerOpen ? oDrawer.handleOpenToolTip : oDrawer.handleClosedToolTip
+        }
         QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
 
         DragHandler {
@@ -107,7 +112,7 @@ Item {
             : globalToolBar.rightHandleAnchor;
     }
 
-    enabled: drawer.handleVisible
+    enabled: (drawer as KT.OverlayDrawer).handleVisible
 
     x: {
         switch (drawer.edge) {
@@ -184,15 +189,15 @@ Item {
     height: handleAnchor?.visible ? handleAnchor.height : width
     // NOTE: check on pageStack.depth is to keep and hack elisa is doing working
     opacity: handleAnchor && applicationWindow()?.pageStack.depth > 0
-            ? drawer.position * root.drawer.handleVisible
+            ? drawer.position * (root.drawer as KT.OverlayDrawer).handleVisible
             : 1
 
     transform: Translate {
-        x: root.drawer.handleVisible ? 0 : (root.drawer.edge === Qt.LeftEdge ? -Math.max(root.width, button.width) : Math.max(root.width, button.width))
+        x: (root.drawer as KT.OverlayDrawer).handleVisible ? 0 : (root.drawer.edge === Qt.LeftEdge ? -Math.max(root.width, button.width) : Math.max(root.width, button.width))
         Behavior on x {
             NumberAnimation {
                 duration: Kirigami.Units.longDuration
-                easing.type: !root.drawer.handleVisible ? Easing.OutQuad : Easing.InQuad
+                easing.type: !(root.drawer as KT.OverlayDrawer).handleVisible ? Easing.OutQuad : Easing.InQuad
             }
         }
     }

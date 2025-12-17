@@ -7,6 +7,7 @@ pragma ComponentBehavior: Bound
 
 import QtQuick
 import QtQuick.Controls as QQC2
+import QtQuick.Templates as T
 import QtQuick.Layouts
 import org.kde.kirigami as Kirigami
 import org.kde.kirigami.private.polyfill
@@ -59,7 +60,7 @@ Item {
         })
         // remove the oldest notification if new notification count would exceed 3
         if (notificationsModel.count === maximumNotificationCount) {
-            if (listView.itemAtIndex(0).hovered === true) {
+            if ((listView.itemAtIndex(0) as T.Control).hovered === true) {
                 hideNotification(1)
             } else {
                 hideNotification()
@@ -193,7 +194,7 @@ Item {
             opacity: Kirigami.Units.longDuration > 0 ? 0 : 1
 
             anchors.horizontalCenter: parent ? parent.horizontalCenter : undefined
-            width: Math.min(implicitWidth, maximumNotificationWidth)
+            width: Math.min(implicitWidth, root.maximumNotificationWidth)
             implicitHeight: {
                 // HACK: contentItem.implicitHeight needs to be updated manually for some reason
                 void contentItem.implicitHeight;

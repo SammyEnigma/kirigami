@@ -306,7 +306,7 @@ QT.Control {
                         dialog.close();
                     }
                 });
-                item.Kirigami.PageStack.closeDialog.connect(() => dialog.close());
+                (item as Item).Kirigami.PageStack.closeDialog.connect(() => dialog.close());
                 dialog.open();
             } else {
                 // open as a layer
@@ -346,7 +346,7 @@ QT.Control {
             const window = windowComponent.createObject(root, windowProperties);
             windowComponent.destroy();
             item = window.pageStack.push(page, properties);
-            item.Kirigami.PageStack.closeDialog.connect(() => window.close());
+            (item as Item).Kirigami.PageStack.closeDialog.connect(() => window.close());
             Object.defineProperty(item, 'closeDialog', {
                 value: function() {
                     console.warn("Calling closeDialog is deprecated. Use Kirigami.PageStack.closeDialog instead.");
@@ -418,7 +418,7 @@ QT.Control {
      */
     function removePage(page): QT.Page {
         if (depth > 0) {
-            return columnView.removeItem(page);
+            return columnView.removeItem(page) as QT.Page;
         }
         return null
     }
@@ -433,7 +433,7 @@ QT.Control {
       Returns the page instance that was popped off the stack.
      */
     function pop(page): QT.Page {
-        return columnView.pop(page);
+        return columnView.pop(page) as QT.Page;
     }
 
     /*!
@@ -692,11 +692,11 @@ QT.Control {
 
     GlobalToolBar.PageRowGlobalToolBarStyleGroup {
         id: globalToolBar
-        readonly property int leftReservedSpace: globalToolBarUI.item ? globalToolBarUI.item.leftReservedSpace : 0
-        readonly property int rightReservedSpace: globalToolBarUI.item ? globalToolBarUI.item.rightReservedSpace : 0
+        readonly property int leftReservedSpace: (globalToolBarUI.item as GlobalToolBar.PageRowGlobalToolBarUI)?.leftReservedSpace ?? 0
+        readonly property int rightReservedSpace: (globalToolBarUI.item as GlobalToolBar.PageRowGlobalToolBarUI)?.rightReservedSpace ?? 0
         readonly property int height: globalToolBarUI.height
-        readonly property Item leftHandleAnchor: globalToolBarUI.item ? globalToolBarUI.item.leftHandleAnchor : null
-        readonly property Item rightHandleAnchor: globalToolBarUI.item ? globalToolBarUI.item.rightHandleAnchor : null
+        readonly property Item leftHandleAnchor: (globalToolBarUI.item as GlobalToolBar.PageRowGlobalToolBarUI)?.leftHandleAnchor ?? null
+        readonly property Item rightHandleAnchor: (globalToolBarUI.item as GlobalToolBar.PageRowGlobalToolBarUI)?.rightHandleAnchor ?? null
     }
 
     QQC2.StackView {
@@ -1028,7 +1028,7 @@ QT.Control {
                     bottom: parent.bottom
                 }
 
-                topPadding: globalToolBarUI.item && globalToolBarUI.item.breadcrumbVisible
+                topPadding: (globalToolBarUI.item as GlobalToolBar.PageRowGlobalToolBarUI)?.breadcrumbVisible
                             ? globalToolBarUI.height : 0
 
                 Component {

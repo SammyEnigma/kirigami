@@ -149,7 +149,7 @@ T.ToolBar {
 
             Layout.fillWidth: true
             Layout.alignment: Qt.AlignVCenter
-            Layout.minimumWidth: item?.Layout.minimumWidth ?? 0
+            Layout.minimumWidth: (item as Item)?.Layout.minimumWidth ?? 0
             active: root.actions.length > 0
             sourceComponent: Kirigami.ActionToolBar {
                 actions: root.actions

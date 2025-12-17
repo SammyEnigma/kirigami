@@ -36,7 +36,7 @@ Item {
         if (window) {
             return window.pageStack.globalToolBar.minimumHeight;
         } else if (mainItem.applicationItem) {
-            return mainItem.applicationItem.pageStack.globalToolBar.minimumHeight;
+            return (mainItem.applicationItem as Kirigami.ApplicationItem).pageStack.globalToolBar.minimumHeight;
         }
 
         return 0
@@ -50,7 +50,7 @@ Item {
         if (window) {
             return window.pageStack.globalToolBar.preferredHeight;
         } else if (mainItem.applicationItem) {
-            return mainItem.applicationItem.pageStack.globalToolBar.preferredHeight;
+            return (mainItem.applicationItem as Kirigami.ApplicationItem).pageStack.globalToolBar.preferredHeight;
         }
 
         return mainItem.children.reduce((accumulator, item) => {
@@ -65,7 +65,7 @@ Item {
         if (window) {
             return window.pageStack.globalToolBar.maximumHeight;
         } else if (mainItem.applicationItem) {
-            return mainItem.applicationItem.pageStack.globalToolBar.maximumHeight;
+            return (mainItem.applicationItem as Kirigami.ApplicationItem).pageStack.globalToolBar.maximumHeight;
         }
         return Kirigami.Units.gridUnit * 3 + topPadding + bottomPadding;
     }

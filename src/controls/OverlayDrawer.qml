@@ -65,7 +65,7 @@ KT.OverlayDrawer {
                     return false;
                 }
                 // compatible header
-                const header = root.header ?? null;
+                const header = (root as Kirigami.GlobalDrawer)?.header ?? null;
                 if (header instanceof T.ToolBar || header instanceof KT.AbstractApplicationHeader) {
                     return true;
                 }

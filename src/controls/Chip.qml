@@ -38,7 +38,7 @@ KT.Chip {
         + (indicator.visible && !mirrored ? implicitIndicatorWidth : 0)
 
     indicator: QQC2.ToolButton {
-        x: parent.mirrored ? 0 : parent.width - width
+        x: chip.mirrored ? 0 : parent.width - width
         y: Math.round((parent.height - height) / 2)
         visible: chip.closable
         text: qsTr("Remove")

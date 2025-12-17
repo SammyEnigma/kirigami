@@ -76,7 +76,7 @@ Kirigami.AbstractApplicationHeader {
                 }
 
                 return drawer !== null
-                    && ((drawer.handleVisible && drawer.enabled) || (drawer?.isMenu ?? false))
+                    && ((drawer.handleVisible && drawer.enabled) || ((drawer as Kirigami.GlobalDrawer)?.isMenu ?? false))
                     && (root.pageRow.columnView.columnResizeMode === Kirigami.ColumnView.SingleColumn
                     || firstVisible);
             }
@@ -92,10 +92,10 @@ Kirigami.AbstractApplicationHeader {
             id: titleLoader
             // Don't need space on the first item
             Layout.alignment: Qt.AlignLeft | Qt.AlignVCenter
-            Layout.fillWidth: item?.Layout.fillWidth ?? false
-            Layout.minimumWidth: item?.Layout.minimumWidth ?? -1
-            Layout.preferredWidth: item?.Layout.preferredWidth ?? -1
-            Layout.maximumWidth: item?.Layout.maximumWidth ?? -1
+            Layout.fillWidth: (item as Item)?.Layout.fillWidth ?? false
+            Layout.minimumWidth: (item as Item)?.Layout.minimumWidth ?? -1
+            Layout.preferredWidth: (item as Item)?.Layout.preferredWidth ?? -1
+            Layout.maximumWidth: (item as Item)?.Layout.maximumWidth ?? -1
             Layout.leftMargin: {
                 if (!(item instanceof KP.DefaultPageTitleDelegate)) {
                     return 0;

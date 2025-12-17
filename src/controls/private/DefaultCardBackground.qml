@@ -6,6 +6,7 @@
  */
 import QtQuick
 import org.kde.kirigami as Kirigami
+import org.kde.kirigami.templates as KT
 
 /*!
   \brief This is the default background for Cards.
@@ -70,9 +71,11 @@ Kirigami.ShadowedRectangle {
 //END properties
 
     color: {
-        if (root.parent.checked || (root.clickFeedback && (root.parent.down || root.parent.highlighted)))
+        // Also used for OverlaySheet, but that supports none ot these states so always defaultColor
+        const card = root.parent as KT.AbstractCard
+        if (card?.checked || (root.clickFeedback && (card?.down || card?.highlighted)))
             return root.pressedColor
-        else if (root.hoverFeedback && root.parent.hovered)
+        else if (root.hoverFeedback && card?.hovered)
             return root.hoverColor
         return root.defaultColor
     }
@@ -99,7 +102,7 @@ Kirigami.ShadowedRectangle {
         radius: root.radius
         height: root.height
         color: Qt.darker(Qt.rgba(Kirigami.Theme.backgroundColor.r, Kirigami.Theme.backgroundColor.g, Kirigami.Theme.backgroundColor.b, 0.6), 1.1)
-        visible: !root.clickFeedback || !root.parent.down
+        visible: !root.clickFeedback || !(root.parent as KT.AbstractCard)?.down
 
         z: -1
     }

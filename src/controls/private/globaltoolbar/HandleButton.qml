@@ -18,18 +18,18 @@ P.PrivateActionToolButton {
     icon.source: drawer?.position === 1 ? (drawer?.handleOpenIcon.source ?? "") : (drawer?.handleClosedIcon.source ?? "")
 
     action: Kirigami.Action {
-        children: root.drawer && root.drawer instanceof Kirigami.GlobalDrawer && root.drawer.isMenu ? root.drawer.actions : []
+        children: root.drawer && (root.drawer as Kirigami.GlobalDrawer)?.isMenu ? (root.drawer as Kirigami.GlobalDrawer).actions : []
         tooltip: {
-            if (root.drawer && root.drawer.isMenu) {
+            if (root.drawer && (root.drawer as Kirigami.GlobalDrawer)?.isMenu) {
                 return checked ? qsTr("Close menu") : qsTr("Open menu");
             }
 
-            return root.QQC.ApplicationWindow.window?.globalDrawer?.handleClosedToolTip || ""
+            return (root.QQC.ApplicationWindow.window as Kirigami.ApplicationWindow)?.globalDrawer?.handleClosedToolTip || ""
         }
     }
 
     onClicked: {
-        if (!drawer || drawer?.isMenu) {
+        if (!drawer || (root.drawer as Kirigami.GlobalDrawer)?.isMenu) {
             return;
         }
         if (drawer.visible) {
@@ -46,7 +46,7 @@ P.PrivateActionToolButton {
         // doesn't have an isMenuChanged() signal.
         target: root.drawer as Kirigami.GlobalDrawer
         function onIsMenuChanged() {
-            if (!root.drawer.isMenu && root.menu) {
+            if (!(root.drawer as Kirigami.GlobalDrawer).isMenu && root.menu) {
                 root.menu.dismiss()
             }
         }

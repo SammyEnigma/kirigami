@@ -102,7 +102,7 @@ RowLayout {
         icon.name: hovered ? "window-close" : "window-close-symbolic"
         text: qsTr("Close", "@action:button close dialog")
         display: QQC2.AbstractButton.IconOnly
-        visible: root.dialog?.showCloseButton ?? true
+        visible: (root.dialog as Kirigami.Dialog)?.showCloseButton ?? true
 
         onClicked: root.dialog.reject()
     }

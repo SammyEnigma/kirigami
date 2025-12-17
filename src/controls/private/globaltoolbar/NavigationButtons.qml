@@ -85,11 +85,12 @@ Loader {
         spacing: Kirigami.Units.smallSpacing
 
         component NavButton: QQC.ToolButton {
+            id: navButton
             display: QQC.ToolButton.IconOnly
 
             QQC.ToolTip {
-                visible: parent.hovered
-                text: parent.text
+                visible: navButton.hovered
+                text: navButton.text
                 delay: Kirigami.Units.toolTipDelay
                 y: parent.height
             }

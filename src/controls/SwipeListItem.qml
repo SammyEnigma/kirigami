@@ -222,7 +222,7 @@ QQC2.SwipeDelegate {
     QtObject {
         id: internal
 
-        property Flickable view: listItem.ListView.view || (listItem.parent ? (listItem.parent.ListView.view || (listItem.parent instanceof Flickable ? listItem.parent : null)) : null)
+        property Flickable view: listItem.ListView.view || (listItem.parent ? (listItem.parent.ListView.view || (listItem.parent instanceof Flickable ? listItem.parent : null)) : null) as Flickable
 
         function viewHasPropertySwipeFilter(): bool {
             return view && view.parent && view.parent.parent && "_swipeFilter" in view.parent.parent;

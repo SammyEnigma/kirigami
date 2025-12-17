@@ -108,7 +108,7 @@ Kirigami.AbstractApplicationItem {
             // NOTE: drawers are handling the back button by themselves
             const backEvent = {accepted: false}
             if (root.pageStack.currentIndex >= 1) {
-                root.pageStack.currentItem.backRequested(backEvent);
+                (root.pageStack.currentItem as Page).backRequested(backEvent);
                 if (!backEvent.accepted) {
                     root.pageStack.flickBack();
                     backEvent.accepted = true;

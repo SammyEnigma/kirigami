@@ -77,6 +77,7 @@ Kirigami.AbstractCard {
     Accessible.name: banner.title
 
     header: Kirigami.Padding {
+        id: headerItem
         topPadding: -root.topPadding + root.background.border.width
         leftPadding: -root.leftPadding + root.background.border.width
         rightPadding: -root.rightPadding + root.background.border.width
@@ -86,7 +87,7 @@ Kirigami.AbstractCard {
             id: bannerImage
 
             implicitWidth: Layout.preferredWidth
-            implicitHeight: (source.toString().length > 0 && sourceSize.width > 0 && sourceSize.height > 0 ? width / (sourceSize.width / sourceSize.height) : Layout.minimumHeight) + parent.topPadding + parent.bottomPadding
+            implicitHeight: (source.toString().length > 0 && sourceSize.width > 0 && sourceSize.height > 0 ? width / (sourceSize.width / sourceSize.height) : Layout.minimumHeight) + headerItem.topPadding + headerItem.bottomPadding
 
             readonly property real widthWithBorder: width + root.background.border.width * 2
             readonly property real heightWithBorder: height + root.background.border.width * 2

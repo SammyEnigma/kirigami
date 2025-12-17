@@ -415,11 +415,18 @@ T.Drawer {
 //END signal handlers
 
     // this is as hidden as it can get here
-    property QtObject __internal: QtObject {
+
+    component Internal: QtObject {
+        property bool completed
+        property bool isSidebarTransitioning
+        property SequentialAnimation positionResetAnim
+    }
+
+    property Internal __internal: Internal {
         //here in order to not be accessible from outside
-        property bool completed: false
-        property bool isSidebarTransitioning: false
-        property SequentialAnimation positionResetAnim: SequentialAnimation {
+        completed: false
+        isSidebarTransitioning: false
+        positionResetAnim: SequentialAnimation {
             id: positionResetAnim
             property alias to: internalAnim.to
             NumberAnimation {

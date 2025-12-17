@@ -255,7 +255,7 @@ T.Dialog {
     function standardButton(button): T.AbstractButton {
         // in case a footer is redefined
         if (footer instanceof T.DialogButtonBox) {
-            return footer.standardButton(button);
+            return (footer as T.DialogButtonBox).standardButton(button);
         } else if (footer === footerToolBar) {
             return dialogButtonBox.standardButton(button);
         } else {
@@ -480,7 +480,8 @@ T.Dialog {
             Kirigami.Separator {
                 id: footerSeparator
                 visible: if (root.contentItem instanceof T.Pane || root.contentItem instanceof Flickable) {
-                    return root.contentItem.height < root.contentItem.contentHeight;
+                    const itemContentHeight = (root.contentItem as T.Pane)?.contentHeight ?? (root.contentItem as Flickable)?.contentHeight
+                    return root.contentItem.height < itemContentHeight;
                 } else {
                     return false;
                 }

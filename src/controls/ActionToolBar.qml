@@ -102,7 +102,7 @@ QQC2.Control {
 
       default: \c QQC2.ToolBar.Header
      */
-    property int position: parent instanceof T.ToolBar ? parent.position : QQC2.ToolBar.Header
+    property int position: (parent as T.ToolBar)?.position ?? QQC2.ToolBar.Header
 
     /*!
       \qmlproperty int ActionToolBar::maximumContentWidth
@@ -171,14 +171,14 @@ QQC2.Control {
             flat: root.flat
             display: root.display
             position: root.position
-            action: Kirigami.ToolBarLayout.action
+            action: Kirigami.ToolBarLayout.action as T.Action
         }
 
         iconDelegate: P.PrivateActionToolButton {
             flat: root.flat
             display: QQC2.Button.IconOnly
             position: root.position
-            action: Kirigami.ToolBarLayout.action
+            action: Kirigami.ToolBarLayout.action as T.Action
 
             showMenuArrow: false
 
