@@ -395,6 +395,7 @@ Kirigami.OverlayDrawer {
 
                     tAction: modelData
                     withSections: actionsRepeater.withSections
+                    backItem: backItem
                 }
             }
         }
@@ -406,6 +407,8 @@ Kirigami.OverlayDrawer {
         required property int index
         required property T.Action tAction
         required property bool withSections
+
+        property Item backItem
 
         // `as` case operator is still buggy
         readonly property Kirigami.Action kAction: tAction instanceof Kirigami.Action ? tAction : null
@@ -432,14 +435,14 @@ Kirigami.OverlayDrawer {
 
             onCheckedChanged: {
                 // move every checked item into view
-                if (checked && topContent.height + backItem.height + (delegate.index + 1) * height - mainFlickable.contentY > mainFlickable.height) {
+                if (checked && topContent.height + delegate.backItem.height + (delegate.index + 1) * height - mainFlickable.contentY > mainFlickable.height) {
                     mainFlickable.contentY += height
                 }
             }
 
             onFocusChanged: {
                 if (focus) {
-                    root.ensureVisible (delegate, topContent.height + (backItem.visible ? backItem.height : 0))
+                    root.ensureVisible (delegate, topContent.height + (delegate.backItem.visible ? delegate.backItem.height : 0))
                 }
             }
         }
