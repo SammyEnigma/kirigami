@@ -15,70 +15,70 @@ msgstr ""
 "X-Qt-Contexts: true\n"
 "X-POOTLE-MTIME: 1497529432.000000\n"
 
-#: controls/AboutItem.qml:162
+#: controls/AboutItem.qml:163
 #, qt-format
 msgctxt "AboutItem|"
 msgid "%1 (%2)"
 msgstr "%1 (%2)"
 
-#: controls/AboutItem.qml:182
+#: controls/AboutItem.qml:183
 #, qt-format
 msgctxt "AboutItem|"
 msgid "Send an email to %1"
 msgstr "%1 kişisine bir e-posta gönder"
 
-#: controls/AboutItem.qml:224
+#: controls/AboutItem.qml:225
 msgctxt "AboutItem|"
 msgid "Get Involved"
 msgstr "Katıl"
 
-#: controls/AboutItem.qml:230
+#: controls/AboutItem.qml:231
 msgctxt "AboutItem|"
 msgid "Donate"
 msgstr "Bağış Yap"
 
-#: controls/AboutItem.qml:247
+#: controls/AboutItem.qml:248
 msgctxt "AboutItem|"
 msgid "Report a Bug"
 msgstr "Hata Bildir"
 
-#: controls/AboutItem.qml:260
+#: controls/AboutItem.qml:261
 msgctxt "AboutItem|"
 msgid "Copyright"
 msgstr "Telif Hakkı"
 
-#: controls/AboutItem.qml:305
+#: controls/AboutItem.qml:310
 msgctxt "AboutItem|"
 msgid "License:"
 msgstr "Lisans:"
 
-#: controls/AboutItem.qml:327
+#: controls/AboutItem.qml:333
 #, qt-format
 msgctxt "AboutItem|"
 msgid "License: %1"
 msgstr "Lisans: %1"
 
-#: controls/AboutItem.qml:338
+#: controls/AboutItem.qml:344
 msgctxt "AboutItem|"
 msgid "Libraries in use"
 msgstr "Kullanımdaki Kitaplıklar"
 
-#: controls/AboutItem.qml:368
+#: controls/AboutItem.qml:376
 msgctxt "AboutItem|"
 msgid "Authors"
 msgstr "Yazarlar"
 
-#: controls/AboutItem.qml:378
+#: controls/AboutItem.qml:386
 msgctxt "AboutItem|"
 msgid "Show author photos"
 msgstr "Yazar fotoğraflarını göster"
 
-#: controls/AboutItem.qml:389
+#: controls/AboutItem.qml:397
 msgctxt "AboutItem|"
 msgid "Credits"
 msgstr "Emeği Geçenler"
 
-#: controls/AboutItem.qml:401
+#: controls/AboutItem.qml:409
 msgctxt "AboutItem|"
 msgid "Translators"
 msgstr "Çevirmenler"
@@ -94,7 +94,7 @@ msgctxt "AbstractApplicationWindow|"
 msgid "Quit"
 msgstr "Çık"
 
-#: controls/ActionToolBar.qml:205
+#: controls/ActionToolBar.qml:206
 msgctxt "ActionToolBar|"
 msgid "More Actions"
 msgstr "Daha fazla eylem"
@@ -104,7 +104,7 @@ msgctxt "Chip|"
 msgid "Remove"
 msgstr "Kaldır"
 
-#: controls/ContextDrawer.qml:62
+#: controls/ContextDrawer.qml:63
 msgctxt "ContextDrawer|"
 msgid "Actions"
 msgstr "Eylemler"
@@ -114,17 +114,17 @@ msgctxt "ContextualHelpButton|"
 msgid "Show Contextual Help"
 msgstr "Bağlamsal Yardımı Göster"
 
-#: controls/GlobalDrawer.qml:361
+#: controls/GlobalDrawer.qml:363
 msgctxt "GlobalDrawer|"
 msgid "Back"
 msgstr "Geri"
 
-#: controls/GlobalDrawer.qml:689
+#: controls/GlobalDrawer.qml:691
 msgctxt "GlobalDrawer|"
 msgid "Close Sidebar"
 msgstr "Kenar çubuğunu kapat"
 
-#: controls/GlobalDrawer.qml:694
+#: controls/GlobalDrawer.qml:696
 msgctxt "GlobalDrawer|"
 msgid "Open Sidebar"
 msgstr "Kenar çubuğunu aç"
@@ -149,22 +149,22 @@ msgctxt "PasswordField|"
 msgid "Show Password"
 msgstr "Parolayı Göster"
 
-#: controls/private/globaltoolbar/HandleButton.qml:25
+#: controls/private/globaltoolbar/HandleButton.qml:24
 msgctxt "HandleButton|"
 msgid "Close menu"
 msgstr "Menüyü kapat"
 
-#: controls/private/globaltoolbar/HandleButton.qml:25
+#: controls/private/globaltoolbar/HandleButton.qml:24
 msgctxt "HandleButton|"
 msgid "Open menu"
 msgstr "Menüyü aç"
 
-#: controls/private/globaltoolbar/NavigationButtons.qml:98
+#: controls/private/globaltoolbar/NavigationButtons.qml:99
 msgctxt "NavigationButtons|"
 msgid "Navigate Back"
 msgstr "Geri Git"
 
-#: controls/private/globaltoolbar/NavigationButtons.qml:115
+#: controls/private/globaltoolbar/NavigationButtons.qml:116
 msgctxt "NavigationButtons|"
 msgid "Navigate Forward"
 msgstr "İleri Git"
@@ -253,7 +253,7 @@ msgctxt "InlineMessage|"
 msgid "Note"
 msgstr "Not"
 
-#: templates/InlineMessage.qml:444
+#: templates/InlineMessage.qml:443
 msgctxt "InlineMessage|"
 msgid "Close"
 msgstr "Kapat"

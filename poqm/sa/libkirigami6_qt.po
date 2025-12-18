@@ -13,70 +13,70 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n>1);\n"
 "X-Generator: Lokalize 24.08.2\n"
 
-#: controls/AboutItem.qml:162
+#: controls/AboutItem.qml:163
 #, qt-format
 msgctxt "AboutItem|"
 msgid "%1 (%2)"
 msgstr "%1 (%2)"
 
-#: controls/AboutItem.qml:182
+#: controls/AboutItem.qml:183
 #, qt-format
 msgctxt "AboutItem|"
 msgid "Send an email to %1"
 msgstr "%1 इत्यस्मै ईमेल प्रेषयन्तु"
 
-#: controls/AboutItem.qml:224
+#: controls/AboutItem.qml:225
 msgctxt "AboutItem|"
 msgid "Get Involved"
 msgstr "सम्मिलित हो जाओ"
 
-#: controls/AboutItem.qml:230
+#: controls/AboutItem.qml:231
 msgctxt "AboutItem|"
 msgid "Donate"
 msgstr "वितरणं"
 
-#: controls/AboutItem.qml:247
+#: controls/AboutItem.qml:248
 msgctxt "AboutItem|"
 msgid "Report a Bug"
 msgstr "एकं दोषं प्रतिवेदयतु"
 
-#: controls/AboutItem.qml:260
+#: controls/AboutItem.qml:261
 msgctxt "AboutItem|"
 msgid "Copyright"
 msgstr "प्रतिलिपि अधिकार"
 
-#: controls/AboutItem.qml:305
+#: controls/AboutItem.qml:310
 msgctxt "AboutItem|"
 msgid "License:"
 msgstr "अनुज्ञापत्रम् :"
 
-#: controls/AboutItem.qml:327
+#: controls/AboutItem.qml:333
 #, qt-format
 msgctxt "AboutItem|"
 msgid "License: %1"
 msgstr "अनुज्ञापत्रम् : %1"
 
-#: controls/AboutItem.qml:338
+#: controls/AboutItem.qml:344
 msgctxt "AboutItem|"
 msgid "Libraries in use"
 msgstr "प्रयुक्ताः पुस्तकालयाः"
 
-#: controls/AboutItem.qml:368
+#: controls/AboutItem.qml:376
 msgctxt "AboutItem|"
 msgid "Authors"
 msgstr "लेखकाः"
 
-#: controls/AboutItem.qml:378
+#: controls/AboutItem.qml:386
 msgctxt "AboutItem|"
 msgid "Show author photos"
 msgstr "लेखकस्य छायाचित्रं दर्शयतु"
 
-#: controls/AboutItem.qml:389
+#: controls/AboutItem.qml:397
 msgctxt "AboutItem|"
 msgid "Credits"
 msgstr "श्रेयः"
 
-#: controls/AboutItem.qml:401
+#: controls/AboutItem.qml:409
 msgctxt "AboutItem|"
 msgid "Translators"
 msgstr "अनुवादकाः"
@@ -92,7 +92,7 @@ msgctxt "AbstractApplicationWindow|"
 msgid "Quit"
 msgstr "परिजहातु"
 
-#: controls/ActionToolBar.qml:205
+#: controls/ActionToolBar.qml:206
 msgctxt "ActionToolBar|"
 msgid "More Actions"
 msgstr "अधिकानि क्रियाः"
@@ -105,7 +105,7 @@ msgctxt "Chip|"
 msgid "Remove"
 msgstr "टैग हटाएँ"
 
-#: controls/ContextDrawer.qml:62
+#: controls/ContextDrawer.qml:63
 msgctxt "ContextDrawer|"
 msgid "Actions"
 msgstr "कर्माणि"
@@ -115,17 +115,17 @@ msgctxt "ContextualHelpButton|"
 msgid "Show Contextual Help"
 msgstr "सन्दर्भसहायतां दर्शयतु"
 
-#: controls/GlobalDrawer.qml:361
+#: controls/GlobalDrawer.qml:363
 msgctxt "GlobalDrawer|"
 msgid "Back"
 msgstr "पृष्ठभागः"
 
-#: controls/GlobalDrawer.qml:689
+#: controls/GlobalDrawer.qml:691
 msgctxt "GlobalDrawer|"
 msgid "Close Sidebar"
 msgstr "पार्श्वपट्टिकां बन्दं कुर्वन्तु"
 
-#: controls/GlobalDrawer.qml:694
+#: controls/GlobalDrawer.qml:696
 msgctxt "GlobalDrawer|"
 msgid "Open Sidebar"
 msgstr "पार्श्वपट्टिका उद्घाटयन्तु"
@@ -150,7 +150,7 @@ msgctxt "PasswordField|"
 msgid "Show Password"
 msgstr "गुप्तशब्दं दर्शयतु"
 
-#: controls/private/globaltoolbar/HandleButton.qml:25
+#: controls/private/globaltoolbar/HandleButton.qml:24
 #, fuzzy
 #| msgctxt "PageRowGlobalToolBarUI|"
 #| msgid "Close menu"
@@ -158,7 +158,7 @@ msgctxt "HandleButton|"
 msgid "Close menu"
 msgstr "मेनू बन्दं कुर्वन्तु"
 
-#: controls/private/globaltoolbar/HandleButton.qml:25
+#: controls/private/globaltoolbar/HandleButton.qml:24
 #, fuzzy
 #| msgctxt "PageRowGlobalToolBarUI|"
 #| msgid "Open menu"
@@ -166,7 +166,7 @@ msgctxt "HandleButton|"
 msgid "Open menu"
 msgstr "मेनू उद्घाटयन्तु"
 
-#: controls/private/globaltoolbar/NavigationButtons.qml:98
+#: controls/private/globaltoolbar/NavigationButtons.qml:99
 #, fuzzy
 #| msgctxt "BackButton|"
 #| msgid "Navigate Back"
@@ -174,7 +174,7 @@ msgctxt "NavigationButtons|"
 msgid "Navigate Back"
 msgstr "Back इति नेविगेट् कुर्वन्तु"
 
-#: controls/private/globaltoolbar/NavigationButtons.qml:115
+#: controls/private/globaltoolbar/NavigationButtons.qml:116
 #, fuzzy
 #| msgctxt "ForwardButton|"
 #| msgid "Navigate Forward"
@@ -269,7 +269,7 @@ msgctxt "InlineMessage|"
 msgid "Note"
 msgstr "टीका"
 
-#: templates/InlineMessage.qml:444
+#: templates/InlineMessage.qml:443
 msgctxt "InlineMessage|"
 msgid "Close"
 msgstr "पिधानं करोतु"

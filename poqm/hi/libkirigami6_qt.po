@@ -13,13 +13,13 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n!=1);\n"
 "X-Generator: Lokalize 21.08.0\n"
 
-#: controls/AboutItem.qml:162
+#: controls/AboutItem.qml:163
 #, qt-format
 msgctxt "AboutItem|"
 msgid "%1 (%2)"
 msgstr ""
 
-#: controls/AboutItem.qml:182
+#: controls/AboutItem.qml:183
 #, fuzzy, qt-format
 #| msgctxt "AboutPage|"
 #| msgid "Send an email to %1"
@@ -27,7 +27,7 @@ msgctxt "AboutItem|"
 msgid "Send an email to %1"
 msgstr "%1 को ईमेल भेजें"
 
-#: controls/AboutItem.qml:224
+#: controls/AboutItem.qml:225
 #, fuzzy
 #| msgctxt "AboutPage|"
 #| msgid "Get Involved"
@@ -35,17 +35,17 @@ msgctxt "AboutItem|"
 msgid "Get Involved"
 msgstr "सहभाग लें"
 
-#: controls/AboutItem.qml:230
+#: controls/AboutItem.qml:231
 msgctxt "AboutItem|"
 msgid "Donate"
 msgstr ""
 
-#: controls/AboutItem.qml:247
+#: controls/AboutItem.qml:248
 msgctxt "AboutItem|"
 msgid "Report a Bug"
 msgstr ""
 
-#: controls/AboutItem.qml:260
+#: controls/AboutItem.qml:261
 #, fuzzy
 #| msgctxt "AboutPage|"
 #| msgid "Copyright"
@@ -53,7 +53,7 @@ msgctxt "AboutItem|"
 msgid "Copyright"
 msgstr "सर्वाधिकार"
 
-#: controls/AboutItem.qml:305
+#: controls/AboutItem.qml:310
 #, fuzzy
 #| msgctxt "AboutPage|"
 #| msgid "License:"
@@ -61,7 +61,7 @@ msgctxt "AboutItem|"
 msgid "License:"
 msgstr "अनुज्ञापत्र :"
 
-#: controls/AboutItem.qml:327
+#: controls/AboutItem.qml:333
 #, fuzzy, qt-format
 #| msgctxt "AboutPage|"
 #| msgid "License: %1"
@@ -69,7 +69,7 @@ msgctxt "AboutItem|"
 msgid "License: %1"
 msgstr "अनुज्ञापत्र : %1"
 
-#: controls/AboutItem.qml:338
+#: controls/AboutItem.qml:344
 #, fuzzy
 #| msgctxt "AboutPage|"
 #| msgid "Libraries in use"
@@ -77,7 +77,7 @@ msgctxt "AboutItem|"
 msgid "Libraries in use"
 msgstr "उपयोग किए गए संग्रह"
 
-#: controls/AboutItem.qml:368
+#: controls/AboutItem.qml:376
 #, fuzzy
 #| msgctxt "AboutPage|"
 #| msgid "Authors"
@@ -85,7 +85,7 @@ msgctxt "AboutItem|"
 msgid "Authors"
 msgstr "लेखक"
 
-#: controls/AboutItem.qml:378
+#: controls/AboutItem.qml:386
 #, fuzzy
 #| msgctxt "AboutPage|"
 #| msgid "Show author photos"
@@ -93,7 +93,7 @@ msgctxt "AboutItem|"
 msgid "Show author photos"
 msgstr "लेखक की फोटोओं को दिखाएँ"
 
-#: controls/AboutItem.qml:389
+#: controls/AboutItem.qml:397
 #, fuzzy
 #| msgctxt "AboutPage|"
 #| msgid "Credits"
@@ -101,7 +101,7 @@ msgctxt "AboutItem|"
 msgid "Credits"
 msgstr "आभार सूची"
 
-#: controls/AboutItem.qml:401
+#: controls/AboutItem.qml:409
 #, fuzzy
 #| msgctxt "AboutPage|"
 #| msgid "Translators"
@@ -120,7 +120,7 @@ msgctxt "AbstractApplicationWindow|"
 msgid "Quit"
 msgstr "बाहर जाएँ"
 
-#: controls/ActionToolBar.qml:205
+#: controls/ActionToolBar.qml:206
 msgctxt "ActionToolBar|"
 msgid "More Actions"
 msgstr "अधिक क्रियाएँ"
@@ -130,7 +130,7 @@ msgctxt "Chip|"
 msgid "Remove"
 msgstr ""
 
-#: controls/ContextDrawer.qml:62
+#: controls/ContextDrawer.qml:63
 msgctxt "ContextDrawer|"
 msgid "Actions"
 msgstr "क्रियाएं"
@@ -140,17 +140,17 @@ msgctxt "ContextualHelpButton|"
 msgid "Show Contextual Help"
 msgstr ""
 
-#: controls/GlobalDrawer.qml:361
+#: controls/GlobalDrawer.qml:363
 msgctxt "GlobalDrawer|"
 msgid "Back"
 msgstr "पीछे"
 
-#: controls/GlobalDrawer.qml:689
+#: controls/GlobalDrawer.qml:691
 msgctxt "GlobalDrawer|"
 msgid "Close Sidebar"
 msgstr "बाजूपट्टी बंद करें"
 
-#: controls/GlobalDrawer.qml:694
+#: controls/GlobalDrawer.qml:696
 #, fuzzy
 #| msgctxt "GlobalDrawer|"
 #| msgid "Close Sidebar"
@@ -184,7 +184,7 @@ msgctxt "PasswordField|"
 msgid "Show Password"
 msgstr "कूटशब्द"
 
-#: controls/private/globaltoolbar/HandleButton.qml:25
+#: controls/private/globaltoolbar/HandleButton.qml:24
 #, fuzzy
 #| msgctxt "OverlayDrawer|"
 #| msgid "Close"
@@ -192,7 +192,7 @@ msgctxt "HandleButton|"
 msgid "Close menu"
 msgstr "बंद करें"
 
-#: controls/private/globaltoolbar/HandleButton.qml:25
+#: controls/private/globaltoolbar/HandleButton.qml:24
 #, fuzzy
 #| msgctxt "OverlayDrawer|"
 #| msgid "Open"
@@ -200,7 +200,7 @@ msgctxt "HandleButton|"
 msgid "Open menu"
 msgstr "खोलें"
 
-#: controls/private/globaltoolbar/NavigationButtons.qml:98
+#: controls/private/globaltoolbar/NavigationButtons.qml:99
 #, fuzzy
 #| msgctxt "BackButton|"
 #| msgid "Navigate Back"
@@ -208,7 +208,7 @@ msgctxt "NavigationButtons|"
 msgid "Navigate Back"
 msgstr "पीछे जाएँ"
 
-#: controls/private/globaltoolbar/NavigationButtons.qml:115
+#: controls/private/globaltoolbar/NavigationButtons.qml:116
 #, fuzzy
 #| msgctxt "ForwardButton|"
 #| msgid "Navigate Forward"
@@ -315,7 +315,7 @@ msgctxt "InlineMessage|"
 msgid "Note"
 msgstr ""
 
-#: templates/InlineMessage.qml:444
+#: templates/InlineMessage.qml:443
 #, fuzzy
 #| msgctxt "OverlayDrawer|"
 #| msgid "Close"
