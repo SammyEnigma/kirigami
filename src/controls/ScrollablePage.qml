@@ -313,6 +313,7 @@ Kirigami.Page {
             sourceComponent: PullDownIndicator {
                 parent: root
                 active: root.refreshing
+                refreshing: root.refreshing
                 onTriggered: root.refreshing = true
             }
         }

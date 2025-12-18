@@ -51,6 +51,13 @@ Item {
     readonly property real progress: !refreshing ? Math.min(-Math.min(flickable?.verticalOvershoot ?? 0, 0) / indicatorContainer.height, 1) : 0
 
     /*!
+     \brief Whether the Flickable or ScrollablePage is actively asking for a refresh
+
+     This should be bound to a ScrollablePage's refreshing value.
+     */
+    property bool refreshing: false
+
+    /*!
       \brief Time to wait after the flickable has been pulled down before triggering a refresh
 
       This gives the user a chance to back out of the refresh if they release the flickable
