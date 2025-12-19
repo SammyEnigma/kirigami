@@ -103,8 +103,6 @@ msgstr "Flere handlinger"
 
 #: controls/Chip.qml:44
 #, fuzzy
-#| msgctxt "Chip|"
-#| msgid "Remove Tag"
 msgctxt "Chip|"
 msgid "Remove"
 msgstr "Fjern merkelapp"
@@ -156,16 +154,12 @@ msgstr "Vis passord"
 
 #: controls/private/globaltoolbar/HandleButton.qml:24
 #, fuzzy
-#| msgctxt "PageRowGlobalToolBarUI|"
-#| msgid "Close menu"
 msgctxt "HandleButton|"
 msgid "Close menu"
 msgstr "Lukk meny"
 
 #: controls/private/globaltoolbar/HandleButton.qml:24
 #, fuzzy
-#| msgctxt "PageRowGlobalToolBarUI|"
-#| msgid "Open menu"
 msgctxt "HandleButton|"
 msgid "Open menu"
 msgstr "Åpne meny"
