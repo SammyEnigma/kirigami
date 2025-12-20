@@ -117,12 +117,12 @@ msgctxt "GlobalDrawer|"
 msgid "Back"
 msgstr "Terug"
 
-#: controls/GlobalDrawer.qml:691
+#: controls/GlobalDrawer.qml:694
 msgctxt "GlobalDrawer|"
 msgid "Close Sidebar"
 msgstr "Zijbalk sluiten"
 
-#: controls/GlobalDrawer.qml:696
+#: controls/GlobalDrawer.qml:699
 msgctxt "GlobalDrawer|"
 msgid "Open Sidebar"
 msgstr "Zijbalk openen"
