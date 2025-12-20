@@ -133,26 +133,13 @@ T.TabButton {
     Kirigami.MnemonicData.label: text
 
     Accessible.description: Kirigami.MnemonicData.plainTextLabel
-    Accessible.onPressAction: {
-        if (typeof control.animateClick === "function") {
-            control.animateClick();
-        } else {
-            control.action.trigger();
-        }
-    }
+    Accessible.onPressAction: control.animateClick()
 
     Shortcut {
         //in case of explicit & the button manages it by itself
         enabled: !(RegExp(/\&[^\&]/).test(control.text))
         sequence: control.Kirigami.MnemonicData.sequence
-        onActivated: {
-            // TODO Remove check once we depend on Qt 6.8.
-            if (typeof control.animateClick === "function") {
-                control.animateClick();
-            } else {
-                control.action.trigger();
-            }
-        }
+        onActivated: control.animateClick()
     }
 
     background: Item {
