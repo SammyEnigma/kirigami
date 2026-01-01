@@ -12,7 +12,7 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n==1 ? 0 : n%10>=2 && (n%100<10 || n"
 "%100>=20) ? 1 : n%10==0 || (n%100>10 && n%100<20) ? 2 : 3);\n"
 "X-Qt-Contexts: true\n"
-"X-Generator: Poedit 3.4.2\n"
+"X-Generator: Poedit 3.8\n"
 
 #: controls/AboutItem.qml:163
 #, qt-format
@@ -99,12 +99,9 @@ msgid "More Actions"
 msgstr "Daugiau veiksmų"
 
 #: controls/Chip.qml:44
-#, fuzzy
-#| msgctxt "Chip|"
-#| msgid "Remove Tag"
 msgctxt "Chip|"
 msgid "Remove"
-msgstr "Šalinti žymę"
+msgstr "Šalinti"
 
 #: controls/ContextDrawer.qml:63
 msgctxt "ContextDrawer|"
@@ -152,33 +149,21 @@ msgid "Show Password"
 msgstr "Rodyti slaptažodį"
 
 #: controls/private/globaltoolbar/HandleButton.qml:24
-#, fuzzy
-#| msgctxt "PageRowGlobalToolBarUI|"
-#| msgid "Close menu"
 msgctxt "HandleButton|"
 msgid "Close menu"
 msgstr "Užverti meniu"
 
 #: controls/private/globaltoolbar/HandleButton.qml:24
-#, fuzzy
-#| msgctxt "PageRowGlobalToolBarUI|"
-#| msgid "Open menu"
 msgctxt "HandleButton|"
 msgid "Open menu"
 msgstr "Atverti meniu"
 
 #: controls/private/globaltoolbar/NavigationButtons.qml:99
-#, fuzzy
-#| msgctxt "BackButton|"
-#| msgid "Navigate Back"
 msgctxt "NavigationButtons|"
 msgid "Navigate Back"
 msgstr "Naršyti atgal"
 
 #: controls/private/globaltoolbar/NavigationButtons.qml:116
-#, fuzzy
-#| msgctxt "ForwardButton|"
-#| msgid "Navigate Forward"
 msgctxt "NavigationButtons|"
 msgid "Navigate Forward"
 msgstr "Naršyti pirmyn"
@@ -199,17 +184,14 @@ msgid "Clear search"
 msgstr "Išvalyti paiešką"
 
 #: controls/SelectableLabel.qml:297
-#, fuzzy
-#| msgctxt "AboutItem|"
-#| msgid "Copyright"
 msgctxt "SelectableLabel|"
 msgid "Copy"
-msgstr "Autorių teisės"
+msgstr "Kopijuoti"
 
 #: controls/SelectableLabel.qml:310
 msgctxt "SelectableLabel|"
 msgid "Select All"
-msgstr ""
+msgstr "Žymėti viską"
 
 #: controls/UrlButton.qml:50
 #, qt-format
@@ -228,9 +210,6 @@ msgid "Copy Link to Clipboard"
 msgstr "Kopijuoti nuorodą į iškarpinę"
 
 #: dialogs/DialogHeaderTopContent.qml:103
-#, fuzzy
-#| msgctxt "Dialog|@action:button close dialog"
-#| msgid "Close"
 msgctxt "DialogHeaderTopContent|@action:button close dialog"
 msgid "Close"
 msgstr "Užverti"
@@ -256,27 +235,24 @@ msgstr "Qt %2 (sudaryta remiantis %3)"
 #: templates/InlineMessage.qml:350
 msgctxt "InlineMessage|"
 msgid "Success"
-msgstr ""
+msgstr "Pavyko"
 
 #: templates/InlineMessage.qml:352
 msgctxt "InlineMessage|"
 msgid "Warning"
-msgstr ""
+msgstr "Įspėjimas"
 
 #: templates/InlineMessage.qml:354
 msgctxt "InlineMessage|"
 msgid "Error"
-msgstr ""
+msgstr "Klaida"
 
 #: templates/InlineMessage.qml:356
 msgctxt "InlineMessage|"
 msgid "Note"
-msgstr ""
+msgstr "Pastaba"
 
 #: templates/InlineMessage.qml:443
-#, fuzzy
-#| msgctxt "Dialog|@action:button close dialog"
-#| msgid "Close"
 msgctxt "InlineMessage|"
 msgid "Close"
 msgstr "Užverti"
@@ -292,9 +268,6 @@ msgid "Open drawer"
 msgstr "Atidaryti stalčių"
 
 #: templates/OverlaySheet.qml:294
-#, fuzzy
-#| msgctxt "Dialog|@action:button close dialog"
-#| msgid "Close"
 msgctxt "OverlaySheet|@action:button close dialog"
 msgid "Close"
 msgstr "Užverti"
