@@ -311,7 +311,8 @@ ColumnLayout {
 
         Layout.alignment: Qt.AlignHCenter
         Layout.topMargin: Kirigami.Units.gridUnit
-        Layout.maximumWidth: root.width
+        Layout.maximumWidth: implicitWidth
+        Layout.fillWidth: true
 
         visible: action?.enabled ?? false
     }
