@@ -287,7 +287,7 @@ ColumnLayout {
         horizontalAlignment: Qt.AlignHCenter
         verticalAlignment: Qt.AlignVCenter
 
-        wrapMode: Text.WordWrap
+        wrapMode: Text.Wrap
     }
 
     Kirigami.SelectableLabel {
@@ -298,7 +298,7 @@ ColumnLayout {
         opacity: root.type === PlaceholderMessage.Type.Actionable ? 1 : 0.75
 
         horizontalAlignment: Qt.AlignHCenter
-        wrapMode: Text.WordWrap
+        wrapMode: Text.Wrap
 
         Layout.fillWidth: true
 
@@ -311,6 +311,7 @@ ColumnLayout {
 
         Layout.alignment: Qt.AlignHCenter
         Layout.topMargin: Kirigami.Units.gridUnit
+        Layout.maximumWidth: root.width
 
         visible: action?.enabled ?? false
     }
