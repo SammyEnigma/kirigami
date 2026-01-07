@@ -317,21 +317,44 @@ QQC2.Control {
             }
         }
 
-        readonly property int toolTipX: hoverHandler.point.position.x - Math.round(QQC2.ToolTip.toolTip.implicitWidth / 2)
-        readonly property int toolTipY: hoverHandler.point.position.y - QQC2.ToolTip.toolTip.implicitHeight - Kirigami.Units.gridUnit
-
         QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
         QQC2.ToolTip.visible: textEdit.hoveredLink
-        QQC2.ToolTip.toolTip.x: toolTipX
-        QQC2.ToolTip.toolTip.y: toolTipY
-        QQC2.ToolTip.onVisibleChanged: {
-            if (visible) {
-                // Set this stuff imperatively because:
-                // - We don't want the text to get unset before the tooltip disappears, because that's ugly
-                // - We want the position to stay fixed, not jump around as the pointer moves
+
+        Binding {
+            id: toolTipXBinding
+
+            // QQC2.ToolTip.toolTip is global and we don't own it. We need to make sure that our x and y bindings are active only when *we* are showing tooltip
+            readonly property bool overrideToolTipCoordinates: textEdit.QQC2.ToolTip.toolTip.parent === textEdit
+            // Cursor x position at which the tooltip is shown. Written once when tooltip is shown
+            property int toolTipOriginX: 0
+
+            target: textEdit.QQC2.ToolTip.toolTip
+            property: "x"
+            value: toolTipOriginX - Math.round(textEdit.QQC2.ToolTip.toolTip.implicitWidth / 2)
+            when: overrideToolTipCoordinates
+        }
+
+        Binding {
+            id: toolTipYBinding
+
+            // Cursor y position at which the tooltip is shown. Written once when tooltip is shown
+            property int toolTipOriginY: 0
+
+            target: textEdit.QQC2.ToolTip.toolTip
+            property: "y"
+            value: toolTipOriginY - textEdit.QQC2.ToolTip.toolTip.implicitHeight - Kirigami.Units.gridUnit
+            when: toolTipXBinding.overrideToolTipCoordinates
+        }
+
+        onHoveredLinkChanged: {
+            if (textEdit.hoveredLink) {
+                // Don't reset tooltip text when it's empty so that it doesn't disappear immediately while tooltip is fading out
                 QQC2.ToolTip.text = textEdit.hoveredLink
-                QQC2.ToolTip.toolTip.x = toolTipX
-                QQC2.ToolTip.toolTip.y = toolTipY
+                // hoverHandler.point.position is not updated yet when onHoveredLinkChanged is called, delay using callLater
+                Qt.callLater(() => {
+                    toolTipXBinding.toolTipOriginX = hoverHandler.point.position.x
+                    toolTipYBinding.toolTipOriginY = hoverHandler.point.position.y
+                })
             }
         }
     }
