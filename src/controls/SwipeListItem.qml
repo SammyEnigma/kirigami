@@ -277,7 +277,8 @@ QQC2.SwipeDelegate {
             name: "reanchored"
             AnchorChanges {
                 target: overlayLoader
-                anchors.right: listItem.contentItem.right
+                anchors.right: listItem.mirrored ? undefined : listItem.contentItem.right
+                anchors.left: listItem.mirrored ? listItem.contentItem.left : undefined
                 anchors.top: parent.top
                 anchors.bottom: parent.bottom
             }
