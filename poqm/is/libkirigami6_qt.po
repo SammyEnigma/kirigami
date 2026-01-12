@@ -93,7 +93,7 @@ msgctxt "AbstractApplicationWindow|"
 msgid "Quit"
 msgstr "Hætta"
 
-#: controls/ActionToolBar.qml:206
+#: controls/ActionToolBar.qml:207
 msgctxt "ActionToolBar|"
 msgid "More Actions"
 msgstr "Fleiri aðgerðir"
@@ -118,12 +118,12 @@ msgctxt "GlobalDrawer|"
 msgid "Back"
 msgstr "Til baka"
 
-#: controls/GlobalDrawer.qml:694
+#: controls/GlobalDrawer.qml:693
 msgctxt "GlobalDrawer|"
 msgid "Close Sidebar"
 msgstr "Loka hliðarstiku"
 
-#: controls/GlobalDrawer.qml:699
+#: controls/GlobalDrawer.qml:698
 msgctxt "GlobalDrawer|"
 msgid "Open Sidebar"
 msgstr "Opna hliðarstiku"
@@ -158,12 +158,12 @@ msgctxt "HandleButton|"
 msgid "Open menu"
 msgstr "Opna valmynd"
 
-#: controls/private/globaltoolbar/NavigationButtons.qml:99
+#: controls/private/globaltoolbar/NavigationButtons.qml:100
 msgctxt "NavigationButtons|"
 msgid "Navigate Back"
 msgstr "Fletta til baka"
 
-#: controls/private/globaltoolbar/NavigationButtons.qml:116
+#: controls/private/globaltoolbar/NavigationButtons.qml:117
 msgctxt "NavigationButtons|"
 msgid "Navigate Forward"
 msgstr "Fletta áfram"

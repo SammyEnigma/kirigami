@@ -92,7 +92,7 @@ msgctxt "AbstractApplicationWindow|"
 msgid "Quit"
 msgstr "끝내기"
 
-#: controls/ActionToolBar.qml:206
+#: controls/ActionToolBar.qml:207
 msgctxt "ActionToolBar|"
 msgid "More Actions"
 msgstr "더 많은 동작"
@@ -120,12 +120,12 @@ msgctxt "GlobalDrawer|"
 msgid "Back"
 msgstr "뒤로"
 
-#: controls/GlobalDrawer.qml:694
+#: controls/GlobalDrawer.qml:693
 msgctxt "GlobalDrawer|"
 msgid "Close Sidebar"
 msgstr "사이드바 닫기"
 
-#: controls/GlobalDrawer.qml:699
+#: controls/GlobalDrawer.qml:698
 msgctxt "GlobalDrawer|"
 msgid "Open Sidebar"
 msgstr "사이드바 열기"
@@ -166,12 +166,12 @@ msgctxt "HandleButton|"
 msgid "Open menu"
 msgstr "메뉴 열기"
 
-#: controls/private/globaltoolbar/NavigationButtons.qml:99
+#: controls/private/globaltoolbar/NavigationButtons.qml:100
 msgctxt "NavigationButtons|"
 msgid "Navigate Back"
 msgstr "이전 탐색"
 
-#: controls/private/globaltoolbar/NavigationButtons.qml:116
+#: controls/private/globaltoolbar/NavigationButtons.qml:117
 msgctxt "NavigationButtons|"
 msgid "Navigate Forward"
 msgstr "다음 탐색"
