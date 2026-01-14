@@ -97,8 +97,6 @@ target_sources(Kirigami PRIVATE
     enums.h
     imagecolors.cpp
     imagecolors.h
-    mnemonicattached.cpp
-    mnemonicattached.h
     overlayzstackingattached.cpp
     overlayzstackingattached.h
     pagepool.cpp

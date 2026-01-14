@@ -12,6 +12,8 @@ target_sources(KirigamiPrimitives PRIVATE
     alignedsizeattached.h
     icon.cpp
     icon.h
+    mnemonicattached.h
+    mnemonicattached.cpp
     shadowedrectangle.cpp
     shadowedrectangle.h
     shadowedtexture.cpp
