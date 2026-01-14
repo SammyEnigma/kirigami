@@ -1013,6 +1013,9 @@ QT.Control {
                     top: parent.top
                     bottom: parent.bottom
                 }
+                transform: Translate {
+                    x: root.mirrored ? -sidebarControl.Kirigami.ScenePosition.x : 0
+                }
                 z: 1
                 width: visible ? root.leftSidebar.width * root.leftSidebar.position : 0
                 // Using leftSidebar.position instead of visible because leftSidebar.visible depends from its main item visibility which is our child so would be a loop
