@@ -214,10 +214,10 @@ QQC2.Control {
             menuActions: root.actions
 
             menuComponent: P.ActionsMenu {
-                id: actionsMenu
-
                 y: root.position === QQC2.ToolBar.Footer ? -height : 0
                 submenuComponent: P.ActionsMenu {
+                    id: actionsMenu
+
                     Binding {
                         target: actionsMenu.parentItem
                         property: "visible"
