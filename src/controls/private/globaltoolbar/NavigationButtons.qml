@@ -100,7 +100,7 @@ Loader {
             text: qsTr("Navigate Back")
             enabled: {
                 let isScrolled = !LayoutMirroring.enabled ? root.pageStack.columnView.contentX > 0
-                    : (root.pageStack.columnView.contentX === 0 && root.pageStack.columnView.contentWidth > root.pageStack.columnView.width)
+                    : root.pageStack.columnView.contentWidth - root.pageStack.columnView.contentX !== root.pageStack.columnView.width
                 return root.page.QQC.StackView.view || (root.pageStack.depth > 1 && isScrolled);
             }
             visible: root.page.QQC.StackView.view || root.pageStack.globalToolBar.showNavigationButtons & Kirigami.ApplicationHeaderStyle.ShowBackButton
