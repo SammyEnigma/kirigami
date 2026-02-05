@@ -17,6 +17,8 @@
 #include "loggingcategory.h"
 #include "toolbarlayoutdelegate.h"
 
+using namespace Qt::StringLiterals;
+
 ToolBarLayoutAttached::ToolBarLayoutAttached(QObject *parent)
     : QObject(parent)
 {
@@ -355,8 +357,16 @@ void ToolBarLayout::geometryChange(const QRectF &newGeometry, const QRectF &oldG
 
 void ToolBarLayout::itemChange(QQuickItem::ItemChange change, const QQuickItem::ItemChangeData &data)
 {
-    if (change == ItemVisibleHasChanged || change == ItemSceneChange) {
+    if (change == ItemSceneChange) {
         relayout();
+    } else if (change == ItemVisibleHasChanged) {
+        // If we just became visible we want all the actions to be visible and laid out,
+        // in order to not draw a frame with an empty toolbar
+        for (auto &delegate : std::as_const(d->delegates)) {
+            delegate.second->forceCompletion();
+        }
+        d->implicitSizeValid = false;
+        d->performLayout();
     }
     QQuickItem::itemChange(change, data);
 }
@@ -402,7 +412,8 @@ void ToolBarLayoutPrivate::calculateImplicitSize()
     sortedDelegates = createDelegates();
 
     bool ready = std::all_of(delegates.cbegin(), delegates.cend(), [](const std::pair<QObject *const, std::unique_ptr<ToolBarLayoutDelegate>> &entry) {
-        return entry.second->isReady();
+        // If the delegate wants to always be hidden we don't care if it's still loading
+        return entry.second->isReady() || entry.second->isHidden();
     });
     if (!ready || !moreButtonInstance) {
         return;
@@ -494,21 +505,18 @@ void ToolBarLayoutPrivate::performLayout()
         calculateImplicitSize();
     }
 
-    if (sortedDelegates.isEmpty()) {
+    if (sortedDelegates.isEmpty() || !moreButtonInstance) {
         sortedDelegates = createDelegates();
     }
 
     bool ready = std::all_of(delegates.cbegin(), delegates.cend(), [](const std::pair<QObject *const, std::unique_ptr<ToolBarLayoutDelegate>> &entry) {
-        return entry.second->isReady();
+        // If the delegate wants to always be hidden we don't care if it's still loading
+        return entry.second->isReady() || entry.second->isHidden();
     });
-    if (!ready || !moreButtonInstance) {
-        // Hide toolbar actions if delegates are still being
-        // loaded (otherwise they visibly glitch in one-by-one as they load)
-        q->setVisible(false);
+    if (!ready) {
+        // Don't continue to layout if all delegates aren't ready yet
         return;
     }
-    // Set visibility to true once all delegates have loaded
-    q->setVisible(true);
 
     qreal width = q->width();
     qreal height = q->height();
@@ -606,28 +614,15 @@ QList<ToolBarLayoutDelegate *> ToolBarLayoutPrivate::createDelegates()
         }
     }
 
-    if (!moreButtonInstance && !moreButtonIncubator) {
-        moreButtonIncubator = new ToolBarDelegateIncubator(moreButton, qmlContext(moreButton));
-        moreButtonIncubator->setStateCallback([this](QQuickItem *item) {
-            item->setParentItem(q);
+    if (!moreButtonInstance) {
+        moreButtonInstance = qobject_cast<QQuickItem *>(
+            moreButton->createWithInitialProperties({{u"parent"_s, QVariant::fromValue(q)}, {u"visible"_s, false}}, qmlContext(moreButton)));
+        QObject::connect(moreButtonInstance, &QQuickItem::visibleChanged, q, [this]() {
+            moreButtonInstance->setVisible(shouldShowMoreButton);
         });
-        moreButtonIncubator->setCompletedCallback([this](ToolBarDelegateIncubator *incubator) {
-            moreButtonInstance = qobject_cast<QQuickItem *>(incubator->object());
-            moreButtonInstance->setVisible(false);
-
-            QObject::connect(moreButtonInstance, &QQuickItem::visibleChanged, q, [this]() {
-                moreButtonInstance->setVisible(shouldShowMoreButton);
-            });
-            QObject::connect(moreButtonInstance, &QQuickItem::widthChanged, q, &ToolBarLayout::minimumWidthChanged);
-            q->relayout();
-            Q_EMIT q->minimumWidthChanged();
-
-            QTimer::singleShot(0, q, [this]() {
-                delete moreButtonIncubator;
-                moreButtonIncubator = nullptr;
-            });
-        });
-        moreButtonIncubator->create();
+        QObject::connect(moreButtonInstance, &QQuickItem::widthChanged, q, &ToolBarLayout::minimumWidthChanged);
+        q->relayout();
+        Q_EMIT q->minimumWidthChanged();
     }
 
     return result;

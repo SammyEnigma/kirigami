@@ -68,6 +68,7 @@ public:
     void showIcon();
     void showFull();
     void show();
+    void forceCompletion();
 
     void setPosition(qreal x, qreal y);
     void setHeight(qreal height);

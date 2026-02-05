@@ -9,11 +9,15 @@
 #include "loggingcategory.h"
 #include "toolbarlayout.h"
 
+using namespace Qt::StringLiterals;
+
 ToolBarDelegateIncubator::ToolBarDelegateIncubator(QQmlComponent *component, QQmlContext *context)
     : QQmlIncubator(QQmlIncubator::Asynchronous)
     , m_component(component)
     , m_context(context)
 {
+    // Start with the delegate invisible in order to avoid flickering it in the wrong place when created
+    setInitialProperties({{u"visible"_s, false}});
 }
 
 void ToolBarDelegateIncubator::setStateCallback(std::function<void(QQuickItem *)> callback)
@@ -174,6 +178,12 @@ void ToolBarLayoutDelegate::createItems(QQmlComponent *fullComponent, QQmlCompon
 
     m_fullIncubator->create();
     m_iconIncubator->create();
+
+    // If we are in a visible parent and the action doesn't want to always be hidden, create it immadiately,
+    // in order to not have a frame be drawn with an empty toolbar
+    if (m_parent->isVisible() && isActionVisible() && !isHidden()) {
+        forceCompletion();
+    }
 }
 
 bool ToolBarLayoutDelegate::isReady() const
@@ -228,6 +238,17 @@ void ToolBarLayoutDelegate::showIcon()
 void ToolBarLayoutDelegate::show()
 {
     ensureItemVisibility();
+}
+
+void ToolBarLayoutDelegate::forceCompletion()
+{
+    if (m_iconIncubator) {
+        m_iconIncubator->forceCompletion();
+    }
+    if (m_fullIncubator) {
+        m_fullIncubator->forceCompletion();
+    }
+    m_ready = true;
 }
 
 void ToolBarLayoutDelegate::setPosition(qreal x, qreal y)
