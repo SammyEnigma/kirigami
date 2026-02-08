@@ -1,8 +1,8 @@
-# SPDX-FileCopyrightText: 2024, 2025 Toms Trasuns <toms.trasuns@posteo.net>
+# SPDX-FileCopyrightText: 2024, 2025, 2026 Toms Trasuns <toms.trasuns@posteo.net>
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2025-08-21 10:26+0300\n"
+"PO-Revision-Date: 2026-02-06 14:14+0200\n"
 "Last-Translator: Toms Trasuns <toms.trasuns@posteo.net>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
 "Language: lv\n"
@@ -12,7 +12,7 @@ msgstr ""
 "X-Qt-Contexts: true\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : "
 "2);\n"
-"X-Generator: Lokalize 25.08.0\n"
+"X-Generator: Lokalize 25.12.1\n"
 
 #: controls/AboutItem.qml:163
 #, qt-format
@@ -99,12 +99,9 @@ msgid "More Actions"
 msgstr "Vairāk darbību"
 
 #: controls/Chip.qml:44
-#, fuzzy
-#| msgctxt "Chip|"
-#| msgid "Remove Tag"
 msgctxt "Chip|"
 msgid "Remove"
-msgstr "Noņemt birku"
+msgstr "Noņemt"
 
 #: controls/ContextDrawer.qml:63
 msgctxt "ContextDrawer|"
@@ -152,17 +149,11 @@ msgid "Show Password"
 msgstr "Rādīt paroli"
 
 #: controls/private/globaltoolbar/HandleButton.qml:24
-#, fuzzy
-#| msgctxt "PageRowGlobalToolBarUI|"
-#| msgid "Close menu"
 msgctxt "HandleButton|"
 msgid "Close menu"
 msgstr "Aizvērt izvēlni"
 
 #: controls/private/globaltoolbar/HandleButton.qml:24
-#, fuzzy
-#| msgctxt "PageRowGlobalToolBarUI|"
-#| msgid "Open menu"
 msgctxt "HandleButton|"
 msgid "Open menu"
 msgstr "Atvērt izvēlni"
