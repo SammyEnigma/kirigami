@@ -1070,7 +1070,8 @@ QT.Control {
                                 return Math.min(1, 1 - transitionTransform.progress);
                             }
                         }
-                        readonly property list<OpacityBinding> __opacityBindings: [
+                        // NOTE: We use list<Binding> here instead of list<OpacityBinding> to work around QTBUG-144092
+                        readonly property list<Binding> __opacityBindings: [
                             OpacityBinding {
                                 target: transitionTransform.page
                             },
