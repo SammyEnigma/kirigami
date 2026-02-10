@@ -125,7 +125,7 @@ endif()
 
 ecm_set_disabled_deprecation_versions(
     QT 6.2
-    KF 6.21.0
+    KF 6.23.0
 )
 
 if(CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
