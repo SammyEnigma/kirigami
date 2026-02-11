@@ -105,11 +105,24 @@ QQC2.ToolButton {
             const a = control.action;
             const ka = a as Kirigami.Action
             if (a) {
+                let tooltip;
+                // Use the defiend tooltip, otherwise fallback to the action's text where applicable.
+                // If the action has no text (bad!) then display the shortcut if defined. Ultimately display no tooltip in the worst case.
                 if (ka?.tooltip && ka?.tooltip !== ka.text) {
-                    return ka.tooltip;
-                } else if (control.display === QQC2.Button.IconOnly) {
-                    return a.text;
+                    tooltip = ka.tooltip;
+                } else if (a.text && (control.display === QQC2.Button.IconOnly || a.shortcut)) {
+                    tooltip = a.text;
+                } else if (a.shortcut) {
+                    return a.shortcut;
+                } else {
+                    return "";
                 }
+
+                // Add shortcut to an existing tooltip if defined.
+                if (a.shortcut) {
+                    tooltip = qsTranslate("@info:tooltip %1 is the tooltip of an action, %2 is its keyboard shorcut", "%1 (%2)").arg(tooltip).arg(a.shortcut);
+                }
+                return tooltip;
             }
             return "";
         }
