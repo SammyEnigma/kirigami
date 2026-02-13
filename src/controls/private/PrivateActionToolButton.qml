@@ -110,10 +110,10 @@ QQC2.ToolButton {
                 // If the action has no text (bad!) then display the shortcut if defined. Ultimately display no tooltip in the worst case.
                 if (ka?.tooltip && ka?.tooltip !== ka.text) {
                     tooltip = ka.tooltip;
-                } else if (a.text && (control.display === QQC2.Button.IconOnly || a.shortcut)) {
+                } else if (a.text && control.display === QQC2.Button.IconOnly) {
                     tooltip = a.text;
                 } else if (a.shortcut) {
-                    return a.shortcut;
+                    return qsTranslate("@info:tooltip %1 is a keyboard shorcut", "Trigger this action with %2").arg(a.shortcut);
                 } else {
                     return "";
                 }
