@@ -7,12 +7,12 @@
 # Thiago Masato Costa Sueto <herzenschein@gmail.com>, 2021.
 # SPDX-FileCopyrightText: 2023 Geraldo Simiao <geraldosimiao@fedoraproject.org>
 # SPDX-FileCopyrightText: 2025 Guilherme Marçal Silva <guimarcalsilva@gmail.com>
-# SPDX-FileCopyrightText: 2025 Marcus Gama <marcus.gama@gmail.com>
+# SPDX-FileCopyrightText: 2025, 2026 Marcus Gama <marcus.gama@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: libkirigami2plugin_qt\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"PO-Revision-Date: 2025-12-01 08:23-0300\n"
+"PO-Revision-Date: 2026-02-13 09:08-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
@@ -21,7 +21,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Qt-Contexts: true\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 25.08.3\n"
+"X-Generator: Lokalize 25.12.2\n"
 
 #: controls/AboutItem.qml:163
 #, qt-format
@@ -178,9 +178,7 @@ msgid "Navigate Forward"
 msgstr "Avançar"
 
 #: controls/private/PrivateActionToolButton.qml:123
-#, fuzzy, qt-format
-#| msgctxt "AboutItem|"
-#| msgid "%1 (%2)"
+#, qt-format
 msgctxt ""
 "@info:tooltip %1 is the tooltip of an action, %2 is its keyboard shorcut|"
 msgid "%1 (%2)"

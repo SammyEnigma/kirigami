@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2026-01-24 12:36+0400\n"
+"PO-Revision-Date: 2026-02-13 17:14+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -170,9 +170,7 @@ msgid "Navigate Forward"
 msgstr "تَقَدَّم"
 
 #: controls/private/PrivateActionToolButton.qml:123
-#, fuzzy, qt-format
-#| msgctxt "AboutItem|"
-#| msgid "%1 (%2)"
+#, qt-format
 msgctxt ""
 "@info:tooltip %1 is the tooltip of an action, %2 is its keyboard shorcut|"
 msgid "%1 (%2)"

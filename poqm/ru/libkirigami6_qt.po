@@ -1,12 +1,12 @@
 # Alexander Potashev <aspotashev@gmail.com>, 2016, 2017, 2019.
-# SPDX-FileCopyrightText: 2019, 2020, 2021, 2024, 2025 Alexander Yavorsky <kekcuha@gmail.com>
+# SPDX-FileCopyrightText: 2019, 2020, 2021, 2024, 2025, 2026 Alexander Yavorsky <kekcuha@gmail.com>
 # Мария Шикунова <translation-team@basealt.ru>, 2022, 2023.
 # SPDX-FileCopyrightText: 2024, 2025 Olesya Gerasimenko <translation-team@basealt.ru>
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2025-12-23 19:55+0300\n"
-"Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
+"PO-Revision-Date: 2026-02-13 16:27+0200\n"
+"Last-Translator: Alexander Yavorskiy <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
@@ -15,7 +15,7 @@ msgstr ""
 "X-Qt-Contexts: true\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Lokalize 25.12.0\n"
+"X-Generator: Lokalize 25.12.2\n"
 
 #: controls/AboutItem.qml:163
 #, qt-format
@@ -172,9 +172,7 @@ msgid "Navigate Forward"
 msgstr "Перейти вперёд"
 
 #: controls/private/PrivateActionToolButton.qml:123
-#, fuzzy, qt-format
-#| msgctxt "AboutItem|"
-#| msgid "%1 (%2)"
+#, qt-format
 msgctxt ""
 "@info:tooltip %1 is the tooltip of an action, %2 is its keyboard shorcut|"
 msgid "%1 (%2)"
