@@ -113,7 +113,7 @@ QQC2.ToolButton {
                 } else if (a.text && control.display === QQC2.Button.IconOnly) {
                     tooltip = a.text;
                 } else if (a.shortcut) {
-                    return qsTranslate("@info:tooltip %1 is a keyboard shorcut", "Trigger this action with %2").arg(a.shortcut);
+                    return qsTranslate("@info:tooltip %1 is a keyboard shorcut", "Trigger this action with %1").arg(a.shortcut);
                 } else {
                     return "";
                 }
