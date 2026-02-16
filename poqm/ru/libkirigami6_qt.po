@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2026-02-13 16:27+0200\n"
+"PO-Revision-Date: 2026-02-15 14:33+0200\n"
 "Last-Translator: Alexander Yavorskiy <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
 "Language: ru\n"
@@ -172,10 +172,12 @@ msgid "Navigate Forward"
 msgstr "Перейти вперёд"
 
 #: controls/private/PrivateActionToolButton.qml:116
-#, qt-format
+#, fuzzy, qt-format
+#| msgctxt "@info:tooltip %1 is a keyboard shorcut|"
+#| msgid "Trigger this action with %2"
 msgctxt "@info:tooltip %1 is a keyboard shorcut|"
-msgid "Trigger this action with %2"
-msgstr ""
+msgid "Trigger this action with %1"
+msgstr "Вызвать это действие комбинацией клавиш %2"
 
 #: controls/private/PrivateActionToolButton.qml:123
 #, qt-format

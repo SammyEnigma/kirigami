@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2026-02-13 14:23+0100\n"
+"PO-Revision-Date: 2026-02-15 14:36+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -168,10 +168,12 @@ msgid "Navigate Forward"
 msgstr "Naar voren navigeren"
 
 #: controls/private/PrivateActionToolButton.qml:116
-#, qt-format
+#, fuzzy, qt-format
+#| msgctxt "@info:tooltip %1 is a keyboard shorcut|"
+#| msgid "Trigger this action with %2"
 msgctxt "@info:tooltip %1 is a keyboard shorcut|"
-msgid "Trigger this action with %2"
-msgstr ""
+msgid "Trigger this action with %1"
+msgstr "Activeer deze actie met %2"
 
 #: controls/private/PrivateActionToolButton.qml:123
 #, qt-format

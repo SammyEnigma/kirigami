@@ -1,13 +1,14 @@
 # Spanish translations for libkirigami6_qt.po package.
-# Copyright (C) 2016-2025 This file is copyright:
+# Copyright (C) 2016-2026 This file is copyright:
 # This file is distributed under the same license as the kirigami package.
 #
-# SPDX-FileCopyrightText: 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025 Eloy Cuadra <ecuadra@eloihr.net>
+# SPDX-FileCopyrightText: 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026 Eloy Cuadra <ecuadra@eloihr.net>
 msgid ""
 msgstr ""
 "Project-Id-Version: libkirigami6_qt\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"PO-Revision-Date: 2025-12-02 01:35+0100\n"
+"POT-Creation-Date: 2026-02-16 01:28+0100\n"
+"PO-Revision-Date: 2026-02-16 01:29+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -16,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Qt-Contexts: true\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 25.08.3\n"
+"X-Generator: Lokalize 25.12.2\n"
 
 #: controls/AboutItem.qml:163
 #, qt-format
@@ -173,15 +174,15 @@ msgid "Navigate Forward"
 msgstr "Avanzar una página"
 
 #: controls/private/PrivateActionToolButton.qml:116
-#, qt-format
+#, fuzzy, qt-format
+#| msgctxt "@info:tooltip %1 is a keyboard shorcut|"
+#| msgid "Trigger this action with %2"
 msgctxt "@info:tooltip %1 is a keyboard shorcut|"
-msgid "Trigger this action with %2"
-msgstr ""
+msgid "Trigger this action with %1"
+msgstr "Activar esta acción con %2"
 
 #: controls/private/PrivateActionToolButton.qml:123
-#, fuzzy, qt-format
-#| msgctxt "AboutItem|"
-#| msgid "%1 (%2)"
+#, qt-format
 msgctxt ""
 "@info:tooltip %1 is the tooltip of an action, %2 is its keyboard shorcut|"
 msgid "%1 (%2)"

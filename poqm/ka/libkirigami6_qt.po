@@ -168,10 +168,12 @@ msgid "Navigate Forward"
 msgstr "წინ გადასვლა"
 
 #: controls/private/PrivateActionToolButton.qml:116
-#, qt-format
+#, fuzzy, qt-format
+#| msgctxt "@info:tooltip %1 is a keyboard shorcut|"
+#| msgid "Trigger this action with %2"
 msgctxt "@info:tooltip %1 is a keyboard shorcut|"
-msgid "Trigger this action with %2"
-msgstr ""
+msgid "Trigger this action with %1"
+msgstr "ამ ქმედების დატრიგერება %2-ით"
 
 #: controls/private/PrivateActionToolButton.qml:123
 #, qt-format

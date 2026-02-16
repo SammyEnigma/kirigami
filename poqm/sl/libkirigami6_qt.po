@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2026-02-13 11:55+0100\n"
+"PO-Revision-Date: 2026-02-15 09:21+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -174,10 +174,12 @@ msgid "Navigate Forward"
 msgstr "Krmari naprej"
 
 #: controls/private/PrivateActionToolButton.qml:116
-#, qt-format
+#, fuzzy, qt-format
+#| msgctxt "@info:tooltip %1 is a keyboard shorcut|"
+#| msgid "Trigger this action with %2"
 msgctxt "@info:tooltip %1 is a keyboard shorcut|"
-msgid "Trigger this action with %2"
-msgstr ""
+msgid "Trigger this action with %1"
+msgstr "Sproži to dejavnost s %2"
 
 #: controls/private/PrivateActionToolButton.qml:123
 #, qt-format
