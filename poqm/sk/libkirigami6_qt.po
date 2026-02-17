@@ -18,13 +18,13 @@ msgstr ""
 "X-Qt-Contexts: true\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 
-#: controls/AboutItem.qml:163
+#: controls/AboutItem.qml:166
 #, qt-format
 msgctxt "AboutItem|"
 msgid "%1 (%2)"
 msgstr ""
 
-#: controls/AboutItem.qml:183
+#: controls/AboutItem.qml:186
 #, fuzzy, qt-format
 #| msgctxt "AboutPage|"
 #| msgid "Send an email to %1"
@@ -32,7 +32,7 @@ msgctxt "AboutItem|"
 msgid "Send an email to %1"
 msgstr "Odoslať email na adresu %1"
 
-#: controls/AboutItem.qml:225
+#: controls/AboutItem.qml:228
 #, fuzzy
 #| msgctxt "AboutPage|"
 #| msgid "Get Involved"
@@ -40,12 +40,12 @@ msgctxt "AboutItem|"
 msgid "Get Involved"
 msgstr "Zapojiť sa"
 
-#: controls/AboutItem.qml:231
+#: controls/AboutItem.qml:234
 msgctxt "AboutItem|"
 msgid "Donate"
 msgstr ""
 
-#: controls/AboutItem.qml:248
+#: controls/AboutItem.qml:251
 #, fuzzy
 #| msgctxt "AboutPage|"
 #| msgid "Report Bug…"
@@ -53,7 +53,7 @@ msgctxt "AboutItem|"
 msgid "Report a Bug"
 msgstr "Nahlásiť chybu..."
 
-#: controls/AboutItem.qml:261
+#: controls/AboutItem.qml:264
 #, fuzzy
 #| msgctxt "AboutPage|"
 #| msgid "Copyright"
@@ -61,7 +61,7 @@ msgctxt "AboutItem|"
 msgid "Copyright"
 msgstr "Copyright"
 
-#: controls/AboutItem.qml:310
+#: controls/AboutItem.qml:313
 #, fuzzy
 #| msgctxt "AboutPage|"
 #| msgid "License:"
@@ -69,7 +69,7 @@ msgctxt "AboutItem|"
 msgid "License:"
 msgstr "Licencia:"
 
-#: controls/AboutItem.qml:333
+#: controls/AboutItem.qml:336
 #, fuzzy, qt-format
 #| msgctxt "AboutPage|"
 #| msgid "License: %1"
@@ -77,7 +77,7 @@ msgctxt "AboutItem|"
 msgid "License: %1"
 msgstr "Licencia: %1"
 
-#: controls/AboutItem.qml:344
+#: controls/AboutItem.qml:347
 #, fuzzy
 #| msgctxt "AboutPage|"
 #| msgid "Libraries in use"
@@ -85,7 +85,7 @@ msgctxt "AboutItem|"
 msgid "Libraries in use"
 msgstr "Použité knižnice"
 
-#: controls/AboutItem.qml:376
+#: controls/AboutItem.qml:379
 #, fuzzy
 #| msgctxt "AboutPage|"
 #| msgid "Authors"
@@ -93,7 +93,7 @@ msgctxt "AboutItem|"
 msgid "Authors"
 msgstr "Autori"
 
-#: controls/AboutItem.qml:386
+#: controls/AboutItem.qml:389
 #, fuzzy
 #| msgctxt "AboutPage|"
 #| msgid "Show author photos"
@@ -101,7 +101,7 @@ msgctxt "AboutItem|"
 msgid "Show author photos"
 msgstr "Zobraziť fotografie autora"
 
-#: controls/AboutItem.qml:397
+#: controls/AboutItem.qml:400
 #, fuzzy
 #| msgctxt "AboutPage|"
 #| msgid "Credits"
@@ -109,7 +109,7 @@ msgctxt "AboutItem|"
 msgid "Credits"
 msgstr "Zásluhy"
 
-#: controls/AboutItem.qml:409
+#: controls/AboutItem.qml:412
 #, fuzzy
 #| msgctxt "AboutPage|"
 #| msgid "Translators"
@@ -123,22 +123,22 @@ msgctxt "AboutPage|"
 msgid "About %1"
 msgstr "O  %1"
 
-#: controls/AbstractApplicationWindow.qml:176
+#: controls/AbstractApplicationWindow.qml:177
 msgctxt "AbstractApplicationWindow|"
 msgid "Quit"
 msgstr "Ukončiť"
 
-#: controls/ActionToolBar.qml:207
+#: controls/ActionToolBar.qml:209
 msgctxt "ActionToolBar|"
 msgid "More Actions"
 msgstr "Viac akcií"
 
-#: controls/Chip.qml:44
+#: controls/Chip.qml:45
 msgctxt "Chip|"
 msgid "Remove"
 msgstr ""
 
-#: controls/ContextDrawer.qml:63
+#: controls/ContextDrawer.qml:65
 msgctxt "ContextDrawer|"
 msgid "Actions"
 msgstr "Akcie"
@@ -148,17 +148,17 @@ msgctxt "ContextualHelpButton|"
 msgid "Show Contextual Help"
 msgstr ""
 
-#: controls/GlobalDrawer.qml:363
+#: controls/GlobalDrawer.qml:366
 msgctxt "GlobalDrawer|"
 msgid "Back"
 msgstr "Späť"
 
-#: controls/GlobalDrawer.qml:716
+#: controls/GlobalDrawer.qml:719
 msgctxt "GlobalDrawer|"
 msgid "Close Sidebar"
 msgstr "Zatvoriť bočný panel"
 
-#: controls/GlobalDrawer.qml:721
+#: controls/GlobalDrawer.qml:724
 #, fuzzy
 #| msgctxt "GlobalDrawer|"
 #| msgid "Close Sidebar"
@@ -166,7 +166,7 @@ msgctxt "GlobalDrawer|"
 msgid "Open Sidebar"
 msgstr "Zatvoriť bočný panel"
 
-#: controls/LoadingPlaceholder.qml:57
+#: controls/LoadingPlaceholder.qml:58
 msgctxt "LoadingPlaceholder|"
 msgid "Loading…"
 msgstr ""
@@ -208,7 +208,7 @@ msgctxt "HandleButton|"
 msgid "Open menu"
 msgstr "Otvoriť"
 
-#: controls/private/globaltoolbar/NavigationButtons.qml:100
+#: controls/private/globaltoolbar/NavigationButtons.qml:102
 #, fuzzy
 #| msgctxt "BackButton|"
 #| msgid "Navigate Back"
@@ -216,7 +216,7 @@ msgctxt "NavigationButtons|"
 msgid "Navigate Back"
 msgstr "Navigovať späť"
 
-#: controls/private/globaltoolbar/NavigationButtons.qml:117
+#: controls/private/globaltoolbar/NavigationButtons.qml:119
 #, fuzzy
 #| msgctxt "ForwardButton|"
 #| msgid "Navigate Forward"
@@ -224,30 +224,30 @@ msgctxt "NavigationButtons|"
 msgid "Navigate Forward"
 msgstr "Navigovať dopredu"
 
-#: controls/private/PrivateActionToolButton.qml:116
+#: controls/private/PrivateActionToolButton.qml:118
 #, qt-format
 msgctxt "@info:tooltip %1 is a keyboard shorcut|"
 msgid "Trigger this action with %1"
 msgstr ""
 
-#: controls/private/PrivateActionToolButton.qml:123
+#: controls/private/PrivateActionToolButton.qml:125
 #, qt-format
 msgctxt ""
 "@info:tooltip %1 is the tooltip of an action, %2 is its keyboard shorcut|"
 msgid "%1 (%2)"
 msgstr ""
 
-#: controls/SearchField.qml:86
+#: controls/SearchField.qml:88
 msgctxt "SearchField|"
 msgid "Search…"
 msgstr "Hľadať..."
 
-#: controls/SearchField.qml:88
+#: controls/SearchField.qml:90
 msgctxt "SearchField|"
 msgid "Search"
 msgstr "Hľadať"
 
-#: controls/SearchField.qml:98
+#: controls/SearchField.qml:100
 msgctxt "SearchField|"
 msgid "Clear search"
 msgstr ""
@@ -265,13 +265,13 @@ msgctxt "SelectableLabel|"
 msgid "Select All"
 msgstr ""
 
-#: controls/UrlButton.qml:50
+#: controls/UrlButton.qml:52
 #, qt-format
 msgctxt "UrlButton|@info:whatsthis"
 msgid "Open link %1"
 msgstr ""
 
-#: controls/UrlButton.qml:51
+#: controls/UrlButton.qml:53
 #, fuzzy
 #| msgctxt "OverlayDrawer|"
 #| msgid "Open"
@@ -279,7 +279,7 @@ msgctxt "UrlButton|@info:whatsthis"
 msgid "Open link"
 msgstr "Otvoriť"
 
-#: controls/UrlButton.qml:99
+#: controls/UrlButton.qml:101
 msgctxt "UrlButton|"
 msgid "Copy Link to Clipboard"
 msgstr ""

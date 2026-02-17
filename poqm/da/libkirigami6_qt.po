@@ -14,70 +14,70 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Lokalize 24.08.2\n"
 
-#: controls/AboutItem.qml:163
+#: controls/AboutItem.qml:166
 #, qt-format
 msgctxt "AboutItem|"
 msgid "%1 (%2)"
 msgstr "%1 (%2)"
 
-#: controls/AboutItem.qml:183
+#: controls/AboutItem.qml:186
 #, qt-format
 msgctxt "AboutItem|"
 msgid "Send an email to %1"
 msgstr "Send en e-mail til %1"
 
-#: controls/AboutItem.qml:225
+#: controls/AboutItem.qml:228
 msgctxt "AboutItem|"
 msgid "Get Involved"
 msgstr "Bliv involveret"
 
-#: controls/AboutItem.qml:231
+#: controls/AboutItem.qml:234
 msgctxt "AboutItem|"
 msgid "Donate"
 msgstr "Donér"
 
-#: controls/AboutItem.qml:248
+#: controls/AboutItem.qml:251
 msgctxt "AboutItem|"
 msgid "Report a Bug"
 msgstr "Rapportér en fejl"
 
-#: controls/AboutItem.qml:261
+#: controls/AboutItem.qml:264
 msgctxt "AboutItem|"
 msgid "Copyright"
 msgstr "Ophavsret"
 
-#: controls/AboutItem.qml:310
+#: controls/AboutItem.qml:313
 msgctxt "AboutItem|"
 msgid "License:"
 msgstr "Licens:"
 
-#: controls/AboutItem.qml:333
+#: controls/AboutItem.qml:336
 #, qt-format
 msgctxt "AboutItem|"
 msgid "License: %1"
 msgstr "Licens: %1"
 
-#: controls/AboutItem.qml:344
+#: controls/AboutItem.qml:347
 msgctxt "AboutItem|"
 msgid "Libraries in use"
 msgstr "Biblioteker i brug"
 
-#: controls/AboutItem.qml:376
+#: controls/AboutItem.qml:379
 msgctxt "AboutItem|"
 msgid "Authors"
 msgstr "Ophavsmænd"
 
-#: controls/AboutItem.qml:386
+#: controls/AboutItem.qml:389
 msgctxt "AboutItem|"
 msgid "Show author photos"
 msgstr "Vis fotos af ophavsmænd"
 
-#: controls/AboutItem.qml:397
+#: controls/AboutItem.qml:400
 msgctxt "AboutItem|"
 msgid "Credits"
 msgstr "Bidragsydere"
 
-#: controls/AboutItem.qml:409
+#: controls/AboutItem.qml:412
 msgctxt "AboutItem|"
 msgid "Translators"
 msgstr "Oversættere"
@@ -88,17 +88,17 @@ msgctxt "AboutPage|"
 msgid "About %1"
 msgstr "Om %1"
 
-#: controls/AbstractApplicationWindow.qml:176
+#: controls/AbstractApplicationWindow.qml:177
 msgctxt "AbstractApplicationWindow|"
 msgid "Quit"
 msgstr "Afslut"
 
-#: controls/ActionToolBar.qml:207
+#: controls/ActionToolBar.qml:209
 msgctxt "ActionToolBar|"
 msgid "More Actions"
 msgstr "Flere handlinger"
 
-#: controls/Chip.qml:44
+#: controls/Chip.qml:45
 #, fuzzy
 #| msgctxt "Chip|"
 #| msgid "Remove Tag"
@@ -106,7 +106,7 @@ msgctxt "Chip|"
 msgid "Remove"
 msgstr "Fjern mærke"
 
-#: controls/ContextDrawer.qml:63
+#: controls/ContextDrawer.qml:65
 msgctxt "ContextDrawer|"
 msgid "Actions"
 msgstr "Handlinger"
@@ -116,22 +116,22 @@ msgctxt "ContextualHelpButton|"
 msgid "Show Contextual Help"
 msgstr "Vis kontekstbaseret hjælp"
 
-#: controls/GlobalDrawer.qml:363
+#: controls/GlobalDrawer.qml:366
 msgctxt "GlobalDrawer|"
 msgid "Back"
 msgstr "Tilbage"
 
-#: controls/GlobalDrawer.qml:716
+#: controls/GlobalDrawer.qml:719
 msgctxt "GlobalDrawer|"
 msgid "Close Sidebar"
 msgstr "Luk sidepanel"
 
-#: controls/GlobalDrawer.qml:721
+#: controls/GlobalDrawer.qml:724
 msgctxt "GlobalDrawer|"
 msgid "Open Sidebar"
 msgstr "Åbn sidepanel"
 
-#: controls/LoadingPlaceholder.qml:57
+#: controls/LoadingPlaceholder.qml:58
 msgctxt "LoadingPlaceholder|"
 msgid "Loading…"
 msgstr "Indlæser…"
@@ -167,7 +167,7 @@ msgctxt "HandleButton|"
 msgid "Open menu"
 msgstr "Åbn menu"
 
-#: controls/private/globaltoolbar/NavigationButtons.qml:100
+#: controls/private/globaltoolbar/NavigationButtons.qml:102
 #, fuzzy
 #| msgctxt "BackButton|"
 #| msgid "Navigate Back"
@@ -175,7 +175,7 @@ msgctxt "NavigationButtons|"
 msgid "Navigate Back"
 msgstr "Navigér tilbage"
 
-#: controls/private/globaltoolbar/NavigationButtons.qml:117
+#: controls/private/globaltoolbar/NavigationButtons.qml:119
 #, fuzzy
 #| msgctxt "ForwardButton|"
 #| msgid "Navigate Forward"
@@ -183,13 +183,13 @@ msgctxt "NavigationButtons|"
 msgid "Navigate Forward"
 msgstr "Navigér fremad"
 
-#: controls/private/PrivateActionToolButton.qml:116
+#: controls/private/PrivateActionToolButton.qml:118
 #, qt-format
 msgctxt "@info:tooltip %1 is a keyboard shorcut|"
 msgid "Trigger this action with %1"
 msgstr ""
 
-#: controls/private/PrivateActionToolButton.qml:123
+#: controls/private/PrivateActionToolButton.qml:125
 #, fuzzy, qt-format
 #| msgctxt "AboutItem|"
 #| msgid "%1 (%2)"
@@ -198,17 +198,17 @@ msgctxt ""
 msgid "%1 (%2)"
 msgstr "%1 (%2)"
 
-#: controls/SearchField.qml:86
+#: controls/SearchField.qml:88
 msgctxt "SearchField|"
 msgid "Search…"
 msgstr "Søg…"
 
-#: controls/SearchField.qml:88
+#: controls/SearchField.qml:90
 msgctxt "SearchField|"
 msgid "Search"
 msgstr "Søg"
 
-#: controls/SearchField.qml:98
+#: controls/SearchField.qml:100
 msgctxt "SearchField|"
 msgid "Clear search"
 msgstr "Ryd søgning"
@@ -223,18 +223,18 @@ msgctxt "SelectableLabel|"
 msgid "Select All"
 msgstr "Vælg alle"
 
-#: controls/UrlButton.qml:50
+#: controls/UrlButton.qml:52
 #, qt-format
 msgctxt "UrlButton|@info:whatsthis"
 msgid "Open link %1"
 msgstr "Åbn link %1"
 
-#: controls/UrlButton.qml:51
+#: controls/UrlButton.qml:53
 msgctxt "UrlButton|@info:whatsthis"
 msgid "Open link"
 msgstr "Åbn link"
 
-#: controls/UrlButton.qml:99
+#: controls/UrlButton.qml:101
 msgctxt "UrlButton|"
 msgid "Copy Link to Clipboard"
 msgstr "Kopiér link til udklipsholderen"
