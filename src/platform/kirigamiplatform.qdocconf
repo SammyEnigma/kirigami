@@ -8,7 +8,7 @@ documentationinheaders = true
 headerdirs += .
 sourcedirs += .
 
-depends = kde qtcore qtquick qtquickcontrols
+depends = kde qtcore qtgui qtqml qtquick qtquickcontrols
 
 navigation.landingpage = "Kirigami"
 
