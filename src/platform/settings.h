@@ -17,7 +17,7 @@ namespace Kirigami
 namespace Platform
 {
 /*!
- * \qmltype Settings
+ * \qmlsingletontype Settings
  * \inqmlmodule org.kde.kirigami.platform
  *
  * \brief Provides global kirigami settings about

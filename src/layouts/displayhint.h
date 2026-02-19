@@ -11,7 +11,7 @@
 #include <QQmlEngine>
 
 /*!
- * \qmltype DisplayHint
+ * \qmlsingletontype DisplayHint
  * \inqmlmodule org.kde.kirigami.layouts
  *
  * \brief Hints for implementations using Actions indicating preferences about how to display the action.

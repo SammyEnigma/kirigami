@@ -68,7 +68,7 @@ Q_SIGNALS:
 };
 
 /*!
- * \qmltype Units
+ * \qmlsingletontype Units
  * \inqmlmodule org.kde.kirigami.platform
  * \nativetype Kirigami::Platform::Units
  *

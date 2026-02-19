@@ -20,7 +20,7 @@ namespace Platform
 {
 
 /*!
- * \qmltype InputMethod
+ * \qmlsingletontype InputMethod
  * \inqmlmodule org.kde.kirigami.platform
  *
  * \brief This exposes information about the current used input method.

@@ -14,7 +14,7 @@
 #include "kirigamiplatform_export.h"
 
 /*!
- * \qmltype ColorUtils
+ * \qmlsingletontype ColorUtils
  * \inqmlmodule org.kde.kirigami.platform
  *
  * \brief Utilities for processing items to obtain colors and information useful for
