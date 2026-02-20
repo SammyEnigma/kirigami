@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2026-02-13 09:48+0200\n"
+"PO-Revision-Date: 2026-02-15 07:57+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -172,7 +172,7 @@ msgstr "ניווט קדימה"
 #, qt-format
 msgctxt "@info:tooltip %1 is a keyboard shorcut|"
 msgid "Trigger this action with %1"
-msgstr ""
+msgstr "הזנקת הפעולה הזאת עם %1"
 
 #: controls/private/PrivateActionToolButton.qml:125
 #, qt-format
