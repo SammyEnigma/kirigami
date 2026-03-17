@@ -127,8 +127,8 @@ QString StyleSelector::installRoot()
     importPaths.append(QCoreApplication::applicationDirPath());
     importPaths.append(qEnvironmentVariable("QML_IMPORT_PATH").split(QDir::listSeparator()));
     importPaths.append(qEnvironmentVariable("QML2_IMPORT_PATH").split(QDir::listSeparator()));
-    importPaths.append(u":/qt/qml"_s);
     importPaths.append(QLibraryInfo::paths(QLibraryInfo::QmlImportsPath));
+    importPaths.append(u":/qt/qml"_s);
 
     for (auto path : importPaths) {
         if (!QFile::exists(path)) {
