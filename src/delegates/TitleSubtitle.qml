@@ -94,6 +94,10 @@ Item {
      */
     property bool selected: false
     /*!
+      The way the text property for the title and subtitle should be displayed.
+     */
+    property int textFormat: Text.AutoText
+    /*!
       Is the subtitle visible?
      */
     // Note: Don't rely on subtitleItem.visible because visibility is an
@@ -135,6 +139,7 @@ Item {
         font: root.font
         elide: root.elide
         wrapMode: root.wrapMode
+        textFormat: root.textFormat
 
         onLinkActivated: link => root.linkActivated(link)
         onLinkHovered: link => root.linkHovered(link)
@@ -172,6 +177,7 @@ Item {
         font: root.subtitleFont
         elide: root.elide
         wrapMode: root.wrapMode
+        textFormat: root.textFormat
 
         visible: text.length > 0
 
