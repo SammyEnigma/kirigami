@@ -120,17 +120,17 @@ msgctxt "ContextualHelpButton|"
 msgid "Show Contextual Help"
 msgstr "सन्दर्भसहायतां दर्शयतु"
 
-#: controls/GlobalDrawer.qml:365
+#: controls/GlobalDrawer.qml:371
 msgctxt "GlobalDrawer|"
 msgid "Back"
 msgstr "पृष्ठभागः"
 
-#: controls/GlobalDrawer.qml:717
+#: controls/GlobalDrawer.qml:723
 msgctxt "GlobalDrawer|"
 msgid "Close Sidebar"
 msgstr "पार्श्वपट्टिकां बन्दं कुर्वन्तु"
 
-#: controls/GlobalDrawer.qml:722
+#: controls/GlobalDrawer.qml:728
 msgctxt "GlobalDrawer|"
 msgid "Open Sidebar"
 msgstr "पार्श्वपट्टिका उद्घाटयन्तु"

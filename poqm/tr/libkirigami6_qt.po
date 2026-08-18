@@ -113,17 +113,17 @@ msgctxt "ContextualHelpButton|"
 msgid "Show Contextual Help"
 msgstr "Bağlamsal Yardımı Göster"
 
-#: controls/GlobalDrawer.qml:365
+#: controls/GlobalDrawer.qml:371
 msgctxt "GlobalDrawer|"
 msgid "Back"
 msgstr "Geri"
 
-#: controls/GlobalDrawer.qml:717
+#: controls/GlobalDrawer.qml:723
 msgctxt "GlobalDrawer|"
 msgid "Close Sidebar"
 msgstr "Kenar çubuğunu kapat"
 
-#: controls/GlobalDrawer.qml:722
+#: controls/GlobalDrawer.qml:728
 msgctxt "GlobalDrawer|"
 msgid "Open Sidebar"
 msgstr "Kenar çubuğunu aç"
