@@ -19,7 +19,7 @@ msgstr ""
 #, qt-format
 msgctxt "AboutItem|"
 msgid "Visit %1's KDE Store page"
-msgstr ""
+msgstr "访问 %1 的 KDE 商店页面"
 
 #: controls/AboutItem.qml:197
 #, qt-format
@@ -33,17 +33,14 @@ msgid "Copyright"
 msgstr "版权信息"
 
 #: controls/AboutItem.qml:244
-#, fuzzy
-#| msgctxt "AboutItem|"
-#| msgid "License:"
 msgctxt "AboutItem|"
 msgid "License"
-msgstr "许可证："
+msgstr "许可证"
 
 #: controls/AboutItem.qml:266
 msgctxt "AboutItem|"
 msgid "Homepage"
-msgstr ""
+msgstr "主页"
 
 #: controls/AboutItem.qml:280
 msgctxt "AboutItem|"
@@ -56,9 +53,6 @@ msgid "Get Involved"
 msgstr "参与贡献"
 
 #: controls/AboutItem.qml:308
-#, fuzzy
-#| msgctxt "AboutItem|"
-#| msgid "Report a Bug"
 msgctxt "AboutItem|"
 msgid "Report a bug"
 msgstr "报告程序缺陷"
@@ -290,11 +284,3 @@ msgstr "打开抽屉栏"
 msgctxt "OverlaySheet|@action:button close dialog"
 msgid "Close"
 msgstr "关闭"
-
-#~ msgctxt "AboutItem|"
-#~ msgid "%1 (%2)"
-#~ msgstr "%1 (%2)"
-
-#~ msgctxt "AboutItem|"
-#~ msgid "License: %1"
-#~ msgstr "许可证：%1"
